@@ -1,0 +1,728 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Diagnóstico inicial y planteamiento ideal de adquisición de mandantes para Loyevo.">
+  <meta name="theme-color" content="#ed0a78">
+  <title>Loyevo | Diagnóstico de adquisición de mandantes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --pink: #ed0a78;
+      --pink-dark: #c6005f;
+      --pink-soft: #fff0f7;
+      --ink: #15131a;
+      --muted: #6b6872;
+      --line: #e8e5ea;
+      --paper: #fbfafb;
+      --white: #ffffff;
+      --green: #11875d;
+      --green-soft: #eaf8f2;
+      --amber: #af6500;
+      --amber-soft: #fff6e6;
+      --red: #c63b45;
+      --red-soft: #fff0f1;
+      --navy: #262337;
+      --radius: 22px;
+      --shadow: 0 16px 48px rgba(27, 18, 26, .08);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 82px; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.55;
+      overflow-x: clip;
+    }
+    a { color: inherit; }
+    button { font: inherit; }
+    .wrap { width: min(1180px, calc(100% - 40px)); margin-inline: auto; }
+    .skip-link { position: fixed; left: 16px; top: -60px; z-index: 100; padding: 10px 16px; background: var(--ink); color: white; border-radius: 8px; }
+    .skip-link:focus { top: 12px; }
+
+    .site-header {
+      position: sticky; top: 0; z-index: 30;
+      height: 72px; border-bottom: 1px solid rgba(232,229,234,.9);
+      background: rgba(251,250,251,.9); backdrop-filter: blur(18px);
+    }
+    .header-inner { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: flex; align-items: center; gap: 11px; text-decoration: none; font: 800 20px/1 Manrope, sans-serif; }
+    .brand-mark { width: 34px; height: 34px; display: grid; place-items: center; border-radius: 11px; color: white; background: var(--pink); font-size: 19px; }
+    .brand em { color: var(--pink); font-style: normal; }
+    nav { display: flex; align-items: center; gap: 22px; }
+    nav a { color: var(--muted); text-decoration: none; font-size: 14px; font-weight: 600; }
+    nav a:hover, nav a:focus-visible { color: var(--pink); }
+    .header-label { padding: 8px 12px; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); font-size: 12px; font-weight: 700; letter-spacing: .05em; }
+    .menu-button { display: none; border: 0; background: transparent; font-size: 24px; }
+
+    .hero { position: relative; overflow: hidden; padding: 80px 0 56px; }
+    .hero::before { content: ""; position: absolute; width: 520px; height: 520px; right: -160px; top: -230px; border-radius: 50%; background: radial-gradient(circle, rgba(237,10,120,.18), rgba(237,10,120,0) 68%); }
+    .hero-grid { position: relative; display: grid; grid-template-columns: 1.5fr .75fr; gap: 70px; align-items: end; min-width: 0; }
+    .hero-grid > *, .section-heading > *, .score-layout > *, .campaign-card > *, .measurement-grid > * { min-width: 0; }
+    .kicker { display: flex; align-items: center; gap: 10px; margin: 0 0 22px; color: var(--pink); text-transform: uppercase; letter-spacing: .13em; font: 800 12px/1 Manrope, sans-serif; }
+    .kicker::before { content: ""; width: 30px; height: 2px; background: currentColor; }
+    h1, h2, h3, h4 { margin: 0; font-family: Manrope, sans-serif; letter-spacing: -.035em; }
+    h1 { max-width: 820px; font-size: clamp(48px, 7vw, 88px); line-height: .98; }
+    h1 span { color: var(--pink); }
+    .hero-lead { max-width: 720px; margin: 28px 0 0; color: var(--muted); font-size: clamp(18px, 2vw, 22px); }
+    .hero-card { max-width: 100%; min-width: 0; padding: 26px; overflow: hidden; color: white; border-radius: var(--radius); background: var(--ink); box-shadow: var(--shadow); }
+    .hero-card small { display: block; margin-bottom: 10px; color: #bdb7c2; text-transform: uppercase; letter-spacing: .12em; font-weight: 700; }
+    .hero-card strong { display: block; font: 700 25px/1.15 Manrope, sans-serif; }
+    .hero-card p { margin: 14px 0 0; color: #d8d4db; font-size: 14px; }
+    .hero-meta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px; }
+    .chip { padding: 9px 13px; border: 1px solid var(--line); border-radius: 999px; background: white; color: var(--muted); font-size: 13px; font-weight: 600; }
+
+    .notice { margin-bottom: 30px; padding: 18px 22px; display: grid; grid-template-columns: auto 1fr; gap: 14px; border: 1px solid #f3d98c; border-radius: 16px; background: #fffaf0; }
+    .notice-icon { width: 28px; height: 28px; display: grid; place-items: center; border-radius: 50%; color: white; background: var(--amber); font-weight: 800; }
+    .notice strong { display: block; margin-bottom: 3px; }
+    .notice p { margin: 0; color: #705c37; font-size: 14px; }
+
+    .metric-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 22px; }
+    .metric-card { min-height: 158px; padding: 23px; display: flex; flex-direction: column; justify-content: space-between; border: 1px solid var(--line); border-radius: 18px; background: var(--paper); }
+    .metric-card small { color: var(--muted); text-transform: uppercase; letter-spacing: .07em; font-weight: 800; }
+    .metric-card strong { display: block; margin-top: 18px; color: var(--pink); font: 800 clamp(28px, 4vw, 42px)/1 Manrope, sans-serif; letter-spacing: -.05em; }
+    .metric-card span { margin-top: 8px; color: var(--muted); font-size: 12px; }
+    .allocation { display: grid; grid-template-columns: .78fr 1.22fr; gap: 20px; }
+    .allocation-card, .actual-results { padding: 28px; border: 1px solid var(--line); border-radius: var(--radius); background: white; }
+    .allocation-card h3, .actual-results h3 { margin-bottom: 20px; font-size: 23px; }
+    .allocation-row { margin-top: 17px; }
+    .allocation-head { display: flex; justify-content: space-between; gap: 14px; margin-bottom: 8px; font-size: 13px; }
+    .allocation-head span { color: var(--muted); }
+    .allocation-track { height: 9px; overflow: hidden; border-radius: 99px; background: #eeeaf0; }
+    .allocation-track i { display: block; width: var(--share); height: 100%; border-radius: inherit; background: var(--pink); }
+    .allocation-row:nth-of-type(3) .allocation-track i { background: var(--navy); }
+    .allocation-row:nth-of-type(4) .allocation-track i { background: #aaa4ad; }
+    .result-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+    .result-cell { padding: 17px 13px; border-radius: 14px; background: var(--paper); }
+    .result-cell strong { display: block; color: var(--pink); font: 800 25px/1 Manrope, sans-serif; }
+    .result-cell span { display: block; margin-top: 7px; color: var(--muted); font-size: 11px; }
+    .actual-note { margin: 18px 0 0; padding: 15px; border-radius: 12px; color: #705c37; background: var(--amber-soft); font-size: 12px; }
+    .performance-wrap { margin-top: 22px; overflow-x: auto; border: 1px solid var(--line); border-radius: 18px; }
+    .performance-table { width: 100%; min-width: 880px; border-collapse: collapse; background: white; }
+    .performance-table th, .performance-table td { padding: 15px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
+    .performance-table th { color: var(--muted); text-transform: uppercase; letter-spacing: .07em; font-size: 10px; }
+    .performance-table td { font-size: 12px; }
+    .performance-table td:first-child { font-weight: 700; }
+    .performance-table td b { color: var(--pink-dark); }
+    .performance-table tr:last-child td { border-bottom: 0; }
+
+    section { padding: 76px 0; }
+    .section-white { background: white; }
+    .section-dark { color: white; background: var(--ink); }
+    .section-heading { display: grid; grid-template-columns: 1fr .75fr; gap: 60px; align-items: end; margin-bottom: 38px; }
+    .section-heading h2 { font-size: clamp(34px, 5vw, 58px); line-height: 1.02; }
+    .section-heading > p { margin: 0; color: var(--muted); font-size: 17px; }
+    .section-dark .section-heading > p { color: #bdb8c1; }
+
+    .score-layout { display: grid; grid-template-columns: .7fr 1.3fr; gap: 24px; }
+    .score-main { min-height: 320px; padding: 34px; display: flex; flex-direction: column; justify-content: space-between; border-radius: var(--radius); color: white; background: var(--pink); }
+    .score-main span { text-transform: uppercase; letter-spacing: .1em; font-size: 12px; font-weight: 800; }
+    .score-main strong { font: 800 clamp(78px, 12vw, 132px)/.8 Manrope, sans-serif; letter-spacing: -.08em; }
+    .score-main strong small { font-size: 25px; letter-spacing: -.03em; }
+    .score-main p { margin: 0; max-width: 310px; font-size: 15px; }
+    .score-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+    .score-item { padding: 24px; border: 1px solid var(--line); border-radius: 18px; background: white; }
+    .score-item-top { display: flex; justify-content: space-between; gap: 16px; align-items: baseline; }
+    .score-item h3 { font-size: 17px; }
+    .score-item strong { color: var(--pink); font: 800 24px Manrope, sans-serif; }
+    .bar { height: 7px; margin: 16px 0 13px; overflow: hidden; border-radius: 99px; background: #eeeaf0; }
+    .bar i { display: block; height: 100%; width: var(--value); border-radius: inherit; background: var(--pink); }
+    .score-item p { margin: 0; color: var(--muted); font-size: 13px; }
+
+    .finding-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .finding { padding: 26px; border: 1px solid var(--line); border-radius: var(--radius); background: white; }
+    .finding-number { display: flex; align-items: center; justify-content: space-between; margin-bottom: 26px; }
+    .finding-number span:first-child { color: #c6c1c9; font: 800 13px Manrope, sans-serif; }
+    .status { padding: 6px 9px; border-radius: 999px; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; }
+    .status.high { color: var(--red); background: var(--red-soft); }
+    .status.medium { color: var(--amber); background: var(--amber-soft); }
+    .status.good { color: var(--green); background: var(--green-soft); }
+    .finding h3 { margin-bottom: 12px; font-size: 21px; line-height: 1.18; }
+    .finding p { margin: 0; color: var(--muted); font-size: 14px; }
+    .evidence { margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--line); color: #8a858e; font-size: 12px; }
+
+    .priority-list { display: grid; gap: 12px; counter-reset: priority; }
+    .priority { position: relative; display: grid; grid-template-columns: 48px 1.25fr 1.2fr .45fr; gap: 20px; align-items: center; padding: 20px 22px; border-radius: 17px; background: #292631; }
+    .priority::before { counter-increment: priority; content: counter(priority, decimal-leading-zero); width: 38px; height: 38px; display: grid; place-items: center; border-radius: 12px; color: white; background: var(--pink); font: 800 12px Manrope, sans-serif; }
+    .priority h3 { font-size: 17px; }
+    .priority p { margin: 0; color: #bdb8c1; font-size: 13px; }
+    .priority time { justify-self: end; color: #fff; font-size: 12px; font-weight: 700; }
+
+    .flow { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
+    .flow-step { position: relative; min-height: 190px; padding: 22px; border: 1px solid var(--line); border-radius: 18px; background: white; }
+    .flow-step:not(:last-child)::after { content: "→"; position: absolute; z-index: 2; right: -18px; top: 50%; width: 24px; height: 24px; display: grid; place-items: center; border-radius: 50%; color: white; background: var(--pink); font-weight: 800; }
+    .flow-step span { color: var(--pink); text-transform: uppercase; letter-spacing: .08em; font-size: 11px; font-weight: 800; }
+    .flow-step h3 { margin: 16px 0 8px; font-size: 17px; }
+    .flow-step p { margin: 0; color: var(--muted); font-size: 13px; }
+    .flow-step code { display: inline-block; margin-top: 14px; padding: 5px 7px; border-radius: 6px; background: var(--pink-soft); color: var(--pink-dark); font-size: 11px; }
+
+    .campaign-tabs { display: flex; gap: 8px; margin-bottom: 20px; padding: 5px; width: fit-content; border: 1px solid var(--line); border-radius: 14px; background: white; }
+    .tab { padding: 10px 16px; border: 0; border-radius: 10px; color: var(--muted); background: transparent; font-weight: 700; cursor: pointer; }
+    .tab[aria-selected="true"] { color: white; background: var(--pink); }
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; animation: reveal .25s ease; }
+    @keyframes reveal { from { opacity: 0; transform: translateY(5px); } }
+    .campaign-card { display: grid; grid-template-columns: .38fr 1.62fr; min-height: 310px; overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius); background: white; box-shadow: var(--shadow); }
+    .campaign-share { padding: 32px; display: flex; flex-direction: column; justify-content: space-between; color: white; background: var(--ink); }
+    .campaign-share strong { font: 800 62px/.9 Manrope, sans-serif; letter-spacing: -.06em; }
+    .campaign-share span { color: #bdb8c1; font-size: 13px; }
+    .campaign-body { padding: 32px; }
+    .campaign-body h3 { font-size: 27px; }
+    .campaign-body > p { max-width: 700px; margin: 8px 0 24px; color: var(--muted); }
+    .spec-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .spec { padding: 16px; border-radius: 13px; background: var(--paper); }
+    .spec small { display: block; margin-bottom: 5px; color: var(--pink); text-transform: uppercase; letter-spacing: .07em; font-weight: 800; }
+    .spec p { margin: 0; font-size: 13px; }
+
+    .account-map { margin-top: 24px; display: grid; gap: 12px; }
+    .account-row { display: grid; grid-template-columns: .32fr .68fr; overflow: hidden; border: 1px solid var(--line); border-radius: 17px; background: white; }
+    .account-level { padding: 20px; display: flex; flex-direction: column; justify-content: center; color: white; background: var(--ink); }
+    .account-level small { color: #bdb8c1; text-transform: uppercase; letter-spacing: .08em; font-weight: 800; }
+    .account-level strong { margin-top: 4px; font: 800 17px Manrope, sans-serif; }
+    .account-detail { padding: 18px 20px; display: grid; grid-template-columns: 1.1fr 1fr 1fr; gap: 16px; align-items: center; }
+    .account-detail div { min-width: 0; }
+    .account-detail small { display: block; margin-bottom: 4px; color: var(--pink); text-transform: uppercase; letter-spacing: .06em; font-size: 10px; font-weight: 800; }
+    .account-detail p { margin: 0; color: var(--muted); font-size: 12px; }
+    .naming-box { margin-top: 20px; padding: 24px; border: 1px solid var(--line); border-radius: 17px; background: var(--paper); }
+    .naming-box h3 { margin-bottom: 16px; font-size: 19px; }
+    .name-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .name-list div { padding: 14px; border-radius: 12px; background: white; }
+    .name-list small { display: block; margin-bottom: 7px; color: var(--muted); font-weight: 700; }
+    .name-list code { color: var(--pink-dark); font-size: 11px; overflow-wrap: anywhere; }
+    .name-list p { margin: 8px 0 0; color: var(--muted); font-size: 11px; }
+
+    .creative-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .creative { min-height: 245px; padding: 26px; display: flex; flex-direction: column; border-radius: var(--radius); background: #292631; }
+    .creative:nth-child(2), .creative:nth-child(5) { background: var(--pink); }
+    .creative-label { color: #bdb8c1; text-transform: uppercase; letter-spacing: .1em; font-size: 11px; font-weight: 800; }
+    .creative:nth-child(2) .creative-label, .creative:nth-child(5) .creative-label { color: rgba(255,255,255,.72); }
+    .creative h3 { margin: auto 0 12px; font-size: 23px; line-height: 1.12; }
+    .creative p { margin: 0; color: #cbc7ce; font-size: 13px; }
+    .creative:nth-child(2) p, .creative:nth-child(5) p { color: rgba(255,255,255,.85); }
+    .audit-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin-bottom: 42px; }
+    .audit-card { padding: 21px; border: 1px solid #3d3944; border-radius: 17px; background: #292631; }
+    .audit-card small { color: #aaa4ad; text-transform: uppercase; letter-spacing: .07em; font-size: 10px; font-weight: 800; }
+    .audit-card strong { display: block; margin: 12px 0 8px; color: var(--pink); font: 800 32px/1 Manrope, sans-serif; }
+    .audit-card p { margin: 0; color: #cbc7ce; font-size: 12px; }
+    .creative-findings { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 54px; }
+    .creative-finding { padding: 24px; border-radius: 18px; color: var(--ink); background: white; }
+    .creative-finding span { color: var(--pink); text-transform: uppercase; letter-spacing: .08em; font-size: 10px; font-weight: 800; }
+    .creative-finding h3 { margin: 8px 0 10px; font-size: 20px; }
+    .creative-finding p { margin: 0; color: var(--muted); font-size: 13px; }
+    .ideas-wrap { margin-top: 48px; overflow-x: auto; border: 1px solid #3d3944; border-radius: 18px; }
+    .ideas-table { width: 100%; min-width: 900px; border-collapse: collapse; background: #211e27; }
+    .ideas-table th, .ideas-table td { padding: 16px; text-align: left; vertical-align: top; border-bottom: 1px solid #3d3944; }
+    .ideas-table th { color: #aaa4ad; text-transform: uppercase; letter-spacing: .08em; font-size: 10px; }
+    .ideas-table td { color: #d4d0d6; font-size: 12px; }
+    .ideas-table td:first-child { color: var(--pink); font-weight: 800; }
+    .ideas-table strong { color: white; }
+    .ideas-table tr:last-child td { border-bottom: 0; }
+    .ideas-wrap + .section-heading { margin-top: 58px; }
+    .creative-rules { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 20px; }
+    .creative-rule { padding: 18px; border: 1px solid #3d3944; border-radius: 15px; }
+    .creative-rule b { display: block; margin-bottom: 6px; color: var(--pink); font: 800 12px Manrope, sans-serif; }
+    .creative-rule p { margin: 0; color: #bbb6be; font-size: 12px; }
+
+    .measurement-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 22px; }
+    .event-map, .kpi-card { padding: 30px; border: 1px solid var(--line); border-radius: var(--radius); background: white; }
+    .event-map h3, .kpi-card h3 { margin-bottom: 22px; font-size: 24px; }
+    .event-list { display: grid; gap: 11px; }
+    .event { display: grid; grid-template-columns: 1.2fr 1fr auto; gap: 14px; padding: 13px 0; border-bottom: 1px solid var(--line); align-items: center; }
+    .event:last-child { border: 0; }
+    .event code { color: var(--pink-dark); font-weight: 700; }
+    .event span { color: var(--muted); font-size: 13px; }
+    .event b { color: var(--green); font-size: 11px; text-transform: uppercase; }
+    .kpi-hero { padding: 20px; border-radius: 16px; color: white; background: var(--pink); }
+    .kpi-hero small { text-transform: uppercase; letter-spacing: .08em; font-weight: 800; }
+    .kpi-hero strong { display: block; margin-top: 8px; font: 800 28px/1.15 Manrope, sans-serif; }
+    .kpi-list { margin: 20px 0 0; padding: 0; list-style: none; }
+    .kpi-list li { display: flex; justify-content: space-between; gap: 20px; padding: 13px 0; border-bottom: 1px solid var(--line); font-size: 14px; }
+    .kpi-list span { color: var(--muted); }
+    .kpi-list b { text-align: right; }
+
+    .roadmap { position: relative; display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .roadmap::before { content: ""; position: absolute; top: 31px; left: 15%; right: 15%; height: 2px; background: #e3dde4; }
+    .phase { position: relative; padding-top: 64px; }
+    .phase::before { content: ""; position: absolute; z-index: 1; top: 21px; left: 24px; width: 20px; height: 20px; border: 7px solid var(--paper); border-radius: 50%; background: var(--pink); box-shadow: 0 0 0 2px var(--pink); }
+    .phase-card { min-height: 300px; padding: 25px; border: 1px solid var(--line); border-radius: var(--radius); background: white; }
+    .phase small { color: var(--pink); text-transform: uppercase; letter-spacing: .09em; font-weight: 800; }
+    .phase h3 { margin: 7px 0 16px; font-size: 23px; }
+    .phase ul { margin: 0; padding-left: 19px; color: var(--muted); font-size: 14px; }
+    .phase li + li { margin-top: 8px; }
+    .gate { margin-top: 18px; padding-top: 15px; border-top: 1px solid var(--line); color: var(--ink); font-size: 13px; font-weight: 700; }
+
+    .questions { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    details { border: 1px solid var(--line); border-radius: 15px; background: white; }
+    summary { padding: 18px 20px; cursor: pointer; font-weight: 700; }
+    details p { margin: 0; padding: 0 20px 20px; color: var(--muted); font-size: 14px; }
+
+    .sources { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .source { padding: 17px 19px; border: 1px solid #3c3844; border-radius: 14px; color: #d5d0d8; text-decoration: none; font-size: 14px; }
+    .source:hover { border-color: var(--pink); color: white; }
+    .source small { display: block; margin-bottom: 3px; color: var(--pink); text-transform: uppercase; letter-spacing: .07em; font-weight: 800; }
+
+    footer { padding: 30px 0; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 20px; }
+    .progress { position: fixed; z-index: 40; left: 0; top: 0; height: 3px; width: var(--progress, 0%); background: var(--pink); }
+
+    @media (max-width: 920px) {
+      nav { display: none; position: absolute; left: 20px; right: 20px; top: 66px; padding: 18px; flex-direction: column; align-items: stretch; border: 1px solid var(--line); border-radius: 16px; background: white; box-shadow: var(--shadow); }
+      nav.open { display: flex; }
+      .menu-button { display: block; }
+      .header-label { display: none; }
+      .hero-grid, .section-heading, .score-layout, .measurement-grid { grid-template-columns: 1fr; gap: 28px; }
+      .metric-grid { grid-template-columns: repeat(2, 1fr); }
+      .allocation { grid-template-columns: 1fr; }
+      .finding-grid, .creative-grid { grid-template-columns: repeat(2, 1fr); }
+      .flow { grid-template-columns: repeat(2, 1fr); }
+      .flow-step::after { display: none !important; }
+      .campaign-card { grid-template-columns: 1fr; }
+      .campaign-share { min-height: 170px; }
+      .spec-grid { grid-template-columns: 1fr 1fr; }
+      .account-row { grid-template-columns: 1fr; }
+      .account-detail { grid-template-columns: 1fr 1fr; }
+      .name-list { grid-template-columns: 1fr; }
+      .audit-grid { grid-template-columns: repeat(2, 1fr); }
+      .creative-rules { grid-template-columns: repeat(2, 1fr); }
+      .priority { grid-template-columns: 42px 1fr; }
+      .priority p { grid-column: 2; }
+      .priority time { grid-column: 2; justify-self: start; }
+    }
+    @media (max-width: 620px) {
+      .wrap { width: min(100% - 26px, 1180px); }
+      .hero { padding-top: 52px; }
+      .hero-grid { display: block; }
+      .section-heading, .score-layout, .measurement-grid, .campaign-card { display: block; width: 100%; }
+      .hero-card, .section-heading > p, .score-grid, .event-map { margin-top: 28px; }
+      h1 { font-size: 39px; }
+      .hero-lead { font-size: 17px; }
+      section { padding: 58px 0; }
+      .score-grid, .finding-grid, .creative-grid, .flow, .roadmap, .questions, .sources { grid-template-columns: 1fr; }
+      .metric-grid, .result-strip { grid-template-columns: 1fr 1fr; }
+      .creative-findings, .audit-grid, .creative-rules { grid-template-columns: 1fr; }
+      .account-detail { grid-template-columns: 1fr; }
+      .roadmap::before { display: none; }
+      .phase { padding-top: 26px; }
+      .phase::before { top: 0; left: 6px; }
+      .spec-grid { grid-template-columns: 1fr; }
+      .campaign-tabs { width: 100%; overflow-x: auto; }
+      .tab { white-space: nowrap; }
+      .event { grid-template-columns: 1fr; gap: 3px; }
+      .footer-inner { flex-direction: column; }
+    }
+    @media print {
+      .site-header, .progress, .campaign-tabs { display: none; }
+      .tab-panel { display: block; margin-bottom: 16px; }
+      section { break-inside: avoid; padding: 34px 0; }
+      body { background: white; }
+    }
+  </style>
+</head>
+<body>
+  <div class="progress" aria-hidden="true"></div>
+  <a class="skip-link" href="#resumen">Saltar al diagnóstico</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#top" aria-label="Loyevo, inicio"><span class="brand-mark">L</span><span>lo<em>yevo</em></span></a>
+      <nav id="main-nav" aria-label="Navegación principal">
+        <a href="index.html">Documentos</a>
+        <a href="#resumen">Diagnóstico</a>
+        <a href="#hallazgos">Hallazgos</a>
+        <a href="#estructura">Estructura ideal</a>
+        <a href="#creatividad">Creatividad</a>
+        <a href="#medicion">Medición</a>
+      </nav>
+      <span class="header-label">META · CUENTA 811773518495568</span>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir navegación">☰</button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <p class="kicker">Diagnóstico inicial · agosto 2026</p>
+          <h1>De conseguir clics<br>a conseguir<br><span>mandantes.</span></h1>
+          <p class="hero-lead">Auditoría del ecosistema público y del histórico real de Meta para que más personas coticen, paguen y completen su primer mandado con Loyevo.</p>
+          <div class="hero-meta">
+            <span class="chip">Foco: adquisición</span>
+            <span class="chip">Mercado: Colombia</span>
+            <span class="chip">Conversión: mandado pagado</span>
+          </div>
+        </div>
+        <aside class="hero-card">
+          <small>La decisión estratégica</small>
+          <strong>Optimizar a valor real, no a descargas.</strong>
+          <p>La descarga es un paso. El negocio ocurre cuando un mandante publica, paga y logra entregar su objeto.</p>
+        </aside>
+      </div>
+    </section>
+
+    <div class="wrap">
+      <div class="notice" role="note">
+        <span class="notice-icon">!</span>
+        <div><strong>Auditoría ampliada con Marketing API</strong><p>Datos consultados el 13 de agosto de 2026 mediante Meta Marketing API v21.0. El histórico disponible inicia en noviembre de 2025, la última inversión se registró el 1 de agosto de 2026 y actualmente todas las campañas están pausadas. Las cifras de Meta reflejan eventos publicitarios; no prueban por sí solas que un mandado haya sido pagado o entregado.</p></div>
+      </div>
+    </div>
+
+    <section class="section-white" id="meta-data">
+      <div class="wrap">
+        <div class="section-heading">
+          <div><p class="kicker">Evidencia de cuenta</p><h2>La inversión creció.<br>La señal quedó corta.</h2></div>
+          <p>La cuenta generó volumen, pero concentró el aprendizaje en captar viajeros y en eventos intermedios. Meta no reporta una sola compra en el histórico.</p>
+        </div>
+        <div class="metric-grid">
+          <article class="metric-card"><small>Inversión histórica</small><strong>$11,16 M</strong><span>COP · nov. 2025 a ago. 2026</span></article>
+          <article class="metric-card"><small>Entrega publicitaria</small><strong>2,89 M</strong><span>Impresiones</span></article>
+          <article class="metric-card"><small>Interacción</small><strong>97.456</strong><span>Clics reportados por Meta</span></article>
+          <article class="metric-card"><small>Estructura</small><strong>14 / 94</strong><span>Campañas / anuncios · 0 activos</span></article>
+        </div>
+        <div class="allocation">
+          <article class="allocation-card">
+            <h3>¿A quién se destinó la inversión?</h3>
+            <div class="allocation-row"><div class="allocation-head"><b>Viajeros / oferta</b><span>$8.278.308 · 74,2%</span></div><div class="allocation-track"><i style="--share:74.2%"></i></div></div>
+            <div class="allocation-row"><div class="allocation-head"><b>Mandantes / demanda</b><span>$2.374.779 · 21,3%</span></div><div class="allocation-track"><i style="--share:21.3%"></i></div></div>
+            <div class="allocation-row"><div class="allocation-head"><b>Awareness y pruebas</b><span>$504.700 · 4,5%</span></div><div class="allocation-track"><i style="--share:4.5%"></i></div></div>
+          </article>
+          <article class="actual-results">
+            <h3>Eventos atribuidos</h3>
+            <div class="result-strip">
+              <div class="result-cell"><strong>7.553</strong><span>CompleteRegistration</span></div>
+              <div class="result-cell"><strong>44</strong><span>Leads totales</span></div>
+              <div class="result-cell"><strong>939</strong><span>Conversaciones iniciadas</span></div>
+              <div class="result-cell"><strong>0</strong><span>Purchase reportados</span></div>
+            </div>
+            <p class="actual-note"><strong>Lectura:</strong> 7.553 registros no equivalen a mandantes. El 89% provino de la campaña de cinco ciudades, cuyos anuncios captaban socios viajeros con vehículo.</p>
+          </article>
+        </div>
+        <div class="performance-wrap" role="region" aria-label="Desempeño de las principales líneas de captación" tabindex="0">
+          <table class="performance-table">
+            <thead><tr><th>Línea</th><th>Inversión</th><th>Resultado Meta</th><th>Costo</th><th>Diagnóstico</th></tr></thead>
+            <tbody>
+              <tr><td>Viajeros · cinco ciudades</td><td>$6.691.183</td><td>6.757 registros</td><td><b>$990 / registro</b></td><td>60% del gasto total; construyó oferta, no demanda.</td></tr>
+              <tr><td>Mandantes · lead + web</td><td>$1.470.485</td><td>31 leads</td><td><b>$47.435 / lead</b></td><td>1.158 vistas de landing → 2,68% a lead.</td></tr>
+              <tr><td>Mandantes · WhatsApp</td><td>$724.304</td><td>177 conversaciones</td><td><b>$4.092 / conversación</b></td><td>Falta conectar conversación con pago y entrega.</td></tr>
+              <tr><td>Mandados a $4.900 · tráfico</td><td>$179.990</td><td>1.988 vistas de landing</td><td><b>$91 / vista</b></td><td>CTR de 7,01%, pero sin evento profundo atribuido.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="resumen">
+      <div class="wrap">
+        <div class="section-heading">
+          <div><p class="kicker">Resumen ejecutivo</p><h2>La promesa funciona.<br>El sistema todavía no.</h2></div>
+          <p>Loyevo ya explica seguridad, seguimiento y pagos protegidos. La brecha está entre esa promesa y una adquisición medible: 74% de la inversión construyó oferta de viajeros y el histórico no devuelve mandados pagados a Meta.</p>
+        </div>
+        <div class="score-layout">
+          <article class="score-main">
+            <span>Madurez digital estimada</span>
+            <strong>42<small>/100</small></strong>
+            <p>Índice diagnóstico, no resultado de plataforma. Resume claridad de oferta, conversión, medición, confianza y preparación para escalar.</p>
+          </article>
+          <div class="score-grid">
+            <article class="score-item"><div class="score-item-top"><h3>Propuesta de valor</h3><strong>70</strong></div><div class="bar"><i style="--value:70%"></i></div><p>Beneficios y seguridad bien explicados.</p></article>
+            <article class="score-item"><div class="score-item-top"><h3>Conversión web</h3><strong>38</strong></div><div class="bar"><i style="--value:38%"></i></div><p>El cotizador existe, pero no es el CTA dominante.</p></article>
+            <article class="score-item"><div class="score-item-top"><h3>Medición</h3><strong>32</strong></div><div class="bar"><i style="--value:32%"></i></div><p>Tres píxeles y señales intermedias; cero Purchase en Meta.</p></article>
+            <article class="score-item"><div class="score-item-top"><h3>Escalabilidad</h3><strong>28</strong></div><div class="bar"><i style="--value:28%"></i></div><p>Falta gobernar inversión según liquidez de cada corredor.</p></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="hallazgos">
+      <div class="wrap">
+        <div class="section-heading">
+          <div><p class="kicker">Qué encontramos</p><h2>Seis oportunidades<br>que mueven negocio.</h2></div>
+          <p>Priorizadas por impacto potencial en adquisición y por la velocidad con que pueden validarse.</p>
+        </div>
+        <div class="finding-grid">
+          <article class="finding"><div class="finding-number"><span>01</span><span class="status high">Crítico</span></div><h3>La inversión priorizó viajeros</h3><p>$8,28 millones —74,2% del histórico— captaron oferta. Solo $2,37 millones se orientaron explícitamente a mandantes, el foco actual del negocio.</p><div class="evidence">Acción: separar presupuestos y mover el centro de gravedad a demanda.</div></article>
+          <article class="finding"><div class="finding-number"><span>02</span><span class="status high">Crítico</span></div><h3>Meta nunca recibió la compra</h3><p>La cuenta reporta 7.553 registros, 44 leads y 939 conversaciones, pero cero Purchase. No se puede calcular CPA de mandado ni ROAS.</p><div class="evidence">Impacto: el algoritmo aprende volumen, no valor de negocio.</div></article>
+          <article class="finding"><div class="finding-number"><span>03</span><span class="status high">Crítico</span></div><h3>La medición está fragmentada</h3><p>Existen tres píxeles: descarga, mandantes y pre-registro. Solo hay una conversión personalizada —descarga de app— y los conjuntos optimizan Lead o CompleteRegistration.</p><div class="evidence">Acción: dataset unificado, CAPI y eventos de pago/entrega deduplicados.</div></article>
+          <article class="finding"><div class="finding-number"><span>04</span><span class="status medium">Medio</span></div><h3>La cuenta se dispersó y hoy está apagada</h3><p>14 campañas, 19 conjuntos y 94 anuncios repartidos entre ventas, leads, engagement, awareness y tráfico; actualmente ninguno está activo.</p><div class="evidence">La última inversión registrada fue el 1 de agosto de 2026.</div></article>
+          <article class="finding"><div class="finding-number"><span>05</span><span class="status medium">Medio</span></div><h3>El journey cambia entre anuncio y destino</h3><p>La portada prioriza descarga; el carrusel de mandantes invita a cotizar en app, muestra Google Play y usa GET_QUOTE en campañas web.</p><div class="evidence">Oportunidad: una promesa, un destino y un CTA por campaña.</div></article>
+          <article class="finding"><div class="finding-number"><span>06</span><span class="status good">Fortaleza</span></div><h3>El producto ya tiene argumentos potentes</h3><p>Viajeros verificados, pago protegido, seguimiento, soporte humano y posible entrega el mismo día son activos creativos claros para reducir riesgo percibido.</p><div class="evidence">Acción: convertir beneficios en demostraciones, no solo afirmaciones.</div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-dark">
+      <div class="wrap">
+        <div class="section-heading">
+          <div><p class="kicker">Primero lo primero</p><h2>Orden de<br>intervención.</h2></div>
+          <p>Escalar inversión antes de cerrar estas brechas multiplicaría tráfico, no necesariamente mandados.</p>
+        </div>
+        <div class="priority-list">
+          <article class="priority"><h3>Definir la fuente de verdad</h3><p>Mandado pagado y primer mandado entregado, con ID, valor, corredor y rol del usuario.</p><time>Semana 1</time></article>
+          <article class="priority"><h3>Instrumentar el journey completo</h3><p>Pixel + CAPI + GA4 desde portada hasta pago y entrega; deduplicación por event_id.</p><time>Semanas 1–2</time></article>
+          <article class="priority"><h3>Enviar pauta al cotizador</h3><p>Landing por necesidad/corredor, precio o rango temprano, prueba de confianza y CTA “Cotiza ahora”.</p><time>Semana 2</time></article>
+          <article class="priority"><h3>Reestructurar Meta</h3><p>Prospección, retargeting y laboratorio creativo; exclusiones claras y presupuesto por liquidez.</p><time>Semanas 2–3</time></article>
+          <article class="priority"><h3>Escalar por margen y entrega</h3><p>Aumentar presupuesto solo cuando CPA, match rate, cancelación y margen de contribución cierren.</p><time>Desde semana 4</time></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="estructura" class="section-white">
+      <div class="wrap">
+        <div class="section-heading">
+          <div><p class="kicker">Journey ideal</p><h2>Menos pasos ciegos.<br>Más intención.</h2></div>
+          <p>El anuncio debe anticipar el caso de uso, llevar a una cotización relevante y devolver a Meta una señal económica confiable.</p>
+        </div>
+        <div class="flow" aria-label="Flujo ideal de adquisición">
+          <article class="flow-step"><span>01 · Descubrimiento</span><h3>Problema + corredor</h3><p>“¿Necesitas mandar algo de Bogotá a Tunja?” Creatividad específica por necesidad.</p><code>ViewContent</code></article>
+          <article class="flow-step"><span>02 · Intención</span><h3>Cotización web</h3><p>Origen y destino prellenados, tipo de objeto, urgencia y precio transparente.</p><code>Search / Quote</code></article>
+          <article class="flow-step"><span>03 · Confianza</span><h3>Validación</h3><p>Cómo se protege el pago, quién lleva el objeto y qué ocurre ante incidentes.</p><code>Lead</code></article>
+          <article class="flow-step"><span>04 · Negocio</span><h3>Mandado pagado</h3><p>Evento con valor, moneda, corredor e ID único. Esta es la conversión primaria.</p><code>Purchase</code></article>
+          <article class="flow-step"><span>05 · Calidad</span><h3>Entrega completada</h3><p>Señal offline/CAPI para medir la calidad real de cada fuente y creatividad.</p><code>MandadoDelivered</code></article>
+        </div>
+
+        <div style="height:64px"></div>
+        <div class="section-heading">
+          <div><p class="kicker">Arquitectura de cuenta</p><h2>Tres campañas.<br>Una meta común.</h2></div>
+          <p>Estructura inicial simple para concentrar aprendizaje. Los porcentajes son una hipótesis de arranque y deben ajustarse con demanda y capacidad por corredor.</p>
+        </div>
+        <div class="campaign-tabs" role="tablist" aria-label="Campañas recomendadas">
+          <button class="tab" role="tab" aria-selected="true" data-panel="campaign-1">Prospección · 70%</button>
+          <button class="tab" role="tab" aria-selected="false" data-panel="campaign-2">Retargeting · 20%</button>
+          <button class="tab" role="tab" aria-selected="false" data-panel="campaign-3">Laboratorio · 10%</button>
+        </div>
+        <div id="campaign-1" class="tab-panel active" role="tabpanel">
+          <article class="campaign-card"><div class="campaign-share"><span>Participación inicial</span><strong>70%</strong><span>Demanda nueva</span></div><div class="campaign-body"><h3>Mandantes · Prospección</h3><p>Campaña de Ventas a sitio web, optimizada a Purchase cuando haya volumen suficiente. Antes, usar la señal profunda más cercana sin perder el objetivo de negocio.</p><div class="spec-grid"><div class="spec"><small>Geografía</small><p>Ciudades de origen con corredores activos; excluir zonas sin oferta.</p></div><div class="spec"><small>Audiencia</small><p>Broad / Advantage+ con exclusión de clientes recientes y viajeros.</p></div><div class="spec"><small>Conjuntos</small><p>Agrupar por corredor o clúster solo cuando cambie economía/mensaje.</p></div><div class="spec"><small>Creatividades</small><p>Problema, velocidad, precio, confianza y demostración.</p></div><div class="spec"><small>Destino</small><p>Cotizador web con UTM y ruta preseleccionada.</p></div><div class="spec"><small>Regla</small><p>No escalar si cae match rate o suben cancelaciones.</p></div></div></div></article>
+        </div>
+        <div id="campaign-2" class="tab-panel" role="tabpanel">
+          <article class="campaign-card"><div class="campaign-share"><span>Participación inicial</span><strong>20%</strong><span>Recuperar intención</span></div><div class="campaign-body"><h3>Mandantes · Retargeting</h3><p>Recuperar a quienes cotizaron o iniciaron pago sin competir con prospección. La ventana y el mensaje cambian según la profundidad.</p><div class="spec-grid"><div class="spec"><small>1–3 días</small><p>Inició pago: objeción, soporte y continuidad directa.</p></div><div class="spec"><small>4–14 días</small><p>Cotizó: prueba social, seguridad y recordatorio de ruta.</p></div><div class="spec"><small>15–30 días</small><p>Visitó contenido: casos de uso y educación.</p></div><div class="spec"><small>Exclusión</small><p>Mandado pagado en ventana coherente con recurrencia.</p></div><div class="spec"><small>Destino</small><p>Retomar cotización, no volver a la portada.</p></div><div class="spec"><small>Control</small><p>Vigilar frecuencia y solapamiento entre ventanas.</p></div></div></div></article>
+        </div>
+        <div id="campaign-3" class="tab-panel" role="tabpanel">
+          <article class="campaign-card"><div class="campaign-share"><span>Participación inicial</span><strong>10%</strong><span>Aprendizaje</span></div><div class="campaign-body"><h3>Laboratorio creativo</h3><p>Entorno controlado para descubrir conceptos ganadores antes de llevarlos a prospección. Testear una variable principal por celda.</p><div class="spec-grid"><div class="spec"><small>Hipótesis</small><p>Dolor vs. confianza vs. ahorro vs. velocidad.</p></div><div class="spec"><small>Formatos</small><p>UGC, demostración, estático, carrusel y animación simple.</p></div><div class="spec"><small>Lectura</small><p>Hook rate, retención, CTR, quote rate y CPA pagado.</p></div><div class="spec"><small>Cadencia</small><p>3–5 conceptos nuevos por semana al inicio.</p></div><div class="spec"><small>Ganador</small><p>Se valida por conversión, no solo por CTR.</p></div><div class="spec"><small>Aprendizaje</small><p>Documentar concepto, hook, promesa, prueba y audiencia.</p></div></div></div></article>
+        </div>
+
+        <div style="height:58px"></div>
+        <div class="section-heading">
+          <div><p class="kicker">Implementación</p><h2>Así se ordena<br>dentro de Meta.</h2></div>
+          <p>La jerarquía evita campañas duplicadas y permite leer qué corredor, concepto y pieza producen mandados de calidad.</p>
+        </div>
+        <div class="account-map" aria-label="Jerarquía recomendada de campañas de Meta">
+          <article class="account-row">
+            <div class="account-level"><small>Campaña 01 · 70%</small><strong>SALES · PROSPECTING</strong></div>
+            <div class="account-detail"><div><small>Objetivo</small><p>Ventas → sitio web → Purchase.</p></div><div><small>Conjuntos</small><p>Broad por clúster de origen/corredores con economía distinta.</p></div><div><small>Anuncios</small><p>3–5 conceptos activos; mezcla UGC, demo y estático.</p></div></div>
+          </article>
+          <article class="account-row">
+            <div class="account-level"><small>Campaña 02 · 20%</small><strong>SALES · RETARGETING</strong></div>
+            <div class="account-detail"><div><small>Objetivo</small><p>Recuperar cotización y pago.</p></div><div><small>Conjuntos</small><p>1–3 días alta intención; 4–30 días consideración.</p></div><div><small>Exclusiones</small><p>Purchase reciente, viajeros y audiencias solapadas.</p></div></div>
+          </article>
+          <article class="account-row">
+            <div class="account-level"><small>Campaña 03 · 10%</small><strong>SALES · CREATIVE LAB</strong></div>
+            <div class="account-detail"><div><small>Objetivo</small><p>Descubrir conceptos escalables.</p></div><div><small>Método</small><p>Una variable principal por prueba y gasto comparable.</p></div><div><small>Salida</small><p>Ganadores migran a prospección sin editar el original.</p></div></div>
+          </article>
+        </div>
+        <aside class="naming-box">
+          <h3>Convención de nombres recomendada</h3>
+          <div class="name-list">
+            <div><small>Campaña</small><code>CO_META_MAND_SALES_PROS_2026</code></div>
+            <div><small>Conjunto</small><code>AS_BROAD_[ORIGEN-O-CLUSTER]_18P</code></div>
+            <div><small>Anuncio</small><code>AD_[ANGULO]_[FORMATO]_[HOOK]_V01</code></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section-dark" id="creatividad">
+      <div class="wrap">
+        <div class="section-heading">
+          <div><p class="kicker">Auditoría de 94 anuncios</p><h2>El clic apareció.<br>La prueba no.</h2></div>
+          <p>Se revisaron formatos, CTA, copies, imágenes y desempeño histórico. Ninguna pieza está activa hoy, por lo que la lectura busca rescatar aprendizajes sin confundirlos con vigencia creativa.</p>
+        </div>
+        <div class="audit-grid" aria-label="Evaluación creativa sobre cinco puntos">
+          <article class="audit-card"><small>Foco en mandante</small><strong>2/5</strong><p>74% del gasto se dirigió a viajeros.</p></article>
+          <article class="audit-card"><small>Mix de formatos</small><strong>1/5</strong><p>87 imágenes/enlaces, 6 videos y 1 dinámica.</p></article>
+          <article class="audit-card"><small>Consistencia visual</small><strong>2/5</strong><p>Logo, tipografía y acabado cambian entre líneas.</p></article>
+          <article class="audit-card"><small>Coherencia de CTA</small><strong>2/5</strong><p>47 SIGN_UP frente a 12 GET_QUOTE.</p></article>
+          <article class="audit-card"><small>Prueba real</small><strong>1/5</strong><p>Poca evidencia humana de recogida y entrega.</p></article>
+        </div>
+        <div class="creative-findings">
+          <article class="creative-finding"><span>Brecha 01</span><h3>Los mayores “ganadores” no captaban mandantes</h3><p>Siete de los ocho anuncios con mayor gasto ofrecían ingresos a conductores. Sus CTR y registros prueban interés de oferta, pero no responden la pregunta de cómo captar demanda.</p></article>
+          <article class="creative-finding"><span>Brecha 02</span><h3>El portafolio depende casi por completo de estáticos</h3><p>El 92,6% del inventario es imagen/enlace. Faltan UGC, demostración del cotizador, testimonios autorizados y secuencias que enseñen el servicio en funcionamiento.</p></article>
+          <article class="creative-finding"><span>Brecha 03</span><h3>Conviven dos sistemas visuales</h3><p>Viajeros usa fotos de carro con tipografía itálica contorneada; mandantes usa degradados, tarjetas explicativas y otros tratamientos del logo. La recordación se diluye.</p></article>
+          <article class="creative-finding"><span>Brecha 04</span><h3>La pieza promete un recorrido distinto al clic</h3><p>El carrusel de mandantes dice “cotiza en la app”, termina en Google Play y código promocional, mientras el anuncio usa GET_QUOTE dentro de campañas web.</p></article>
+        </div>
+
+        <div class="section-heading">
+          <div><p class="kicker">Aprendizajes observados</p><h2>Lo que sí funcionó<br>y qué corregir.</h2></div>
+          <p>Los costos son señales publicitarias de Meta; no incluyen validación de pago, match ni entrega.</p>
+        </div>
+        <div class="ideas-wrap" role="region" aria-label="Desempeño de piezas creativas observadas" tabindex="0">
+          <table class="ideas-table">
+            <thead><tr><th>Pieza</th><th>Inversión / señal</th><th>Qué funcionó</th><th>Qué corregir</th></tr></thead>
+            <tbody>
+              <tr><td>Viajero · Creativo 7</td><td><strong>$1.569.466 · CTR 5,01% · 1.683 registros</strong></td><td>Ruta específica y beneficio económico directo.</td><td>No aporta aprendizaje sobre adquisición de mandantes.</td></tr>
+              <tr><td>Mandante · carrusel</td><td><strong>$566.761 · CTR 2,69% · 11 leads</strong></td><td>Explica recogida, entrega y proceso en pasos.</td><td>Unificar web/app, usar pantalla de cotización y sumar prueba real.</td></tr>
+              <tr><td>Mandante · web 2</td><td><strong>$368.051 · CTR 2,41% · 12 leads</strong></td><td>Abre con una necesidad clara y CTA de cotización.</td><td>Profundizar casos de uso y mostrar el producto, no solo describirlo.</td></tr>
+              <tr><td>Mandante · WhatsApp 3</td><td><strong>$431.035 · CTR 2,56% · 114 conversaciones</strong></td><td>Urgencia y canal de baja fricción.</td><td>Medir conversación calificada, cotización, pago y entrega.</td></tr>
+              <tr><td>Mandados a $4.900</td><td><strong>$179.990 · CTR 7,01% · 1.988 LPV</strong></td><td>La oferta concreta produjo curiosidad a bajo costo.</td><td>Validar elegibilidad, claridad de términos y conversión posterior.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="section-heading">
+          <div><p class="kicker">Territorios de mensaje</p><h2>Seis ángulos<br>para mandantes.</h2></div>
+          <p>La marca no necesita repetir “somos una comunidad”; necesita resolver momentos concretos y evidenciar por qué el proceso reduce riesgo.</p>
+        </div>
+        <div class="creative-grid">
+          <article class="creative"><span class="creative-label">Problema urgente</span><h3>“Se te quedaron las llaves en otra ciudad.”</h3><p>Situación reconocible → solución → cotización.</p></article>
+          <article class="creative"><span class="creative-label">Corredor</span><h3>“Bogotá → Tunja, sin filas ni bodegas.”</h3><p>Relevancia geográfica y expectativa concreta.</p></article>
+          <article class="creative"><span class="creative-label">Confianza</span><h3>“El pago se libera cuando entregan.”</h3><p>Demostrar verificación, fotos y seguimiento.</p></article>
+          <article class="creative"><span class="creative-label">Velocidad</span><h3>“Hoy puede llegar eso que necesitas mandar hoy.”</h3><p>Usar solo en rutas donde la promesa sea sostenible.</p></article>
+          <article class="creative"><span class="creative-label">Comparación</span><h3>“Cotiza antes de ir a una transportadora.”</h3><p>Precio y conveniencia sin afirmaciones no sustentadas.</p></article>
+          <article class="creative"><span class="creative-label">Demostración</span><h3>Un mandado real, de inicio a entrega.</h3><p>UGC con pantalla, viajero, tracking y confirmación.</p></article>
+        </div>
+
+        <div class="ideas-wrap" role="region" aria-label="Ideas creativas de captación" tabindex="0">
+          <table class="ideas-table">
+            <thead><tr><th>Idea</th><th>Hook / apertura</th><th>Ejecución</th><th>Formato</th><th>CTA</th></tr></thead>
+            <tbody>
+              <tr><td>01 · Las llaves</td><td><strong>“Las llaves están en Bogotá. Tú ya estás en Tunja.”</strong></td><td>UGC de 15–20 s: problema, cotización en pantalla, recogida y confirmación.</td><td>Reel / Story 9:16</td><td>Cotiza esa ruta</td></tr>
+              <tr><td>02 · Regalo a tiempo</td><td><strong>“El cumpleaños es hoy y el regalo sigue contigo.”</strong></td><td>Historia emocional con reloj, ruta y entrega; prueba de seguimiento.</td><td>UGC + subtítulos</td><td>Mándalo hoy</td></tr>
+              <tr><td>03 · Documento urgente</td><td><strong>“Ese documento no puede esperar al próximo envío.”</strong></td><td>Escena problema/solución; explicar viajero verificado y foto de entrega.</td><td>Video 15 s / estático</td><td>Cotiza en 2 minutos</td></tr>
+              <tr><td>04 · Pantalla real</td><td><strong>“Así se manda un paquete con Loyevo.”</strong></td><td>Screen recording con pasos: ruta, objeto, precio, pago y tracking.</td><td>Demo 20–30 s</td><td>Haz tu cotización</td></tr>
+              <tr><td>05 · Pago protegido</td><td><strong>“Tu aporte no se libera antes de la entrega.”</strong></td><td>Animación simple del flujo de dinero y confirmación, con disclaimer preciso.</td><td>Motion / carrusel</td><td>Conoce cómo funciona</td></tr>
+              <tr><td>06 · Caso real</td><td><strong>“De Medellín a Rionegro: qué mandó, cuánto tardó.”</strong></td><td>Cliente autorizado + objeto + ruta + resultado comprobable.</td><td>Testimonio 20 s</td><td>Cotiza tu mandado</td></tr>
+              <tr><td>07 · Emprendedor</td><td><strong>“Una venta en otra ciudad no debería frenarte.”</strong></td><td>Producto de emprendimiento, necesidad de despacho puntual y entrega.</td><td>UGC / carrusel</td><td>Envía tu pedido</td></tr>
+              <tr><td>08 · Recuperación</td><td><strong>“Tu cotización sigue lista.”</strong></td><td>Retargeting dinámico por ruta y etapa; resolver la objeción principal.</td><td>Estático / Story</td><td>Retomar cotización</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="creative-rules">
+          <article class="creative-rule"><b>01 · Un mensaje</b><p>Cada pieza prueba un dolor, promesa o prueba principal; no todo a la vez.</p></article>
+          <article class="creative-rule"><b>02 · Evidencia</b><p>Rostros, objetos, rutas y resultados solo con autorización y soporte verificable.</p></article>
+          <article class="creative-rule"><b>03 · Promesa local</b><p>No anunciar mismo día, precio o cobertura donde la operación no pueda cumplir.</p></article>
+          <article class="creative-rule"><b>04 · Ganador real</b><p>Evaluar por cotización, pago y entrega; CTR y retención son diagnósticos intermedios.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="medicion">
+      <div class="wrap">
+        <div class="section-heading">
+          <div><p class="kicker">Medición ideal</p><h2>Meta necesita saber<br>qué mandado vale.</h2></div>
+          <p>Implementar Pixel y Conversions API con el mismo <code>event_id</code>, consentimiento, UTMs persistentes y parámetros de negocio no sensibles.</p>
+        </div>
+        <div class="measurement-grid">
+          <article class="event-map"><h3>Mapa mínimo de eventos</h3><div class="event-list">
+            <div class="event"><code>ViewContent</code><span>Visita landing/caso de uso</span><b>Micro</b></div>
+            <div class="event"><code>Search</code><span>Origen + destino consultados</span><b>Intención</b></div>
+            <div class="event"><code>Lead</code><span>Datos de mandante enviados</span><b>Secundario</b></div>
+            <div class="event"><code>AddPaymentInfo</code><span>Método de pago iniciado</span><b>Profundo</b></div>
+            <div class="event"><code>Purchase</code><span>Mandado pagado + value/COP</span><b>Primario</b></div>
+            <div class="event"><code>MandadoDelivered</code><span>Entrega confirmada vía CAPI</span><b>Calidad</b></div>
+          </div></article>
+          <article class="kpi-card"><h3>Tablero de decisión</h3><div class="kpi-hero"><small>KPI norte</small><strong>Costo por primer mandado entregado</strong></div><ul class="kpi-list">
+            <li><span>Negocio</span><b>Margen por corredor</b></li>
+            <li><span>Adquisición</span><b>CPA mandado pagado · sin histórico</b></li>
+            <li><span>Conversión</span><b>Cotización → pago · pendiente</b></li>
+            <li><span>Liquidez</span><b>Match rate / tiempo a match</b></li>
+            <li><span>Calidad</span><b>Entrega y cancelación</b></li>
+            <li><span>Retención</span><b>Repetición a 30/60/90 días</b></li>
+          </ul></article>
+        </div>
+        <aside class="naming-box">
+          <h3>Configuración actual detectada en Meta</h3>
+          <div class="name-list">
+            <div><small>Pixel mandantes</small><code>Mandantes Loyevo (Cotizar)</code><p>Optimización actual: Lead · última señal 12 ago. 2026.</p></div>
+            <div><small>Pixel viajeros</small><code>Pre-registro Redes sociales</code><p>Optimización actual: CompleteRegistration · última señal 6 ago. 2026.</p></div>
+            <div><small>Pixel descarga</small><code>CLICK DESCARGAR APP WEB</code><p>Única conversión personalizada: “Loyevo.co Descarga APP”.</p></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="roadmap" class="section-white">
+      <div class="wrap">
+        <div class="section-heading">
+          <div><p class="kicker">Plan de 90 días</p><h2>Medir, validar<br>y luego escalar.</h2></div>
+          <p>Cada fase tiene una puerta de salida. El avance depende de evidencia, no del calendario.</p>
+        </div>
+        <div class="roadmap">
+          <article class="phase"><div class="phase-card"><small>Días 0–30</small><h3>Fundación</h3><ul><li>Conciliar los tres píxeles en un dataset gobernado.</li><li>Auditar GTM, CAPI, consentimiento y deduplicación.</li><li>Definir eventos y economía por corredor.</li><li>Convertir cotizador en destino principal.</li><li>Lanzar 3–5 conceptos creativos para mandantes.</li></ul><p class="gate">Puerta: Purchase deduplicado y atribuible.</p></div></article>
+          <article class="phase"><div class="phase-card"><small>Días 31–60</small><h3>Validación</h3><ul><li>Consolidar prospección y retargeting.</li><li>Testear propuesta, corredor y formato.</li><li>Optimizar cotización → pago.</li><li>Activar recuperación de abandono.</li><li>Cruzar CPA con match y entrega.</li></ul><p class="gate">Puerta: cohortes con margen y calidad sostenibles.</p></div></article>
+          <article class="phase"><div class="phase-card"><small>Días 61–90</small><h3>Escala controlada</h3><ul><li>Aumentar inversión en corredores ganadores.</li><li>Replicar conceptos, no anuncios idénticos.</li><li>Incorporar valor de conversión.</li><li>Crear automatizaciones y alertas.</li><li>Evaluar lift o geo-test cuando haya volumen.</li></ul><p class="gate">Puerta: crecimiento sin deteriorar CPA ni entregas.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="section-heading">
+          <div><p class="kicker">Para cerrar el modelo</p><h2>Meta ya habló.<br>Falta el negocio.</h2></div>
+          <p>La API permitió reconstruir pauta y creatividades. Para decidir cuánto invertir falta conectar cada resultado publicitario con la operación real.</p>
+        </div>
+        <div class="questions">
+          <details open><summary>Conciliación de resultados</summary><p>Relacionar lead, conversación y registro de Meta con usuario, cotización, mandado pagado, match, cancelación y entrega.</p></details>
+          <details><summary>Registro de cambios</summary><p>Permite distinguir aprendizaje real de cambios de presupuesto, pausas, ediciones y reinicios de fase.</p></details>
+          <details><summary>Calidad de medición</summary><p>Events Manager: CAPI, calidad de coincidencia, deduplicación, dominios, UTMs, consentimiento y ventanas de atribución.</p></details>
+          <details><summary>Economía y operación</summary><p>Ingreso, costo variable, margen, match rate, tiempo a match, cancelación y entrega por corredor. Sin esto no existe un CPA máximo defendible.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-dark" id="fuentes">
+      <div class="wrap">
+        <div class="section-heading">
+          <div><p class="kicker">Fuentes y trazabilidad</p><h2>Observado,<br>no supuesto.</h2></div>
+          <p>Revisión realizada el 13 de agosto de 2026. Las cifras de inversión, entrega, eventos, estructura y creatividades provienen directamente de la cuenta.</p>
+        </div>
+        <div class="sources">
+          <div class="source"><small>Meta Marketing API v21.0</small>Cuenta 811773518495568 · campañas, conjuntos, anuncios, insights, píxeles y conversiones</div>
+          <a class="source" href="https://loyevo.co/" target="_blank" rel="noopener"><small>Sitio oficial</small>Propuesta, CTA, seguridad, beneficios y testimonios</a>
+          <a class="source" href="https://loyevo.co/emisor-web/cotizar" target="_blank" rel="noopener"><small>Cotizador</small>Journey web, etiquetas base y flujo de conversión</a>
+          <a class="source" href="https://play.google.com/store/apps/details?id=com.luquedigital.loyevo" target="_blank" rel="noopener"><small>Google Play</small>Ficha pública de la aplicación Loyevo</a>
+          <a class="source" href="https://www.facebook.com/ads/library/" target="_blank" rel="noopener"><small>Meta pública</small>Biblioteca de anuncios activos</a>
+          <a class="source" href="https://loyevo.co/legal/datos-personales/" target="_blank" rel="noopener"><small>Legal</small>Tratamiento de datos, seguridad y rol de la plataforma</a>
+          <a class="source" href="https://www.facebook.com/help/259468828226154" target="_blank" rel="noopener"><small>Documentación</small>Alcance y funcionamiento de la Biblioteca de anuncios</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="wrap footer-inner"><span>Loyevo · Diagnóstico inicial de adquisición</span><span>Documento estratégico · Agosto 2026</span></div></footer>
+
+  <script>
+    const menuButton = document.querySelector('.menu-button');
+    const nav = document.querySelector('#main-nav');
+    menuButton.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      menuButton.setAttribute('aria-expanded', String(open));
+      menuButton.textContent = open ? '×' : '☰';
+    });
+    nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      nav.classList.remove('open');
+      menuButton.setAttribute('aria-expanded', 'false');
+      menuButton.textContent = '☰';
+    }));
+
+    document.querySelectorAll('.tab').forEach(tab => tab.addEventListener('click', () => {
+      document.querySelectorAll('.tab').forEach(item => item.setAttribute('aria-selected', 'false'));
+      document.querySelectorAll('.tab-panel').forEach(panel => panel.classList.remove('active'));
+      tab.setAttribute('aria-selected', 'true');
+      document.getElementById(tab.dataset.panel).classList.add('active');
+    }));
+
+    const progress = document.querySelector('.progress');
+    const setProgress = () => {
+      const height = document.documentElement.scrollHeight - window.innerHeight;
+      const value = height > 0 ? (window.scrollY / height) * 100 : 0;
+      progress.style.setProperty('--progress', `${Math.min(100, value)}%`);
+    };
+    addEventListener('scroll', setProgress, { passive: true });
+    setProgress();
+  </script>
+</body>
+</html>
