@@ -8,7 +8,7 @@
   <title>Loyevo | Diagnóstico de adquisición de mandantes</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
       --pink: #ed0a78;
@@ -36,7 +36,7 @@
       margin: 0;
       color: var(--ink);
       background: var(--paper);
-      font-family: "DM Sans", sans-serif;
+      font-family: Poppins, sans-serif;
       line-height: 1.55;
       overflow-x: clip;
     }
@@ -52,8 +52,8 @@
       background: rgba(251,250,251,.9); backdrop-filter: blur(18px);
     }
     .header-inner { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
-    .brand { display: flex; align-items: center; gap: 11px; text-decoration: none; font: 800 20px/1 Manrope, sans-serif; }
-    .brand-mark { width: 34px; height: 34px; display: grid; place-items: center; border-radius: 11px; color: white; background: var(--pink); font-size: 19px; }
+    .brand { display: flex; align-items: center; gap: 11px; text-decoration: none; font: 800 20px/1 Poppins, sans-serif; }
+    .brand-logo { width: 36px; height: 36px; display: block; border-radius: 11px; object-fit: cover; }
     .brand em { color: var(--pink); font-style: normal; }
     nav { display: flex; align-items: center; gap: 22px; }
     nav a { color: var(--muted); text-decoration: none; font-size: 14px; font-weight: 600; }
@@ -65,15 +65,15 @@
     .hero::before { content: ""; position: absolute; width: 520px; height: 520px; right: -160px; top: -230px; border-radius: 50%; background: radial-gradient(circle, rgba(237,10,120,.18), rgba(237,10,120,0) 68%); }
     .hero-grid { position: relative; display: grid; grid-template-columns: 1.5fr .75fr; gap: 70px; align-items: end; min-width: 0; }
     .hero-grid > *, .section-heading > *, .score-layout > *, .campaign-card > *, .measurement-grid > * { min-width: 0; }
-    .kicker { display: flex; align-items: center; gap: 10px; margin: 0 0 22px; color: var(--pink); text-transform: uppercase; letter-spacing: .13em; font: 800 12px/1 Manrope, sans-serif; }
+    .kicker { display: flex; align-items: center; gap: 10px; margin: 0 0 22px; color: var(--pink); text-transform: uppercase; letter-spacing: .13em; font: 800 12px/1 Poppins, sans-serif; }
     .kicker::before { content: ""; width: 30px; height: 2px; background: currentColor; }
-    h1, h2, h3, h4 { margin: 0; font-family: Manrope, sans-serif; letter-spacing: -.035em; }
+    h1, h2, h3, h4 { margin: 0; font-family: Poppins, sans-serif; letter-spacing: -.035em; }
     h1 { max-width: 820px; font-size: clamp(48px, 7vw, 88px); line-height: .98; }
     h1 span { color: var(--pink); }
     .hero-lead { max-width: 720px; margin: 28px 0 0; color: var(--muted); font-size: clamp(18px, 2vw, 22px); }
     .hero-card { max-width: 100%; min-width: 0; padding: 26px; overflow: hidden; color: white; border-radius: var(--radius); background: var(--ink); box-shadow: var(--shadow); }
     .hero-card small { display: block; margin-bottom: 10px; color: #bdb7c2; text-transform: uppercase; letter-spacing: .12em; font-weight: 700; }
-    .hero-card strong { display: block; font: 700 25px/1.15 Manrope, sans-serif; }
+    .hero-card strong { display: block; font: 700 25px/1.15 Poppins, sans-serif; }
     .hero-card p { margin: 14px 0 0; color: #d8d4db; font-size: 14px; }
     .hero-meta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px; }
     .chip { padding: 9px 13px; border: 1px solid var(--line); border-radius: 999px; background: white; color: var(--muted); font-size: 13px; font-weight: 600; }
@@ -86,7 +86,7 @@
     .metric-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 22px; }
     .metric-card { min-height: 158px; padding: 23px; display: flex; flex-direction: column; justify-content: space-between; border: 1px solid var(--line); border-radius: 18px; background: var(--paper); }
     .metric-card small { color: var(--muted); text-transform: uppercase; letter-spacing: .07em; font-weight: 800; }
-    .metric-card strong { display: block; margin-top: 18px; color: var(--pink); font: 800 clamp(28px, 4vw, 42px)/1 Manrope, sans-serif; letter-spacing: -.05em; }
+    .metric-card strong { display: block; margin-top: 18px; color: var(--pink); font: 800 clamp(28px, 4vw, 42px)/1 Poppins, sans-serif; letter-spacing: -.05em; }
     .metric-card span { margin-top: 8px; color: var(--muted); font-size: 12px; }
     .allocation { display: grid; grid-template-columns: .78fr 1.22fr; gap: 20px; }
     .allocation-card, .actual-results { padding: 28px; border: 1px solid var(--line); border-radius: var(--radius); background: white; }
@@ -100,7 +100,7 @@
     .allocation-row:nth-of-type(4) .allocation-track i { background: #aaa4ad; }
     .result-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
     .result-cell { padding: 17px 13px; border-radius: 14px; background: var(--paper); }
-    .result-cell strong { display: block; color: var(--pink); font: 800 25px/1 Manrope, sans-serif; }
+    .result-cell strong { display: block; color: var(--pink); font: 800 25px/1 Poppins, sans-serif; }
     .result-cell span { display: block; margin-top: 7px; color: var(--muted); font-size: 11px; }
     .actual-note { margin: 18px 0 0; padding: 15px; border-radius: 12px; color: #705c37; background: var(--amber-soft); font-size: 12px; }
     .performance-wrap { margin-top: 22px; overflow-x: auto; border: 1px solid var(--line); border-radius: 18px; }
@@ -123,14 +123,14 @@
     .score-layout { display: grid; grid-template-columns: .7fr 1.3fr; gap: 24px; }
     .score-main { min-height: 320px; padding: 34px; display: flex; flex-direction: column; justify-content: space-between; border-radius: var(--radius); color: white; background: var(--pink); }
     .score-main span { text-transform: uppercase; letter-spacing: .1em; font-size: 12px; font-weight: 800; }
-    .score-main strong { font: 800 clamp(78px, 12vw, 132px)/.8 Manrope, sans-serif; letter-spacing: -.08em; }
+    .score-main strong { font: 800 clamp(78px, 12vw, 132px)/.8 Poppins, sans-serif; letter-spacing: -.08em; }
     .score-main strong small { font-size: 25px; letter-spacing: -.03em; }
     .score-main p { margin: 0; max-width: 310px; font-size: 15px; }
     .score-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
     .score-item { padding: 24px; border: 1px solid var(--line); border-radius: 18px; background: white; }
     .score-item-top { display: flex; justify-content: space-between; gap: 16px; align-items: baseline; }
     .score-item h3 { font-size: 17px; }
-    .score-item strong { color: var(--pink); font: 800 24px Manrope, sans-serif; }
+    .score-item strong { color: var(--pink); font: 800 24px Poppins, sans-serif; }
     .bar { height: 7px; margin: 16px 0 13px; overflow: hidden; border-radius: 99px; background: #eeeaf0; }
     .bar i { display: block; height: 100%; width: var(--value); border-radius: inherit; background: var(--pink); }
     .score-item p { margin: 0; color: var(--muted); font-size: 13px; }
@@ -138,7 +138,7 @@
     .finding-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
     .finding { padding: 26px; border: 1px solid var(--line); border-radius: var(--radius); background: white; }
     .finding-number { display: flex; align-items: center; justify-content: space-between; margin-bottom: 26px; }
-    .finding-number span:first-child { color: #c6c1c9; font: 800 13px Manrope, sans-serif; }
+    .finding-number span:first-child { color: #c6c1c9; font: 800 13px Poppins, sans-serif; }
     .status { padding: 6px 9px; border-radius: 999px; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; }
     .status.high { color: var(--red); background: var(--red-soft); }
     .status.medium { color: var(--amber); background: var(--amber-soft); }
@@ -149,7 +149,7 @@
 
     .priority-list { display: grid; gap: 12px; counter-reset: priority; }
     .priority { position: relative; display: grid; grid-template-columns: 48px 1.25fr 1.2fr .45fr; gap: 20px; align-items: center; padding: 20px 22px; border-radius: 17px; background: #292631; }
-    .priority::before { counter-increment: priority; content: counter(priority, decimal-leading-zero); width: 38px; height: 38px; display: grid; place-items: center; border-radius: 12px; color: white; background: var(--pink); font: 800 12px Manrope, sans-serif; }
+    .priority::before { counter-increment: priority; content: counter(priority, decimal-leading-zero); width: 38px; height: 38px; display: grid; place-items: center; border-radius: 12px; color: white; background: var(--pink); font: 800 12px Poppins, sans-serif; }
     .priority h3 { font-size: 17px; }
     .priority p { margin: 0; color: #bdb8c1; font-size: 13px; }
     .priority time { justify-self: end; color: #fff; font-size: 12px; font-weight: 700; }
@@ -170,7 +170,7 @@
     @keyframes reveal { from { opacity: 0; transform: translateY(5px); } }
     .campaign-card { display: grid; grid-template-columns: .38fr 1.62fr; min-height: 310px; overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius); background: white; box-shadow: var(--shadow); }
     .campaign-share { padding: 32px; display: flex; flex-direction: column; justify-content: space-between; color: white; background: var(--ink); }
-    .campaign-share strong { font: 800 62px/.9 Manrope, sans-serif; letter-spacing: -.06em; }
+    .campaign-share strong { font: 800 62px/.9 Poppins, sans-serif; letter-spacing: -.06em; }
     .campaign-share span { color: #bdb8c1; font-size: 13px; }
     .campaign-body { padding: 32px; }
     .campaign-body h3 { font-size: 27px; }
@@ -184,7 +184,7 @@
     .account-row { display: grid; grid-template-columns: .32fr .68fr; overflow: hidden; border: 1px solid var(--line); border-radius: 17px; background: white; }
     .account-level { padding: 20px; display: flex; flex-direction: column; justify-content: center; color: white; background: var(--ink); }
     .account-level small { color: #bdb8c1; text-transform: uppercase; letter-spacing: .08em; font-weight: 800; }
-    .account-level strong { margin-top: 4px; font: 800 17px Manrope, sans-serif; }
+    .account-level strong { margin-top: 4px; font: 800 17px Poppins, sans-serif; }
     .account-detail { padding: 18px 20px; display: grid; grid-template-columns: 1.1fr 1fr 1fr; gap: 16px; align-items: center; }
     .account-detail div { min-width: 0; }
     .account-detail small { display: block; margin-bottom: 4px; color: var(--pink); text-transform: uppercase; letter-spacing: .06em; font-size: 10px; font-weight: 800; }
@@ -208,7 +208,7 @@
     .audit-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin-bottom: 42px; }
     .audit-card { padding: 21px; border: 1px solid #3d3944; border-radius: 17px; background: #292631; }
     .audit-card small { color: #aaa4ad; text-transform: uppercase; letter-spacing: .07em; font-size: 10px; font-weight: 800; }
-    .audit-card strong { display: block; margin: 12px 0 8px; color: var(--pink); font: 800 32px/1 Manrope, sans-serif; }
+    .audit-card strong { display: block; margin: 12px 0 8px; color: var(--pink); font: 800 32px/1 Poppins, sans-serif; }
     .audit-card p { margin: 0; color: #cbc7ce; font-size: 12px; }
     .creative-findings { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 54px; }
     .creative-finding { padding: 24px; border-radius: 18px; color: var(--ink); background: white; }
@@ -226,7 +226,7 @@
     .ideas-wrap + .section-heading { margin-top: 58px; }
     .creative-rules { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 20px; }
     .creative-rule { padding: 18px; border: 1px solid #3d3944; border-radius: 15px; }
-    .creative-rule b { display: block; margin-bottom: 6px; color: var(--pink); font: 800 12px Manrope, sans-serif; }
+    .creative-rule b { display: block; margin-bottom: 6px; color: var(--pink); font: 800 12px Poppins, sans-serif; }
     .creative-rule p { margin: 0; color: #bbb6be; font-size: 12px; }
 
     .measurement-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 22px; }
@@ -240,7 +240,7 @@
     .event b { color: var(--green); font-size: 11px; text-transform: uppercase; }
     .kpi-hero { padding: 20px; border-radius: 16px; color: white; background: var(--pink); }
     .kpi-hero small { text-transform: uppercase; letter-spacing: .08em; font-weight: 800; }
-    .kpi-hero strong { display: block; margin-top: 8px; font: 800 28px/1.15 Manrope, sans-serif; }
+    .kpi-hero strong { display: block; margin-top: 8px; font: 800 28px/1.15 Poppins, sans-serif; }
     .kpi-list { margin: 20px 0 0; padding: 0; list-style: none; }
     .kpi-list li { display: flex; justify-content: space-between; gap: 20px; padding: 13px 0; border-bottom: 1px solid var(--line); font-size: 14px; }
     .kpi-list span { color: var(--muted); }
@@ -360,7 +360,7 @@
 
   <header class="site-header">
     <div class="wrap header-inner">
-      <a class="brand" href="#top" aria-label="Loyevo, inicio"><span class="brand-mark">L</span><span>lo<em>yevo</em></span></a>
+      <a class="brand" href="#top" aria-label="Loyevo, inicio"><img class="brand-logo" src="assets/logo-loyevo.png" alt=""><span>lo<em>yevo</em></span></a>
       <nav id="main-nav" aria-label="Navegación principal">
         <a href="index.html">Documentos</a>
         <a href="#resumen">Diagnóstico</a>
@@ -370,7 +370,7 @@
         <a href="#medicion">Medición</a>
         <a href="#siguientes-pasos">Siguientes pasos</a>
       </nav>
-      <span class="header-label">META · CUENTA 811773518495568</span>
+      <span class="header-label">PAUTA · CUENTA DE LOYEVO</span>
       <button class="menu-button" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir navegación">☰</button>
     </div>
   </header>
@@ -399,7 +399,7 @@
     <div class="wrap">
       <div class="notice" role="note">
         <span class="notice-icon">!</span>
-        <div><strong>Auditoría ampliada con Marketing API</strong><p>Datos consultados el 13 de agosto de 2026 mediante Meta Marketing API v21.0. El histórico disponible inicia en noviembre de 2025, la última inversión se registró el 1 de agosto de 2026 y actualmente todas las campañas están pausadas. Las cifras de Meta reflejan eventos publicitarios; no prueban por sí solas que un mandado haya sido pagado o entregado.</p></div>
+        <div><strong>Revisión de la cuenta de Loyevo</strong><p>Información revisada al 13 de agosto de 2026. El histórico disponible inicia en noviembre de 2025, la última inversión se registró el 1 de agosto de 2026 y actualmente todas las campañas están pausadas. Las cifras publicitarias reflejan interacciones y registros; no prueban por sí solas que un mandado haya sido pagado o entregado.</p></div>
       </div>
     </div>
 
@@ -478,7 +478,7 @@
         <div class="finding-grid">
           <article class="finding"><div class="finding-number"><span>01</span><span class="status high">Crítico</span></div><h3>La inversión priorizó viajeros</h3><p>$8,28 millones —74,2% del histórico— captaron oferta. Solo $2,37 millones se orientaron explícitamente a mandantes, el foco actual del negocio.</p><div class="evidence">Acción: separar presupuestos y mover el centro de gravedad a demanda.</div></article>
           <article class="finding"><div class="finding-number"><span>02</span><span class="status high">Crítico</span></div><h3>Meta nunca recibió la compra</h3><p>La cuenta reporta 7.553 registros, 44 leads y 939 conversaciones, pero cero Purchase. No se puede calcular CPA de mandado ni ROAS.</p><div class="evidence">Impacto: el algoritmo aprende volumen, no valor de negocio.</div></article>
-          <article class="finding"><div class="finding-number"><span>03</span><span class="status high">Crítico</span></div><h3>La medición está fragmentada</h3><p>Existen tres píxeles: descarga, mandantes y pre-registro. Solo hay una conversión personalizada —descarga de app— y los conjuntos optimizan Lead o CompleteRegistration.</p><div class="evidence">Acción: dataset unificado, CAPI y eventos de pago/entrega deduplicados.</div></article>
+          <article class="finding"><div class="finding-number"><span>03</span><span class="status high">Crítico</span></div><h3>La medición está fragmentada</h3><p>Existen tres fuentes de medición: descarga, mandantes y pre-registro. Solo hay una conversión personalizada —descarga de app— y las campañas priorizan registros intermedios.</p><div class="evidence">Acción: unificar la medición y registrar pagos y entregas sin duplicados.</div></article>
           <article class="finding"><div class="finding-number"><span>04</span><span class="status medium">Medio</span></div><h3>La cuenta se dispersó y hoy está apagada</h3><p>14 campañas, 19 conjuntos y 94 anuncios repartidos entre ventas, leads, engagement, awareness y tráfico; actualmente ninguno está activo.</p><div class="evidence">La última inversión registrada fue el 1 de agosto de 2026.</div></article>
           <article class="finding"><div class="finding-number"><span>05</span><span class="status medium">Medio</span></div><h3>El journey cambia entre anuncio y destino</h3><p>La portada prioriza descarga; el carrusel de mandantes invita a cotizar en app, muestra Google Play y usa GET_QUOTE en campañas web.</p><div class="evidence">Oportunidad: una promesa, un destino y un CTA por campaña.</div></article>
           <article class="finding"><div class="finding-number"><span>06</span><span class="status good">Fortaleza</span></div><h3>El producto ya tiene argumentos potentes</h3><p>Viajeros verificados, pago protegido, seguimiento, soporte humano y posible entrega el mismo día son activos creativos claros para reducir riesgo percibido.</p><div class="evidence">Acción: convertir beneficios en demostraciones, no solo afirmaciones.</div></article>
@@ -494,7 +494,7 @@
         </div>
         <div class="priority-list">
           <article class="priority"><h3>Definir la fuente de verdad</h3><p>Mandado pagado y primer mandado entregado, con ID, valor, corredor y rol del usuario.</p><time>Semana 1</time></article>
-          <article class="priority"><h3>Instrumentar el journey completo</h3><p>Pixel + CAPI + GA4 desde portada hasta pago y entrega; deduplicación por event_id.</p><time>Semanas 1–2</time></article>
+          <article class="priority"><h3>Medir el recorrido completo</h3><p>Conectar portada, cotización, registro, pago y entrega, evitando resultados duplicados.</p><time>Semanas 1–2</time></article>
           <article class="priority"><h3>Enviar pauta al cotizador</h3><p>Landing por necesidad/corredor, precio o rango temprano, prueba de confianza y CTA “Cotiza ahora”.</p><time>Semana 2</time></article>
           <article class="priority"><h3>Reestructurar Meta</h3><p>Prospección, retargeting y laboratorio creativo; exclusiones claras y presupuesto por liquidez.</p><time>Semanas 2–3</time></article>
           <article class="priority"><h3>Escalar por margen y entrega</h3><p>Aumentar presupuesto solo cuando CPA, match rate, cancelación y margen de contribución cierren.</p><time>Desde semana 4</time></article>
@@ -513,7 +513,7 @@
           <article class="flow-step"><span>02 · Intención</span><h3>Cotización web</h3><p>Origen y destino prellenados, tipo de objeto, urgencia y precio transparente.</p><code>Search / Quote</code></article>
           <article class="flow-step"><span>03 · Confianza</span><h3>Validación</h3><p>Cómo se protege el pago, quién lleva el objeto y qué ocurre ante incidentes.</p><code>Lead</code></article>
           <article class="flow-step"><span>04 · Negocio</span><h3>Mandado pagado</h3><p>Evento con valor, moneda, corredor e ID único. Esta es la conversión primaria.</p><code>Purchase</code></article>
-          <article class="flow-step"><span>05 · Calidad</span><h3>Entrega completada</h3><p>Señal offline/CAPI para medir la calidad real de cada fuente y creatividad.</p><code>MandadoDelivered</code></article>
+          <article class="flow-step"><span>05 · Calidad</span><h3>Entrega completada</h3><p>Confirmación final para medir la calidad real de cada canal y creatividad.</p><code>MandadoDelivered</code></article>
         </div>
 
         <div style="height:64px"></div>
@@ -644,7 +644,7 @@
       <div class="wrap">
         <div class="section-heading">
           <div><p class="kicker">Medición ideal</p><h2>Meta necesita saber<br>qué mandado vale.</h2></div>
-          <p>Implementar Pixel y Conversions API con el mismo <code>event_id</code>, consentimiento, UTMs persistentes y parámetros de negocio no sensibles.</p>
+          <p>Conectar el recorrido completo con identificadores consistentes, consentimiento, enlaces trazables y datos de negocio no sensibles.</p>
         </div>
         <div class="measurement-grid">
           <article class="event-map"><h3>Mapa mínimo de eventos</h3><div class="event-list">
@@ -653,7 +653,7 @@
             <div class="event"><code>Lead</code><span>Datos de mandante enviados</span><b>Secundario</b></div>
             <div class="event"><code>AddPaymentInfo</code><span>Método de pago iniciado</span><b>Profundo</b></div>
             <div class="event"><code>Purchase</code><span>Mandado pagado + value/COP</span><b>Primario</b></div>
-            <div class="event"><code>MandadoDelivered</code><span>Entrega confirmada vía CAPI</span><b>Calidad</b></div>
+            <div class="event"><code>MandadoDelivered</code><span>Entrega confirmada</span><b>Calidad</b></div>
           </div></article>
           <article class="kpi-card"><h3>Tablero de decisión</h3><div class="kpi-hero"><small>KPI norte</small><strong>Costo por primer mandado entregado</strong></div><ul class="kpi-list">
             <li><span>Negocio</span><b>Margen por corredor</b></li>
@@ -682,7 +682,7 @@
           <p>Cada fase tiene una puerta de salida. El avance depende de evidencia, no del calendario.</p>
         </div>
         <div class="roadmap">
-          <article class="phase"><div class="phase-card"><small>Días 0–30</small><h3>Fundación</h3><ul><li>Conciliar los tres píxeles en un dataset gobernado.</li><li>Auditar GTM, CAPI, consentimiento y deduplicación.</li><li>Definir eventos y economía por corredor.</li><li>Convertir cotizador en destino principal.</li><li>Lanzar 3–5 conceptos creativos para mandantes.</li></ul><p class="gate">Puerta: Purchase deduplicado y atribuible.</p></div></article>
+          <article class="phase"><div class="phase-card"><small>Días 0–30</small><h3>Fundación</h3><ul><li>Conciliar las tres fuentes de medición.</li><li>Revisar etiquetas, consentimiento y resultados duplicados.</li><li>Definir eventos y economía por corredor.</li><li>Convertir cotizador en destino principal.</li><li>Lanzar 3–5 conceptos creativos para mandantes.</li></ul><p class="gate">Puerta: mandado pagado, identificable y atribuible.</p></div></article>
           <article class="phase"><div class="phase-card"><small>Días 31–60</small><h3>Validación</h3><ul><li>Consolidar prospección y retargeting.</li><li>Testear propuesta, corredor y formato.</li><li>Optimizar cotización → pago.</li><li>Activar recuperación de abandono.</li><li>Cruzar CPA con match y entrega.</li></ul><p class="gate">Puerta: cohortes con margen y calidad sostenibles.</p></div></article>
           <article class="phase"><div class="phase-card"><small>Días 61–90</small><h3>Escala controlada</h3><ul><li>Aumentar inversión en corredores ganadores.</li><li>Replicar conceptos, no anuncios idénticos.</li><li>Incorporar valor de conversión.</li><li>Crear automatizaciones y alertas.</li><li>Evaluar lift o geo-test cuando haya volumen.</li></ul><p class="gate">Puerta: crecimiento sin deteriorar CPA ni entregas.</p></div></article>
         </div>
@@ -693,12 +693,12 @@
       <div class="wrap">
         <div class="section-heading">
           <div><p class="kicker">Para cerrar el modelo</p><h2>Meta ya habló.<br>Falta el negocio.</h2></div>
-          <p>La API permitió reconstruir pauta y creatividades. Para decidir cuánto invertir falta conectar cada resultado publicitario con la operación real.</p>
+          <p>El histórico de la cuenta de Loyevo permite entender la pauta y las creatividades. Para decidir cuánto invertir falta conectar cada resultado publicitario con la operación real.</p>
         </div>
         <div class="questions">
           <details open><summary>Conciliación de resultados</summary><p>Relacionar lead, conversación y registro de Meta con usuario, cotización, mandado pagado, match, cancelación y entrega.</p></details>
           <details><summary>Registro de cambios</summary><p>Permite distinguir aprendizaje real de cambios de presupuesto, pausas, ediciones y reinicios de fase.</p></details>
-          <details><summary>Calidad de medición</summary><p>Events Manager: CAPI, calidad de coincidencia, deduplicación, dominios, UTMs, consentimiento y ventanas de atribución.</p></details>
+          <details><summary>Calidad de medición</summary><p>Revisar la calidad de las señales, resultados duplicados, dominios, enlaces trazables, consentimiento y ventanas de atribución.</p></details>
           <details><summary>Economía y operación</summary><p>Ingreso, costo variable, margen, match rate, tiempo a match, cancelación y entrega por corredor. Sin esto no existe un CPA máximo defendible.</p></details>
         </div>
       </div>
@@ -711,7 +711,7 @@
           <p>Revisión realizada el 13 de agosto de 2026. Las cifras de inversión, entrega, eventos, estructura y creatividades provienen directamente de la cuenta.</p>
         </div>
         <div class="sources">
-          <div class="source"><small>Meta Marketing API v21.0</small>Cuenta 811773518495568 · campañas, conjuntos, anuncios, insights, píxeles y conversiones</div>
+          <div class="source"><small>Cuenta de Loyevo</small>Campañas, conjuntos, anuncios, inversión, resultados y configuración de medición</div>
           <a class="source" href="https://loyevo.co/" target="_blank" rel="noopener"><small>Sitio oficial</small>Propuesta, CTA, seguridad, beneficios y testimonios</a>
           <a class="source" href="https://loyevo.co/emisor-web/cotizar" target="_blank" rel="noopener"><small>Cotizador</small>Journey web, etiquetas base y flujo de conversión</a>
           <a class="source" href="https://play.google.com/store/apps/details?id=com.luquedigital.loyevo" target="_blank" rel="noopener"><small>Google Play</small>Ficha pública de la aplicación Loyevo</a>

@@ -24,14 +24,14 @@ Centro de documentos web para revisar el ecosistema público de Loyevo y constru
 - Arquitectura de Meta: prospección, retargeting y laboratorio creativo, con jerarquía y convención de nombres.
 - Auditoría de 94 anuncios, copies, formatos, CTA y piezas de mayor inversión.
 - Territorios de comunicación e ideas de captación para mandantes.
-- Mapa de eventos Pixel + CAPI y tablero de KPI.
+- Mapa de eventos y tablero de KPI.
 - Roadmap de implementación a 90 días.
 - Checklist de datos operativos necesarios para conciliar Meta con mandados pagados y entregados.
 - Calendario de seis semanas para integrar pauta, CRM, medición, creatividad, QA y primeros lanzamientos.
 
 ## Alcance y limitaciones
 
-La cuenta auditada es `811773518495568`. Se consultó mediante Meta Marketing API v21.0 usando una credencial local que no se copió al repositorio ni a los HTML. El documento separa explícitamente:
+El diagnóstico toma como referencia la cuenta de Loyevo y su ecosistema digital. El documento separa explícitamente:
 
 - **Datos de cuenta:** inversión, campañas, conjuntos, anuncios, insights, píxeles y conversiones configuradas.
 - **Observaciones públicas:** sitio oficial, cotizador, ficha de Google Play, HTML/JavaScript público y documentación legal.
@@ -55,4 +55,4 @@ La portada prioriza la descarga mientras la ruta web de cotización queda relega
 - [Biblioteca de anuncios de Meta](https://www.facebook.com/ads/library/)
 - [Ayuda oficial sobre la Biblioteca de anuncios](https://www.facebook.com/help/259468828226154)
 
-Revisión pública y consulta de Marketing API realizadas el **13 de agosto de 2026**. Última inversión registrada: **1 de agosto de 2026**; todas las campañas estaban pausadas al momento de la auditoría.
+Revisión pública y de la cuenta de Loyevo realizada el **13 de agosto de 2026**. Última inversión registrada: **1 de agosto de 2026**; todas las campañas estaban pausadas al momento de la auditoría.
