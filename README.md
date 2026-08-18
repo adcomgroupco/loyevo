@@ -27,6 +27,7 @@ Centro de documentos web para revisar el ecosistema público de Loyevo y constru
 - Mapa de eventos Pixel + CAPI y tablero de KPI.
 - Roadmap de implementación a 90 días.
 - Checklist de datos operativos necesarios para conciliar Meta con mandados pagados y entregados.
+- Calendario de seis semanas para integrar pauta, CRM, medición, creatividad, QA y primeros lanzamientos.
 
 ## Alcance y limitaciones
 

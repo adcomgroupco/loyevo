@@ -267,6 +267,32 @@
     .source:hover { border-color: var(--pink); color: white; }
     .source small { display: block; margin-bottom: 3px; color: var(--pink); text-transform: uppercase; letter-spacing: .07em; font-weight: 800; }
 
+    .schedule-shell { overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius); background: white; }
+    .schedule-swipe { display: none; margin: 0; padding: 10px 14px; color: var(--muted); background: var(--pink-soft); font-size: 12px; font-weight: 700; }
+    .schedule-scroll { overflow-x: auto; }
+    .schedule-table { width: 100%; min-width: 900px; border-collapse: collapse; table-layout: fixed; }
+    .schedule-table th:first-child { width: 36%; }
+    .schedule-table thead th { padding: 14px 8px; border-left: 1px solid var(--line); color: var(--muted); background: #f6f4f6; text-align: center; text-transform: uppercase; letter-spacing: .08em; font-size: 11px; }
+    .schedule-table thead th:first-child { padding-left: 22px; border-left: 0; color: var(--ink); text-align: left; }
+    .schedule-table tbody th { padding: 16px 22px; border-top: 1px solid var(--line); text-align: left; }
+    .schedule-table tbody th h3 { margin-bottom: 3px; font-size: 17px; }
+    .schedule-table tbody th p { margin: 0; color: var(--muted); font-size: 12px; font-weight: 400; }
+    .week-cell { position: relative; height: 72px; padding: 0; border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+    .week-cell.active { background: var(--pink-soft); }
+    .week-cell.active::before { content: ""; position: absolute; left: 0; right: 0; top: 50%; height: 7px; transform: translateY(-50%); background: var(--pink); }
+    .week-cell.start::before { left: 28%; border-radius: 8px 0 0 8px; }
+    .week-cell.end::before { right: 50%; border-radius: 0 8px 8px 0; }
+    .week-cell.milestone::after { content: ""; position: absolute; z-index: 1; left: 50%; top: 50%; width: 14px; height: 14px; transform: translate(-50%, -50%); border: 4px solid white; border-radius: 50%; background: var(--ink); box-shadow: 0 0 0 2px var(--ink); }
+    .schedule-guards { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); background: #f9f7f9; }
+    .schedule-guard { padding: 16px 20px; }
+    .schedule-guard + .schedule-guard { border-left: 1px solid var(--line); }
+    .schedule-guard small { display: block; margin-bottom: 4px; color: var(--pink); text-transform: uppercase; letter-spacing: .08em; font-weight: 800; }
+    .schedule-guard p { margin: 0; color: var(--muted); font-size: 12px; }
+    .schedule-legend { display: flex; flex-wrap: wrap; gap: 18px; margin: 16px 0 0; color: var(--muted); font-size: 12px; }
+    .schedule-legend span { display: flex; align-items: center; gap: 7px; }
+    .legend-line { width: 25px; height: 6px; border-radius: 6px; background: var(--pink); }
+    .legend-dot { width: 11px; height: 11px; border-radius: 50%; background: var(--ink); }
+
     footer { padding: 30px 0; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }
     .footer-inner { display: flex; justify-content: space-between; gap: 20px; }
     .progress { position: fixed; z-index: 40; left: 0; top: 0; height: 3px; width: var(--progress, 0%); background: var(--pink); }
@@ -281,6 +307,8 @@
       .allocation { grid-template-columns: 1fr; }
       .finding-grid, .creative-grid { grid-template-columns: repeat(2, 1fr); }
       .flow { grid-template-columns: repeat(2, 1fr); }
+      .schedule-guards { grid-template-columns: 1fr; }
+      .schedule-guard + .schedule-guard { border-top: 1px solid var(--line); border-left: 0; }
       .flow-step::after { display: none !important; }
       .campaign-card { grid-template-columns: 1fr; }
       .campaign-share { min-height: 170px; }
@@ -310,6 +338,8 @@
       .roadmap::before { display: none; }
       .phase { padding-top: 26px; }
       .phase::before { top: 0; left: 6px; }
+      .schedule-table { min-width: 780px; }
+      .schedule-swipe { display: block; }
       .spec-grid { grid-template-columns: 1fr; }
       .campaign-tabs { width: 100%; overflow-x: auto; }
       .tab { white-space: nowrap; }
@@ -338,6 +368,7 @@
         <a href="#estructura">Estructura ideal</a>
         <a href="#creatividad">Creatividad</a>
         <a href="#medicion">Medición</a>
+        <a href="#siguientes-pasos">Siguientes pasos</a>
       </nav>
       <span class="header-label">META · CUENTA 811773518495568</span>
       <button class="menu-button" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir navegación">☰</button>
@@ -688,6 +719,37 @@
           <a class="source" href="https://loyevo.co/legal/datos-personales/" target="_blank" rel="noopener"><small>Legal</small>Tratamiento de datos, seguridad y rol de la plataforma</a>
           <a class="source" href="https://www.facebook.com/help/259468828226154" target="_blank" rel="noopener"><small>Documentación</small>Alcance y funcionamiento de la Biblioteca de anuncios</a>
         </div>
+      </div>
+    </section>
+
+    <section id="siguientes-pasos" class="section-white">
+      <div class="wrap">
+        <div class="section-heading">
+          <div><p class="kicker">Siguientes pasos</p><h2>Seis semanas.<br>Seis hitos claros.</h2></div>
+          <p>Un calendario de trabajo corto para completar la lectura del negocio, construir la ruta integrada y llegar a los primeros lanzamientos con medición y control.</p>
+        </div>
+        <div class="schedule-shell">
+          <p class="schedule-swipe">Desliza el calendario para ver las seis semanas →</p>
+          <div class="schedule-scroll" role="region" aria-label="Calendario de trabajo de seis semanas" tabindex="0">
+            <table class="schedule-table">
+              <thead><tr><th scope="col">Frente y resultado esperado</th><th scope="col">S1</th><th scope="col">S2</th><th scope="col">S3</th><th scope="col">S4</th><th scope="col">S5</th><th scope="col">S6</th></tr></thead>
+              <tbody>
+                <tr><th scope="row"><h3>01 · Diagnóstico integrado</h3><p>Salida: lectura de pauta, CRM, canales internos y situación actual.</p></th><td class="week-cell active start"></td><td class="week-cell active end milestone"></td><td class="week-cell"></td><td class="week-cell"></td><td class="week-cell"></td><td class="week-cell"></td></tr>
+                <tr><th scope="row"><h3>02 · Accesos y medición</h3><p>Salida: permisos, fuentes de datos, KPI y línea base validados.</p></th><td class="week-cell active start"></td><td class="week-cell active"></td><td class="week-cell active end milestone"></td><td class="week-cell"></td><td class="week-cell"></td><td class="week-cell"></td></tr>
+                <tr><th scope="row"><h3>03 · Ruta estratégica</h3><p>Salida: rol de pauta, CRM e inbound dentro de un recorrido común.</p></th><td class="week-cell"></td><td class="week-cell active start"></td><td class="week-cell active end milestone"></td><td class="week-cell"></td><td class="week-cell"></td><td class="week-cell"></td></tr>
+                <tr><th scope="row"><h3>04 · Concepto y producción</h3><p>Salida: ideas, copies, piezas de pauta y materiales de inbound.</p></th><td class="week-cell"></td><td class="week-cell"></td><td class="week-cell active start"></td><td class="week-cell active end milestone"></td><td class="week-cell"></td><td class="week-cell"></td></tr>
+                <tr><th scope="row"><h3>05 · Configuración y QA</h3><p>Salida: campañas, automatizaciones, tracking y recorridos probados.</p></th><td class="week-cell"></td><td class="week-cell"></td><td class="week-cell"></td><td class="week-cell active start"></td><td class="week-cell active end milestone"></td><td class="week-cell"></td></tr>
+                <tr><th scope="row"><h3>06 · Lanzamiento y aprendizaje</h3><p>Salida: primeras activaciones, lectura inicial y plan de ajustes.</p></th><td class="week-cell"></td><td class="week-cell"></td><td class="week-cell"></td><td class="week-cell"></td><td class="week-cell active start"></td><td class="week-cell active end milestone"></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="schedule-guards" aria-label="Condiciones para mantener el calendario">
+            <div class="schedule-guard"><small>Responsables</small><p>Definir desde el inicio quién entrega información y quién aprueba estrategia, piezas y campañas.</p></div>
+            <div class="schedule-guard"><small>Dependencia crítica</small><p>Los accesos deben quedar completos en la semana 3 para no mover producción, QA ni lanzamiento.</p></div>
+            <div class="schedule-guard"><small>Puerta de lanzamiento</small><p>No activar sin validar eventos, KPI, audiencias, automatizaciones, enlaces, copies y piezas.</p></div>
+          </div>
+        </div>
+        <div class="schedule-legend" aria-label="Leyenda del calendario"><span><i class="legend-line" aria-hidden="true"></i>Trabajo activo</span><span><i class="legend-dot" aria-hidden="true"></i>Entrega o aprobación</span><span>Semanas contadas desde el kickoff.</span></div>
       </div>
     </section>
   </main>
