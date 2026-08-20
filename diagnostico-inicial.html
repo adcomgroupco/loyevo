@@ -14,7 +14,10 @@
       --pink: #ed0a78;
       --pink-dark: #c6005f;
       --pink-soft: #fff0f7;
-      --ink: #15131a;
+      --ink: #111827;
+      --ink-deep: #0b1018;
+      --ink-table: #0d1420;
+      --ink-line: #273244;
       --muted: #6b6872;
       --line: #e8e5ea;
       --paper: #fbfafb;
@@ -25,7 +28,7 @@
       --amber-soft: #fff6e6;
       --red: #c63b45;
       --red-soft: #fff0f1;
-      --navy: #262337;
+      --navy: #1c2c44;
       --radius: 22px;
       --shadow: 0 16px 48px rgba(27, 18, 26, .08);
     }
@@ -83,6 +86,31 @@
     .notice strong { display: block; margin-bottom: 3px; }
     .notice p { margin: 0; color: #705c37; font-size: 14px; }
 
+    .reading-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 20px; }
+    .reading-card { padding: 28px; border: 1px solid var(--line); border-radius: var(--radius); background: white; }
+    .reading-card h3 { margin-bottom: 10px; font-size: 23px; }
+    .reading-card > p { margin: 0; color: var(--muted); font-size: 14px; }
+    .diagnostic-facts { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 22px; }
+    .diagnostic-fact { padding: 14px; border-radius: 13px; background: var(--paper); }
+    .diagnostic-fact small, .term small { display: block; margin-bottom: 4px; color: var(--pink); text-transform: uppercase; letter-spacing: .07em; font-size: 10px; font-weight: 800; }
+    .diagnostic-fact b { display: block; font-size: 13px; line-height: 1.35; }
+    .term-list { display: grid; gap: 1px; margin-top: 18px; border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
+    .term { padding: 13px 15px; background: var(--paper); }
+    .term + .term { border-top: 1px solid var(--line); }
+    .term p { margin: 0; color: var(--muted); font-size: 12px; }
+    .glossary { margin-top: 14px; }
+    .glossary summary { color: var(--pink-dark); font-size: 13px; }
+    .glossary-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; border-top: 1px solid var(--line); }
+    .glossary-grid div { padding: 13px 15px; background: var(--paper); }
+    .glossary-grid b { display: block; margin-bottom: 3px; color: var(--ink); font-size: 12px; }
+    .glossary-grid span { color: var(--muted); font-size: 11px; }
+    .term-tip { position: relative; color: inherit; text-decoration: underline dotted var(--pink); text-underline-offset: 3px; cursor: help; }
+    .term-tip::after { content: attr(data-tip); position: absolute; z-index: 10; left: 50%; bottom: calc(100% + 10px); width: min(250px, 76vw); padding: 10px 12px; transform: translateX(-50%); border-radius: 10px; color: white; background: var(--ink); box-shadow: var(--shadow); font: 500 11px/1.45 Poppins, sans-serif; text-align: left; opacity: 0; pointer-events: none; transition: opacity .18s ease, transform .18s ease; }
+    .term-tip:hover::after, .term-tip:focus::after { opacity: 1; transform: translateX(-50%) translateY(-2px); }
+    .interpretation { margin-top: 20px; padding: 18px 20px; border-left: 3px solid var(--pink); border-radius: 0 14px 14px 0; background: var(--pink-soft); }
+    .interpretation strong { display: block; margin-bottom: 4px; font-size: 13px; }
+    .interpretation p { margin: 0; color: #7c365c; font-size: 13px; }
+
     .metric-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 22px; }
     .metric-card { min-height: 158px; padding: 23px; display: flex; flex-direction: column; justify-content: space-between; border: 1px solid var(--line); border-radius: 18px; background: var(--paper); }
     .metric-card small { color: var(--muted); text-transform: uppercase; letter-spacing: .07em; font-weight: 800; }
@@ -111,6 +139,12 @@
     .performance-table td:first-child { font-weight: 700; }
     .performance-table td b { color: var(--pink-dark); }
     .performance-table tr:last-child td { border-bottom: 0; }
+
+    .scope-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .scope-card { padding: 22px; border: 1px solid var(--line); border-radius: 18px; background: var(--paper); }
+    .scope-card small { display: block; margin-bottom: 10px; color: var(--pink); text-transform: uppercase; letter-spacing: .08em; font-weight: 800; }
+    .scope-card h3 { margin-bottom: 9px; font-size: 19px; }
+    .scope-card p { margin: 0; color: var(--muted); font-size: 13px; }
 
     section { padding: 76px 0; }
     .section-white { background: white; }
@@ -148,7 +182,7 @@
     .evidence { margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--line); color: #8a858e; font-size: 12px; }
 
     .priority-list { display: grid; gap: 12px; counter-reset: priority; }
-    .priority { position: relative; display: grid; grid-template-columns: 48px 1.25fr 1.2fr .45fr; gap: 20px; align-items: center; padding: 20px 22px; border-radius: 17px; background: #292631; }
+    .priority { position: relative; display: grid; grid-template-columns: 48px 1.25fr 1.2fr .45fr; gap: 20px; align-items: center; padding: 20px 22px; border-radius: 17px; background: var(--ink-deep); }
     .priority::before { counter-increment: priority; content: counter(priority, decimal-leading-zero); width: 38px; height: 38px; display: grid; place-items: center; border-radius: 12px; color: white; background: var(--pink); font: 800 12px Poppins, sans-serif; }
     .priority h3 { font-size: 17px; }
     .priority p { margin: 0; color: #bdb8c1; font-size: 13px; }
@@ -161,6 +195,14 @@
     .flow-step h3 { margin: 16px 0 8px; font-size: 17px; }
     .flow-step p { margin: 0; color: var(--muted); font-size: 13px; }
     .flow-step code { display: inline-block; margin-top: 14px; padding: 5px 7px; border-radius: 6px; background: var(--pink-soft); color: var(--pink-dark); font-size: 11px; }
+    .current-funnel { display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; }
+    .funnel-status { position: relative; min-height: 150px; padding: 18px; border: 1px solid var(--line); border-radius: 16px; background: var(--paper); }
+    .funnel-status:not(:last-child)::after { content: "→"; position: absolute; right: -15px; top: 50%; z-index: 2; color: var(--pink); font-weight: 800; }
+    .funnel-status small { color: var(--pink); text-transform: uppercase; letter-spacing: .07em; font-size: 10px; font-weight: 800; }
+    .funnel-status strong { display: block; margin: 18px 0 5px; font: 800 26px/1 Poppins, sans-serif; }
+    .funnel-status p { margin: 0; color: var(--muted); font-size: 11px; }
+    .funnel-status.pending { border-style: dashed; background: #fffdfd; }
+    .funnel-status.pending strong { color: var(--amber); font-size: 18px; line-height: 1.2; }
 
     .campaign-tabs { display: flex; gap: 8px; margin-bottom: 20px; padding: 5px; width: fit-content; border: 1px solid var(--line); border-radius: 14px; background: white; }
     .tab { padding: 10px 16px; border: 0; border-radius: 10px; color: var(--muted); background: transparent; font-weight: 700; cursor: pointer; }
@@ -198,7 +240,7 @@
     .name-list p { margin: 8px 0 0; color: var(--muted); font-size: 11px; }
 
     .creative-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-    .creative { min-height: 245px; padding: 26px; display: flex; flex-direction: column; border-radius: var(--radius); background: #292631; }
+    .creative { min-height: 245px; padding: 26px; display: flex; flex-direction: column; border-radius: var(--radius); background: var(--ink-deep); }
     .creative:nth-child(2), .creative:nth-child(5) { background: var(--pink); }
     .creative-label { color: #bdb8c1; text-transform: uppercase; letter-spacing: .1em; font-size: 11px; font-weight: 800; }
     .creative:nth-child(2) .creative-label, .creative:nth-child(5) .creative-label { color: rgba(255,255,255,.72); }
@@ -206,7 +248,7 @@
     .creative p { margin: 0; color: #cbc7ce; font-size: 13px; }
     .creative:nth-child(2) p, .creative:nth-child(5) p { color: rgba(255,255,255,.85); }
     .audit-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin-bottom: 42px; }
-    .audit-card { padding: 21px; border: 1px solid #3d3944; border-radius: 17px; background: #292631; }
+    .audit-card { padding: 21px; border: 1px solid var(--ink-line); border-radius: 17px; background: var(--ink-deep); }
     .audit-card small { color: #aaa4ad; text-transform: uppercase; letter-spacing: .07em; font-size: 10px; font-weight: 800; }
     .audit-card strong { display: block; margin: 12px 0 8px; color: var(--pink); font: 800 32px/1 Poppins, sans-serif; }
     .audit-card p { margin: 0; color: #cbc7ce; font-size: 12px; }
@@ -215,9 +257,9 @@
     .creative-finding span { color: var(--pink); text-transform: uppercase; letter-spacing: .08em; font-size: 10px; font-weight: 800; }
     .creative-finding h3 { margin: 8px 0 10px; font-size: 20px; }
     .creative-finding p { margin: 0; color: var(--muted); font-size: 13px; }
-    .ideas-wrap { margin-top: 48px; overflow-x: auto; border: 1px solid #3d3944; border-radius: 18px; }
-    .ideas-table { width: 100%; min-width: 900px; border-collapse: collapse; background: #211e27; }
-    .ideas-table th, .ideas-table td { padding: 16px; text-align: left; vertical-align: top; border-bottom: 1px solid #3d3944; }
+    .ideas-wrap { margin-top: 48px; overflow-x: auto; border: 1px solid var(--ink-line); border-radius: 18px; }
+    .ideas-table { width: 100%; min-width: 900px; border-collapse: collapse; background: var(--ink-table); }
+    .ideas-table th, .ideas-table td { padding: 16px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--ink-line); }
     .ideas-table th { color: #aaa4ad; text-transform: uppercase; letter-spacing: .08em; font-size: 10px; }
     .ideas-table td { color: #d4d0d6; font-size: 12px; }
     .ideas-table td:first-child { color: var(--pink); font-weight: 800; }
@@ -225,7 +267,7 @@
     .ideas-table tr:last-child td { border-bottom: 0; }
     .ideas-wrap + .section-heading { margin-top: 58px; }
     .creative-rules { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 20px; }
-    .creative-rule { padding: 18px; border: 1px solid #3d3944; border-radius: 15px; }
+    .creative-rule { padding: 18px; border: 1px solid var(--ink-line); border-radius: 15px; }
     .creative-rule b { display: block; margin-bottom: 6px; color: var(--pink); font: 800 12px Poppins, sans-serif; }
     .creative-rule p { margin: 0; color: #bbb6be; font-size: 12px; }
 
@@ -261,9 +303,14 @@
     details { border: 1px solid var(--line); border-radius: 15px; background: white; }
     summary { padding: 18px 20px; cursor: pointer; font-weight: 700; }
     details p { margin: 0; padding: 0 20px 20px; color: var(--muted); font-size: 14px; }
+    .data-legend { display: flex; flex-wrap: wrap; gap: 9px; margin: 0 0 22px; }
+    .data-legend span { padding: 7px 10px; border-radius: 999px; background: var(--paper); color: var(--muted); font-size: 11px; font-weight: 700; }
+    .data-legend b { color: var(--pink-dark); }
+    .score-method { margin-top: 18px; padding: 17px 20px; border: 1px solid var(--line); border-radius: 15px; background: var(--paper); color: var(--muted); font-size: 13px; }
+    .score-method b { color: var(--ink); }
 
     .sources { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
-    .source { padding: 17px 19px; border: 1px solid #3c3844; border-radius: 14px; color: #d5d0d8; text-decoration: none; font-size: 14px; }
+    .source { padding: 17px 19px; border: 1px solid var(--ink-line); border-radius: 14px; color: #d5d0d8; text-decoration: none; font-size: 14px; }
     .source:hover { border-color: var(--pink); color: white; }
     .source small { display: block; margin-bottom: 3px; color: var(--pink); text-transform: uppercase; letter-spacing: .07em; font-weight: 800; }
 
@@ -297,19 +344,29 @@
     .footer-inner { display: flex; justify-content: space-between; gap: 20px; }
     .progress { position: fixed; z-index: 40; left: 0; top: 0; height: 3px; width: var(--progress, 0%); background: var(--pink); }
 
+    @media (hover: hover) {
+      .metric-card, .reading-card, .scope-card, .score-item, .finding, .flow-step, .funnel-status, .event-map, .kpi-card, .audit-card, .creative-finding, .creative-rule, .phase-card, .naming-box, details, .source { transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
+      .metric-card:hover, .reading-card:hover, .scope-card:hover, .score-item:hover, .finding:hover, .flow-step:hover, .funnel-status:hover, .event-map:hover, .kpi-card:hover, .audit-card:hover, .creative-finding:hover, .creative-rule:hover, .phase-card:hover, .naming-box:hover, details:hover, .source:hover { transform: translateY(-3px); border-color: rgba(237,10,120,.42); box-shadow: 0 14px 30px rgba(17,24,39,.14); }
+      .tab:hover { color: var(--pink-dark); background: var(--pink-soft); }
+      .tab[aria-selected="true"]:hover { color: white; background: var(--pink-dark); }
+    }
+
     @media (max-width: 920px) {
       nav { display: none; position: absolute; left: 20px; right: 20px; top: 66px; padding: 18px; flex-direction: column; align-items: stretch; border: 1px solid var(--line); border-radius: 16px; background: white; box-shadow: var(--shadow); }
       nav.open { display: flex; }
       .menu-button { display: block; }
       .header-label { display: none; }
-      .hero-grid, .section-heading, .score-layout, .measurement-grid { grid-template-columns: 1fr; gap: 28px; }
+      .hero-grid, .section-heading, .score-layout, .measurement-grid, .reading-grid { grid-template-columns: 1fr; gap: 28px; }
       .metric-grid { grid-template-columns: repeat(2, 1fr); }
       .allocation { grid-template-columns: 1fr; }
       .finding-grid, .creative-grid { grid-template-columns: repeat(2, 1fr); }
       .flow { grid-template-columns: repeat(2, 1fr); }
+      .scope-grid { grid-template-columns: 1fr; }
+      .current-funnel { grid-template-columns: repeat(3, 1fr); }
       .schedule-guards { grid-template-columns: 1fr; }
       .schedule-guard + .schedule-guard { border-top: 1px solid var(--line); border-left: 0; }
       .flow-step::after { display: none !important; }
+      .funnel-status::after { display: none !important; }
       .campaign-card { grid-template-columns: 1fr; }
       .campaign-share { min-height: 170px; }
       .spec-grid { grid-template-columns: 1fr 1fr; }
@@ -331,7 +388,7 @@
       h1 { font-size: 39px; }
       .hero-lead { font-size: 17px; }
       section { padding: 58px 0; }
-      .score-grid, .finding-grid, .creative-grid, .flow, .roadmap, .questions, .sources { grid-template-columns: 1fr; }
+      .score-grid, .finding-grid, .creative-grid, .flow, .roadmap, .questions, .sources, .diagnostic-facts, .current-funnel { grid-template-columns: 1fr; }
       .metric-grid, .result-strip { grid-template-columns: 1fr 1fr; }
       .creative-findings, .audit-grid, .creative-rules { grid-template-columns: 1fr; }
       .account-detail { grid-template-columns: 1fr; }
@@ -341,6 +398,7 @@
       .schedule-table { min-width: 780px; }
       .schedule-swipe { display: block; }
       .spec-grid { grid-template-columns: 1fr; }
+      .glossary-grid { grid-template-columns: 1fr; }
       .campaign-tabs { width: 100%; overflow-x: auto; }
       .tab { white-space: nowrap; }
       .event { grid-template-columns: 1fr; gap: 3px; }
@@ -403,11 +461,54 @@
       </div>
     </div>
 
+    <section id="lectura" class="section-white">
+      <div class="wrap">
+        <div class="section-heading">
+          <div><p class="kicker">Guía de lectura</p><h2>Antes de entrar<br>en los resultados.</h2></div>
+          <p>Este documento revisa la adquisición digital y la medición disponible. Está diseñado para leerse tanto desde marketing como desde operación, sin asumir conocimiento previo de las fuentes o métricas publicitarias.</p>
+        </div>
+        <div class="reading-grid">
+          <article class="reading-card">
+            <h3>Ficha del diagnóstico</h3>
+            <p>Las fechas y el alcance aclaran qué puede afirmarse con la evidencia disponible y qué aún requiere una validación operativa.</p>
+            <div class="diagnostic-facts">
+              <div class="diagnostic-fact"><small>Elaboración</small><b>19 de agosto de 2026</b></div>
+              <div class="diagnostic-fact"><small>Periodo analizado</small><b>Nov. 2025 – 13 ago. 2026</b></div>
+              <div class="diagnostic-fact"><small>Fecha de corte</small><b>13 de agosto de 2026</b></div>
+              <div class="diagnostic-fact"><small>Fuentes revisadas</small><b>Meta, sitio, cotizador y píxeles</b></div>
+              <div class="diagnostic-fact"><small>Alcance</small><b>Adquisición y medición digital</b></div>
+            </div>
+          </article>
+          <article class="reading-card">
+            <h3>Términos del recorrido</h3>
+            <p>Estas definiciones se usan en todo el diagnóstico para conectar la pauta con la operación.</p>
+            <div class="term-list">
+              <div class="term"><small>Mandante</small><p>Persona que necesita enviar un objeto y publica, cotiza o paga un mandado.</p></div>
+              <div class="term"><small>Viajero</small><p>Persona que puede transportar el objeto dentro de un corredor disponible.</p></div>
+              <div class="term"><small>Corredor y match</small><p>Ruta operativa entre origen y destino; match es la conexión efectiva entre mandante y viajero.</p></div>
+            </div>
+            <details class="glossary">
+              <summary>Glosario de métricas de pauta</summary>
+              <div class="glossary-grid">
+                <div><b>CTR</b><span>Porcentaje de personas que hicieron clic después de ver un anuncio.</span></div>
+                <div><b>CPA</b><span>Costo por adquirir una acción de negocio definida, como un mandado pagado.</span></div>
+                <div><b>ROAS</b><span>Ingresos atribuidos por cada peso invertido en publicidad.</span></div>
+                <div><b>LPV</b><span>Visita a una página de destino registrada por Meta.</span></div>
+                <div><b>Lead</b><span>Persona que dejó sus datos o completó una acción de contacto.</span></div>
+                <div><b>Purchase</b><span>Evento de compra: en este caso, un mandado pagado.</span></div>
+                <div><b>CompleteRegistration</b><span>Registro completado reportado por Meta; no equivale necesariamente a un mandante activo.</span></div>
+              </div>
+            </details>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section class="section-white" id="meta-data">
       <div class="wrap">
         <div class="section-heading">
           <div><p class="kicker">Evidencia de cuenta</p><h2>La inversión creció.<br>La señal quedó corta.</h2></div>
-          <p>La cuenta generó volumen, pero concentró el aprendizaje en captar viajeros y en eventos intermedios. Meta no reporta una sola compra en el histórico.</p>
+          <p>La cuenta generó volumen, pero concentró el aprendizaje en captar viajeros y en eventos intermedios. Meta no registra compras atribuidas en el histórico.</p>
         </div>
         <div class="metric-grid">
           <article class="metric-card"><small>Inversión histórica</small><strong>$11,16 M</strong><span>COP · nov. 2025 a ago. 2026</span></article>
@@ -425,10 +526,10 @@
           <article class="actual-results">
             <h3>Eventos atribuidos</h3>
             <div class="result-strip">
-              <div class="result-cell"><strong>7.553</strong><span>CompleteRegistration</span></div>
-              <div class="result-cell"><strong>44</strong><span>Leads totales</span></div>
+              <div class="result-cell"><strong>7.553</strong><span><abbr class="term-tip" tabindex="0" data-tip="Registro completado reportado por Meta. No equivale necesariamente a un mandante activo.">CompleteRegistration</abbr></span></div>
+              <div class="result-cell"><strong>44</strong><span><abbr class="term-tip" tabindex="0" data-tip="Persona que dejó sus datos o completó una acción de contacto.">Leads totales</abbr></span></div>
               <div class="result-cell"><strong>939</strong><span>Conversaciones iniciadas</span></div>
-              <div class="result-cell"><strong>0</strong><span>Purchase reportados</span></div>
+              <div class="result-cell"><strong>0</strong><span><abbr class="term-tip" tabindex="0" data-tip="Compra atribuida a Meta; en este diagnóstico equivale a un mandado pagado.">Purchase atribuidos</abbr></span></div>
             </div>
             <p class="actual-note"><strong>Lectura:</strong> 7.553 registros no equivalen a mandantes. El 89% provino de la campaña de cinco ciudades, cuyos anuncios captaban socios viajeros con vehículo.</p>
           </article>
@@ -443,6 +544,21 @@
               <tr><td>Mandados a $4.900 · tráfico</td><td>$179.990</td><td>1.988 vistas de landing</td><td><b>$91 / vista</b></td><td>CTR de 7,01%, pero sin evento profundo atribuido.</td></tr>
             </tbody>
           </table>
+        </div>
+        <div class="interpretation"><strong>Cómo leer “0 Purchase atribuidos”</strong><p>La cuenta no registra compras atribuidas en Meta. Esto revela una brecha de medición; no permite concluir, por sí solo, que Meta no haya generado ventas. Para comprobarlo se debe conciliar origen de campaña, CRM, pagos, mandados y entregas.</p></div>
+      </div>
+    </section>
+
+    <section id="alcance">
+      <div class="wrap">
+        <div class="section-heading">
+          <div><p class="kicker">Alcance del diagnóstico</p><h2>Qué se sabe.<br>Qué falta conectar.</h2></div>
+          <p>La evidencia de pauta es suficiente para identificar prioridades, pero las decisiones de escala requieren completar el vínculo con el desempeño comercial y operativo.</p>
+        </div>
+        <div class="scope-grid">
+          <article class="scope-card"><small>Revisado</small><h3>Adquisición digital</h3><p>Campañas, conjuntos, anuncios, inversión, resultados, píxeles, sitio web, cotizador y creatividades de Meta.</p></article>
+          <article class="scope-card"><small>Pendiente de validar</small><h3>Resultado de negocio</h3><p>Cotizaciones, pagos, mandados, match, entregas, cancelaciones, ticket, margen y recurrencia por corredor.</p></article>
+          <article class="scope-card"><small>Fuera del corte actual</small><h3>Otros canales</h3><p>Google, orgánico, referidos, CRM, email, WhatsApp, alianzas y tiendas de aplicaciones: identificar su rol antes de compararlos.</p></article>
         </div>
       </div>
     </section>
@@ -462,10 +578,11 @@
           <div class="score-grid">
             <article class="score-item"><div class="score-item-top"><h3>Propuesta de valor</h3><strong>70</strong></div><div class="bar"><i style="--value:70%"></i></div><p>Beneficios y seguridad bien explicados.</p></article>
             <article class="score-item"><div class="score-item-top"><h3>Conversión web</h3><strong>38</strong></div><div class="bar"><i style="--value:38%"></i></div><p>El cotizador existe, pero no es el CTA dominante.</p></article>
-            <article class="score-item"><div class="score-item-top"><h3>Medición</h3><strong>32</strong></div><div class="bar"><i style="--value:32%"></i></div><p>Tres píxeles y señales intermedias; cero Purchase en Meta.</p></article>
+            <article class="score-item"><div class="score-item-top"><h3>Medición</h3><strong>32</strong></div><div class="bar"><i style="--value:32%"></i></div><p>Tres píxeles y señales intermedias; cero Purchase atribuidos en Meta.</p></article>
             <article class="score-item"><div class="score-item-top"><h3>Escalabilidad</h3><strong>28</strong></div><div class="bar"><i style="--value:28%"></i></div><p>Falta gobernar inversión según liquidez de cada corredor.</p></article>
           </div>
         </div>
+        <p class="score-method"><b>Cómo se interpreta este índice:</b> es una rúbrica diagnóstica inicial, no una métrica extraída de Meta ni un indicador financiero. Sintetiza la evidencia revisada en propuesta de valor, conversión web, medición y preparación para escalar; deberá actualizarse cuando se concilien datos comerciales y operativos.</p>
       </div>
     </section>
 
@@ -477,7 +594,7 @@
         </div>
         <div class="finding-grid">
           <article class="finding"><div class="finding-number"><span>01</span><span class="status high">Crítico</span></div><h3>La inversión priorizó viajeros</h3><p>$8,28 millones —74,2% del histórico— captaron oferta. Solo $2,37 millones se orientaron explícitamente a mandantes, el foco actual del negocio.</p><div class="evidence">Acción: separar presupuestos y mover el centro de gravedad a demanda.</div></article>
-          <article class="finding"><div class="finding-number"><span>02</span><span class="status high">Crítico</span></div><h3>Meta nunca recibió la compra</h3><p>La cuenta reporta 7.553 registros, 44 leads y 939 conversaciones, pero cero Purchase. No se puede calcular CPA de mandado ni ROAS.</p><div class="evidence">Impacto: el algoritmo aprende volumen, no valor de negocio.</div></article>
+          <article class="finding"><div class="finding-number"><span>02</span><span class="status high">Crítico</span></div><h3>Meta no recibió compras atribuidas</h3><p>La cuenta reporta 7.553 registros, 44 leads y 939 conversaciones, pero cero Purchase atribuidos. No se puede calcular CPA de mandado ni ROAS con la información actual.</p><div class="evidence">Dato observado: el algoritmo aprende volumen, no valor de negocio. Hipótesis por validar: puede existir conversión fuera de la atribución de Meta.</div></article>
           <article class="finding"><div class="finding-number"><span>03</span><span class="status high">Crítico</span></div><h3>La medición está fragmentada</h3><p>Existen tres fuentes de medición: descarga, mandantes y pre-registro. Solo hay una conversión personalizada —descarga de app— y las campañas priorizan registros intermedios.</p><div class="evidence">Acción: unificar la medición y registrar pagos y entregas sin duplicados.</div></article>
           <article class="finding"><div class="finding-number"><span>04</span><span class="status medium">Medio</span></div><h3>La cuenta se dispersó y hoy está apagada</h3><p>14 campañas, 19 conjuntos y 94 anuncios repartidos entre ventas, leads, engagement, awareness y tráfico; actualmente ninguno está activo.</p><div class="evidence">La última inversión registrada fue el 1 de agosto de 2026.</div></article>
           <article class="finding"><div class="finding-number"><span>05</span><span class="status medium">Medio</span></div><h3>El journey cambia entre anuncio y destino</h3><p>La portada prioriza descarga; el carrusel de mandantes invita a cotizar en app, muestra Google Play y usa GET_QUOTE en campañas web.</p><div class="evidence">Oportunidad: una promesa, un destino y un CTA por campaña.</div></article>
@@ -504,6 +621,20 @@
 
     <section id="estructura" class="section-white">
       <div class="wrap">
+        <div class="section-heading">
+          <div><p class="kicker">Recorrido observado</p><h2>La señal llega.<br>El negocio no vuelve.</h2></div>
+          <p>El embudo actual muestra hasta dónde llega la evidencia de Meta. Las últimas etapas no son cero: hoy no están conciliadas ni atribuidas de forma confiable.</p>
+        </div>
+        <div class="current-funnel" aria-label="Embudo actual de datos disponibles">
+          <article class="funnel-status"><small>Disponible</small><strong>2,89 M</strong><p>Impresiones reportadas.</p></article>
+          <article class="funnel-status"><small>Disponible</small><strong>97.456</strong><p>Clics reportados por Meta.</p></article>
+          <article class="funnel-status"><small>Disponible</small><strong>3.146</strong><p>Vistas de landing identificadas en líneas destacadas.</p></article>
+          <article class="funnel-status"><small>Disponible</small><strong>983</strong><p>Leads y conversaciones atribuidos.</p></article>
+          <article class="funnel-status pending"><small>Sin conciliar</small><strong>Pago / mandado</strong><p>Falta cruzar cotización, usuario y pago.</p></article>
+          <article class="funnel-status pending"><small>Sin conciliar</small><strong>Match / entrega</strong><p>Falta conectar operación, calidad y resultado.</p></article>
+        </div>
+
+        <div style="height:64px"></div>
         <div class="section-heading">
           <div><p class="kicker">Journey ideal</p><h2>Menos pasos ciegos.<br>Más intención.</h2></div>
           <p>El anuncio debe anticipar el caso de uso, llevar a una cotización relevante y devolver a Meta una señal económica confiable.</p>
@@ -695,11 +826,14 @@
           <div><p class="kicker">Para cerrar el modelo</p><h2>Meta ya habló.<br>Falta el negocio.</h2></div>
           <p>El histórico de la cuenta de Loyevo permite entender la pauta y las creatividades. Para decidir cuánto invertir falta conectar cada resultado publicitario con la operación real.</p>
         </div>
+        <div class="data-legend" aria-label="Guía para interpretar los pendientes"><span><b>Dato observado:</b> evidencia disponible</span><span><b>Validación:</b> cruce requerido con Loyevo</span><span><b>Recomendación:</b> acción propuesta</span></div>
         <div class="questions">
-          <details open><summary>Conciliación de resultados</summary><p>Relacionar lead, conversación y registro de Meta con usuario, cotización, mandado pagado, match, cancelación y entrega.</p></details>
-          <details><summary>Registro de cambios</summary><p>Permite distinguir aprendizaje real de cambios de presupuesto, pausas, ediciones y reinicios de fase.</p></details>
-          <details><summary>Calidad de medición</summary><p>Revisar la calidad de las señales, resultados duplicados, dominios, enlaces trazables, consentimiento y ventanas de atribución.</p></details>
-          <details><summary>Economía y operación</summary><p>Ingreso, costo variable, margen, match rate, tiempo a match, cancelación y entrega por corredor. Sin esto no existe un CPA máximo defendible.</p></details>
+          <details open><summary>Conciliación de resultados</summary><p><b>Validación:</b> relacionar lead, conversación y registro de Meta con usuario, cotización, mandado pagado, match, cancelación y entrega.</p></details>
+          <details><summary>Objetivo comercial actual</summary><p><b>Validación:</b> definir la prioridad que permitirá interpretar el desempeño: mandados, ingresos, margen, recurrencia, corredor específico o validación de mercado.</p></details>
+          <details><summary>Economía y operación</summary><p><b>Validación:</b> ingreso, costo variable, margen, ticket, match rate, tiempo a match, cancelación y entrega por corredor. Sin esto no existe un CPA máximo defendible.</p></details>
+          <details><summary>Canales y atribución</summary><p><b>Validación:</b> identificar Google, orgánico, referidos, CRM, email, WhatsApp, alianzas y tiendas de aplicaciones; definir su rol y cruzar resultados cuando aplique.</p></details>
+          <details><summary>Registro de cambios</summary><p><b>Recomendación:</b> documentar presupuesto, pausas, ediciones y reinicios de fase para distinguir aprendizaje real de cambios de configuración.</p></details>
+          <details><summary>Calidad de medición</summary><p><b>Recomendación:</b> revisar señales, duplicados, dominios, enlaces trazables, consentimiento y ventanas de atribución antes de escalar.</p></details>
         </div>
       </div>
     </section>
@@ -732,7 +866,7 @@
           <p class="schedule-swipe">Desliza el calendario para ver las seis semanas →</p>
           <div class="schedule-scroll" role="region" aria-label="Calendario de trabajo de seis semanas" tabindex="0">
             <table class="schedule-table">
-              <thead><tr><th scope="col">Frente y resultado esperado</th><th scope="col">S1</th><th scope="col">S2</th><th scope="col">S3</th><th scope="col">S4</th><th scope="col">S5</th><th scope="col">S6</th></tr></thead>
+              <thead><tr><th scope="col">Frente y resultado esperado</th><th scope="col">Semana 1</th><th scope="col">Semana 2</th><th scope="col">Semana 3</th><th scope="col">Semana 4</th><th scope="col">Semana 5</th><th scope="col">Semana 6</th></tr></thead>
               <tbody>
                 <tr><th scope="row"><h3>01 · Diagnóstico integrado</h3><p>Salida: lectura de pauta, CRM, canales internos y situación actual.</p></th><td class="week-cell active start"></td><td class="week-cell active end milestone"></td><td class="week-cell"></td><td class="week-cell"></td><td class="week-cell"></td><td class="week-cell"></td></tr>
                 <tr><th scope="row"><h3>02 · Accesos y medición</h3><p>Salida: permisos, fuentes de datos, KPI y línea base validados.</p></th><td class="week-cell active start"></td><td class="week-cell active"></td><td class="week-cell active end milestone"></td><td class="week-cell"></td><td class="week-cell"></td><td class="week-cell"></td></tr>
@@ -744,12 +878,12 @@
             </table>
           </div>
           <div class="schedule-guards" aria-label="Condiciones para mantener el calendario">
-            <div class="schedule-guard"><small>Responsables</small><p>Definir desde el inicio quién entrega información y quién aprueba estrategia, piezas y campañas.</p></div>
+            <div class="schedule-guard"><small>Responsables</small><p>Definir desde el inicio quién entrega información y quién aprueba estrategia, piezas, medición y campañas.</p></div>
             <div class="schedule-guard"><small>Dependencia crítica</small><p>Los accesos deben quedar completos en la semana 3 para no mover producción, QA ni lanzamiento.</p></div>
             <div class="schedule-guard"><small>Puerta de lanzamiento</small><p>No activar sin validar eventos, KPI, audiencias, automatizaciones, enlaces, copies y piezas.</p></div>
           </div>
         </div>
-        <div class="schedule-legend" aria-label="Leyenda del calendario"><span><i class="legend-line" aria-hidden="true"></i>Trabajo activo</span><span><i class="legend-dot" aria-hidden="true"></i>Entrega o aprobación</span><span>Semanas contadas desde el kickoff.</span></div>
+        <div class="schedule-legend" aria-label="Leyenda del calendario"><span><i class="legend-line" aria-hidden="true"></i>Trabajo activo</span><span><i class="legend-dot" aria-hidden="true"></i>Entrega o aprobación</span><span>Semana 1 a Semana 6, contadas desde el kickoff.</span></div>
       </div>
     </section>
   </main>
