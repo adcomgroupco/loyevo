@@ -86,24 +86,24 @@
     .notice strong { display: block; margin-bottom: 3px; }
     .notice p { margin: 0; color: #705c37; font-size: 14px; }
 
-    .reading-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 20px; }
-    .reading-card { padding: 28px; border: 1px solid var(--line); border-radius: var(--radius); background: white; }
-    .reading-card h3 { margin-bottom: 10px; font-size: 23px; }
-    .reading-card > p { margin: 0; color: var(--muted); font-size: 14px; }
-    .diagnostic-facts { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 22px; }
-    .diagnostic-fact { padding: 14px; border-radius: 13px; background: var(--paper); }
-    .diagnostic-fact small, .term small { display: block; margin-bottom: 4px; color: var(--pink); text-transform: uppercase; letter-spacing: .07em; font-size: 10px; font-weight: 800; }
-    .diagnostic-fact b { display: block; font-size: 13px; line-height: 1.35; }
-    .term-list { display: grid; gap: 1px; margin-top: 18px; border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
-    .term { padding: 13px 15px; background: var(--paper); }
-    .term + .term { border-top: 1px solid var(--line); }
-    .term p { margin: 0; color: var(--muted); font-size: 12px; }
-    .glossary { margin-top: 14px; }
-    .glossary summary { color: var(--pink-dark); font-size: 13px; }
-    .glossary-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; border-top: 1px solid var(--line); }
-    .glossary-grid div { padding: 13px 15px; background: var(--paper); }
-    .glossary-grid b { display: block; margin-bottom: 3px; color: var(--ink); font-size: 12px; }
-    .glossary-grid span { color: var(--muted); font-size: 11px; }
+    .icon-sprite { position: absolute; width: 0; height: 0; overflow: hidden; }
+    .icon { width: 20px; height: 20px; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+    .icon-badge { width: 38px; height: 38px; display: grid; place-items: center; border-radius: 12px; color: var(--pink); background: var(--pink-soft); }
+
+    .chapter-console { position: sticky; z-index: 24; top: 84px; margin: 24px auto 30px; padding: 14px; display: grid; grid-template-columns: 1fr auto; gap: 12px; align-items: center; border: 1px solid rgba(232,229,234,.9); border-radius: 20px; background: rgba(255,255,255,.94); box-shadow: 0 12px 34px rgba(17,24,39,.10); backdrop-filter: blur(18px); }
+    .chapter-tabs { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; }
+    .chapter-tab { min-width: 0; padding: 10px 12px; display: flex; align-items: center; gap: 10px; border: 1px solid transparent; border-radius: 13px; color: var(--muted); background: transparent; text-align: left; cursor: pointer; }
+    .chapter-tab .icon { width: 18px; height: 18px; }
+    .chapter-tab span { min-width: 0; }
+    .chapter-tab small { display: block; color: #9c96a0; font-size: 9px; font-weight: 800; letter-spacing: .07em; text-transform: uppercase; }
+    .chapter-tab b { display: block; overflow: hidden; font-size: 12px; line-height: 1.25; text-overflow: ellipsis; white-space: nowrap; }
+    .chapter-tab[aria-pressed="true"] { border-color: var(--pink); color: white; background: var(--pink); box-shadow: 0 9px 22px rgba(237,10,120,.22); }
+    .chapter-tab[aria-pressed="true"] small { color: #ffd4e8; }
+    .chapter-controls { display: flex; align-items: center; gap: 7px; }
+    .chapter-status { width: 54px; color: var(--muted); font-size: 11px; font-weight: 800; text-align: center; }
+    .chapter-control { width: 36px; height: 36px; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 11px; color: var(--ink); background: white; cursor: pointer; }
+    .chapter-control:disabled { opacity: .35; cursor: not-allowed; }
+    [data-chapter][hidden] { display: none !important; }
     .term-tip { position: relative; color: inherit; text-decoration: underline dotted var(--pink); text-underline-offset: 3px; cursor: help; }
     .term-tip::after { content: attr(data-tip); position: absolute; z-index: 10; left: 50%; bottom: calc(100% + 10px); width: min(250px, 76vw); padding: 10px 12px; transform: translateX(-50%); border-radius: 10px; color: white; background: var(--ink); box-shadow: var(--shadow); font: 500 11px/1.45 Poppins, sans-serif; text-align: left; opacity: 0; pointer-events: none; transition: opacity .18s ease, transform .18s ease; }
     .term-tip:hover::after, .term-tip:focus::after { opacity: 1; transform: translateX(-50%) translateY(-2px); }
@@ -112,20 +112,34 @@
     .interpretation p { margin: 0; color: #7c365c; font-size: 13px; }
 
     .metric-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 22px; }
-    .metric-card { min-height: 158px; padding: 23px; display: flex; flex-direction: column; justify-content: space-between; border: 1px solid var(--line); border-radius: 18px; background: var(--paper); }
+    .metric-card { min-height: 168px; padding: 23px; display: flex; flex-direction: column; justify-content: space-between; border: 1px solid var(--line); border-radius: 18px; background: var(--paper); }
+    .metric-card-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .metric-card .icon-badge { width: 34px; height: 34px; }
+    .metric-card .icon { width: 17px; height: 17px; }
     .metric-card small { color: var(--muted); text-transform: uppercase; letter-spacing: .07em; font-weight: 800; }
     .metric-card strong { display: block; margin-top: 18px; color: var(--pink); font: 800 clamp(28px, 4vw, 42px)/1 Poppins, sans-serif; letter-spacing: -.05em; }
     .metric-card span { margin-top: 8px; color: var(--muted); font-size: 12px; }
-    .allocation { display: grid; grid-template-columns: .78fr 1.22fr; gap: 20px; }
+    .allocation { display: grid; grid-template-columns: 1.05fr .95fr; gap: 20px; }
     .allocation-card, .actual-results { padding: 28px; border: 1px solid var(--line); border-radius: var(--radius); background: white; }
-    .allocation-card h3, .actual-results h3 { margin-bottom: 20px; font-size: 23px; }
-    .allocation-row { margin-top: 17px; }
-    .allocation-head { display: flex; justify-content: space-between; gap: 14px; margin-bottom: 8px; font-size: 13px; }
-    .allocation-head span { color: var(--muted); }
-    .allocation-track { height: 9px; overflow: hidden; border-radius: 99px; background: #eeeaf0; }
-    .allocation-track i { display: block; width: var(--share); height: 100%; border-radius: inherit; background: var(--pink); }
-    .allocation-row:nth-of-type(3) .allocation-track i { background: var(--navy); }
-    .allocation-row:nth-of-type(4) .allocation-track i { background: #aaa4ad; }
+    .card-title { display: flex; align-items: center; gap: 12px; margin-bottom: 22px; }
+    .card-title h3 { margin: 0; font-size: 23px; }
+    .card-title small { display: block; margin-bottom: 2px; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; font-size: 9px; font-weight: 800; }
+    .allocation-visual { display: grid; grid-template-columns: 186px 1fr; gap: 24px; align-items: center; }
+    .allocation-donut { position: relative; width: 186px; aspect-ratio: 1; display: grid; place-items: center; border-radius: 50%; background: conic-gradient(var(--pink) 0 74.2%, var(--navy) 74.2% 95.5%, #b9b3bd 95.5% 100%); box-shadow: inset 0 0 0 1px rgba(17,24,39,.04); }
+    .allocation-donut::before { content: ""; position: absolute; width: 116px; aspect-ratio: 1; border-radius: 50%; background: white; box-shadow: 0 4px 18px rgba(17,24,39,.08); }
+    .allocation-total { position: relative; z-index: 1; text-align: center; }
+    .allocation-total strong { display: block; font: 800 25px/1 Poppins, sans-serif; letter-spacing: -.05em; }
+    .allocation-total span { display: block; margin-top: 6px; color: var(--muted); font-size: 10px; font-weight: 700; }
+    .allocation-legend { display: grid; gap: 14px; }
+    .allocation-key { display: grid; grid-template-columns: 10px 1fr auto; gap: 10px; align-items: center; }
+    .allocation-key::before { content: ""; width: 10px; height: 10px; border-radius: 3px; background: var(--swatch); }
+    .allocation-key b { font-size: 13px; }
+    .allocation-key span { color: var(--muted); font-size: 12px; font-weight: 700; }
+    .allocation-key small { grid-column: 2 / 4; margin-top: -8px; color: var(--muted); font-size: 10px; }
+    .allocation-stack { height: 12px; display: flex; overflow: hidden; margin-top: 24px; border-radius: 99px; background: var(--line); }
+    .allocation-stack span { width: var(--share); background: var(--swatch); }
+    .chart-note { margin: 12px 0 0; color: var(--muted); font-size: 11px; }
+    .actual-results h3 { margin: 0; font-size: 23px; }
     .result-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
     .result-cell { padding: 17px 13px; border-radius: 14px; background: var(--paper); }
     .result-cell strong { display: block; color: var(--pink); font: 800 25px/1 Poppins, sans-serif; }
@@ -288,16 +302,24 @@
     .kpi-list span { color: var(--muted); }
     .kpi-list b { text-align: right; }
 
-    .roadmap { position: relative; display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-    .roadmap::before { content: ""; position: absolute; top: 31px; left: 15%; right: 15%; height: 2px; background: #e3dde4; }
-    .phase { position: relative; padding-top: 64px; }
-    .phase::before { content: ""; position: absolute; z-index: 1; top: 21px; left: 24px; width: 20px; height: 20px; border: 7px solid var(--paper); border-radius: 50%; background: var(--pink); box-shadow: 0 0 0 2px var(--pink); }
-    .phase-card { min-height: 300px; padding: 25px; border: 1px solid var(--line); border-radius: var(--radius); background: white; }
+    .roadmap { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .phase { min-width: 0; }
+    .phase-card { min-height: 100%; padding: 25px; border: 1px solid var(--line); border-radius: var(--radius); background: white; }
+    .phase-head { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin-bottom: 18px; }
+    .phase-head .icon-badge { color: white; background: var(--ink); }
     .phase small { color: var(--pink); text-transform: uppercase; letter-spacing: .09em; font-weight: 800; }
-    .phase h3 { margin: 7px 0 16px; font-size: 23px; }
-    .phase ul { margin: 0; padding-left: 19px; color: var(--muted); font-size: 14px; }
+    .phase h3 { margin: 6px 0 0; font-size: 23px; }
+    .phase ul { margin: 0; padding-left: 19px; color: var(--muted); font-size: 13px; }
     .phase li + li { margin-top: 8px; }
-    .gate { margin-top: 18px; padding-top: 15px; border-top: 1px solid var(--line); color: var(--ink); font-size: 13px; font-weight: 700; }
+    .gate { margin-top: 18px; padding: 15px; border-radius: 13px; color: var(--ink); background: var(--pink-soft); font-size: 12px; font-weight: 700; }
+    .parallel-note { margin-bottom: 20px; padding: 16px 18px; display: flex; align-items: center; gap: 12px; border: 1px solid #f2c2d9; border-radius: 15px; color: var(--ink); background: var(--pink-soft); font-size: 13px; }
+
+    .education-band { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 42px; }
+    .education-card { padding: 21px; border: 1px solid var(--ink-line); border-radius: 17px; background: var(--ink-deep); }
+    .education-card .icon-badge { margin-bottom: 18px; color: white; background: rgba(237,10,120,.2); }
+    .education-card small { color: #f4a8cc; text-transform: uppercase; letter-spacing: .08em; font-size: 9px; font-weight: 800; }
+    .education-card h3 { margin: 8px 0; color: white; font-size: 18px; }
+    .education-card p { margin: 0; color: #bbb6be; font-size: 12px; }
 
     .questions { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
     details { border: 1px solid var(--line); border-radius: 15px; background: white; }
@@ -317,19 +339,28 @@
     .schedule-shell { overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius); background: white; }
     .schedule-swipe { display: none; margin: 0; padding: 10px 14px; color: var(--muted); background: var(--pink-soft); font-size: 12px; font-weight: 700; }
     .schedule-scroll { overflow-x: auto; }
-    .schedule-table { width: 100%; min-width: 900px; border-collapse: collapse; table-layout: fixed; }
-    .schedule-table th:first-child { width: 36%; }
-    .schedule-table thead th { padding: 14px 8px; border-left: 1px solid var(--line); color: var(--muted); background: #f6f4f6; text-align: center; text-transform: uppercase; letter-spacing: .08em; font-size: 11px; }
-    .schedule-table thead th:first-child { padding-left: 22px; border-left: 0; color: var(--ink); text-align: left; }
-    .schedule-table tbody th { padding: 16px 22px; border-top: 1px solid var(--line); text-align: left; }
-    .schedule-table tbody th h3 { margin-bottom: 3px; font-size: 17px; }
-    .schedule-table tbody th p { margin: 0; color: var(--muted); font-size: 12px; font-weight: 400; }
-    .week-cell { position: relative; height: 72px; padding: 0; border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
-    .week-cell.active { background: var(--pink-soft); }
-    .week-cell.active::before { content: ""; position: absolute; left: 0; right: 0; top: 50%; height: 7px; transform: translateY(-50%); background: var(--pink); }
-    .week-cell.start::before { left: 28%; border-radius: 8px 0 0 8px; }
-    .week-cell.end::before { right: 50%; border-radius: 0 8px 8px 0; }
-    .week-cell.milestone::after { content: ""; position: absolute; z-index: 1; left: 50%; top: 50%; width: 14px; height: 14px; transform: translate(-50%, -50%); border: 4px solid white; border-radius: 50%; background: var(--ink); box-shadow: 0 0 0 2px var(--ink); }
+    .parallel-timeline { min-width: 980px; padding: 18px; }
+    .timeline-head, .timeline-row { display: grid; grid-template-columns: 220px repeat(4, 1fr); gap: 8px; }
+    .timeline-head { margin-bottom: 8px; }
+    .timeline-head div { padding: 10px 12px; border-radius: 11px; color: var(--muted); background: #f6f4f6; text-align: center; font-size: 10px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
+    .timeline-head div:first-child { color: var(--ink); text-align: left; }
+    .timeline-row { position: relative; min-height: 86px; align-items: stretch; border-top: 1px solid var(--line); }
+    .timeline-label { grid-column: 1; padding: 16px 12px 12px; display: flex; gap: 11px; align-items: flex-start; }
+    .timeline-label .icon-badge { width: 34px; height: 34px; }
+    .timeline-label .icon { width: 17px; height: 17px; }
+    .timeline-label b { display: block; font-size: 13px; }
+    .timeline-label small { display: block; margin-top: 3px; color: var(--muted); font-size: 10px; }
+    .timeline-gridline { border-left: 1px solid var(--line); background: linear-gradient(180deg, rgba(251,250,251,.65), rgba(255,255,255,0)); }
+    .timeline-bar { z-index: 2; align-self: center; min-height: 54px; margin: 0 5px; padding: 11px 13px; display: flex; align-items: center; border-radius: 13px; color: white; background: var(--ink); box-shadow: 0 9px 18px rgba(17,24,39,.12); font-size: 10px; font-weight: 700; line-height: 1.35; }
+    .timeline-bar.pink { background: var(--pink); }
+    .timeline-bar.soft { color: var(--pink-dark); background: var(--pink-soft); box-shadow: inset 0 0 0 1px #f2bfd6; }
+    .timeline-bar.green { background: var(--green); }
+    .timeline-bar.amber { color: #6f4300; background: #ffd98f; }
+    .timeline-row > :nth-child(2) { grid-column: 2; grid-row: 1; }
+    .timeline-row > :nth-child(3) { grid-column: 3; grid-row: 1; }
+    .timeline-row > :nth-child(4) { grid-column: 4; grid-row: 1; }
+    .timeline-row > :nth-child(5) { grid-column: 5; grid-row: 1; }
+    .timeline-row .timeline-bar { grid-column: var(--start) / var(--end); grid-row: 1; }
     .schedule-guards { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); background: #f9f7f9; }
     .schedule-guard { padding: 16px 20px; }
     .schedule-guard + .schedule-guard { border-left: 1px solid var(--line); }
@@ -337,16 +368,17 @@
     .schedule-guard p { margin: 0; color: var(--muted); font-size: 12px; }
     .schedule-legend { display: flex; flex-wrap: wrap; gap: 18px; margin: 16px 0 0; color: var(--muted); font-size: 12px; }
     .schedule-legend span { display: flex; align-items: center; gap: 7px; }
-    .legend-line { width: 25px; height: 6px; border-radius: 6px; background: var(--pink); }
-    .legend-dot { width: 11px; height: 11px; border-radius: 50%; background: var(--ink); }
+    .schedule-legend .icon { color: var(--pink); }
 
     footer { padding: 30px 0; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }
     .footer-inner { display: flex; justify-content: space-between; gap: 20px; }
     .progress { position: fixed; z-index: 40; left: 0; top: 0; height: 3px; width: var(--progress, 0%); background: var(--pink); }
 
     @media (hover: hover) {
-      .metric-card, .reading-card, .scope-card, .score-item, .finding, .flow-step, .funnel-status, .event-map, .kpi-card, .audit-card, .creative-finding, .creative-rule, .phase-card, .naming-box, details, .source { transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
-      .metric-card:hover, .reading-card:hover, .scope-card:hover, .score-item:hover, .finding:hover, .flow-step:hover, .funnel-status:hover, .event-map:hover, .kpi-card:hover, .audit-card:hover, .creative-finding:hover, .creative-rule:hover, .phase-card:hover, .naming-box:hover, details:hover, .source:hover { transform: translateY(-3px); border-color: rgba(237,10,120,.42); box-shadow: 0 14px 30px rgba(17,24,39,.14); }
+      .metric-card, .scope-card, .score-item, .finding, .flow-step, .funnel-status, .event-map, .kpi-card, .audit-card, .creative-finding, .creative-rule, .phase-card, .education-card, .naming-box, details, .source { transition: transform .2s ease, box-shadow .2s ease,border-color .2s ease; }
+      .metric-card:hover, .scope-card:hover, .score-item:hover, .finding:hover, .flow-step:hover, .funnel-status:hover, .event-map:hover, .kpi-card:hover, .audit-card:hover, .creative-finding:hover, .creative-rule:hover, .phase-card:hover, .education-card:hover, .naming-box:hover, details:hover, .source:hover { transform: translateY(-3px); border-color: rgba(237,10,120,.42); box-shadow: 0 14px 30px rgba(17,24,39,.14); }
+      .chapter-tab:hover { color: var(--pink-dark); background: var(--pink-soft); }
+      .chapter-tab[aria-pressed="true"]:hover { color: white; background: var(--pink-dark); }
       .tab:hover { color: var(--pink-dark); background: var(--pink-soft); }
       .tab[aria-selected="true"]:hover { color: white; background: var(--pink-dark); }
     }
@@ -356,7 +388,10 @@
       nav.open { display: flex; }
       .menu-button { display: block; }
       .header-label { display: none; }
-      .hero-grid, .section-heading, .score-layout, .measurement-grid, .reading-grid { grid-template-columns: 1fr; gap: 28px; }
+      .hero-grid, .section-heading, .score-layout, .measurement-grid { grid-template-columns: 1fr; gap: 28px; }
+      .chapter-console { position: relative; top: auto; grid-template-columns: 1fr; }
+      .chapter-tabs { grid-template-columns: repeat(5, minmax(150px, 1fr)); overflow-x: auto; padding-bottom: 4px; }
+      .chapter-controls { justify-content: flex-end; }
       .metric-grid { grid-template-columns: repeat(2, 1fr); }
       .allocation { grid-template-columns: 1fr; }
       .finding-grid, .creative-grid { grid-template-columns: repeat(2, 1fr); }
@@ -374,7 +409,7 @@
       .account-detail { grid-template-columns: 1fr 1fr; }
       .name-list { grid-template-columns: 1fr; }
       .audit-grid { grid-template-columns: repeat(2, 1fr); }
-      .creative-rules { grid-template-columns: repeat(2, 1fr); }
+      .creative-rules, .education-band { grid-template-columns: repeat(2, 1fr); }
       .priority { grid-template-columns: 42px 1fr; }
       .priority p { grid-column: 2; }
       .priority time { grid-column: 2; justify-self: start; }
@@ -388,24 +423,23 @@
       h1 { font-size: 39px; }
       .hero-lead { font-size: 17px; }
       section { padding: 58px 0; }
-      .score-grid, .finding-grid, .creative-grid, .flow, .roadmap, .questions, .sources, .diagnostic-facts, .current-funnel { grid-template-columns: 1fr; }
+      .score-grid, .finding-grid, .creative-grid, .flow, .roadmap, .questions, .sources, .current-funnel { grid-template-columns: 1fr; }
       .metric-grid, .result-strip { grid-template-columns: 1fr 1fr; }
-      .creative-findings, .audit-grid, .creative-rules { grid-template-columns: 1fr; }
+      .creative-findings, .audit-grid, .creative-rules, .education-band { grid-template-columns: 1fr; }
+      .allocation-visual { grid-template-columns: 1fr; justify-items: center; }
+      .allocation-legend { width: 100%; }
       .account-detail { grid-template-columns: 1fr; }
-      .roadmap::before { display: none; }
-      .phase { padding-top: 26px; }
-      .phase::before { top: 0; left: 6px; }
-      .schedule-table { min-width: 780px; }
+      .parallel-timeline { min-width: 880px; }
       .schedule-swipe { display: block; }
       .spec-grid { grid-template-columns: 1fr; }
-      .glossary-grid { grid-template-columns: 1fr; }
       .campaign-tabs { width: 100%; overflow-x: auto; }
       .tab { white-space: nowrap; }
       .event { grid-template-columns: 1fr; gap: 3px; }
       .footer-inner { flex-direction: column; }
     }
     @media print {
-      .site-header, .progress, .campaign-tabs { display: none; }
+      .site-header, .progress, .campaign-tabs, .chapter-console { display: none; }
+      [data-chapter][hidden] { display: block !important; }
       .tab-panel { display: block; margin-bottom: 16px; }
       section { break-inside: avoid; padding: 34px 0; }
       body { background: white; }
@@ -414,6 +448,21 @@
 </head>
 <body>
   <div class="progress" aria-hidden="true"></div>
+  <svg class="icon-sprite" aria-hidden="true">
+    <symbol id="icon-chart" viewBox="0 0 24 24"><path d="M4 19V9M10 19V5M16 19v-7M22 19H2"/></symbol>
+    <symbol id="icon-route" viewBox="0 0 24 24"><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="6" r="2.5"/><path d="M8.5 18h2.25A3.25 3.25 0 0 0 14 14.75v-5.5A3.25 3.25 0 0 1 17.25 6h-1.75"/></symbol>
+    <symbol id="icon-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M12 2v2M22 12h-2M12 22v-2M2 12h2"/></symbol>
+    <symbol id="icon-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4M17 3v4M3 10h18"/></symbol>
+    <symbol id="icon-wallet" viewBox="0 0 24 24"><path d="M4 6.5h14a2 2 0 0 1 2 2V19H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h12"/><path d="M15 11h6v5h-6a2.5 2.5 0 0 1 0-5Z"/></symbol>
+    <symbol id="icon-eye" viewBox="0 0 24 24"><path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"/><circle cx="12" cy="12" r="2.5"/></symbol>
+    <symbol id="icon-cursor" viewBox="0 0 24 24"><path d="m5 3 13 9-6 1.5L9 19 5 3Z"/></symbol>
+    <symbol id="icon-layers" viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5 9-5Z"/><path d="m3 12 9 5 9-5M3 16l9 5 9-5"/></symbol>
+    <symbol id="icon-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20v-1a6 6 0 0 1 12 0v1M16 5.5a3 3 0 0 1 0 5.5M18 14a5 5 0 0 1 3 4.6V20"/></symbol>
+    <symbol id="icon-book" viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H11v16H6.5A2.5 2.5 0 0 0 4 21.5v-16ZM20 5.5A2.5 2.5 0 0 0 17.5 3H13v16h4.5a2.5 2.5 0 0 1 2.5 2.5v-16Z"/></symbol>
+    <symbol id="icon-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12 2.5 2.5L16.5 9"/></symbol>
+    <symbol id="icon-arrow-left" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
+    <symbol id="icon-arrow-right" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+  </svg>
   <a class="skip-link" href="#resumen">Saltar al diagnóstico</a>
 
   <header class="site-header">
@@ -461,70 +510,49 @@
       </div>
     </div>
 
-    <section id="lectura" class="section-white">
-      <div class="wrap">
-        <div class="section-heading">
-          <div><p class="kicker">Guía de lectura</p><h2>Antes de entrar<br>en los resultados.</h2></div>
-          <p>Este documento revisa la adquisición digital y la medición disponible. Está diseñado para leerse tanto desde marketing como desde operación, sin asumir conocimiento previo de las fuentes o métricas publicitarias.</p>
-        </div>
-        <div class="reading-grid">
-          <article class="reading-card">
-            <h3>Ficha del diagnóstico</h3>
-            <p>Las fechas y el alcance aclaran qué puede afirmarse con la evidencia disponible y qué aún requiere una validación operativa.</p>
-            <div class="diagnostic-facts">
-              <div class="diagnostic-fact"><small>Elaboración</small><b>19 de agosto de 2026</b></div>
-              <div class="diagnostic-fact"><small>Periodo analizado</small><b>Nov. 2025 – 13 ago. 2026</b></div>
-              <div class="diagnostic-fact"><small>Fecha de corte</small><b>13 de agosto de 2026</b></div>
-              <div class="diagnostic-fact"><small>Fuentes revisadas</small><b>Meta, sitio, cotizador y píxeles</b></div>
-              <div class="diagnostic-fact"><small>Alcance</small><b>Adquisición y medición digital</b></div>
-            </div>
-          </article>
-          <article class="reading-card">
-            <h3>Términos del recorrido</h3>
-            <p>Estas definiciones se usan en todo el diagnóstico para conectar la pauta con la operación.</p>
-            <div class="term-list">
-              <div class="term"><small>Mandante</small><p>Persona que necesita enviar un objeto y publica, cotiza o paga un mandado.</p></div>
-              <div class="term"><small>Viajero</small><p>Persona que puede transportar el objeto dentro de un corredor disponible.</p></div>
-              <div class="term"><small>Corredor y match</small><p>Ruta operativa entre origen y destino; match es la conexión efectiva entre mandante y viajero.</p></div>
-            </div>
-            <details class="glossary">
-              <summary>Glosario de métricas de pauta</summary>
-              <div class="glossary-grid">
-                <div><b>CTR</b><span>Porcentaje de personas que hicieron clic después de ver un anuncio.</span></div>
-                <div><b>CPA</b><span>Costo por adquirir una acción de negocio definida, como un mandado pagado.</span></div>
-                <div><b>ROAS</b><span>Ingresos atribuidos por cada peso invertido en publicidad.</span></div>
-                <div><b>LPV</b><span>Visita a una página de destino registrada por Meta.</span></div>
-                <div><b>Lead</b><span>Persona que dejó sus datos o completó una acción de contacto.</span></div>
-                <div><b>Purchase</b><span>Evento de compra: en este caso, un mandado pagado.</span></div>
-                <div><b>CompleteRegistration</b><span>Registro completado reportado por Meta; no equivale necesariamente a un mandante activo.</span></div>
-              </div>
-            </details>
-          </article>
-        </div>
+    <div class="wrap chapter-console" aria-label="Vistas del diagnóstico">
+      <div class="chapter-tabs">
+        <button class="chapter-tab" type="button" data-chapter-filter="diagnostico" aria-pressed="true"><svg class="icon" aria-hidden="true"><use href="#icon-chart"></use></svg><span><small>01 · Qué pasó</small><b>Diagnóstico</b></span></button>
+        <button class="chapter-tab" type="button" data-chapter-filter="captacion" aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#icon-route"></use></svg><span><small>02 · Cómo operar</small><b>Captación</b></span></button>
+        <button class="chapter-tab" type="button" data-chapter-filter="medicion" aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#icon-target"></use></svg><span><small>03 · Qué probar</small><b>Medición</b></span></button>
+        <button class="chapter-tab" type="button" data-chapter-filter="plan" aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#icon-calendar"></use></svg><span><small>04 · Qué sigue</small><b>Plan 90 días</b></span></button>
+        <button class="chapter-tab" type="button" data-chapter-filter="all" aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#icon-layers"></use></svg><span><small>Vista continua</small><b>Ver todo</b></span></button>
       </div>
-    </section>
+      <div class="chapter-controls">
+        <button class="chapter-control" type="button" data-chapter-prev aria-label="Capítulo anterior"><svg class="icon" aria-hidden="true"><use href="#icon-arrow-left"></use></svg></button>
+        <span class="chapter-status" aria-live="polite">1 / 4</span>
+        <button class="chapter-control" type="button" data-chapter-next aria-label="Capítulo siguiente"><svg class="icon" aria-hidden="true"><use href="#icon-arrow-right"></use></svg></button>
+      </div>
+    </div>
 
-    <section class="section-white" id="meta-data">
+    <section class="section-white" id="meta-data" data-chapter="diagnostico">
       <div class="wrap">
         <div class="section-heading">
           <div><p class="kicker">Evidencia de cuenta</p><h2>La inversión creció.<br>La señal quedó corta.</h2></div>
           <p>La cuenta generó volumen, pero concentró el aprendizaje en captar viajeros y en eventos intermedios. Meta no registra compras atribuidas en el histórico.</p>
         </div>
         <div class="metric-grid">
-          <article class="metric-card"><small>Inversión histórica</small><strong>$11,16 M</strong><span>COP · nov. 2025 a ago. 2026</span></article>
-          <article class="metric-card"><small>Entrega publicitaria</small><strong>2,89 M</strong><span>Impresiones</span></article>
-          <article class="metric-card"><small>Interacción</small><strong>97.456</strong><span>Clics reportados por Meta</span></article>
-          <article class="metric-card"><small>Estructura</small><strong>14 / 94</strong><span>Campañas / anuncios · 0 activos</span></article>
+          <article class="metric-card"><div class="metric-card-top"><small>Inversión histórica</small><span class="icon-badge"><svg class="icon" aria-hidden="true"><use href="#icon-wallet"></use></svg></span></div><strong>$11,16 M</strong><span>COP · nov. 2025 a ago. 2026</span></article>
+          <article class="metric-card"><div class="metric-card-top"><small>Entrega publicitaria</small><span class="icon-badge"><svg class="icon" aria-hidden="true"><use href="#icon-eye"></use></svg></span></div><strong>2,89 M</strong><span>Impresiones</span></article>
+          <article class="metric-card"><div class="metric-card-top"><small>Interacción</small><span class="icon-badge"><svg class="icon" aria-hidden="true"><use href="#icon-cursor"></use></svg></span></div><strong>97.456</strong><span>Clics reportados por Meta</span></article>
+          <article class="metric-card"><div class="metric-card-top"><small>Estructura</small><span class="icon-badge"><svg class="icon" aria-hidden="true"><use href="#icon-layers"></use></svg></span></div><strong>14 / 94</strong><span>Campañas / anuncios · 0 activos</span></article>
         </div>
         <div class="allocation">
           <article class="allocation-card">
-            <h3>¿A quién se destinó la inversión?</h3>
-            <div class="allocation-row"><div class="allocation-head"><b>Viajeros / oferta</b><span>$8.278.308 · 74,2%</span></div><div class="allocation-track"><i style="--share:74.2%"></i></div></div>
-            <div class="allocation-row"><div class="allocation-head"><b>Mandantes / demanda</b><span>$2.374.779 · 21,3%</span></div><div class="allocation-track"><i style="--share:21.3%"></i></div></div>
-            <div class="allocation-row"><div class="allocation-head"><b>Awareness y pruebas</b><span>$504.700 · 4,5%</span></div><div class="allocation-track"><i style="--share:4.5%"></i></div></div>
+            <div class="card-title"><span class="icon-badge"><svg class="icon" aria-hidden="true"><use href="#icon-chart"></use></svg></span><div><small>Distribución histórica</small><h3>¿A quién se destinó la inversión?</h3></div></div>
+            <div class="allocation-visual">
+              <div class="allocation-donut" role="img" aria-label="74,2 por ciento viajeros, 21,3 por ciento mandantes y 4,5 por ciento awareness y pruebas"><div class="allocation-total"><strong>$11,16 M</strong><span>Inversión total</span></div></div>
+              <div class="allocation-legend">
+                <div class="allocation-key" style="--swatch:var(--pink)"><b>Viajeros / oferta</b><span>74,2%</span><small>$8.278.308 COP</small></div>
+                <div class="allocation-key" style="--swatch:var(--navy)"><b>Mandantes / demanda</b><span>21,3%</span><small>$2.374.779 COP</small></div>
+                <div class="allocation-key" style="--swatch:#b9b3bd"><b>Awareness y pruebas</b><span>4,5%</span><small>$504.700 COP</small></div>
+              </div>
+            </div>
+            <div class="allocation-stack" aria-hidden="true"><span style="--share:74.2%;--swatch:var(--pink)"></span><span style="--share:21.3%;--swatch:var(--navy)"></span><span style="--share:4.5%;--swatch:#b9b3bd"></span></div>
+            <p class="chart-note">Casi tres de cada cuatro pesos construyeron oferta. El siguiente ciclo debe separar activación de la base, demanda nueva y liquidez por corredor.</p>
           </article>
           <article class="actual-results">
-            <h3>Eventos atribuidos</h3>
+            <div class="card-title"><span class="icon-badge"><svg class="icon" aria-hidden="true"><use href="#icon-target"></use></svg></span><div><small>Señales disponibles</small><h3>Eventos atribuidos</h3></div></div>
             <div class="result-strip">
               <div class="result-cell"><strong>7.553</strong><span><abbr class="term-tip" tabindex="0" data-tip="Registro completado reportado por Meta. No equivale necesariamente a un mandante activo.">CompleteRegistration</abbr></span></div>
               <div class="result-cell"><strong>44</strong><span><abbr class="term-tip" tabindex="0" data-tip="Persona que dejó sus datos o completó una acción de contacto.">Leads totales</abbr></span></div>
@@ -549,7 +577,7 @@
       </div>
     </section>
 
-    <section id="alcance">
+    <section id="alcance" data-chapter="diagnostico">
       <div class="wrap">
         <div class="section-heading">
           <div><p class="kicker">Alcance del diagnóstico</p><h2>Qué se sabe.<br>Qué falta conectar.</h2></div>
@@ -563,7 +591,7 @@
       </div>
     </section>
 
-    <section id="resumen">
+    <section id="resumen" data-chapter="diagnostico">
       <div class="wrap">
         <div class="section-heading">
           <div><p class="kicker">Resumen ejecutivo</p><h2>La promesa funciona.<br>El sistema todavía no.</h2></div>
@@ -586,7 +614,7 @@
       </div>
     </section>
 
-    <section id="hallazgos">
+    <section id="hallazgos" data-chapter="diagnostico">
       <div class="wrap">
         <div class="section-heading">
           <div><p class="kicker">Qué encontramos</p><h2>Seis oportunidades<br>que mueven negocio.</h2></div>
@@ -603,23 +631,24 @@
       </div>
     </section>
 
-    <section class="section-dark">
+    <section class="section-dark" id="intervencion" data-chapter="captacion">
       <div class="wrap">
         <div class="section-heading">
-          <div><p class="kicker">Primero lo primero</p><h2>Orden de<br>intervención.</h2></div>
-          <p>Escalar inversión antes de cerrar estas brechas multiplicaría tráfico, no necesariamente mandados.</p>
+          <div><p class="kicker">Secuencia recomendada</p><h2>Validar producto.<br>Preparar adquisición.</h2></div>
+          <p>La activación de usuarios registrados y la instrumentación técnica deben avanzar en paralelo. La pauta de adquisición entra cuando el recorrido y la señal de producto ya permiten aprender.</p>
         </div>
         <div class="priority-list">
-          <article class="priority"><h3>Definir la fuente de verdad</h3><p>Mandado pagado y primer mandado entregado, con ID, valor, corredor y rol del usuario.</p><time>Semana 1</time></article>
-          <article class="priority"><h3>Medir el recorrido completo</h3><p>Conectar portada, cotización, registro, pago y entrega, evitando resultados duplicados.</p><time>Semanas 1–2</time></article>
-          <article class="priority"><h3>Enviar pauta al cotizador</h3><p>Landing por necesidad/corredor, precio o rango temprano, prueba de confianza y CTA “Cotiza ahora”.</p><time>Semana 2</time></article>
-          <article class="priority"><h3>Reestructurar Meta</h3><p>Prospección, retargeting y laboratorio creativo; exclusiones claras y presupuesto por liquidez.</p><time>Semanas 2–3</time></article>
-          <article class="priority"><h3>Escalar por margen y entrega</h3><p>Aumentar presupuesto solo cuando CPA, match rate, cancelación y margen de contribución cierren.</p><time>Desde semana 4</time></article>
+          <article class="priority"><h3>Definir la señal de product-market fit</h3><p>Primer mandado entregado, repetición, recomendación y tiempo a valor, medidos por corredor y rol.</p><time>Semana 1</time></article>
+          <article class="priority"><h3>Activar la base registrada</h3><p>Segmentar usuarios, entrevistarlos y acompañar una cohorte hacia su primer mandado; aprender antes de comprar más tráfico.</p><time>Semanas 1–4</time></article>
+          <article class="priority"><h3>Instrumentar el recorrido en paralelo</h3><p>Unir landing, cotización, registro, pago, match y entrega con un ID consistente y un tablero de cohortes.</p><time>Semanas 1–4</time></article>
+          <article class="priority"><h3>Resolver propuesta y camino landing → app</h3><p>La landing explica, filtra ruta y cotiza; la app continúa identidad, pago, seguimiento y recurrencia sin reiniciar el proceso.</p><time>Semanas 2–5</time></article>
+          <article class="priority"><h3>Educar y convertir aprendizajes en creatividad</h3><p>Primero “qué es Loyevo”, cómo funciona y por qué confiar; después casos de uso y piezas de adquisición.</p><time>Semanas 4–7</time></article>
+          <article class="priority"><h3>Activar adquisición como experimento</h3><p>Piloto en 1–2 corredores, con presupuesto limitado y escala condicionada a activación, entrega, margen y repetición.</p><time>Desde semana 7</time></article>
         </div>
       </div>
     </section>
 
-    <section id="estructura" class="section-white">
+    <section id="estructura" class="section-white" data-chapter="captacion">
       <div class="wrap">
         <div class="section-heading">
           <div><p class="kicker">Recorrido observado</p><h2>La señal llega.<br>El negocio no vuelve.</h2></div>
@@ -636,21 +665,21 @@
 
         <div style="height:64px"></div>
         <div class="section-heading">
-          <div><p class="kicker">Journey ideal</p><h2>Menos pasos ciegos.<br>Más intención.</h2></div>
-          <p>El anuncio debe anticipar el caso de uso, llevar a una cotización relevante y devolver a Meta una señal económica confiable.</p>
+          <div><p class="kicker">Journey recomendado</p><h2>La landing orienta.<br>La app completa.</h2></div>
+          <p>No conviene forzar una descarga en frío. La web debe resolver la duda, validar ruta e intención y conservar el contexto cuando el usuario continúa en la app.</p>
         </div>
         <div class="flow" aria-label="Flujo ideal de adquisición">
-          <article class="flow-step"><span>01 · Descubrimiento</span><h3>Problema + corredor</h3><p>“¿Necesitas mandar algo de Bogotá a Tunja?” Creatividad específica por necesidad.</p><code>ViewContent</code></article>
-          <article class="flow-step"><span>02 · Intención</span><h3>Cotización web</h3><p>Origen y destino prellenados, tipo de objeto, urgencia y precio transparente.</p><code>Search / Quote</code></article>
-          <article class="flow-step"><span>03 · Confianza</span><h3>Validación</h3><p>Cómo se protege el pago, quién lleva el objeto y qué ocurre ante incidentes.</p><code>Lead</code></article>
-          <article class="flow-step"><span>04 · Negocio</span><h3>Mandado pagado</h3><p>Evento con valor, moneda, corredor e ID único. Esta es la conversión primaria.</p><code>Purchase</code></article>
-          <article class="flow-step"><span>05 · Calidad</span><h3>Entrega completada</h3><p>Confirmación final para medir la calidad real de cada canal y creatividad.</p><code>MandadoDelivered</code></article>
+          <article class="flow-step"><span>01 · Educación</span><h3>Entender el servicio</h3><p>Contenido “Qué es Loyevo”, caso de uso y corredor. La meta inicial es comprensión, no descarga.</p><code>ViewContent</code></article>
+          <article class="flow-step"><span>02 · Intención web</span><h3>Explorar y cotizar</h3><p>Origen, destino, objeto, disponibilidad estimada y prueba de confianza antes del registro.</p><code>Search / Quote</code></article>
+          <article class="flow-step"><span>03 · Activación</span><h3>Guardar el contexto</h3><p>Registro ligero o soporte por WhatsApp. La ruta y la cotización deben viajar con el usuario.</p><code>Lead / SignUp</code></article>
+          <article class="flow-step"><span>04 · Operación app</span><h3>Publicar y pagar</h3><p>Deep link a la app para identidad, pago y seguimiento, sin repetir lo ya diligenciado.</p><code>Purchase</code></article>
+          <article class="flow-step"><span>05 · Valor</span><h3>Entregar y repetir</h3><p>Confirmación de entrega, satisfacción y siguiente uso para medir acogida real del producto.</p><code>Delivered / Repeat</code></article>
         </div>
 
         <div style="height:64px"></div>
         <div class="section-heading">
-          <div><p class="kicker">Arquitectura de cuenta</p><h2>Tres campañas.<br>Una meta común.</h2></div>
-          <p>Estructura inicial simple para concentrar aprendizaje. Los porcentajes son una hipótesis de arranque y deben ajustarse con demanda y capacidad por corredor.</p>
+          <div><p class="kicker">Arquitectura condicionada</p><h2>Tres campañas.<br>Después de validar.</h2></div>
+          <p>Esta estructura entra cuando la cohorte activada demuestre señal de producto y el recorrido sea medible. Los porcentajes son una hipótesis de piloto, no un presupuesto para arrancar hoy.</p>
         </div>
         <div class="campaign-tabs" role="tablist" aria-label="Campañas recomendadas">
           <button class="tab" role="tab" aria-selected="true" data-panel="campaign-1">Prospección · 70%</button>
@@ -697,11 +726,21 @@
       </div>
     </section>
 
-    <section class="section-dark" id="creatividad">
+    <section class="section-dark" id="creatividad" data-chapter="captacion">
       <div class="wrap">
         <div class="section-heading">
-          <div><p class="kicker">Auditoría de 94 anuncios</p><h2>El clic apareció.<br>La prueba no.</h2></div>
-          <p>Se revisaron formatos, CTA, copies, imágenes y desempeño histórico. Ninguna pieza está activa hoy, por lo que la lectura busca rescatar aprendizajes sin confundirlos con vigencia creativa.</p>
+          <div><p class="kicker">Capítulo de educación</p><h2>Primero entender.<br>Después cotizar.</h2></div>
+          <p>Antes de producir anuncios de adquisición, Loyevo necesita instalar una categoría simple, demostrar el recorrido y responder el riesgo percibido con evidencia.</p>
+        </div>
+        <div class="education-band" aria-label="Sistema de contenidos educativos">
+          <article class="education-card"><span class="icon-badge"><svg class="icon" aria-hidden="true"><use href="#icon-book"></use></svg></span><small>01 · Categoría</small><h3>Qué es Loyevo</h3><p>Alguien que ya viaja por tu ruta puede llevar tu encargo dentro de una operación trazable.</p></article>
+          <article class="education-card"><span class="icon-badge"><svg class="icon" aria-hidden="true"><use href="#icon-route"></use></svg></span><small>02 · Mecánica</small><h3>Cómo funciona</h3><p>Cotización, publicación, match, pago protegido, seguimiento y confirmación de entrega.</p></article>
+          <article class="education-card"><span class="icon-badge"><svg class="icon" aria-hidden="true"><use href="#icon-check"></use></svg></span><small>03 · Confianza</small><h3>Por qué confiar</h3><p>Viajeros verificados, reglas visibles, trazabilidad y casos reales con autorización.</p></article>
+          <article class="education-card"><span class="icon-badge"><svg class="icon" aria-hidden="true"><use href="#icon-target"></use></svg></span><small>04 · Relevancia</small><h3>Cuándo usarlo</h3><p>Situaciones, objetos y corredores concretos donde el modelo puede resolver mejor.</p></article>
+        </div>
+        <div class="section-heading">
+          <div><p class="kicker">Auditoría de 94 anuncios</p><h2>Hay respuesta al mensaje.<br>Falta probar negocio.</h2></div>
+          <p>Se revisaron formatos, CTA, copies, imágenes y desempeño histórico. Ninguna pieza está activa hoy, por lo que la lectura rescata aprendizajes sin confundirlos con vigencia creativa.</p>
         </div>
         <div class="audit-grid" aria-label="Evaluación creativa sobre cinco puntos">
           <article class="audit-card"><small>Foco en mandante</small><strong>2/5</strong><p>74% del gasto se dirigió a viajeros.</p></article>
@@ -771,7 +810,7 @@
       </div>
     </section>
 
-    <section id="medicion">
+    <section id="medicion" data-chapter="medicion">
       <div class="wrap">
         <div class="section-heading">
           <div><p class="kicker">Medición ideal</p><h2>Meta necesita saber<br>qué mandado vale.</h2></div>
@@ -806,24 +845,25 @@
       </div>
     </section>
 
-    <section id="roadmap" class="section-white">
+    <section id="roadmap" class="section-white" data-chapter="plan">
       <div class="wrap">
         <div class="section-heading">
-          <div><p class="kicker">Plan de 90 días</p><h2>Medir, validar<br>y luego escalar.</h2></div>
-          <p>Cada fase tiene una puerta de salida. El avance depende de evidencia, no del calendario.</p>
+          <div><p class="kicker">Plan de 90 días</p><h2>Aprender antes<br>de comprar alcance.</h2></div>
+          <p>Producto, datos y propuesta avanzan en paralelo. La educación y la adquisición se activan por puertas de evidencia, no porque cambie el mes.</p>
         </div>
+        <div class="parallel-note"><span class="icon-badge"><svg class="icon" aria-hidden="true"><use href="#icon-layers"></use></svg></span><span><strong>Dos carriles permanentes:</strong> activar usuarios y observar uso real; al mismo tiempo, cerrar medición, propuesta de valor y continuidad entre landing y app.</span></div>
         <div class="roadmap">
-          <article class="phase"><div class="phase-card"><small>Días 0–30</small><h3>Fundación</h3><ul><li>Conciliar las tres fuentes de medición.</li><li>Revisar etiquetas, consentimiento y resultados duplicados.</li><li>Definir eventos y economía por corredor.</li><li>Convertir cotizador en destino principal.</li><li>Lanzar 3–5 conceptos creativos para mandantes.</li></ul><p class="gate">Puerta: mandado pagado, identificable y atribuible.</p></div></article>
-          <article class="phase"><div class="phase-card"><small>Días 31–60</small><h3>Validación</h3><ul><li>Consolidar prospección y retargeting.</li><li>Testear propuesta, corredor y formato.</li><li>Optimizar cotización → pago.</li><li>Activar recuperación de abandono.</li><li>Cruzar CPA con match y entrega.</li></ul><p class="gate">Puerta: cohortes con margen y calidad sostenibles.</p></div></article>
-          <article class="phase"><div class="phase-card"><small>Días 61–90</small><h3>Escala controlada</h3><ul><li>Aumentar inversión en corredores ganadores.</li><li>Replicar conceptos, no anuncios idénticos.</li><li>Incorporar valor de conversión.</li><li>Crear automatizaciones y alertas.</li><li>Evaluar lift o geo-test cuando haya volumen.</li></ul><p class="gate">Puerta: crecimiento sin deteriorar CPA ni entregas.</p></div></article>
+          <article class="phase"><div class="phase-card"><div class="phase-head"><div><small>Días 0–30</small><h3>Señal de producto</h3></div><span class="icon-badge"><svg class="icon" aria-hidden="true"><use href="#icon-users"></use></svg></span></div><ul><li>Definir hipótesis de PMF por corredor y caso de uso.</li><li>Segmentar y contactar usuarios registrados.</li><li>Acompañar una cohorte al primer mandado entregado.</li><li>Instrumentar eventos, IDs y tablero en paralelo.</li><li>Auditar la continuidad landing → app.</li></ul><p class="gate">Puerta 1: existe una cohorte que activa, completa valor y explica por qué usaría Loyevo de nuevo.</p></div></article>
+          <article class="phase"><div class="phase-card"><div class="phase-head"><div><small>Días 31–60</small><h3>Recorrido repetible</h3></div><span class="icon-badge"><svg class="icon" aria-hidden="true"><use href="#icon-route"></use></svg></span></div><ul><li>Elegir 1–2 corredores con mejor señal y capacidad.</li><li>Ajustar propuesta con entrevistas y comportamiento.</li><li>Hacer que la web cotice y la app continúe sin pérdida de contexto.</li><li>Lanzar contenidos “Qué es Loyevo” y demostraciones.</li><li>Probar activación, recuperación y segundo uso.</li></ul><p class="gate">Puerta 2: el recorrido se mide de punta a punta y alcanza umbrales acordados de activación, entrega y calidad.</p></div></article>
+          <article class="phase"><div class="phase-card"><div class="phase-head"><div><small>Días 61–90</small><h3>Adquisición condicionada</h3></div><span class="icon-badge"><svg class="icon" aria-hidden="true"><use href="#icon-target"></use></svg></span></div><ul><li>Convertir aprendizajes educativos en conceptos de adquisición.</li><li>Activar un piloto de presupuesto limitado por corredor.</li><li>Optimizar a mandado pagado y vigilar entrega y margen.</li><li>Comparar base reactivada, orgánico, referidos y pauta.</li><li>Escalar solo la combinación corredor–mensaje que sostenga calidad.</li></ul><p class="gate">Puerta 3: crecimiento sin deteriorar match, cancelación, margen ni repetición.</p></div></article>
         </div>
       </div>
     </section>
 
-    <section>
+    <section id="validaciones" data-chapter="medicion">
       <div class="wrap">
         <div class="section-heading">
-          <div><p class="kicker">Para cerrar el modelo</p><h2>Meta ya habló.<br>Falta el negocio.</h2></div>
+          <div><p class="kicker">Validaciones de negocio</p><h2>Sin trazabilidad,<br>no hay escala.</h2></div>
           <p>El histórico de la cuenta de Loyevo permite entender la pauta y las creatividades. Para decidir cuánto invertir falta conectar cada resultado publicitario con la operación real.</p>
         </div>
         <div class="data-legend" aria-label="Guía para interpretar los pendientes"><span><b>Dato observado:</b> evidencia disponible</span><span><b>Validación:</b> cruce requerido con Loyevo</span><span><b>Recomendación:</b> acción propuesta</span></div>
@@ -838,7 +878,7 @@
       </div>
     </section>
 
-    <section class="section-dark" id="fuentes">
+    <section class="section-dark" id="fuentes" data-chapter="plan">
       <div class="wrap">
         <div class="section-heading">
           <div><p class="kicker">Fuentes y trazabilidad</p><h2>Observado,<br>no supuesto.</h2></div>
@@ -856,34 +896,46 @@
       </div>
     </section>
 
-    <section id="siguientes-pasos" class="section-white">
+    <section id="siguientes-pasos" class="section-white" data-chapter="plan">
       <div class="wrap">
         <div class="section-heading">
-          <div><p class="kicker">Siguientes pasos</p><h2>Seis semanas.<br>Seis hitos claros.</h2></div>
-          <p>Un calendario de trabajo corto para completar la lectura del negocio, construir la ruta integrada y llegar a los primeros lanzamientos con medición y control.</p>
+          <div><p class="kicker">Cronograma por frentes</p><h2>Cuatro carriles.<br>Tres puertas.</h2></div>
+          <p>La secuencia deja de ser una cadena de pauta. Durante 12 semanas, validación de producto, medición y journey avanzan en paralelo; educación y adquisición entran cuando dependen de aprendizajes ya disponibles.</p>
         </div>
         <div class="schedule-shell">
-          <p class="schedule-swipe">Desliza el calendario para ver las seis semanas →</p>
-          <div class="schedule-scroll" role="region" aria-label="Calendario de trabajo de seis semanas" tabindex="0">
-            <table class="schedule-table">
-              <thead><tr><th scope="col">Frente y resultado esperado</th><th scope="col">Semana 1</th><th scope="col">Semana 2</th><th scope="col">Semana 3</th><th scope="col">Semana 4</th><th scope="col">Semana 5</th><th scope="col">Semana 6</th></tr></thead>
-              <tbody>
-                <tr><th scope="row"><h3>01 · Diagnóstico integrado</h3><p>Salida: lectura de pauta, CRM, canales internos y situación actual.</p></th><td class="week-cell active start"></td><td class="week-cell active end milestone"></td><td class="week-cell"></td><td class="week-cell"></td><td class="week-cell"></td><td class="week-cell"></td></tr>
-                <tr><th scope="row"><h3>02 · Accesos y medición</h3><p>Salida: permisos, fuentes de datos, KPI y línea base validados.</p></th><td class="week-cell active start"></td><td class="week-cell active"></td><td class="week-cell active end milestone"></td><td class="week-cell"></td><td class="week-cell"></td><td class="week-cell"></td></tr>
-                <tr><th scope="row"><h3>03 · Ruta estratégica</h3><p>Salida: rol de pauta, CRM e inbound dentro de un recorrido común.</p></th><td class="week-cell"></td><td class="week-cell active start"></td><td class="week-cell active end milestone"></td><td class="week-cell"></td><td class="week-cell"></td><td class="week-cell"></td></tr>
-                <tr><th scope="row"><h3>04 · Concepto y producción</h3><p>Salida: ideas, copies, piezas de pauta y materiales de inbound.</p></th><td class="week-cell"></td><td class="week-cell"></td><td class="week-cell active start"></td><td class="week-cell active end milestone"></td><td class="week-cell"></td><td class="week-cell"></td></tr>
-                <tr><th scope="row"><h3>05 · Configuración y QA</h3><p>Salida: campañas, automatizaciones, tracking y recorridos probados.</p></th><td class="week-cell"></td><td class="week-cell"></td><td class="week-cell"></td><td class="week-cell active start"></td><td class="week-cell active end milestone"></td><td class="week-cell"></td></tr>
-                <tr><th scope="row"><h3>06 · Lanzamiento y aprendizaje</h3><p>Salida: primeras activaciones, lectura inicial y plan de ajustes.</p></th><td class="week-cell"></td><td class="week-cell"></td><td class="week-cell"></td><td class="week-cell"></td><td class="week-cell active start"></td><td class="week-cell active end milestone"></td></tr>
-              </tbody>
-            </table>
+          <p class="schedule-swipe">Desliza para ver las 12 semanas →</p>
+          <div class="schedule-scroll" role="region" aria-label="Cronograma de trabajo de doce semanas por frentes paralelos" tabindex="0">
+            <div class="parallel-timeline">
+              <div class="timeline-head"><div>Frente de trabajo</div><div>Sem. 1–2<br>Descubrir</div><div>Sem. 3–4<br>Validar</div><div>Sem. 5–8<br>Repetir</div><div>Sem. 9–12<br>Adquirir</div></div>
+              <div class="timeline-row">
+                <div class="timeline-label"><span class="icon-badge"><svg class="icon" aria-hidden="true"><use href="#icon-users"></use></svg></span><span><b>Producto y PMF</b><small>Cohortes y acogida</small></span></div><i class="timeline-gridline"></i><i class="timeline-gridline"></i><i class="timeline-gridline"></i><i class="timeline-gridline"></i>
+                <div class="timeline-bar pink" style="--start:2;--end:6">Segmentar base → entrevistas → activación asistida → entrega → repetición</div>
+              </div>
+              <div class="timeline-row">
+                <div class="timeline-label"><span class="icon-badge"><svg class="icon" aria-hidden="true"><use href="#icon-target"></use></svg></span><span><b>Datos y medición</b><small>Fuente de verdad</small></span></div><i class="timeline-gridline"></i><i class="timeline-gridline"></i><i class="timeline-gridline"></i><i class="timeline-gridline"></i>
+                <div class="timeline-bar" style="--start:2;--end:5">Eventos + ID único → implementación → QA → tablero por corredor y cohorte</div>
+              </div>
+              <div class="timeline-row">
+                <div class="timeline-label"><span class="icon-badge"><svg class="icon" aria-hidden="true"><use href="#icon-route"></use></svg></span><span><b>Propuesta y journey</b><small>Landing + app</small></span></div><i class="timeline-gridline"></i><i class="timeline-gridline"></i><i class="timeline-gridline"></i><i class="timeline-gridline"></i>
+                <div class="timeline-bar soft" style="--start:2;--end:4">Auditar → prototipar → probar continuidad, cotización y objeciones</div>
+              </div>
+              <div class="timeline-row">
+                <div class="timeline-label"><span class="icon-badge"><svg class="icon" aria-hidden="true"><use href="#icon-book"></use></svg></span><span><b>Educación y creatividad</b><small>Comprensión antes que venta</small></span></div><i class="timeline-gridline"></i><i class="timeline-gridline"></i><i class="timeline-gridline"></i><i class="timeline-gridline"></i>
+                <div class="timeline-bar amber" style="--start:3;--end:5">“Qué es Loyevo” → demostración → confianza → conceptos de adquisición</div>
+              </div>
+              <div class="timeline-row">
+                <div class="timeline-label"><span class="icon-badge"><svg class="icon" aria-hidden="true"><use href="#icon-chart"></use></svg></span><span><b>Adquisición</b><small>Piloto condicionado</small></span></div><i class="timeline-gridline"></i><i class="timeline-gridline"></i><i class="timeline-gridline"></i><i class="timeline-gridline"></i>
+                <div class="timeline-bar green" style="--start:4;--end:6">Piloto 1–2 corredores → lectura de calidad → escala o corrección</div>
+              </div>
+            </div>
           </div>
-          <div class="schedule-guards" aria-label="Condiciones para mantener el calendario">
-            <div class="schedule-guard"><small>Responsables</small><p>Definir desde el inicio quién entrega información y quién aprueba estrategia, piezas, medición y campañas.</p></div>
-            <div class="schedule-guard"><small>Dependencia crítica</small><p>Los accesos deben quedar completos en la semana 3 para no mover producción, QA ni lanzamiento.</p></div>
-            <div class="schedule-guard"><small>Puerta de lanzamiento</small><p>No activar sin validar eventos, KPI, audiencias, automatizaciones, enlaces, copies y piezas.</p></div>
+          <div class="schedule-guards" aria-label="Puertas de decisión del cronograma">
+            <div class="schedule-guard"><small>Puerta 1 · Semana 2</small><p>Hipótesis de PMF, corredor, cohorte y evento de activación definidos. Sin esto, no se evalúa acogida.</p></div>
+            <div class="schedule-guard"><small>Puerta 2 · Semana 4</small><p>Primer mandado medible de punta a punta y decisión explícita sobre el rol de landing y app.</p></div>
+            <div class="schedule-guard"><small>Puerta 3 · Semana 8</small><p>Solo lanzar adquisición si activación, entrega, calidad y economía alcanzan los umbrales acordados.</p></div>
           </div>
         </div>
-        <div class="schedule-legend" aria-label="Leyenda del calendario"><span><i class="legend-line" aria-hidden="true"></i>Trabajo activo</span><span><i class="legend-dot" aria-hidden="true"></i>Entrega o aprobación</span><span>Semana 1 a Semana 6, contadas desde el kickoff.</span></div>
+        <div class="schedule-legend" aria-label="Lectura del calendario"><span><svg class="icon" aria-hidden="true"><use href="#icon-layers"></use></svg>Los bloques superpuestos son trabajo paralelo.</span><span><svg class="icon" aria-hidden="true"><use href="#icon-check"></use></svg>Las puertas permiten continuar, corregir o detener.</span><span>Semanas contadas desde el kickoff.</span></div>
       </div>
     </section>
   </main>
@@ -891,6 +943,32 @@
   <footer><div class="wrap footer-inner"><span>Loyevo · Diagnóstico de pauta y adquisición</span><span>Documento estratégico · Adcom Group · Agosto 2026</span></div></footer>
 
   <script>
+    const chapterOrder = ['diagnostico', 'captacion', 'medicion', 'plan'];
+    const chapterButtons = [...document.querySelectorAll('[data-chapter-filter]')];
+    const chapterSections = [...document.querySelectorAll('[data-chapter]')];
+    const chapterStatus = document.querySelector('.chapter-status');
+    const previousChapter = document.querySelector('[data-chapter-prev]');
+    const nextChapter = document.querySelector('[data-chapter-next]');
+    let activeChapter = 'diagnostico';
+
+    const setChapter = (chapter, shouldScroll = true) => {
+      activeChapter = chapter;
+      chapterSections.forEach(section => { section.hidden = chapter !== 'all' && section.dataset.chapter !== chapter; });
+      chapterButtons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.chapterFilter === chapter)));
+      const index = chapterOrder.indexOf(chapter);
+      chapterStatus.textContent = chapter === 'all' ? 'Todo' : `${index + 1} / ${chapterOrder.length}`;
+      previousChapter.disabled = chapter === 'all' || index === 0;
+      nextChapter.disabled = chapter === 'all' || index === chapterOrder.length - 1;
+      if (shouldScroll) {
+        const destination = chapter === 'all' ? document.querySelector('#meta-data') : chapterSections.find(section => section.dataset.chapter === chapter);
+        requestAnimationFrame(() => destination?.scrollIntoView({ behavior: 'smooth', block: 'start' }));
+      }
+    };
+
+    chapterButtons.forEach(button => button.addEventListener('click', () => setChapter(button.dataset.chapterFilter)));
+    previousChapter.addEventListener('click', () => setChapter(chapterOrder[Math.max(0, chapterOrder.indexOf(activeChapter) - 1)]));
+    nextChapter.addEventListener('click', () => setChapter(chapterOrder[Math.min(chapterOrder.length - 1, chapterOrder.indexOf(activeChapter) + 1)]));
+
     const menuButton = document.querySelector('.menu-button');
     const nav = document.querySelector('#main-nav');
     menuButton.addEventListener('click', () => {
@@ -898,11 +976,24 @@
       menuButton.setAttribute('aria-expanded', String(open));
       menuButton.textContent = open ? '×' : '☰';
     });
-    nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+    nav.querySelectorAll('a').forEach(link => link.addEventListener('click', event => {
       nav.classList.remove('open');
       menuButton.setAttribute('aria-expanded', 'false');
       menuButton.textContent = '☰';
+      if (!link.hash) return;
+      const target = document.querySelector(link.hash);
+      const section = target?.closest('[data-chapter]');
+      if (!section) return;
+      event.preventDefault();
+      setChapter(section.dataset.chapter, false);
+      history.replaceState(null, '', link.hash);
+      requestAnimationFrame(() => target.scrollIntoView({ behavior: 'smooth', block: 'start' }));
     }));
+
+    const initialTarget = location.hash ? document.querySelector(location.hash) : null;
+    const initialChapter = initialTarget?.closest('[data-chapter]')?.dataset.chapter || 'diagnostico';
+    setChapter(initialChapter, false);
+    if (initialTarget) requestAnimationFrame(() => requestAnimationFrame(() => initialTarget.scrollIntoView({ block: 'start' })));
 
     document.querySelectorAll('.tab').forEach(tab => tab.addEventListener('click', () => {
       document.querySelectorAll('.tab').forEach(item => item.setAttribute('aria-selected', 'false'));
