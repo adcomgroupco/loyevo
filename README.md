@@ -1,11 +1,12 @@
-# Loyevo · Diagnóstico inicial de adquisición
+# Loyevo · Centro de diagnósticos estratégicos
 
-Centro de documentos web para revisar el ecosistema público de Loyevo y construir una estrategia de Meta enfocada en adquirir **mandantes**: personas que necesitan enviar objetos entre ciudades.
+Centro de documentos web para revisar producto, mercado, posicionamiento y adquisición de Loyevo.
 
 ## Entregable
 
 - `index.html`: hub principal y punto de entrada a los entregables.
-- `diagnostico-inicial.html`: diagnóstico navegable, responsive e imprimible.
+- `diagnostico-producto-mercado.html`: diagnóstico condensado de posicionamiento, barreras, canales, audiencias, competencia, DOFA y prioridades.
+- `diagnostico-inicial.html`: diagnóstico de pauta y adquisición, navegable, responsive e imprimible.
 - No requiere instalación, dependencias ni proceso de compilación.
 - Puede abrirse directamente o publicarse con GitHub Pages.
 
