@@ -24,6 +24,7 @@ Centro de documentos web para revisar producto, mercado, posicionamiento y adqui
 - Priorización de oportunidades.
 - Journey ideal desde anuncio hasta mandado entregado.
 - Arquitectura de Meta: prospección, retargeting y laboratorio creativo, con jerarquía y convención de nombres.
+- Ejercicio de proyección con $6.000.000 COP mensuales a tres meses: rampa de reparto, ejecución mes a mes, costo estimado por KPI y resultados en escenario pesimista, realista y optimista.
 - Auditoría de 94 anuncios, copies, formatos, CTA y piezas de mayor inversión.
 - Territorios de comunicación e ideas de captación para mandantes.
 - Mapa de eventos y tablero de KPI.

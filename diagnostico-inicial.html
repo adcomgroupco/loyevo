@@ -374,6 +374,59 @@
     .footer-inner { display: flex; justify-content: space-between; gap: 20px; }
     .progress { position: fixed; z-index: 40; left: 0; top: 0; height: 3px; width: var(--progress, 0%); background: var(--pink); }
 
+    /* Proyección de inversión */
+    .proj-band { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 22px; }
+    .proj-month { padding: 22px; border: 1px solid var(--line); border-radius: 18px; background: white; }
+    .proj-month-top { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+    .proj-month small { color: var(--pink); text-transform: uppercase; letter-spacing: .08em; font-size: 10px; font-weight: 800; }
+    .proj-month b { font: 800 21px/1 Poppins, sans-serif; letter-spacing: -.04em; }
+    .proj-month > p { margin: 8px 0 16px; color: var(--muted); font-size: 12px; }
+    .split-stack { height: 11px; display: flex; gap: 3px; margin-bottom: 15px; }
+    .split-stack span { width: var(--share); border-radius: 99px; background: var(--swatch); }
+    .split-legend { display: grid; gap: 9px; }
+    .split-legend div { display: grid; grid-template-columns: 9px 1fr auto; gap: 9px; align-items: center; }
+    .split-legend div::before { content: ""; width: 9px; height: 9px; border-radius: 3px; background: var(--swatch); }
+    .split-legend b { font-size: 12px; font-weight: 600; }
+    .split-legend span { color: var(--muted); font-size: 11px; font-weight: 800; }
+
+    .chart-card { margin-top: 20px; padding: 26px; border: 1px solid var(--line); border-radius: var(--radius); background: white; }
+    .chart-card h3 { font-size: 21px; }
+    .chart-card > p { margin: 7px 0 18px; color: var(--muted); font-size: 13px; }
+    .chart-scroll { overflow-x: auto; }
+    .chart-figure { min-width: 540px; width: 100%; height: auto; display: block; font-family: Poppins, sans-serif; }
+    .chart-legend { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 16px; color: var(--muted); font-size: 12px; font-weight: 700; }
+    .chart-legend span { display: flex; align-items: center; gap: 8px; }
+    .chart-legend i { width: 12px; height: 12px; border-radius: 4px; background: var(--swatch); }
+
+    .scenario-card { overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius); background: white; box-shadow: var(--shadow); }
+    .scenario-top { display: grid; grid-template-columns: .34fr 1.66fr; }
+    .scenario-flag { padding: 30px; display: flex; flex-direction: column; justify-content: space-between; color: white; background: var(--ink); }
+    .scenario-flag small { color: #bdb8c1; text-transform: uppercase; letter-spacing: .09em; font-size: 10px; font-weight: 800; }
+    .scenario-flag strong { display: block; margin: 16px 0 6px; font: 800 clamp(30px, 3.4vw, 42px)/.95 Poppins, sans-serif; letter-spacing: -.05em; }
+    .scenario-flag span { color: #bdb8c1; font-size: 12px; }
+    .scenario-flag em { margin-top: 20px; color: white; font-style: normal; font-size: 12px; font-weight: 700; }
+    .scenario-flag.is-real { background: var(--pink); }
+    .scenario-flag.is-real small, .scenario-flag.is-real span { color: rgba(255,255,255,.78); }
+    .scenario-flag.is-opt { background: var(--navy); }
+    .scenario-body { padding: 30px; min-width: 0; }
+    .scenario-body > h3 { font-size: 24px; }
+    .scenario-body > p { max-width: 720px; margin: 8px 0 22px; color: var(--muted); font-size: 14px; }
+    .assumption-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 9px; margin-bottom: 20px; }
+    .assumption { padding: 13px; border-radius: 12px; background: var(--paper); }
+    .assumption small { display: block; color: var(--pink); text-transform: uppercase; letter-spacing: .06em; font-size: 9px; font-weight: 800; }
+    .assumption b { display: block; margin-top: 6px; font: 800 16px Poppins, sans-serif; letter-spacing: -.03em; }
+    .performance-table.compact { min-width: 720px; }
+    .performance-table.wide { min-width: 900px; }
+    .performance-table.compact th, .performance-table.compact td { padding: 12px 13px; }
+    .performance-table tfoot td { border-top: 1px solid var(--ink); border-bottom: 0; font-weight: 800; background: var(--paper); }
+    .performance-table td.num, .performance-table th.num { text-align: right; }
+
+    .guard-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 20px; }
+    .guard { padding: 20px; border: 1px solid var(--line); border-radius: 16px; background: white; }
+    .guard small { display: block; margin-bottom: 8px; color: var(--pink); text-transform: uppercase; letter-spacing: .07em; font-size: 10px; font-weight: 800; }
+    .guard b { display: block; margin-bottom: 7px; font-size: 15px; }
+    .guard p { margin: 0; color: var(--muted); font-size: 12px; }
+
     @media (hover: hover) {
       .metric-card, .scope-card, .score-item, .finding, .flow-step, .funnel-status, .event-map, .kpi-card, .audit-card, .creative-finding, .creative-rule, .phase-card, .education-card, .naming-box, details, .source { transition: transform .2s ease, box-shadow .2s ease,border-color .2s ease; }
       .metric-card:hover, .scope-card:hover, .score-item:hover, .finding:hover, .flow-step:hover, .funnel-status:hover, .event-map:hover, .kpi-card:hover, .audit-card:hover, .creative-finding:hover, .creative-rule:hover, .phase-card:hover, .education-card:hover, .naming-box:hover, details:hover, .source:hover { transform: translateY(-3px); border-color: rgba(237,10,120,.42); box-shadow: 0 14px 30px rgba(17,24,39,.14); }
@@ -410,6 +463,10 @@
       .name-list { grid-template-columns: 1fr; }
       .audit-grid { grid-template-columns: repeat(2, 1fr); }
       .creative-rules, .education-band { grid-template-columns: repeat(2, 1fr); }
+      .proj-band, .guard-grid { grid-template-columns: repeat(2, 1fr); }
+      .scenario-top { grid-template-columns: 1fr; }
+      .scenario-flag { min-height: 150px; }
+      .assumption-grid { grid-template-columns: repeat(3, 1fr); }
       .priority { grid-template-columns: 42px 1fr; }
       .priority p { grid-column: 2; }
       .priority time { grid-column: 2; justify-self: start; }
@@ -435,6 +492,9 @@
       .campaign-tabs { width: 100%; overflow-x: auto; }
       .tab { white-space: nowrap; }
       .event { grid-template-columns: 1fr; gap: 3px; }
+      .proj-band, .guard-grid { grid-template-columns: 1fr; }
+      .assumption-grid { grid-template-columns: repeat(2, 1fr); }
+      .scenario-body, .scenario-flag, .chart-card { padding: 22px; }
       .footer-inner { flex-direction: column; }
     }
     @media print {
@@ -485,6 +545,7 @@
         <a href="#resumen">Diagnóstico</a>
         <a href="#hallazgos">Hallazgos</a>
         <a href="#estructura">Estructura ideal</a>
+        <a href="#proyeccion">Proyección</a>
         <a href="#creatividad">Creatividad</a>
         <a href="#medicion">Medición</a>
         <a href="#siguientes-pasos">Siguientes pasos</a>
@@ -735,6 +796,331 @@
             <div><small>Anuncio</small><code>AD_[ANGULO]_[FORMATO]_[HOOK]_V01</code></div>
           </div>
         </aside>
+      </div>
+    </section>
+
+    <section id="proyeccion" data-chapter="captacion">
+      <div class="wrap">
+        <div class="section-heading">
+          <div><p class="kicker">Ejercicio de proyección</p><h2>Seis millones al mes.<br>Tres meses de evidencia.</h2></div>
+          <p>Cómo se aplicarían esos porcentajes con una inversión real de $6.000.000 COP mensuales, qué debería ocurrir cada mes y qué resultado entrega en un escenario pesimista, realista y optimista.</p>
+        </div>
+
+        <div class="notice" role="note">
+          <span class="notice-icon">!</span>
+          <div><strong>Esto es un ejercicio de planeación, no una promesa de resultados</strong><p>Los costos por impresión, clic, vista de landing y registro parten del histórico real de la cuenta. Las tasas de conversión hacia cotización, pago y entrega son hipótesis, porque hoy no existe un solo Purchase atribuido. Cada cifra proyectada debe reemplazarse por dato medido apenas el evento de mandado pagado empiece a registrar.</p></div>
+        </div>
+
+        <div class="metric-grid">
+          <article class="metric-card"><div class="metric-card-top"><small>Inversión mensual</small><span class="icon-badge"><svg class="icon" aria-hidden="true"><use href="#icon-wallet"></use></svg></span></div><strong>$6,00 M</strong><span>COP · $200.000 por día</span></article>
+          <article class="metric-card"><div class="metric-card-top"><small>Inversión total</small><span class="icon-badge"><svg class="icon" aria-hidden="true"><use href="#icon-calendar"></use></svg></span></div><strong>$18,00 M</strong><span>COP · 3 meses de piloto</span></article>
+          <article class="metric-card"><div class="metric-card-top"><small>A conversión</small><span class="icon-badge"><svg class="icon" aria-hidden="true"><use href="#icon-target"></use></svg></span></div><strong>$15,90 M</strong><span>88,3% · prospección + retargeting</span></article>
+          <article class="metric-card"><div class="metric-card-top"><small>A aprendizaje</small><span class="icon-badge"><svg class="icon" aria-hidden="true"><use href="#icon-layers"></use></svg></span></div><strong>$2,10 M</strong><span>11,7% · laboratorio creativo</span></article>
+        </div>
+
+        <div class="proj-band" aria-label="Reparto mensual de la inversión">
+          <article class="proj-month">
+            <div class="proj-month-top"><small>Mes 1 · Instalar</small><b>$6.000.000</b></div>
+            <p>El retargeting arranca en mínimo porque todavía no hay audiencia acumulada; el laboratorio arranca en máximo porque todavía no hay concepto ganador.</p>
+            <div class="split-stack" aria-hidden="true"><span style="--share:75%;--swatch:var(--pink)"></span><span style="--share:10%;--swatch:var(--navy)"></span><span style="--share:15%;--swatch:#b9b3bd"></span></div>
+            <div class="split-legend">
+              <div style="--swatch:var(--pink)"><b>Prospección</b><span>75% · $4.500.000</span></div>
+              <div style="--swatch:var(--navy)"><b>Retargeting</b><span>10% · $600.000</span></div>
+              <div style="--swatch:#b9b3bd"><b>Laboratorio</b><span>15% · $900.000</span></div>
+            </div>
+          </article>
+          <article class="proj-month">
+            <div class="proj-month-top"><small>Mes 2 · Optimizar</small><b>$6.000.000</b></div>
+            <p>Mes en que la hipótesis 70 / 20 / 10 se cumple exactamente: ya hay audiencias que recuperar y conceptos validados que sostener.</p>
+            <div class="split-stack" aria-hidden="true"><span style="--share:70%;--swatch:var(--pink)"></span><span style="--share:20%;--swatch:var(--navy)"></span><span style="--share:10%;--swatch:#b9b3bd"></span></div>
+            <div class="split-legend">
+              <div style="--swatch:var(--pink)"><b>Prospección</b><span>70% · $4.200.000</span></div>
+              <div style="--swatch:var(--navy)"><b>Retargeting</b><span>20% · $1.200.000</span></div>
+              <div style="--swatch:#b9b3bd"><b>Laboratorio</b><span>10% · $600.000</span></div>
+            </div>
+          </article>
+          <article class="proj-month">
+            <div class="proj-month-top"><small>Mes 3 · Escalar</small><b>$6.000.000</b></div>
+            <p>La intención acumulada ya justifica más recuperación. La prospección cede cinco puntos hacia el tramo más barato del embudo.</p>
+            <div class="split-stack" aria-hidden="true"><span style="--share:65%;--swatch:var(--pink)"></span><span style="--share:25%;--swatch:var(--navy)"></span><span style="--share:10%;--swatch:#b9b3bd"></span></div>
+            <div class="split-legend">
+              <div style="--swatch:var(--pink)"><b>Prospección</b><span>65% · $3.900.000</span></div>
+              <div style="--swatch:var(--navy)"><b>Retargeting</b><span>25% · $1.500.000</span></div>
+              <div style="--swatch:#b9b3bd"><b>Laboratorio</b><span>10% · $600.000</span></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="performance-wrap" role="region" aria-label="Presupuesto mensual y diario por campaña" tabindex="0">
+          <table class="performance-table compact">
+            <thead><tr><th>Mes</th><th class="num">Prospección</th><th class="num">Retargeting</th><th class="num">Laboratorio</th><th class="num">Inversión a conversión</th><th class="num">Presupuesto diario</th></tr></thead>
+            <tbody>
+              <tr><td>Mes 1 · instalar la señal</td><td class="num">$4.500.000 <b>75%</b></td><td class="num">$600.000 <b>10%</b></td><td class="num">$900.000 <b>15%</b></td><td class="num">$5.100.000</td><td class="num">$150.000 / $20.000 / $30.000</td></tr>
+              <tr><td>Mes 2 · optimizar el recorrido</td><td class="num">$4.200.000 <b>70%</b></td><td class="num">$1.200.000 <b>20%</b></td><td class="num">$600.000 <b>10%</b></td><td class="num">$5.400.000</td><td class="num">$140.000 / $40.000 / $20.000</td></tr>
+              <tr><td>Mes 3 · escalar lo que sostiene</td><td class="num">$3.900.000 <b>65%</b></td><td class="num">$1.500.000 <b>25%</b></td><td class="num">$600.000 <b>10%</b></td><td class="num">$5.400.000</td><td class="num">$130.000 / $50.000 / $20.000</td></tr>
+            </tbody>
+            <tfoot><tr><td>Total 90 días</td><td class="num">$12.600.000 · 70,0%</td><td class="num">$3.300.000 · 18,3%</td><td class="num">$2.100.000 · 11,7%</td><td class="num">$15.900.000</td><td class="num">$200.000 diarios</td></tr></tfoot>
+          </table>
+        </div>
+        <p class="chart-note">El promedio de los tres meses aterriza en la hipótesis 70 / 20 / 10 del capítulo anterior. La rampa existe porque el retargeting sin audiencia acumulada gasta mal, y el laboratorio es el único que puede encontrar el concepto que la prospección necesita.</p>
+
+        <div style="height:64px"></div>
+        <div class="section-heading">
+          <div><p class="kicker">Ejecución</p><h2>Cada mes compra<br>una decisión distinta.</h2></div>
+          <p>El primer mes no compra mandados: compra la señal que permitirá comprarlos. Cada tramo cierra con una puerta que decide si el siguiente se ejecuta, se corrige o se apaga.</p>
+        </div>
+        <div class="roadmap">
+          <article class="phase"><div class="phase-card"><div class="phase-head"><div><small>Mes 1 · días 1–30</small><h3>Instalar la señal</h3></div><span class="icon-badge"><svg class="icon" aria-hidden="true"><use href="#icon-target"></use></svg></span></div><ul><li>Publicar <b>Purchase</b> con valor en COP y <b>MandadoDelivered</b> antes del primer peso invertido.</li><li>Una campaña de prospección, dos conjuntos por corredor, 6–8 anuncios.</li><li>Optimizar a cotización o registro; Purchase todavía no tiene volumen para aprender.</li><li>Laboratorio al 15%: 3–5 conceptos nuevos por semana, una variable por celda.</li><li>Retargeting mínimo mientras se construyen las audiencias.</li></ul><p class="gate">Puerta 1: el evento de mandado pagado recibe datos sin duplicados y la cotización semanal supera el umbral acordado.</p></div></article>
+          <article class="phase"><div class="phase-card"><div class="phase-head"><div><small>Mes 2 · días 31–60</small><h3>Optimizar el recorrido</h3></div><span class="icon-badge"><svg class="icon" aria-hidden="true"><use href="#icon-route"></use></svg></span></div><ul><li>Migrar los ganadores del laboratorio a prospección sin editar el anuncio original.</li><li>Abrir retargeting al 20% con las tres ventanas: 1–3, 4–14 y 15–30 días.</li><li>Primera lectura real de costo por cotización y de tasa cotización → pago.</li><li>Apagar el corredor con peor economía en lugar de subirle la puja.</li><li>Conciliar semanalmente Meta contra pagos y entregas.</li></ul><p class="gate">Puerta 2: el costo por mandado pagado se sostiene bajo el techo acordado y la entrega supera el 80%.</p></div></article>
+          <article class="phase"><div class="phase-card"><div class="phase-head"><div><small>Mes 3 · días 61–90</small><h3>Escalar lo que sostiene</h3></div><span class="icon-badge"><svg class="icon" aria-hidden="true"><use href="#icon-chart"></use></svg></span></div><ul><li>Concentrar el incremento en el corredor con mejor margen, no repartirlo.</li><li>Retargeting al 25% con exclusión de compradores recientes.</li><li>Medir repetición a 30 días de la primera cohorte del mes 1.</li><li>Decidir con datos: escalar, sostener o apagar.</li><li>Cerrar el piloto con costo por mandado entregado y margen por corredor.</li></ul><p class="gate">Puerta 3: tres semanas consecutivas de CPA estable, sin caída de match ni aumento de cancelaciones.</p></div></article>
+        </div>
+
+        <div style="height:64px"></div>
+        <div class="section-heading">
+          <div><p class="kicker">Costo estimado por KPI</p><h2>Lo que costaría<br>cada paso del embudo.</h2></div>
+          <p>Costos en estado maduro, equivalentes al mes 2. El mes 1 corre un 30% más caro por fase de aprendizaje y el mes 3 un 12% más barato por acumulación de señal.</p>
+        </div>
+        <div class="performance-wrap" role="region" aria-label="Costo estimado por KPI en cada escenario" tabindex="0">
+          <table class="performance-table compact">
+            <thead><tr><th>KPI</th><th class="num">Referencia histórica</th><th class="num">Pesimista</th><th class="num">Realista</th><th class="num">Optimista</th></tr></thead>
+            <tbody>
+              <tr><td>CPM · mil impresiones</td><td class="num">$3.861 <b>alcance / tráfico</b></td><td class="num">$17.000</td><td class="num">$15.000</td><td class="num">$13.000</td></tr>
+              <tr><td>CPC · clic en el enlace</td><td class="num">$114 <b>objetivo tráfico</b></td><td class="num">$944</td><td class="num">$750</td><td class="num">$565</td></tr>
+              <tr><td>Vista de landing</td><td class="num">$1.270 <b>línea mandantes</b></td><td class="num">$1.259</td><td class="num">$962</td><td class="num">$689</td></tr>
+              <tr><td>Cotización iniciada</td><td class="num">Sin dato</td><td class="num">$12.593</td><td class="num">$6.410</td><td class="num">$4.308</td></tr>
+              <tr><td>Registro de mandante</td><td class="num">$47.435 <b>31 leads</b></td><td class="num">$46.639</td><td class="num">$16.869</td><td class="num">$10.507</td></tr>
+              <tr><td>Mandado pagado · <abbr class="term-tip" tabindex="0" data-tip="Costo por adquisición: inversión dividida entre mandados pagados atribuidos.">CPA</abbr></td><td class="num">Sin dato · 0 Purchase</td><td class="num">$310.928</td><td class="num">$76.678</td><td class="num">$42.030</td></tr>
+              <tr><td>Mandado entregado · <b>KPI norte</b></td><td class="num">Sin dato</td><td class="num">$414.571</td><td class="num">$90.209</td><td class="num">$46.700</td></tr>
+            </tbody>
+            <tfoot><tr><td>Conversión landing → mandado pagado</td><td class="num">2,68% landing → lead</td><td class="num">0,41%</td><td class="num">1,25%</td><td class="num">1,64%</td></tr></tfoot>
+          </table>
+        </div>
+        <div class="interpretation"><strong>Cómo se construyó el escenario pesimista</strong><p>No es un supuesto arbitrario: replica el desempeño que la cuenta ya demostró. Su costo por vista de landing ($1.259) y su costo por registro ($46.639) son prácticamente los históricos, y su tasa de landing a registro es el 2,7% medido en la línea de mandantes. Pesimista significa, literalmente, que el recorrido no mejora.</p></div>
+
+        <div style="height:64px"></div>
+        <div class="section-heading">
+          <div><p class="kicker">Proyección de resultados</p><h2>Tres escenarios.<br>La misma inversión.</h2></div>
+          <p>Los tres parten de $18.000.000 en 90 días y se separan únicamente por las tasas de conversión del recorrido. Cambie de pestaña para ver el detalle mes a mes.</p>
+        </div>
+        <div class="campaign-tabs" role="tablist" aria-label="Escenarios de proyección">
+          <button class="tab" role="tab" aria-selected="false" data-panel="scenario-pes">Pesimista</button>
+          <button class="tab" role="tab" aria-selected="true" data-panel="scenario-real">Realista</button>
+          <button class="tab" role="tab" aria-selected="false" data-panel="scenario-opt">Optimista</button>
+        </div>
+
+        <div id="scenario-pes" class="tab-panel" role="tabpanel">
+          <article class="scenario-card">
+            <div class="scenario-top">
+              <div class="scenario-flag"><div><small>Escenario pesimista</small><strong>50</strong><span>mandados pagados en 90 días</span></div><em>CPA $360.000 · 38 entregados</em></div>
+              <div class="scenario-body">
+                <h3>El recorrido no cambia</h3>
+                <p>La pauta se enciende, pero la landing, el cotizador y la medición siguen como están. Meta compra tráfico correcto hacia un embudo que sigue perdiendo a la gente en el mismo punto.</p>
+                <div class="assumption-grid">
+                  <div class="assumption"><small>CPM</small><b>$17.000</b></div>
+                  <div class="assumption"><small>CTR enlace</small><b>1,8%</b></div>
+                  <div class="assumption"><small>Vista → cotiza</small><b>10%</b></div>
+                  <div class="assumption"><small>Cotiza → paga</small><b>4,1%</b></div>
+                  <div class="assumption"><small>Paga → entrega</small><b>75%</b></div>
+                </div>
+                <div class="performance-wrap" role="region" aria-label="Resultados mensuales del escenario pesimista" tabindex="0">
+                  <table class="performance-table compact wide">
+                    <thead><tr><th>Mes</th><th class="num">Impresiones</th><th class="num">Clics</th><th class="num">Vistas landing</th><th class="num">Cotizaciones</th><th class="num">Registros</th><th class="num">Pagados</th><th class="num">Entregados</th><th class="num">CPA</th></tr></thead>
+                    <tbody>
+                      <tr><td>Mes 1</td><td class="num">230.769</td><td class="num">4.154</td><td class="num">3.115</td><td class="num">312</td><td class="num">84</td><td class="num">13</td><td class="num">10</td><td class="num"><b>$404.207</b></td></tr>
+                      <tr><td>Mes 2</td><td class="num">317.647</td><td class="num">5.718</td><td class="num">4.288</td><td class="num">429</td><td class="num">116</td><td class="num">17</td><td class="num">13</td><td class="num"><b>$310.928</b></td></tr>
+                      <tr><td>Mes 3</td><td class="num">360.963</td><td class="num">6.497</td><td class="num">4.873</td><td class="num">487</td><td class="num">132</td><td class="num">20</td><td class="num">15</td><td class="num"><b>$273.617</b></td></tr>
+                    </tbody>
+                    <tfoot><tr><td>Total 90 días</td><td class="num">909.379</td><td class="num">16.369</td><td class="num">12.277</td><td class="num">1.228</td><td class="num">331</td><td class="num">50</td><td class="num">38</td><td class="num">$360.000</td></tr></tfoot>
+                  </table>
+                </div>
+                <p class="chart-note">Lectura: $18.000.000 compran menos de un mandado pagado por día. A este costo la decisión correcta no es subir el presupuesto, es detener la inversión y arreglar el recorrido.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div id="scenario-real" class="tab-panel active" role="tabpanel">
+          <article class="scenario-card">
+            <div class="scenario-top">
+              <div class="scenario-flag is-real"><div><small>Escenario realista</small><strong>201</strong><span>mandados pagados en 90 días</span></div><em>CPA $89.552 · 172 entregados</em></div>
+              <div class="scenario-body">
+                <h3>El recorrido se arregla antes de encender</h3>
+                <p>La landing cotiza, la ruta viaja con el usuario hasta la app y la medición devuelve pago y entrega. La tasa de landing a registro pasa de 2,7% a 5,7%: el doble de lo que la cuenta ya logró, no una cifra inventada.</p>
+                <div class="assumption-grid">
+                  <div class="assumption"><small>CPM</small><b>$15.000</b></div>
+                  <div class="assumption"><small>CTR enlace</small><b>2,0%</b></div>
+                  <div class="assumption"><small>Vista → cotiza</small><b>15%</b></div>
+                  <div class="assumption"><small>Cotiza → paga</small><b>8,4%</b></div>
+                  <div class="assumption"><small>Paga → entrega</small><b>85%</b></div>
+                </div>
+                <div class="performance-wrap" role="region" aria-label="Resultados mensuales del escenario realista" tabindex="0">
+                  <table class="performance-table compact wide">
+                    <thead><tr><th>Mes</th><th class="num">Impresiones</th><th class="num">Clics</th><th class="num">Vistas landing</th><th class="num">Cotizaciones</th><th class="num">Registros</th><th class="num">Pagados</th><th class="num">Entregados</th><th class="num">CPA</th></tr></thead>
+                    <tbody>
+                      <tr><td>Mes 1</td><td class="num">261.538</td><td class="num">5.231</td><td class="num">4.080</td><td class="num">612</td><td class="num">233</td><td class="num">51</td><td class="num">44</td><td class="num"><b>$99.681</b></td></tr>
+                      <tr><td>Mes 2</td><td class="num">360.000</td><td class="num">7.200</td><td class="num">5.616</td><td class="num">842</td><td class="num">320</td><td class="num">70</td><td class="num">60</td><td class="num"><b>$76.678</b></td></tr>
+                      <tr><td>Mes 3</td><td class="num">409.091</td><td class="num">8.182</td><td class="num">6.382</td><td class="num">957</td><td class="num">364</td><td class="num">80</td><td class="num">68</td><td class="num"><b>$67.476</b></td></tr>
+                    </tbody>
+                    <tfoot><tr><td>Total 90 días</td><td class="num">1.030.629</td><td class="num">20.613</td><td class="num">16.078</td><td class="num">2.412</td><td class="num">916</td><td class="num">201</td><td class="num">172</td><td class="num">$89.552</td></tr></tfoot>
+                  </table>
+                </div>
+                <p class="chart-note">Lectura: 916 registros con intención real de mandar, frente a los 7.553 registros históricos que en su mayoría eran viajeros. El volumen baja ocho veces y el valor sube.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div id="scenario-opt" class="tab-panel" role="tabpanel">
+          <article class="scenario-card">
+            <div class="scenario-top">
+              <div class="scenario-flag is-opt"><div><small>Escenario optimista</small><strong>367</strong><span>mandados pagados en 90 días</span></div><em>CPA $49.046 · 331 entregados</em></div>
+              <div class="scenario-body">
+                <h3>El recorrido se arregla y el concepto pega</h3>
+                <p>Además del recorrido corregido, el laboratorio encuentra temprano un concepto con CTR alto y la oferta encaja en un corredor con liquidez. Es el techo del ejercicio, no su expectativa.</p>
+                <div class="assumption-grid">
+                  <div class="assumption"><small>CPM</small><b>$13.000</b></div>
+                  <div class="assumption"><small>CTR enlace</small><b>2,3%</b></div>
+                  <div class="assumption"><small>Vista → cotiza</small><b>16%</b></div>
+                  <div class="assumption"><small>Cotiza → paga</small><b>10,3%</b></div>
+                  <div class="assumption"><small>Paga → entrega</small><b>90%</b></div>
+                </div>
+                <div class="performance-wrap" role="region" aria-label="Resultados mensuales del escenario optimista" tabindex="0">
+                  <table class="performance-table compact wide">
+                    <thead><tr><th>Mes</th><th class="num">Impresiones</th><th class="num">Clics</th><th class="num">Vistas landing</th><th class="num">Cotizaciones</th><th class="num">Registros</th><th class="num">Pagados</th><th class="num">Entregados</th><th class="num">CPA</th></tr></thead>
+                    <tbody>
+                      <tr><td>Mes 1</td><td class="num">301.775</td><td class="num">6.941</td><td class="num">5.691</td><td class="num">911</td><td class="num">373</td><td class="num">93</td><td class="num">84</td><td class="num"><b>$54.639</b></td></tr>
+                      <tr><td>Mes 2</td><td class="num">415.385</td><td class="num">9.554</td><td class="num">7.834</td><td class="num">1.253</td><td class="num">514</td><td class="num">128</td><td class="num">116</td><td class="num"><b>$42.030</b></td></tr>
+                      <tr><td>Mes 3</td><td class="num">472.028</td><td class="num">10.857</td><td class="num">8.902</td><td class="num">1.424</td><td class="num">584</td><td class="num">146</td><td class="num">131</td><td class="num"><b>$36.986</b></td></tr>
+                    </tbody>
+                    <tfoot><tr><td>Total 90 días</td><td class="num">1.189.188</td><td class="num">27.351</td><td class="num">22.428</td><td class="num">3.588</td><td class="num">1.471</td><td class="num">367</td><td class="num">331</td><td class="num">$49.046</td></tr></tfoot>
+                  </table>
+                </div>
+                <p class="chart-note">Lectura: incluso aquí el mes 3 alcanza 146 mandados pagados, cerca de 34 por semana. Sigue por debajo de las 50 conversiones semanales que Meta necesita para optimizar con estabilidad.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="chart-card">
+          <h3>Mandados pagados por mes</h3>
+          <p>Los mismos $6.000.000 mensuales en los tres escenarios. La diferencia no la produce el presupuesto: la produce la tasa de conversión del recorrido.</p>
+          <div class="chart-scroll">
+            <svg class="chart-figure" viewBox="0 0 760 340" role="img" aria-label="Gráfico de barras de mandados pagados por mes. Mes 1: pesimista 13, realista 51, optimista 93. Mes 2: pesimista 17, realista 70, optimista 128. Mes 3: pesimista 20, realista 80, optimista 146.">
+              <line x1="56" y1="284.0" x2="744" y2="284.0" stroke="#e8e5ea" stroke-width="1"/>
+              <text x="46" y="288.0" text-anchor="end" font-size="11" fill="#6b6872">0</text>
+              <line x1="56" y1="219.5" x2="744" y2="219.5" stroke="#e8e5ea" stroke-width="1"/>
+              <text x="46" y="223.5" text-anchor="end" font-size="11" fill="#6b6872">40</text>
+              <line x1="56" y1="155.0" x2="744" y2="155.0" stroke="#e8e5ea" stroke-width="1"/>
+              <text x="46" y="159.0" text-anchor="end" font-size="11" fill="#6b6872">80</text>
+              <line x1="56" y1="90.5" x2="744" y2="90.5" stroke="#e8e5ea" stroke-width="1"/>
+              <text x="46" y="94.5" text-anchor="end" font-size="11" fill="#6b6872">120</text>
+              <line x1="56" y1="26.0" x2="744" y2="26.0" stroke="#e8e5ea" stroke-width="1"/>
+              <text x="46" y="30.0" text-anchor="end" font-size="11" fill="#6b6872">160</text>
+              <rect x="87.7" y="263.7" width="46" height="20.3" rx="6" fill="#b9b3bd"/>
+              <text x="110.7" y="255.7" text-anchor="middle" font-size="12" font-weight="700" fill="#111827">13</text>
+              <rect x="147.7" y="201.4" width="46" height="82.6" rx="6" fill="#ed0a78"/>
+              <text x="170.7" y="193.4" text-anchor="middle" font-size="12" font-weight="700" fill="#111827">51</text>
+              <rect x="207.7" y="133.6" width="46" height="150.4" rx="6" fill="#1c2c44"/>
+              <text x="230.7" y="125.6" text-anchor="middle" font-size="12" font-weight="700" fill="#111827">93</text>
+              <text x="170.7" y="308" text-anchor="middle" font-size="12" font-weight="700" fill="#111827">Mes 1</text>
+              <rect x="317.0" y="255.9" width="46" height="28.1" rx="6" fill="#b9b3bd"/>
+              <text x="340.0" y="247.9" text-anchor="middle" font-size="12" font-weight="700" fill="#111827">17</text>
+              <rect x="377.0" y="170.5" width="46" height="113.5" rx="6" fill="#ed0a78"/>
+              <text x="400.0" y="162.5" text-anchor="middle" font-size="12" font-weight="700" fill="#111827">70</text>
+              <rect x="437.0" y="76.8" width="46" height="207.2" rx="6" fill="#1c2c44"/>
+              <text x="460.0" y="68.8" text-anchor="middle" font-size="12" font-weight="700" fill="#111827">128</text>
+              <text x="400.0" y="308" text-anchor="middle" font-size="12" font-weight="700" fill="#111827">Mes 2</text>
+              <rect x="546.3" y="252.2" width="46" height="31.8" rx="6" fill="#b9b3bd"/>
+              <text x="569.3" y="244.2" text-anchor="middle" font-size="12" font-weight="700" fill="#111827">20</text>
+              <rect x="606.3" y="155.0" width="46" height="129.0" rx="6" fill="#ed0a78"/>
+              <text x="629.3" y="147.0" text-anchor="middle" font-size="12" font-weight="700" fill="#111827">80</text>
+              <rect x="666.3" y="48.6" width="46" height="235.4" rx="6" fill="#1c2c44"/>
+              <text x="689.3" y="40.6" text-anchor="middle" font-size="12" font-weight="700" fill="#111827">146</text>
+              <text x="629.3" y="308" text-anchor="middle" font-size="12" font-weight="700" fill="#111827">Mes 3</text>
+              <line x1="56" y1="284" x2="744" y2="284" stroke="#c9c4cd" stroke-width="1.5"/>
+            </svg>
+          </div>
+          <div class="chart-legend">
+            <span style="--swatch:#b9b3bd"><i></i>Pesimista · 50 en total</span>
+            <span style="--swatch:var(--pink)"><i></i>Realista · 201 en total</span>
+            <span style="--swatch:var(--navy)"><i></i>Optimista · 367 en total</span>
+          </div>
+        </div>
+
+        <div class="chart-card">
+          <h3>Mandados entregados acumulados</h3>
+          <p>El KPI norte del diagnóstico. Al cierre de los 90 días la distancia entre el peor y el mejor escenario es de 293 entregas con exactamente la misma inversión.</p>
+          <div class="chart-scroll">
+            <svg class="chart-figure" viewBox="0 0 760 340" role="img" aria-label="Gráfico de líneas de mandados entregados acumulados. Pesimista: 10, 23 y 38. Realista: 44, 104 y 172. Optimista: 84, 200 y 331.">
+              <line x1="56" y1="288.0" x2="740" y2="288.0" stroke="#e8e5ea" stroke-width="1"/>
+              <text x="46" y="292.0" text-anchor="end" font-size="11" fill="#6b6872">0</text>
+              <line x1="56" y1="235.6" x2="740" y2="235.6" stroke="#e8e5ea" stroke-width="1"/>
+              <text x="46" y="239.6" text-anchor="end" font-size="11" fill="#6b6872">70</text>
+              <line x1="56" y1="183.2" x2="740" y2="183.2" stroke="#e8e5ea" stroke-width="1"/>
+              <text x="46" y="187.2" text-anchor="end" font-size="11" fill="#6b6872">140</text>
+              <line x1="56" y1="130.8" x2="740" y2="130.8" stroke="#e8e5ea" stroke-width="1"/>
+              <text x="46" y="134.8" text-anchor="end" font-size="11" fill="#6b6872">210</text>
+              <line x1="56" y1="78.4" x2="740" y2="78.4" stroke="#e8e5ea" stroke-width="1"/>
+              <text x="46" y="82.4" text-anchor="end" font-size="11" fill="#6b6872">280</text>
+              <line x1="56" y1="26.0" x2="740" y2="26.0" stroke="#e8e5ea" stroke-width="1"/>
+              <text x="46" y="30.0" text-anchor="end" font-size="11" fill="#6b6872">350</text>
+              <text x="284.0" y="312" text-anchor="middle" font-size="12" font-weight="700" fill="#111827">Mes 1</text>
+              <text x="512.0" y="312" text-anchor="middle" font-size="12" font-weight="700" fill="#111827">Mes 2</text>
+              <text x="740.0" y="312" text-anchor="middle" font-size="12" font-weight="700" fill="#111827">Mes 3</text>
+              <path d="M56.0 288.0 L284.0 225.1 L512.0 138.3 L740.0 40.2" fill="none" stroke="#1c2c44" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="284.0" cy="225.1" r="5" fill="#fff" stroke="#1c2c44" stroke-width="3"/>
+              <circle cx="512.0" cy="138.3" r="5" fill="#fff" stroke="#1c2c44" stroke-width="3"/>
+              <circle cx="740.0" cy="40.2" r="5" fill="#fff" stroke="#1c2c44" stroke-width="3"/>
+              <text x="732.0" y="26.2" text-anchor="end" font-size="13" font-weight="800" fill="#1c2c44">331</text>
+              <path d="M56.0 288.0 L284.0 255.1 L512.0 210.1 L740.0 159.2" fill="none" stroke="#ed0a78" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="284.0" cy="255.1" r="5" fill="#fff" stroke="#ed0a78" stroke-width="3"/>
+              <circle cx="512.0" cy="210.1" r="5" fill="#fff" stroke="#ed0a78" stroke-width="3"/>
+              <circle cx="740.0" cy="159.2" r="5" fill="#fff" stroke="#ed0a78" stroke-width="3"/>
+              <text x="732.0" y="145.2" text-anchor="end" font-size="13" font-weight="800" fill="#ed0a78">172</text>
+              <path d="M56.0 288.0 L284.0 280.5 L512.0 270.8 L740.0 259.6" fill="none" stroke="#b9b3bd" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="284.0" cy="280.5" r="5" fill="#fff" stroke="#b9b3bd" stroke-width="3"/>
+              <circle cx="512.0" cy="270.8" r="5" fill="#fff" stroke="#b9b3bd" stroke-width="3"/>
+              <circle cx="740.0" cy="259.6" r="5" fill="#fff" stroke="#b9b3bd" stroke-width="3"/>
+              <text x="732.0" y="245.6" text-anchor="end" font-size="13" font-weight="800" fill="#b9b3bd">38</text>
+              <line x1="56" y1="288" x2="740" y2="288" stroke="#c9c4cd" stroke-width="1.5"/>
+            </svg>
+          </div>
+          <div class="chart-legend">
+            <span style="--swatch:#b9b3bd"><i></i>Pesimista · 38 entregados</span>
+            <span style="--swatch:var(--pink)"><i></i>Realista · 172 entregados</span>
+            <span style="--swatch:var(--navy)"><i></i>Optimista · 331 entregados</span>
+          </div>
+        </div>
+
+        <div style="height:64px"></div>
+        <div class="section-heading">
+          <div><p class="kicker">Punto de equilibrio</p><h2>Cuánto debe dejar<br>cada mandado.</h2></div>
+          <p>El diagnóstico no tiene ticket ni margen por corredor. Esta tabla convierte ese pendiente en un umbral concreto: el margen de contribución que cada escenario exige para que los $18.000.000 se recuperen dentro de los 90 días.</p>
+        </div>
+        <div class="performance-wrap" role="region" aria-label="Margen de contribución requerido por escenario" tabindex="0">
+          <table class="performance-table compact">
+            <thead><tr><th>Escenario</th><th class="num">Costo por mandado entregado</th><th class="num">Si el mandante hace 1 mandado</th><th class="num">Si hace 2 mandados</th><th class="num">Si hace 3 mandados</th></tr></thead>
+            <tbody>
+              <tr><td>Pesimista</td><td class="num"><b>$473.684</b></td><td class="num">$473.684</td><td class="num">$236.842</td><td class="num">$157.895</td></tr>
+              <tr><td>Realista</td><td class="num"><b>$104.651</b></td><td class="num">$104.651</td><td class="num">$52.326</td><td class="num">$34.884</td></tr>
+              <tr><td>Optimista</td><td class="num"><b>$54.381</b></td><td class="num">$54.381</td><td class="num">$27.190</td><td class="num">$18.127</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="chart-note">Margen de contribución requerido por mandado entregado, calculado sobre la inversión total de $18.000.000 —incluido el laboratorio creativo— y no solo sobre la inversión a conversión. La repetición es la variable que más rápido baja el umbral: es la razón por la que el KPI norte es la entrega y no la compra.</p>
+
+        <div style="height:58px"></div>
+        <div class="section-heading">
+          <div><p class="kicker">Reglas del piloto</p><h2>Qué detiene<br>la inversión.</h2></div>
+          <p>Un presupuesto de esta escala solo es defendible si las condiciones de corte se acuerdan antes de encenderlo, no cuando el resultado ya decepcionó.</p>
+        </div>
+        <div class="guard-grid">
+          <article class="guard"><small>Umbral de aprendizaje</small><b>Ningún escenario llega a 50 conversiones semanales</b><p>El mejor mes del mejor escenario alcanza 34 por semana. Mientras tanto, optimizar a cotización o registro y usar Purchase como lectura de negocio, no como evento de puja.</p></article>
+          <article class="guard"><small>Corte por costo</small><b>Costo por cotización al doble del supuesto</b><p>Si en la semana 6 supera $12.820, se detiene la escala y se revisa landing, oferta y ruta. Lo que falla en ese punto no es la puja.</p></article>
+          <article class="guard"><small>Corte por calidad</small><b>Match, cancelación y entrega</b><p>No se escala ningún corredor si cae el match rate, suben las cancelaciones o la entrega baja del 80%, aunque el CPA se vea bien.</p></article>
+          <article class="guard"><small>Condición de entrada</small><b>Sin evento de pago, no hay piloto</b><p>Si al cierre del mes 1 el evento de mandado pagado no registra con valor y sin duplicados, la inversión del mes 2 se aplaza. El ejercicio completo depende de esa señal.</p></article>
+        </div>
+        <div class="interpretation"><strong>El hallazgo del ejercicio</strong><p>Entre el escenario pesimista y el optimista el CPM solo se mueve un 31% —de $17.000 a $13.000—, pero el resultado se multiplica por siete: de 50 a 367 mandados pagados. Con la misma inversión, la palanca no está en el precio de la subasta ni en el tamaño del presupuesto: está en el recorrido y en la medición. Esa es la razón por la que este ejercicio va después del diagnóstico y no antes.</p></div>
       </div>
     </section>
 
@@ -1020,12 +1406,16 @@
     setChapter(initialChapter, false);
     if (initialTarget) requestAnimationFrame(() => requestAnimationFrame(() => initialTarget.scrollIntoView({ block: 'start' })));
 
-    document.querySelectorAll('.tab').forEach(tab => tab.addEventListener('click', () => {
-      document.querySelectorAll('.tab').forEach(item => item.setAttribute('aria-selected', 'false'));
-      document.querySelectorAll('.tab-panel').forEach(panel => panel.classList.remove('active'));
-      tab.setAttribute('aria-selected', 'true');
-      document.getElementById(tab.dataset.panel).classList.add('active');
-    }));
+    document.querySelectorAll('[role="tablist"]').forEach(list => {
+      const tabs = Array.from(list.querySelectorAll('.tab'));
+      const panels = tabs.map(tab => document.getElementById(tab.dataset.panel));
+      tabs.forEach((tab, index) => tab.addEventListener('click', () => {
+        tabs.forEach(item => item.setAttribute('aria-selected', 'false'));
+        panels.forEach(panel => panel?.classList.remove('active'));
+        tab.setAttribute('aria-selected', 'true');
+        panels[index]?.classList.add('active');
+      }));
+    });
 
     const progress = document.querySelector('.progress');
     const setProgress = () => {
