@@ -444,6 +444,18 @@
       section { break-inside: avoid; padding: 34px 0; }
       body { background: white; }
     }
+    .connected-docs{padding:76px 0;border-top:1px solid var(--line);background:var(--paper)}
+    .connected-head{display:grid;grid-template-columns:1fr .75fr;gap:60px;align-items:end;margin-bottom:32px}
+    .connected-head h2{margin:0;font-size:clamp(32px,4.5vw,52px);line-height:1.03;letter-spacing:-.04em}
+    .connected-head>p{margin:0;color:var(--muted);font-size:15px}
+    .connected-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .connection{min-height:235px;padding:24px;display:flex;flex-direction:column;border:1px solid var(--line);border-radius:18px;background:#fff;text-decoration:none;transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}
+    .connection:hover{transform:translateY(-3px);border-color:var(--pink);box-shadow:var(--shadow)}
+    .connection small{color:var(--pink);font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+    .connection h3{margin:24px 0 10px;font-size:21px;line-height:1.12;letter-spacing:-.03em}
+    .connection p{margin:0;color:var(--muted);font-size:13px}
+    .connection span{margin-top:auto;padding-top:22px;color:var(--pink);font-size:12px;font-weight:800}
+    @media(max-width:800px){.connected-head,.connected-grid{grid-template-columns:1fr}.connected-head{gap:18px}.connection{min-height:auto}.connection span{margin-top:24px}}
   </style>
 </head>
 <body>
@@ -936,6 +948,19 @@
           </div>
         </div>
         <div class="schedule-legend" aria-label="Lectura del calendario"><span><svg class="icon" aria-hidden="true"><use href="#icon-layers"></use></svg>Los bloques superpuestos son trabajo paralelo.</span><span><svg class="icon" aria-hidden="true"><use href="#icon-check"></use></svg>Las puertas permiten continuar, corregir o detener.</span><span>Semanas contadas desde el kickoff.</span></div>
+      </div>
+    </section>
+    <section class="connected-docs" id="conexiones" aria-labelledby="conexiones-title">
+      <div class="wrap">
+        <div class="connected-head">
+          <div><p class="kicker">Ruta conectada · DOC 03</p><h2 id="conexiones-title">Adquirir después<br>de aprender.</h2></div>
+          <p>Pauta y adquisición amplifica una propuesta priorizada y una demanda entendida. Sus datos regresan a producto y CRM para corregir el siguiente ciclo.</p>
+        </div>
+        <div class="connected-grid">
+          <a class="connection" href="diagnostico-producto-mercado.html#canales"><small>Hallazgos → producto</small><h3>Entender la fricción de los activos</h3><p>La lectura de sitio, app, contenido y referidos explica por qué la captación no puede evaluarse aislada del producto.</p><span>Ver Canales →</span></a>
+          <a class="connection" href="diagnostico-crm.html#crm-mandantes"><small>Captación → base propia</small><h3>Convertir cada contacto en relación</h3><p>Pauta, plataforma y referidos deben converger en una base de mandantes con journeys diferenciados.</p><span>Ver Mandantes →</span></a>
+          <a class="connection" href="diagnostico-crm.html#crm-analitica"><small>Medición → aprendizaje</small><h3>Devolver resultados al ciclo</h3><p>Eventos, corredores y cohortes alimentan la analítica que permite investigar, activar y optimizar de nuevo.</p><span>Ver Analítica →</span></a>
+        </div>
       </div>
     </section>
   </main>

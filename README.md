@@ -6,6 +6,7 @@ Centro de documentos web para revisar producto, mercado, posicionamiento y adqui
 
 - `index.html`: hub principal y punto de entrada a los entregables.
 - `diagnostico-producto-mercado.html`: diagnóstico condensado de posicionamiento, barreras, canales, audiencias, competencia, DOFA y prioridades.
+- `diagnostico-crm.html`: diagnóstico de desarrollo de demanda y CRM, con investigación, perfilamiento, embajadores, referidos y journeys de mandantes.
 - `diagnostico-inicial.html`: diagnóstico de pauta y adquisición, navegable, responsive e imprimible.
 - No requiere instalación, dependencias ni proceso de compilación.
 - Puede abrirse directamente o publicarse con GitHub Pages.
