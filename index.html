@@ -44,7 +44,7 @@
     .section-head { display:flex; align-items:end; justify-content:space-between; gap:40px; margin-bottom:34px; }
     .section-head h2 { font-size:clamp(34px,5vw,54px); line-height:1; }
     .section-head p { max-width:470px; margin:0; color:var(--muted); }
-    .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+    .grid { display:grid; grid-template-columns:repeat(4,1fr); gap:20px; }
     .card { min-height:380px; padding:30px; display:flex; flex-direction:column; border:1px solid var(--line); border-radius:var(--radius); background:var(--paper); text-decoration:none; transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease; }
     .card.available:hover { transform:translateY(-5px); border-color:var(--pink); box-shadow:var(--shadow); }
     .card-top { display:flex; justify-content:space-between; gap:16px; align-items:center; }
@@ -59,6 +59,7 @@
     .card.planned .card-footer { color:#9a959e; }
     .document-flow { padding:70px 0; background:var(--paper); }
     .flow-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:32px; }
+    .flow-grid.four { grid-template-columns:repeat(4,1fr); }
     .flow-doc { position:relative; min-height:225px; padding:26px; border:1px solid var(--line); border-radius:20px; background:#fff; text-decoration:none; transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease; }
     .flow-doc:hover { transform:translateY(-4px); border-color:var(--pink); box-shadow:var(--shadow); }
     .flow-doc:not(:last-child)::after { content:"→"; position:absolute; top:50%; right:-22px; z-index:2; width:30px; height:30px; display:grid; place-items:center; transform:translateY(-50%); border-radius:50%; color:#fff; background:var(--pink); font-weight:800; }
@@ -83,6 +84,7 @@
       .count { max-width:360px; }
       .grid { grid-template-columns:1fr; }
       .flow-grid { grid-template-columns:1fr; gap:30px; }
+      .flow-grid.four { grid-template-columns:1fr; }
       .flow-doc { min-height:auto; }
       .flow-doc:not(:last-child)::after { top:auto; right:auto; bottom:-30px; left:50%; transform:translateX(-50%) rotate(90deg); }
       .section-head { display:block; }
@@ -117,9 +119,9 @@
           <p class="lead">Punto de entrada a los diagnósticos que conectan producto, mercado, operación, adquisición y CRM.</p>
         </div>
         <aside class="count" aria-label="Documentos disponibles">
-          <strong>03</strong>
+          <strong>04</strong>
           <span>Documentos disponibles</span>
-          <p>Tres lecturas complementarias para tomar decisiones de producto, crecimiento y desarrollo de demanda.</p>
+          <p>Cuatro lecturas complementarias para tomar decisiones de producto, crecimiento y desarrollo de demanda.</p>
         </aside>
       </div>
     </section>
@@ -149,6 +151,12 @@
             <p>Histórico de Meta, inversión, creatividades, medición, estructura de campañas, KPIs y plan de optimización.</p>
             <div class="card-footer"><span>Abrir diagnóstico</span><span>→</span></div>
           </a>
+          <a class="card available" href="cronograma-arranque.html">
+            <div class="card-top"><span class="number">DOC · 04</span><span class="tag">Disponible</span></div>
+            <h3>Cronograma<br>de arranque</h3>
+            <p>Ruta visual de seis semanas para activar la base, ordenar la medición, producir contenidos y lanzar un piloto responsable.</p>
+            <div class="card-footer"><span>Abrir cronograma</span><span>→</span></div>
+          </a>
         </div>
       </div>
     </section>
@@ -159,10 +167,11 @@
           <div><p class="eyebrow">Ruta conectada</p><h2 id="flow-title">Tres documentos.<br>Una decisión continua.</h2></div>
           <p>Cada lectura responde una pregunta distinta y entrega insumos al siguiente frente, desde la oportunidad de producto hasta la adquisición medible.</p>
         </div>
-        <div class="flow-grid">
+        <div class="flow-grid four">
           <a class="flow-doc" href="diagnostico-producto-mercado.html#resumen"><small>01 · Dónde y por qué</small><h3>Producto y mercado</h3><p>Define la propuesta, los segmentos, las barreras y los corredores donde vale la pena concentrarse.</p></a>
           <a class="flow-doc" href="diagnostico-crm.html#crm-investigacion"><small>02 · Quién y cómo activarlo</small><h3>Desarrollo de demanda y CRM</h3><p>Convierte las hipótesis en investigación, perfilamiento, activación y una base propia de mandantes.</p></a>
           <a class="flow-doc" href="diagnostico-inicial.html#intervencion"><small>03 · Cómo adquirir y medir</small><h3>Pauta y adquisición</h3><p>Amplifica lo validado, instrumenta el recorrido y mide hasta el mandado pagado y entregado.</p></a>
+          <a class="flow-doc" href="cronograma-arranque.html"><small>04 · Cuándo y con quién</small><h3>Cronograma de arranque</h3><p>Organiza actividades, dependencias y responsables para convertir los diagnósticos en ejecución semanal.</p></a>
         </div>
       </div>
     </section>
