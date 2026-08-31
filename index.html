@@ -57,15 +57,7 @@
     .card.planned { cursor:default; background:#f6f4f6; }
     .card.planned h3,.card.planned > p { color:#8e8991; }
     .card.planned .card-footer { color:#9a959e; }
-    .document-flow { padding:70px 0; background:var(--paper); }
-    .flow-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:32px; }
-    .flow-grid.four { grid-template-columns:repeat(4,1fr); }
-    .flow-doc { position:relative; min-height:225px; padding:26px; border:1px solid var(--line); border-radius:20px; background:#fff; text-decoration:none; transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease; }
-    .flow-doc:hover { transform:translateY(-4px); border-color:var(--pink); box-shadow:var(--shadow); }
-    .flow-doc:not(:last-child)::after { content:"→"; position:absolute; top:50%; right:-22px; z-index:2; width:30px; height:30px; display:grid; place-items:center; transform:translateY(-50%); border-radius:50%; color:#fff; background:var(--pink); font-weight:800; }
-    .flow-doc small { color:var(--pink); font-size:10px; font-weight:800; letter-spacing:.09em; text-transform:uppercase; }
-    .flow-doc h3 { margin:25px 0 10px; font-size:25px; line-height:1.08; }
-    .flow-doc p { margin:0; color:var(--muted); font-size:13px; }
+    .document-flow { padding:70px 0; background:var(--paper); }.usage-timeline{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:28px;margin-top:34px}.usage-timeline::before{content:"";position:absolute;z-index:0;top:20px;left:12.5%;right:12.5%;height:2px;background:var(--line)}.usage-step{position:relative;z-index:1;text-decoration:none}.usage-marker{width:42px;height:42px;display:grid;place-items:center;border:5px solid var(--paper);border-radius:50%;color:white;background:var(--pink);font-size:12px;font-weight:800}.usage-step h3{margin:18px 0 8px;font-size:21px;line-height:1.1}.usage-step p{margin:0;color:var(--muted);font-size:13px}.usage-step span{display:inline-block;margin-top:11px;color:var(--pink);font-size:12px;font-weight:800}.usage-step:hover h3,.usage-step:hover span{color:var(--pink-dark)}
     .principle { padding:70px 0; color:#fff; background:var(--ink); }
     .principle-grid { display:grid; grid-template-columns:.7fr 1.3fr; gap:70px; align-items:start; }
     .principle h2 { font-size:clamp(36px,5vw,58px); line-height:1.02; }
@@ -83,10 +75,7 @@
       .hero-grid,.principle-grid { grid-template-columns:1fr; gap:30px; }
       .count { max-width:360px; }
       .grid { grid-template-columns:1fr; }
-      .flow-grid { grid-template-columns:1fr; gap:30px; }
-      .flow-grid.four { grid-template-columns:1fr; }
-      .flow-doc { min-height:auto; }
-      .flow-doc:not(:last-child)::after { top:auto; right:auto; bottom:-30px; left:50%; transform:translateX(-50%) rotate(90deg); }
+      .usage-timeline{grid-template-columns:1fr;gap:28px;margin-left:8px}.usage-timeline::before{top:16px;bottom:16px;left:16px;right:auto;width:2px;height:auto}.usage-marker{position:absolute;left:0;top:0;width:34px;height:34px;border-width:4px}.usage-step{padding-left:52px}.usage-step h3{margin:0 0 8px}
       .section-head { display:block; }
       .section-head p { margin-top:18px; }
     }
@@ -164,14 +153,14 @@
     <section class="document-flow" aria-labelledby="flow-title">
       <div class="wrap">
         <div class="section-head">
-          <div><p class="eyebrow">Ruta conectada</p><h2 id="flow-title">Tres documentos.<br>Una decisión continua.</h2></div>
-          <p>Cada lectura responde una pregunta distinta y entrega insumos al siguiente frente, desde la oportunidad de producto hasta la adquisición medible.</p>
+          <div><p class="eyebrow">Cómo usar la biblioteca</p><h2 id="flow-title">De la lectura<br>a la ejecución.</h2></div>
+          <p>La biblioteca reúne los documentos. Esta secuencia muestra en qué orden usarlos para convertir análisis en decisiones; no es un segundo índice.</p>
         </div>
-        <div class="flow-grid four">
-          <a class="flow-doc" href="diagnostico-producto-mercado.html#resumen"><small>01 · Dónde y por qué</small><h3>Producto y mercado</h3><p>Define la propuesta, los segmentos, las barreras y los corredores donde vale la pena concentrarse.</p></a>
-          <a class="flow-doc" href="diagnostico-crm.html#crm-investigacion"><small>02 · Quién y cómo activarlo</small><h3>Desarrollo de demanda y CRM</h3><p>Convierte las hipótesis en investigación, perfilamiento, activación y una base propia de mandantes.</p></a>
-          <a class="flow-doc" href="diagnostico-inicial.html#intervencion"><small>03 · Cómo adquirir y medir</small><h3>Pauta y adquisición</h3><p>Amplifica lo validado, instrumenta el recorrido y mide hasta el mandado pagado y entregado.</p></a>
-          <a class="flow-doc" href="cronograma-arranque.html"><small>04 · Cuándo y con quién</small><h3>Cronograma de arranque</h3><p>Organiza actividades, dependencias y responsables para convertir los diagnósticos en ejecución semanal.</p></a>
+        <div class="usage-timeline">
+          <a class="usage-step" href="diagnostico-producto-mercado.html#resumen"><i class="usage-marker">01</i><h3>Delimitar la oportunidad</h3><p>Elegir el corredor, caso de uso y fricción que vale la pena resolver primero.</p><span>Ver producto y mercado →</span></a>
+          <a class="usage-step" href="diagnostico-crm.html#crm-investigacion"><i class="usage-marker">02</i><h3>Probar con la base</h3><p>Aprender de viajeros y mandantes antes de ampliar el alcance.</p><span>Ver CRM y demanda →</span></a>
+          <a class="usage-step" href="diagnostico-inicial.html#medicion"><i class="usage-marker">03</i><h3>Instalar la señal</h3><p>Consolidar píxeles, definir eventos y conectar los datos con el resultado real.</p><span>Ver pauta y medición →</span></a>
+          <a class="usage-step" href="cronograma-arranque.html"><i class="usage-marker">04</i><h3>Coordinar el piloto</h3><p>Asignar responsables y avanzar por puertas de decisión, no solo por fechas.</p><span>Ver cronograma →</span></a>
         </div>
       </div>
     </section>
