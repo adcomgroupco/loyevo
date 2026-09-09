@@ -85,6 +85,24 @@
     .notice-icon { width: 28px; height: 28px; display: grid; place-items: center; border-radius: 50%; color: white; background: var(--amber); font-weight: 800; }
     .notice strong { display: block; margin-bottom: 3px; }
     .notice p { margin: 0; color: #705c37; font-size: 14px; }
+    .evidence-intro { margin: 0 0 24px; padding: 18px 20px; border: 1px solid #b9e8d1; border-radius: 16px; background: var(--green-soft); color: #18563e; font-size: 14px; }
+    .evidence-intro b { color: var(--green); }
+    .audience-evidence-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .audience-evidence { padding: 22px; border: 1px solid var(--line); border-radius: 18px; background: white; }
+    .audience-evidence > small { display: block; color: var(--pink); font-size: 10px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+    .audience-evidence h3 { margin: 10px 0 7px; font-size: 21px; }
+    .audience-evidence p { margin: 0; color: var(--muted); font-size: 13px; }
+    .audience-evidence dl { display: grid; grid-template-columns: auto 1fr; gap: 6px 10px; margin: 16px 0 0; font-size: 11px; }
+    .audience-evidence dt { color: var(--muted); font-weight: 700; }
+    .audience-evidence dd { margin: 0; color: var(--ink); font-weight: 600; }
+    .evidence-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 16px; }
+    .evidence-step { padding: 17px; border-radius: 15px; color: white; background: var(--ink); }
+    .evidence-step small { display: block; color: #74d5ad; font-size: 10px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+    .evidence-step b { display: block; margin-top: 7px; font-size: 14px; line-height: 1.25; }
+    .evidence-bridge { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-top: 20px; padding: 17px 19px; border: 1px solid var(--line); border-radius: 15px; background: var(--paper); text-decoration: none; }
+    .evidence-bridge small { display: block; color: var(--pink); font-size: 10px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+    .evidence-bridge b { display: block; margin-top: 4px; font-size: 14px; }
+    .evidence-bridge span { color: var(--pink); font-weight: 800; white-space: nowrap; }
 
     .icon-sprite { position: absolute; width: 0; height: 0; overflow: hidden; }
     .icon { width: 20px; height: 20px; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
@@ -446,6 +464,8 @@
       .chapter-tabs { grid-template-columns: repeat(5, minmax(150px, 1fr)); overflow-x: auto; padding-bottom: 4px; }
       .chapter-controls { justify-content: flex-end; }
       .metric-grid { grid-template-columns: repeat(2, 1fr); }
+      .audience-evidence-grid { grid-template-columns: 1fr; }
+      .evidence-steps { grid-template-columns: repeat(2, 1fr); }
       .allocation { grid-template-columns: 1fr; }
       .finding-grid, .creative-grid { grid-template-columns: repeat(2, 1fr); }
       .flow { grid-template-columns: repeat(2, 1fr); }
@@ -482,6 +502,8 @@
       section { padding: 58px 0; }
       .score-grid, .finding-grid, .creative-grid, .flow, .roadmap, .questions, .sources, .current-funnel { grid-template-columns: 1fr; }
       .metric-grid, .result-strip { grid-template-columns: 1fr 1fr; }
+      .evidence-steps { grid-template-columns: 1fr; }
+      .evidence-bridge { align-items: flex-start; flex-direction: column; }
       .creative-findings, .audit-grid, .creative-rules, .education-band { grid-template-columns: 1fr; }
       .allocation-visual { grid-template-columns: 1fr; justify-items: center; }
       .allocation-legend { width: 100%; }
@@ -544,6 +566,7 @@
         <a href="index.html">Documentos</a>
         <a href="#resumen">Diagnóstico</a>
         <a href="#hallazgos">Hallazgos</a>
+        <a href="#audiencias-oferta">Avances</a>
         <a href="#estructura">Estructura ideal</a>
         <a href="#proyeccion">Proyección</a>
         <a href="#creatividad">Creatividad</a>
@@ -647,6 +670,43 @@
           </table>
         </div>
         <div class="interpretation"><strong>Cómo leer “0 Purchase atribuidos”</strong><p>La cuenta no registra compras atribuidas en Meta. Esto revela una brecha de medición; no permite concluir, por sí solo, que Meta no haya generado ventas. Para comprobarlo se debe conciliar origen de campaña, CRM, pagos, mandados y entregas.</p></div>
+      </div>
+    </section>
+
+    <section id="audiencias-oferta" class="section-white" data-chapter="captacion">
+      <div class="wrap">
+        <div class="section-heading">
+          <div><p class="kicker">Evidencia de avance · 9 sep 2026</p><h2>La primera señal<br>para captar oferta ya existe.</h2></div>
+          <p>El piloto actual de Meta no busca mandantes. Busca personas que ya conducen, se movilizan o viajan y podrían llevar un encargo en un trayecto que de todas formas realizarían.</p>
+        </div>
+        <p class="evidence-intro"><b>Propuesta que se está llevando a producción:</b> “Si ya vas a viajar, gana dinero llevando un encargo en tu camino.” Las audiencias se mantienen deliberadamente en tres para no fragmentar el aprendizaje inicial.</p>
+        <div class="audience-evidence-grid">
+          <article class="audience-evidence">
+            <small>Público guardado · Meta</small>
+            <h3>Conductores</h3>
+            <p>Señales de Uber, UberEats, Taxi Driver, automóviles, conducción y transporte. Los intereses internacionales funcionan como <em>proxy</em> ante la baja disponibilidad de señales específicas para Colombia.</p>
+            <dl><dt>Ubicación</dt><dd>Bogotá D. C.</dd><dt>Edad</dt><dd>18–65+</dd><dt>Tamaño mostrado</dt><dd>33,3–39,2 M</dd></dl>
+          </article>
+          <article class="audience-evidence">
+            <small>Público guardado · Meta</small>
+            <h3>Viajeros frecuentes</h3>
+            <p>Usa el comportamiento “Viajeros frecuentes”, la señal más cercana a quienes se desplazan recurrentemente y pueden monetizar una ruta.</p>
+            <dl><dt>Ubicación</dt><dd>Bogotá D. C.</dd><dt>Edad</dt><dd>18–65+</dd><dt>Advantage+</dt><dd>Desactivado</dd><dt>Tamaño mostrado</dt><dd>30,1–35,4 M</dd></dl>
+          </article>
+          <article class="audience-evidence">
+            <small>Público guardado · Meta</small>
+            <h3>Transporte y traslado</h3>
+            <p>Audiencia amplia a partir de Vehículos (transporte) y el sector Transporte y traslado; permite contrastar una señal sectorial frente a las otras dos hipótesis.</p>
+            <dl><dt>Ubicación</dt><dd>Bogotá D. C.</dd><dt>Edad</dt><dd>18–65+</dd><dt>Advantage+</dt><dd>Desactivado</dd><dt>Tamaño mostrado</dt><dd>18,3–21,5 M</dd></dl>
+          </article>
+        </div>
+        <div class="evidence-steps" aria-label="Avances confirmados del piloto">
+          <article class="evidence-step"><small>01 · Completado</small><b>Tag Manager conectado<br>GTM-T7W5FHZ7</b></article>
+          <article class="evidence-step"><small>02 · Completado</small><b>GA4 creado y funcionando<br>Cuenta 407123361</b></article>
+          <article class="evidence-step"><small>03 · Completado</small><b>Clic hacia Google Play Store<br>medido y probado</b></article>
+          <article class="evidence-step"><small>04 · En curso</small><b>Producción de piezas<br>para el piloto de oferta</b></article>
+        </div>
+        <a class="evidence-bridge" href="cronograma-arranque.html#avances-confirmados"><div><small>Evidencia → ejecución</small><b>Ver cómo estos avances habilitan el cronograma de ocho semanas.</b></div><span>Ir al cronograma →</span></a>
       </div>
     </section>
 
