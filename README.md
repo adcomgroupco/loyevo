@@ -46,6 +46,7 @@ Los estilos están organizados en `assets/css`: `shared.css` contiene la base co
 - Calendario de ocho semanas para integrar pauta, CRM, medición, creatividad, QA y primeros lanzamientos.
 - Enlace directo al [informe de pauta](https://datastudio.google.com/reporting/75593648-d0c8-48d2-969a-2131c9580d3f).
 - Actualización de acceso y línea base de eventos de Firebase Analytics al 27 de octubre de 2026.
+- Historial operativo de la campaña de mandantes: activación el 19 de octubre, cambios de presupuesto, incorporación de videos y conciliación pendiente entre Meta, web y app.
 
 ## Alcance y limitaciones
 
