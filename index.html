@@ -9,89 +9,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --pink:#ed0a78; --pink-dark:#c6005f; --pink-soft:#fff0f7;
-      --ink:#111827; --muted:#6b6872; --line:#e8e5ea;
-      --paper:#fbfafb; --white:#fff; --radius:24px;
-      --shadow:0 18px 55px rgba(27,18,26,.09);
-    }
-    * { box-sizing:border-box; }
-    html { scroll-behavior:smooth; }
-    body { margin:0; color:var(--ink); background:var(--paper); font-family:Poppins,sans-serif; line-height:1.55; }
-    a { color:inherit; }
-    .wrap { width:min(1180px,calc(100% - 40px)); margin-inline:auto; }
-    .site-header { height:72px; border-bottom:1px solid var(--line); background:rgba(251,250,251,.92); }
-    .header-inner { height:100%; display:flex; align-items:center; justify-content:space-between; gap:20px; }
-    .brand { display:flex; align-items:center; gap:11px; text-decoration:none; font:800 20px/1 Poppins,sans-serif; }
-    .brand-logo { width:36px; height:36px; display:block; border-radius:11px; object-fit:cover; }
-    .brand em { color:var(--pink); font-style:normal; }
-    .header-meta { color:var(--muted); font-size:12px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; }
-    .hero { position:relative; overflow:hidden; padding:82px 0 68px; }
-    .hero::after { content:""; position:absolute; top:-260px; right:-130px; width:600px; height:600px; border-radius:50%; background:radial-gradient(circle,rgba(237,10,120,.18),rgba(237,10,120,0) 68%); pointer-events:none; }
-    .hero-grid { position:relative; z-index:1; display:grid; grid-template-columns:1.45fr .55fr; gap:70px; align-items:end; }
-    .eyebrow { display:flex; align-items:center; gap:10px; margin:0 0 22px; color:var(--pink); font:800 12px/1 Poppins,sans-serif; letter-spacing:.13em; text-transform:uppercase; }
-    .eyebrow::before { content:""; width:30px; height:2px; background:currentColor; }
-    h1,h2,h3 { margin:0; font-family:Poppins,sans-serif; letter-spacing:-.04em; }
-    h1 { max-width:800px; font-size:clamp(48px,7vw,86px); line-height:.98; }
-    h1 span { color:var(--pink); }
-    .lead { max-width:720px; margin:27px 0 0; color:var(--muted); font-size:20px; }
-    .count { padding:28px; border-radius:var(--radius); color:#fff; background:var(--ink); box-shadow:var(--shadow); }
-    .count strong { display:block; color:var(--pink); font:800 78px/.9 Poppins,sans-serif; letter-spacing:-.08em; }
-    .count span { display:block; margin-top:14px; font-weight:700; }
-    .count p { margin:8px 0 0; color:#bbb5bf; font-size:13px; }
-    .library { padding:70px 0 90px; background:#fff; }
-    .section-head { display:flex; align-items:end; justify-content:space-between; gap:40px; margin-bottom:34px; }
-    .section-head h2 { font-size:clamp(34px,5vw,54px); line-height:1; }
-    .section-head p { max-width:470px; margin:0; color:var(--muted); }
-    .grid { display:grid; grid-template-columns:repeat(4,1fr); gap:20px; }
-    .card { min-height:380px; padding:30px; display:flex; flex-direction:column; border:1px solid var(--line); border-radius:var(--radius); background:var(--paper); text-decoration:none; transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease; }
-    .card.available:hover { transform:translateY(-5px); border-color:var(--pink); box-shadow:var(--shadow); }
-    .card-top { display:flex; justify-content:space-between; gap:16px; align-items:center; }
-    .number { color:#bdb8c1; font:800 13px Poppins,sans-serif; letter-spacing:.1em; }
-    .tag { padding:7px 10px; border-radius:999px; color:var(--pink-dark); background:var(--pink-soft); font-size:11px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; }
-    .tag.planned { color:#706c76; background:#efedf0; }
-    .card h3 { margin:58px 0 14px; font-size:clamp(28px,4vw,43px); line-height:1.03; }
-    .card > p { max-width:540px; margin:0; color:var(--muted); }
-    .card-footer { margin-top:auto; padding-top:28px; display:flex; justify-content:space-between; gap:16px; border-top:1px solid var(--line); color:var(--pink); font-size:14px; font-weight:700; }
-    .card.planned { cursor:default; background:#f6f4f6; }
-    .card.planned h3,.card.planned > p { color:#8e8991; }
-    .card.planned .card-footer { color:#9a959e; }
-    .document-flow { padding:70px 0; background:var(--paper); }.usage-timeline{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:28px;margin-top:34px}.usage-timeline::before{content:"";position:absolute;z-index:0;top:20px;left:12.5%;right:12.5%;height:2px;background:var(--line)}.usage-step{position:relative;z-index:1;text-decoration:none}.usage-marker{width:42px;height:42px;display:grid;place-items:center;border:5px solid var(--paper);border-radius:50%;color:white;background:var(--pink);font-size:12px;font-weight:800}.usage-step h3{margin:18px 0 8px;font-size:21px;line-height:1.1}.usage-step p{margin:0;color:var(--muted);font-size:13px}.usage-step span{display:inline-block;margin-top:11px;color:var(--pink);font-size:12px;font-weight:800}.usage-step:hover h3,.usage-step:hover span{color:var(--pink-dark)}
-    .principle { padding:70px 0; color:#fff; background:var(--ink); }
-    .principle-grid { display:grid; grid-template-columns:.7fr 1.3fr; gap:70px; align-items:start; }
-    .principle h2 { font-size:clamp(36px,5vw,58px); line-height:1.02; }
-    .principle h2 span { color:var(--pink); }
-    .principle-list { display:grid; gap:1px; background:#3b3741; }
-    .principle-item { padding:20px 22px; display:grid; grid-template-columns:42px 1fr; gap:15px; background:var(--ink); }
-    .principle-item b { color:var(--pink); font:800 12px Poppins,sans-serif; }
-    .principle-item p { margin:0; color:#cbc6cd; font-size:14px; }
-    footer { padding:28px 0; color:var(--muted); font-size:13px; }
-    .footer-inner { display:flex; justify-content:space-between; gap:20px; }
-    @media(max-width:1050px){
-      .grid { grid-template-columns:repeat(2,1fr); }
-    }
-    @media(max-width:800px){
-      .hero-grid,.principle-grid { grid-template-columns:1fr; gap:30px; }
-      .count { max-width:360px; }
-      .grid { grid-template-columns:1fr; }
-      .usage-timeline{grid-template-columns:1fr;gap:28px;margin-left:8px}.usage-timeline::before{top:16px;bottom:16px;left:16px;right:auto;width:2px;height:auto}.usage-marker{position:absolute;left:0;top:0;width:34px;height:34px;border-width:4px}.usage-step{padding-left:52px}.usage-step h3{margin:0 0 8px}
-      .section-head { display:block; }
-      .section-head p { margin-top:18px; }
-    }
-    @media(max-width:520px){
-      .wrap { width:calc(100% - 26px); }
-      .header-meta { display:none; }
-      .hero { padding:58px 0 50px; }
-      h1 { font-size:46px; }
-      .lead { font-size:17px; }
-      .card { min-height:350px; padding:24px; }
-      .card h3 { margin-top:42px; }
-      .footer-inner { flex-direction:column; }
-    }
-  </style>
+  <link rel="stylesheet" href="assets/css/shared.css">
+  <link rel="stylesheet" href="assets/css/index.css">
 </head>
 <body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
   <header class="site-header">
     <div class="wrap header-inner">
       <a class="brand" href="index.html" aria-label="Loyevo, centro de documentos"><img class="brand-logo" src="assets/logo-loyevo.png" alt=""><span>lo<em>yevo</em></span></a>
@@ -99,7 +21,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="contenido">
     <section class="hero">
       <div class="wrap hero-grid">
         <div>
@@ -108,9 +30,9 @@
           <p class="lead">Punto de entrada a los diagnósticos que conectan producto, mercado, operación, adquisición y CRM.</p>
         </div>
         <aside class="count" aria-label="Documentos disponibles">
-          <strong>05</strong>
+          <strong>06</strong>
           <span>Documentos disponibles</span>
-          <p>Cinco documentos complementarios para tomar decisiones de producto, crecimiento y desarrollo de demanda.</p>
+          <p>Seis documentos complementarios para tomar decisiones de producto, crecimiento, adquisición y desarrollo de demanda.</p>
         </aside>
       </div>
     </section>
@@ -143,7 +65,7 @@
           <a class="card available" href="cronograma-arranque.html">
             <div class="card-top"><span class="number">DOC · 04</span><span class="tag">Disponible</span></div>
             <h3>Cronograma<br>de arranque</h3>
-            <p>Ruta visual de seis semanas para activar la base, ordenar la medición, producir contenidos y lanzar un piloto responsable.</p>
+            <p>Ruta visual de ocho semanas para activar la base, ordenar la medición, producir contenidos y lanzar un piloto responsable.</p>
             <div class="card-footer"><span>Abrir cronograma</span><span>→</span></div>
           </a>
           <a class="card available" href="flujo-crm-mandantes.html">
@@ -152,7 +74,14 @@
             <p>Guía de cinco etapas con 21 plantillas de correo, eventos para el CRM y lineamientos para WhatsApp.</p>
             <div class="card-footer"><span>Abrir guía CRM</span><span>→</span></div>
           </a>
+          <a class="card available" href="inteligencia-competitiva-skydropx.html">
+            <div class="card-top"><span class="number">DOC · 06</span><span class="tag">Nuevo</span></div>
+            <h3>Inteligencia<br>Skydropx</h3>
+            <p>Análisis de la pauta activa del referente logístico y aprendizajes para las piezas de noviembre.</p>
+            <div class="card-footer"><span>Abrir investigación</span><span>→</span></div>
+          </a>
         </div>
+        <a class="report-banner" href="https://datastudio.google.com/reporting/75593648-d0c8-48d2-969a-2131c9580d3f" target="_blank" rel="noopener"><div><small>Seguimiento activo</small><strong>Informe de pauta de Loyevo</strong></div><span>Abrir dashboard →</span></a>
       </div>
     </section>
 

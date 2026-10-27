@@ -1,0 +1,15 @@
+{
+  "name": "loyevo-centro-documentos",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "serve": "node scripts/serve.mjs",
+    "validate": "node scripts/validate.mjs",
+    "audit:desktop": "lighthouse http://127.0.0.1:8000/ --output=json --output-path=reports/lighthouse-desktop.json --chrome-flags=\"--headless --no-sandbox\" --preset=desktop --quiet",
+    "audit:mobile": "lighthouse http://127.0.0.1:8000/ --output=json --output-path=reports/lighthouse-mobile.json --chrome-flags=\"--headless --no-sandbox\" --quiet"
+  },
+  "devDependencies": {
+    "lighthouse": "^13.5.0"
+  }
+}

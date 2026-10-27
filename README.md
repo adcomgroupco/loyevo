@@ -8,15 +8,26 @@ Centro de documentos web para revisar producto, mercado, posicionamiento y adqui
 - `diagnostico-producto-mercado.html`: diagnóstico condensado de posicionamiento, barreras, canales, audiencias, competencia, DOFA y prioridades.
 - `diagnostico-crm.html`: diagnóstico de desarrollo de demanda y CRM, con investigación, perfilamiento, embajadores, referidos y journeys de mandantes.
 - `diagnostico-inicial.html`: diagnóstico de pauta y adquisición, navegable, responsive e imprimible.
-- `cronograma-arranque.html`: cronograma visual de seis semanas para activar la base, consolidar medición, producir piezas y ejecutar un piloto de adquisición.
+- `cronograma-arranque.html`: cronograma visual de ocho semanas para activar la base, consolidar medición, producir piezas y ejecutar un piloto de adquisición.
 - `flujo-crm-mandantes.html`: guía de cinco etapas con 21 plantillas de correo, eventos de automatización y criterios de uso para WhatsApp.
-- No requiere instalación, dependencias ni proceso de compilación.
+- `inteligencia-competitiva-skydropx.html`: investigación de la pauta activa de Skydropx y aprendizajes aplicables al cuadro de materiales de noviembre.
+- El sitio publicado no requiere compilación ni dependencias de producción.
 - Puede abrirse directamente o publicarse con GitHub Pages.
+
+Los estilos están organizados en `assets/css`: `shared.css` contiene la base común de accesibilidad y cada documento conserva una hoja propia. Los comportamientos interactivos viven en `assets/js`.
 
 ## Uso local
 
-1. Abre `index.html` en el navegador; o
-2. Ejecuta `python -m http.server 8000` en esta carpeta y visita `http://localhost:8000`.
+1. Ejecuta `npm install` para instalar las herramientas locales de auditoría.
+2. Ejecuta `npm run serve` y visita `http://127.0.0.1:8000`.
+
+## Validación
+
+- `npm run validate`: comprueba estructura, recursos, enlaces y anclas internas.
+- `npm run audit:desktop`: genera `reports/lighthouse-desktop.json` con el servidor local activo.
+- `npm run audit:mobile`: genera `reports/lighthouse-mobile.json` con el servidor local activo.
+
+`node_modules`, resultados de Lighthouse y archivos temporales están excluidos mediante `.gitignore`.
 
 ## Contenido
 
@@ -32,7 +43,9 @@ Centro de documentos web para revisar producto, mercado, posicionamiento y adqui
 - Mapa de eventos y tablero de KPI.
 - Roadmap de implementación a 90 días.
 - Checklist de datos operativos necesarios para conciliar Meta con mandados pagados y entregados.
-- Calendario de seis semanas para integrar pauta, CRM, medición, creatividad, QA y primeros lanzamientos.
+- Calendario de ocho semanas para integrar pauta, CRM, medición, creatividad, QA y primeros lanzamientos.
+- Enlace directo al [informe de pauta](https://datastudio.google.com/reporting/75593648-d0c8-48d2-969a-2131c9580d3f).
+- Actualización de acceso y línea base de eventos de Firebase Analytics al 27 de octubre de 2026.
 
 ## Alcance y limitaciones
 

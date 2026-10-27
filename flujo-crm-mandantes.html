@@ -1,149 +1,18 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
-<title>Loyevo Flujo CRM</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Onest:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
-<style>
-/* Layout: documento del hub (DOC · 05 v2, mandantes) — resumen en cifras, mapa por etapas, revisión de lo existente, fichas por plantilla con filtros, tablas de apoyo y plan */
-:root{
-  --bg:#fbf8fa; --surface:#ffffff; --ink:#1d1520; --muted:#6e6272; --line:#eadfe7;
-  --brand:#ed0a78; --brand-soft:#fde6f1; --brand-ink:#b00059;
-  --edu:#2f6fdc; --edu-soft:#e6efff; --info:#0e8a72; --info-soft:#e0f4ef;
-  --trx:#c26a00; --trx-soft:#fff0dc; --cat:#7a3fd1; --cat-soft:#efe6ff;
-  --warn:#8a6400; --warn-soft:#fff4c2; --alt:#b3261e; --alt-soft:#fde4e2;
-  --f-display:"Bricolage Grotesque","Avenir Next",system-ui,sans-serif;
-  --f-body:"Onest","Segoe UI",system-ui,sans-serif;
-  --f-mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
-}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --bg:#141015; --surface:#1d171f; --ink:#f4eef3; --muted:#a99ca8; --line:#342a35;
-  --brand:#ff3d93; --brand-soft:#3a1527; --brand-ink:#ff8cbf;
-  --edu:#7aa7ff; --edu-soft:#17243d; --info:#4fd1b3; --info-soft:#12302a;
-  --trx:#ffb35c; --trx-soft:#36260f; --cat:#b48cff; --cat-soft:#2a1d42;
-  --warn:#ffd25c; --warn-soft:#352b0c; --alt:#ff8a80; --alt-soft:#3b1714; color-scheme:dark}}
-:root[data-theme="dark"]{
-  --bg:#141015; --surface:#1d171f; --ink:#f4eef3; --muted:#a99ca8; --line:#342a35;
-  --brand:#ff3d93; --brand-soft:#3a1527; --brand-ink:#ff8cbf;
-  --edu:#7aa7ff; --edu-soft:#17243d; --info:#4fd1b3; --info-soft:#12302a;
-  --trx:#ffb35c; --trx-soft:#36260f; --cat:#b48cff; --cat-soft:#2a1d42;
-  --warn:#ffd25c; --warn-soft:#352b0c; --alt:#ff8a80; --alt-soft:#3b1714; color-scheme:dark}
-
-*{box-sizing:border-box}
-body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.55;margin:0}
-.wrap{max-width:1080px;margin:0 auto;padding-inline:20px;padding-block:28px 64px}
-h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0;line-height:1.1}
-h2{font-size:clamp(1.5rem,3.2vw,2rem);font-weight:700}
-h3{font-size:1.08rem;font-weight:700}
-p{margin:0}
-a{color:var(--brand-ink)}
-.eyebrow{font-family:var(--f-mono);font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
-.lead{color:var(--muted);max-width:66ch}
-section{display:grid;gap:18px;padding-block:44px;border-top:1px solid var(--line)}
-
-.top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding-bottom:28px}
-.logo{font-family:var(--f-display);font-weight:800;font-size:1.6rem;letter-spacing:-.02em}
-.logo i{color:var(--brand);font-style:italic}
-.top a{font-size:.9rem;text-decoration:none}
-.hero{display:grid;gap:18px;padding-bottom:36px}
-.hero h1{font-size:clamp(2.1rem,6vw,3.5rem);font-weight:800;letter-spacing:-.02em;max-width:19ch}
-.hero h1 em{font-style:normal;color:var(--brand)}
-.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
-.stat{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 14px;display:grid;gap:2px}
-.stat b{font-family:var(--f-display);font-size:1.9rem;font-variant-numeric:tabular-nums;line-height:1}
-.stat span{font-size:.84rem;color:var(--muted)}
-.stat.hl{background:var(--brand-soft);border-color:transparent}
-.stat.hl b{color:var(--brand-ink)}
-.note{font-size:.9rem;color:var(--muted);border-left:3px solid var(--brand);padding-left:12px;max-width:70ch}
-
-.gloss{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
-.gloss div{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px;display:grid;gap:4px;min-width:0}
-.gloss b{font-family:var(--f-display);font-size:1rem}
-.gloss span{color:var(--muted);font-size:.92rem}
-
-.types{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
-.type{border-radius:12px;padding:18px;display:grid;gap:8px;align-content:start;min-width:0}
-.type p{font-size:.93rem}
-.t-edu{background:var(--edu-soft)} .t-info{background:var(--info-soft)} .t-trx{background:var(--trx-soft)} .t-cat{background:var(--cat-soft)}
-.tag{display:inline-flex;align-items:center;gap:6px;font-family:var(--f-mono);font-size:.7rem;font-weight:500;letter-spacing:.05em;text-transform:uppercase;padding:3px 8px;border-radius:999px;white-space:nowrap;justify-self:start}
-.tag::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
-.tag.edu{color:var(--edu);background:var(--edu-soft)} .tag.info{color:var(--info);background:var(--info-soft)}
-.tag.trx{color:var(--trx);background:var(--trx-soft)} .tag.cat{color:var(--cat);background:var(--cat-soft)}
-.type .tag{background:var(--surface)}
-.chip{font-family:var(--f-mono);font-size:.7rem;padding:3px 8px;border-radius:6px;white-space:nowrap;border:1px solid var(--line);color:var(--muted)}
-.chip.exist{background:var(--warn-soft);color:var(--warn);border-color:transparent;font-weight:500}
-.chip.new{background:var(--brand-soft);color:var(--brand-ink);border-color:transparent}
-.chip.p1{color:var(--alt);border-color:var(--alt)}
-.chip.wa{background:var(--info-soft);color:var(--info);border-color:transparent}
-
-.map{overflow-x:auto;padding-bottom:6px}
-.map ol{list-style:none;margin:0;padding:0;display:flex;min-width:760px}
-.map li{flex:1;display:grid;gap:6px;align-content:start;position:relative;padding:16px 22px 16px 16px;background:var(--surface);border:1px solid var(--line);border-right:none}
-.map li:first-child{border-radius:12px 0 0 12px}
-.map li:last-child{border-radius:0 12px 12px 0;border-right:1px solid var(--line)}
-.map li:not(:last-child)::after{content:"→";position:absolute;right:-9px;top:22px;background:var(--bg);color:var(--brand);font-weight:700;width:18px;height:18px;display:grid;place-items:center;border-radius:50%;z-index:1;font-size:.8rem}
-.map .n{font-family:var(--f-mono);font-size:.72rem;color:var(--brand-ink)}
-.map b{font-family:var(--f-display);font-size:1rem}
-.map span{font-size:.84rem;color:var(--muted)}
-.map .codes{font-family:var(--f-mono);font-size:.72rem;color:var(--ink)}
-
-.tabs,.filters{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
-.tabs button{font:600 .9rem var(--f-body);padding:8px 14px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
-.tabs button[aria-pressed="true"]{background:var(--brand);border-color:var(--brand);color:#fff}
-button:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
-.filters{font-size:.85rem;color:var(--muted)}
-.filters button{border:none;cursor:pointer}
-.filters button[aria-pressed="false"]{opacity:.35}
-.stage{display:grid;gap:12px;margin-top:14px}
-.stage-h{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
-.steps{display:grid;gap:12px}
-.step{display:grid;grid-template-columns:70px 1fr;gap:16px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px}
-.step.is-exist{border-color:var(--warn)}
-.code{font-family:var(--f-mono);font-size:1rem;font-weight:500;color:var(--brand-ink)}
-.body{display:grid;gap:10px;min-width:0}
-.row{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
-.name{font-family:var(--f-display);font-weight:700;font-size:1.15rem}
-.subj{display:grid;gap:2px;background:var(--bg);border-radius:8px;padding:10px 12px}
-.subj b{font-weight:600;white-space:pre-line}
-.subj span{color:var(--muted);font-size:.9rem}
-.meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px 20px;font-size:.9rem;margin:0}
-.meta div{min-width:0}
-.meta .wide{grid-column:1/-1}
-dt,.lbl{font-family:var(--f-mono);font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
-dd{margin:0;white-space:pre-line}
-.cta{justify-self:start;font-weight:600;font-size:.85rem;color:var(--brand-ink);background:var(--brand-soft);padding:4px 10px;border-radius:6px}
-.wa-msg{border-left:3px solid var(--info);padding:6px 10px;background:var(--info-soft);border-radius:0 8px 8px 0;font-size:.9rem}
-.empty{color:var(--muted)}
-
-.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
-table{border-collapse:collapse;width:100%;min-width:760px;font-size:.88rem}
-th,td{text-align:left;padding:11px 13px;border-bottom:1px solid var(--line);vertical-align:top}
-th{font-family:var(--f-mono);font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:500;background:var(--bg)}
-tr:last-child td{border-bottom:none}
-td code{font-family:var(--f-mono);font-size:.78rem;color:var(--brand-ink)}
-td b{font-weight:600}
-.prio{font-family:var(--f-mono);font-size:.7rem;padding:2px 7px;border-radius:5px;white-space:nowrap}
-.prio.Alta{background:var(--alt-soft);color:var(--alt)} .prio.Media{background:var(--warn-soft);color:var(--warn)}
-.prio.Baja{background:var(--bg);color:var(--muted)} .prio.Mantener{background:var(--info-soft);color:var(--info)}
-
-.ways{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}
-.way{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px;display:grid;gap:8px;align-content:start;min-width:0}
-.way p{font-size:.92rem}
-.way .k{font-family:var(--f-mono);font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
-.rules{margin:0;padding-left:18px;display:grid;gap:4px;font-size:.92rem}
-
-.plan{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
-.wk{border-top:3px solid var(--brand);background:var(--surface);border-radius:0 0 10px 10px;padding:14px;display:grid;gap:10px;align-content:start}
-.wk ul{margin:0;padding:0;list-style:none;display:grid;gap:10px}
-.wk li{display:grid;gap:2px;font-size:.88rem}
-.wk li b{font-family:var(--f-display);font-size:.95rem}
-.wk li span{color:var(--muted)}
-.wk li i{font-style:normal;font-family:var(--f-mono);font-size:.68rem;color:var(--brand-ink)}
-footer{border-top:1px solid var(--line);padding-top:20px;color:var(--muted);font-size:.85rem;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
-@media (max-width:560px){.step{grid-template-columns:1fr;gap:6px}}
-@media (prefers-reduced-motion:no-preference){.tabs button{transition:background .15s}}
-</style>
-
-<div class="wrap">
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>Loyevo | Flujo CRM para mandantes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Onest:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+  <link rel="stylesheet" href="assets/css/shared.css">
+  <link rel="stylesheet" href="assets/css/flujo-crm-mandantes.css">
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+<main id="contenido"><div class="wrap">
   <div class="top">
     <div class="logo">lo<i>yevo</i></div>
     <a href="https://adcomgroupco.github.io/loyevo/" target="_blank" rel="noopener">← Centro de documentación</a>
@@ -240,100 +109,8 @@ footer{border-top:1px solid var(--line);padding-top:20px;color:var(--muted);font
   </section>
 
   <footer><span>Adcom Group · Colombia · 2026</span><span>Propuesta para validar con el equipo de Loyevo</span></footer>
-</div>
+</div></main>
 
-<script>
-const D = {"R": [["EX1", "Ya existe · ajustar", "1 · Urgente", "0. Acceso a la cuenta", "Transacción", "Bienvenida + verifica tu correo", "La persona crea su cuenta en la app o en la web.\nEvento: cuenta_creada", "Inmediato (menos de 1 minuto).", "Se envía una sola vez. Si no verifica en 24 h, pasa a B1.", "Confirmar que el correo es real y activar la cuenta.", "Activa tu cuenta Loyevo en un clic\n(actual: «Bienvenido a Loyevo 🚀»)", "Confirma tu correo y empieza a enviar con viajeros verificados.", "1. Banner de marca\n2. Saludo con nombre\n3. Botón Verificar\n4. Cómo funciona (envía / viaja)\n5. Aviso: nunca pedimos tu contraseña\n6. Soporte (correo + WhatsApp)\n7. Pie legal", "Hola, Andrés. Tu cuenta está casi lista: confirma tu correo para activarla y cotizar tu primer envío.", "Verificar mi correo → enlace de verificación (ideal en dominio loyevo.co)", "Botón arriba, visible sin bajar en el celular · enlace alterno corto · aviso anti-fraude · soporte con horario · términos y privacidad.\nVer ajustes en la hoja 5.", "Sí · manual (soporte)", "Hola {nombre} 👋 Te enviamos un correo para activar tu cuenta Loyevo. Si no lo ves, revisa Spam o Promociones. ¿Te ayudamos?", "% de cuentas verificadas en 24 h."], ["EX2", "Ya existe · ajustar", "1 · Urgente", "0. Acceso a la cuenta", "Transacción", "Tu cuenta fue creada (datos de acceso)", "El equipo de Loyevo crea la cuenta por la persona (registro asistido).\nEvento: cuenta_creada_asistida", "Inmediato.", "Una sola vez. No debe salir junto con EX1 a la misma persona.", "Entregar el acceso de forma segura.", "Tu cuenta Loyevo está lista ✅", "Crea tu contraseña y haz tu primer envío.", "1. Banner\n2. Saludo\n3. Botón Crear contraseña\n4. Cómo funciona\n5. Aviso anti-fraude\n6. Soporte\n7. Pie legal", "Hola, Andrés. Creamos tu cuenta Loyevo. Crea tu contraseña segura para entrar.", "Crear mi contraseña → enlace seguro de un solo uso que vence", "Nunca mostrar la contraseña ni una pista de ella (hoy dice «tu número de documento») · enlace que vence · soporte.", "Sí · manual (soporte)", "Hola {nombre}, creamos tu cuenta Loyevo. Te llegó un correo para crear tu contraseña. Si necesitas ayuda, escríbenos aquí.", "% que entra a la app en 48 h."], ["B1", "Por crear", "1 · Urgente", "0. Acceso a la cuenta", "Información", "Recordatorio: activa tu cuenta", "Cuenta creada y correo SIN verificar después de 24 h.\nEvento: cuenta_creada + correo_verificado = No", "+24 h. Segundo recordatorio a las +72 h.", "Se detiene apenas verifica.", "Recuperar a quien se registró y no terminó.", "Te falta un paso para activar Loyevo", "Tu enlace sigue disponible. Toma 10 segundos.", "1. Saludo\n2. Una frase\n3. Botón\n4. «¿No te llega el correo?» con ayuda", "Hola, Andrés. Tu cuenta está esperando. Confirma tu correo y queda lista.", "Verificar mi correo → enlace nuevo (el anterior pudo vencer)", "Corto · un solo botón · enlace nuevo · ayuda si no llega.", "Sí · manual (soporte)", "Hola {nombre}, vimos que tu cuenta Loyevo aún no está activa. ¿Quieres que te reenviemos el enlace?", "% que verifica después del recordatorio."], ["M1", "Por crear", "1 · Urgente", "1. Bienvenida mandante (días 0–7)", "Información", "Tu encargo viaja con alguien que ya va para allá", "Correo verificado y la persona elige «Enviar» o hace su primera búsqueda de ruta.\nEvento: rol_mandante o busqueda_ruta.\nSi la app no pregunta el rol: enviar a todos al verificar.", "Inmediato tras el evento.", "Se detiene la serie M2–M5 cuando cotiza (pasa a R1) o paga (pasa a T1).", "Explicar en una frase qué es Loyevo y llevarlo a cotizar.", "Envía más barato con viajeros verificados", "Alguien que ya va para tu ciudad puede llevar tu encargo.", "1. Banner\n2. Titular con la promesa\n3. 3 beneficios con íconos: más económico · viajero verificado · pago protegido\n4. Botón Cotizar\n5. Soporte humano por WhatsApp (7 a. m. – 9 p. m.)\n6. Pie legal", "Con Loyevo tu paquete viaja con una persona verificada que ya hace esa ruta. Pagas menos y ves fotos de la recogida y la entrega.", "Cotizar mi primer envío → cotizador en la app", "Promesa clara · 3 beneficios · un solo botón · soporte visible.", "No", "", "Clics al cotizador · % que cotiza en 7 días."], ["M2", "Por crear", "2 · Importante", "1. Bienvenida mandante (días 0–7)", "Educación", "Enviar con Loyevo en 3 pasos", "Mandante que NO ha cotizado 1 día después de M1.", "Día 1.", "Se detiene si cotiza o paga.", "Mostrar que es fácil usar la app.", "Enviar con Loyevo en 3 pasos", "Así de fácil es tu primer envío.", "1. Titular\n2. Paso 1, 2 y 3 con captura real de la app\n3. Botón\n4. Enlace a video corto (si existe)\n5. Soporte", "1. Cotiza: pon origen, destino y qué envías.\n2. Un viajero verificado acepta tu mandado.\n3. Recibes foto al recoger y al entregar.", "Hacer mi primer envío → cotizador", "Capturas reales de la app (no ilustraciones genéricas) · pasos numerados · máximo 3.", "No", "", "Clics · % que cotiza."], ["M3", "Por crear", "2 · Importante", "1. Bienvenida mandante (días 0–7)", "Educación", "Tu dinero solo se libera cuando llega", "Mandante que NO ha cotizado a los 3 días.", "Día 3.", "Se detiene si cotiza o paga.", "Quitar el miedo: ¿y si se pierde?, ¿quién lo lleva?, ¿mi plata?", "Tu dinero solo se libera cuando llega", "Así cuidamos tu encargo de principio a fin.", "1. Titular de seguridad\n2. 4 garantías con íconos: viajero verificado · pago protegido · fotos en tiempo real · soporte humano\n3. Testimonio o calificación real\n4. Botón\n5. Enlace a preguntas frecuentes", "Verificamos a cada viajero. Tu pago queda protegido y solo se libera cuando confirmas la entrega. Ves fotos de todo el recorrido.", "Conocer cómo te protegemos → página de seguridad / preguntas frecuentes", "Pruebas reales (fotos, calificaciones) · sin promesas que la operación no cumpla · validar con legal.", "Sí · manual (soporte)", "Hola {nombre}, ¿tienes alguna duda antes de tu primer envío? Te contamos cómo protegemos tu pago y tu paquete.", "Clics a seguridad · % que cotiza después."], ["M4", "Por crear", "3 · Deseable", "1. Bienvenida mandante (días 0–7)", "Categoría", "Llaves, documentos o un regalo para la familia", "Mandante que NO ha cotizado a los 5 días.", "Día 5.", "Se detiene si cotiza o paga.", "Que la persona se reconozca en un caso de uso.", "¿Qué puedes enviar con Loyevo?", "Documentos, llaves, regalos y compras a emprendedores.", "1. Titular\n2. 4 tarjetas por uso: urgente · familia · emprendedor · documentos\n3. Lista corta de lo que NO se puede enviar\n4. Botón", "Llaves olvidadas, papeles, un regalo para tu mamá o lo que vendes por redes. Si cabe y está permitido, viaja con Loyevo.\nNo se envía: dinero, animales, sustancias ilegales ni artículos peligrosos.", "Cotizar mi caso → cotizador", "Ejemplos cotidianos · prohibidos claros · imágenes reales.", "No", "", "Clics por tarjeta (qué uso interesa más)."], ["M5", "Por crear", "2 · Importante", "1. Bienvenida mandante (días 0–7)", "Información", "Hay viajeros en tu ruta esta semana", "Mandante que NO ha cotizado a los 7 días.", "Día 7.", "Fin de la bienvenida. Si no hace nada, entra al boletín mensual (P4).", "Mostrar disponibilidad real en su ruta.", "Viajeros hacia {ciudad_destino} esta semana", "Tu encargo puede salir en los próximos días.", "1. Titular con su ruta\n2. Fechas o número de viajes próximos (solo datos reales)\n3. Si llegó referido: recordarle su crédito\n4. Botón", "Esta semana hay viajeros de {ciudad_origen} a {ciudad_destino}. Cotiza y asegura tu cupo.", "Enviar ahora → cotizador con la ruta precargada", "Personalizado por ruta · solo información real de disponibilidad.", "Sí · solo con permiso de marketing", "Hola {nombre}, esta semana hay viajeros de {origen} a {destino}. ¿Te ayudamos a enviar? Responde SALIR si no quieres estos avisos.", "% que cotiza tras el correo."], ["R1", "Por crear", "1 · Urgente", "2. Rescate de cotización", "Información", "Tu cotización sigue lista", "Cotizó y NO pagó en 1 hora.\nEvento: cotizacion_creada sin pago_confirmado", "+1 hora.", "Se detiene apenas paga.", "Retomar mientras la necesidad está viva.", "Tu envío a {ciudad_destino} sigue listo", "Termina en un minuto. Estamos para ayudarte.", "1. Resumen: ruta, tipo de paquete, valor\n2. Botón para terminar\n3. Soporte humano", "Guardamos tu cotización de {origen} a {destino} por {valor}. Termínala cuando quieras.", "Terminar mi envío → cotización guardada", "Datos de su cotización · un clic al pago · soporte.", "Sí · manual (soporte)", "Hola {nombre}, vimos tu cotización de {origen} a {destino}. ¿Te ayudamos a terminarla?", "% de cotizaciones recuperadas."], ["R2", "Por crear", "2 · Importante", "2. Rescate de cotización", "Educación", "¿Dudas antes de enviar?", "Sigue sin pagar a las 24 h.", "+24 horas.", "Se detiene apenas paga.", "Responder las objeciones más comunes.", "¿Dudas antes de enviar? Te respondemos", "Las 4 preguntas que más nos hacen.", "1. 4 preguntas frecuentes con respuesta corta\n2. Botón terminar\n3. Botón hablar con soporte", "¿Y si se pierde? ¿Quién lo lleva? ¿Cuándo pago? ¿Qué puedo enviar? Te lo explicamos en 30 segundos.", "Terminar mi envío · Hablar con soporte", "Respuestas cortas · dos caminos (pagar o preguntar).", "No", "", "% recuperadas · contactos a soporte."], ["R3", "Por crear", "3 · Deseable", "2. Rescate de cotización", "Información", "Tu primer envío con beneficio", "Sigue sin pagar a las 72 h. Solo en ruta piloto.", "+72 horas.", "Se detiene apenas paga o vence el beneficio.", "Probar si un incentivo destraba el primer uso.", "Un beneficio para tu primer envío", "Válido hasta el {fecha}.", "1. Beneficio claro y con fecha de vencimiento\n2. Botón\n3. Condiciones", "Para que pruebes Loyevo, tu primer envío tiene un beneficio hasta el {fecha}.", "Usar mi beneficio → cotización con descuento aplicado", "Fecha de vencimiento · condiciones visibles · medir contra un grupo sin beneficio.", "Sí · solo con permiso de marketing", "Hola {nombre}, tu primer envío tiene un beneficio hasta el {fecha}. ¿Lo usamos?", "% recuperadas con y sin beneficio."], ["T1", "Por crear", "1 · Urgente", "3. Mandado en curso", "Transacción", "Recibimos tu pago", "Pago confirmado.\nEvento: pago_confirmado (Purchase)", "Inmediato.", "Siempre se envía.", "Dar tranquilidad y confirmar la compra.", "Recibimos tu pago · mandado #{numero}", "Tu dinero queda protegido hasta la entrega.", "1. Confirmación\n2. Resumen: número, ruta, valor\n3. Qué sigue (buscamos viajero)\n4. Soporte", "Tu pago quedó protegido. Lo liberamos solo cuando confirmes que tu encargo llegó.", "Ver mi mandado → detalle en la app", "Número de mandado · valor · qué sigue · soporte.", "Sí · automático (plantilla Utilidad)", "✅ Recibimos tu pago del mandado #{numero}. Tu dinero queda protegido hasta la entrega.", "Contactos a soporte por «¿sí pagué?» (deben bajar)."], ["T2", "Por crear", "1 · Urgente", "3. Mandado en curso", "Transacción", "{nombre_viajero} llevará tu encargo", "Un viajero acepta el mandado.\nEvento: match_viajero", "Inmediato.", "Siempre se envía.", "Poner cara y datos al viajero.", "{nombre_viajero} llevará tu encargo", "Viajero verificado · calificación {estrellas}.", "1. Foto y nombre del viajero\n2. Sello verificado + calificación\n3. Hora estimada de recogida\n4. Botón", "Tu encargo ya tiene viajero. {nombre_viajero} está verificado y pasará a recogerlo el {fecha_hora}.", "Ver viajero → perfil en la app", "Foto del viajero · sello de verificación · hora de recogida.", "Sí · automático (plantilla Utilidad)", "🚗 {nombre_viajero} (verificado) llevará tu mandado #{numero}. Recogida: {fecha_hora}.", "Cancelaciones después del match."], ["T3", "Por crear", "1 · Urgente", "3. Mandado en curso", "Transacción", "Tu encargo va en camino", "El viajero recoge el paquete y sube la foto.\nEvento: paquete_recogido", "Inmediato.", "Siempre se envía.", "Probar que todo va bien.", "Tu encargo va en camino 📦", "Mira la foto de la recogida.", "1. Foto de recogida\n2. Hora estimada de llegada\n3. Botón seguir", "Tu encargo ya va hacia {ciudad_destino}. Llegada estimada: {hora}.", "Seguir mi envío → seguimiento", "Foto · hora estimada.", "Sí · automático (plantilla Utilidad)", "📦 Tu mandado #{numero} va en camino a {destino}. Llegada estimada: {hora}.", "Consultas «¿dónde va?» a soporte."], ["T4", "Por crear", "1 · Urgente", "3. Mandado en curso", "Transacción", "¡Entregado!", "Entrega confirmada con foto.\nEvento: mandado_entregado (MandadoDelivered)", "Inmediato.", "Siempre se envía.", "Cerrar con evidencia y pedir calificación.", "¡Entregado! Mira la foto", "Tu encargo llegó a {ciudad_destino}.", "1. Foto de entrega\n2. Confirmación\n3. Califica en un toque (estrellas)\n4. Soporte si algo no está bien", "Tu encargo llegó. Aquí está la foto de la entrega. ¿Cómo te fue con {nombre_viajero}?", "Calificar el servicio → estrellas en la app", "Foto · calificación en un toque · camino para reportar un problema.", "Sí · automático (plantilla Utilidad)", "🎉 ¡Entregado! Tu mandado #{numero} llegó. Califica tu experiencia aquí: {enlace}", "% que califica."], ["T5", "Por crear", "2 · Importante", "3. Mandado en curso", "Información", "Seguimos buscando viajero", "Pago confirmado y sin viajero después de X horas (definir según la ruta).\nEvento: sin_match_x_horas", "Según tiempo definido por ruta.", "Se detiene al haber match o cancelación.", "Evitar que la persona sienta que la abandonaron.", "Seguimos buscando viajero para tu envío", "Te contamos qué opciones tienes.", "1. Estado actual\n2. Opciones: esperar, cambiar fecha o cancelar con devolución\n3. Soporte", "Aún no hay viajero para {ruta}. Puedes esperar, cambiar la fecha o cancelar y te devolvemos tu dinero.", "Ver opciones → detalle del mandado", "Transparencia · opciones claras · cómo funciona la devolución.", "Sí · manual (soporte)", "Hola {nombre}, seguimos buscando viajero para tu mandado #{numero}. ¿Prefieres esperar o cambiar la fecha?", "Cancelaciones · tiempo hasta el match."], ["P1", "Por crear", "2 · Importante", "4. Después de la entrega", "Información", "¿Cómo te fue con tu primer envío?", "Primer mandado entregado y sin calificación.", "Entrega +1 día.", "No se envía si ya calificó en T4.", "Medir satisfacción con una pregunta.", "¿Cómo te fue con tu primer envío?", "Una pregunta, 10 segundos.", "1. Pregunta 0 a 10 con botones dentro del correo\n2. Campo opcional de comentario", "Del 0 al 10, ¿qué tan probable es que recomiendes Loyevo?", "Botones 0–10 → registra la respuesta", "Respuesta en un clic · si responde 6 o menos, alerta a soporte para llamar.", "Sí · manual (soporte)", "Hola {nombre}, ¿cómo te fue con tu envío? Del 0 al 10, ¿nos recomendarías?", "% de respuesta · puntaje promedio."], ["P2", "Por crear", "2 · Importante", "4. Después de la entrega", "Información", "Guarda tu ruta para la próxima", "Entregado y sin segundo mandado a los 7 días.", "Entrega +7 días.", "Se detiene si hace un segundo mandado.", "Facilitar que repita.", "Tu ruta {origen}–{destino} está guardada", "La próxima vez envías en dos clics.", "1. Ruta guardada\n2. Próximos viajeros en esa ruta\n3. Botón", "La próxima vez que necesites enviar a {ciudad_destino}, ya tienes todo listo.", "Enviar otra vez → cotizador con ruta precargada", "Ruta precargada · disponibilidad real.", "No", "", "% con segundo mandado en 30 días."], ["P3", "Por crear", "2 · Importante", "4. Después de la entrega", "Información", "Regala $10.000 y gana $10.000", "Entregado con calificación positiva (9 o 10, o 4–5 estrellas).", "Entrega +14 días.", "Una sola vez. Repetir a los 60 días si no ha compartido.", "Activar referidos.", "Regala $10.000 y gana $10.000", "Comparte tu código con quien envía entre ciudades.", "1. Beneficio para los dos\n2. Código personal\n3. Botones compartir (WhatsApp, copiar)\n4. Condiciones", "Tu amigo recibe $10.000 en su primer envío. Tú ganas $10.000 cuando ese envío se entrega.", "Compartir mi código → WhatsApp con mensaje listo", "Código visible · condiciones claras · montos a validar con Loyevo (vienen del diagnóstico CRM).", "Sí · solo con permiso de marketing", "Hola {nombre}, ¿conoces a alguien que envíe cosas entre ciudades? Con tu código {codigo} recibe $10.000 y tú también.", "Códigos compartidos · referidos con primer envío."], ["P4", "Por crear", "3 · Deseable", "4. Después de la entrega", "Categoría", "Así usan Loyevo en tu ruta", "Entregado y sin segundo mandado a los 30 días. También para quien terminó la bienvenida sin cotizar.", "Entrega +30 días; luego 1 vez al mes.", "Se detiene si hace un nuevo mandado.", "Inspirar nuevos usos y mantener la marca presente.", "Así usan Loyevo en {ciudad_origen}", "Historias reales de envíos en tu ruta.", "1. Historia corta de un usuario real\n2. Ideas por tipo de envío\n3. Botón", "Esta semana una emprendedora de Ibagué envió sus pedidos a Bogotá el mismo día. (Ejemplo: usar casos reales con permiso.)", "Cotizar → cotizador", "Casos reales con autorización · enlace para darse de baja.", "No", "", "Clics · reactivación."], ["RF1", "Por crear", "3 · Deseable", "4. Después de la entrega", "Transacción", "Ganaste tu bono de referido", "Un referido completa su primer envío.\nEvento: referido_entregado", "Inmediato.", "Siempre se envía.", "Premiar y motivar a seguir invitando.", "¡Ganaste $10.000! 🎉", "{nombre_referido} hizo su primer envío con tu código.", "1. Bono ganado\n2. Saldo disponible\n3. Botón para invitar a otro", "{nombre_referido} usó tu código. Ya tienes $10.000 para tu próximo envío.", "Invitar a alguien más → compartir código", "Saldo actualizado · cómo usarlo.", "Sí · automático (plantilla Utilidad)", "🎉 Ganaste $10.000: {nombre_referido} hizo su primer envío con tu código.", "Referidos por persona."]], "A": [[1, "Remitente", "Nombre y correo que ve la persona como «De».", "Siempre el mismo nombre y un solo dominio. Usar un correo para transaccionales y otro para promociones.", "Loyevo <hola@loyevo.co> · Loyevo <novedades@loyevo.co>", "Mezclar loyevo.app y loyevo.co: genera desconfianza y empeora la llegada a la bandeja.", "Todos"], [2, "Asunto", "La primera línea que se lee en la bandeja.", "Menos de 45 caracteres. Una idea: beneficio o acción. Máximo 1 emoji. Usar el nombre o la ruta cuando sume.", "Tu envío a Medellín sigue listo", "Asuntos genéricos («Novedades Loyevo») o en MAYÚSCULAS.", "Todos"], [3, "Preheader", "Texto corto que acompaña el asunto.", "40 a 90 caracteres. Completa el asunto, no lo repite.", "Termina en un minuto. Estamos para ayudarte.", "No definirlo: la bandeja muestra «Ver en navegador» o texto suelto.", "Todos"], [4, "Banner / encabezado", "Logo y franja de marca.", "Liviano y bajo (no más de 1/4 de pantalla en celular). Con texto alternativo. Mantener el banner actual con el lema.", "Banner morado y magenta «Conectando trayectos con propósitos».", "Banner tan alto que el botón queda escondido abajo.", "Todos"], [5, "Saludo", "Hola + nombre.", "Nombre con mayúscula inicial. Si no hay nombre: «Hola».", "Hola, Andrés 👋", "«Hola, ANDRES» en mayúsculas o «Hola, {nombre}» sin reemplazar.", "Todos"], [6, "Titular", "La idea principal en una frase.", "Una sola idea. Grande, oscuro y legible.", "Tu dinero solo se libera cuando llega", "Texto gris claro sobre blanco: se pierde en el celular.", "Todos"], [7, "Cuerpo", "El mensaje.", "3 a 5 líneas o 3 pasos con íconos. Tutear, frases cortas, palabras del día a día (envío, encargo, viajero).", "1. Cotiza 2. Un viajero acepta 3. Recibes fotos", "Párrafos largos o palabras técnicas (match, liquidez, corredor).", "Todos"], [8, "Botón (CTA)", "La acción que queremos que haga.", "Uno principal. Verbo + resultado. Color magenta, texto blanco, mínimo 44 px de alto, visible sin bajar en celular.", "Cotizar mi primer envío", "Tres botones que compiten o un enlace de texto pequeño.", "Todos"], [9, "Franja de confianza", "Recordatorio corto de por qué es seguro.", "Una línea con 3 sellos: viajero verificado · pago protegido · fotos de entrega.", "✔ Viajero verificado  ✔ Pago protegido  ✔ Fotos en tiempo real", "Prometer cosas que la operación no cumple (validar con legal).", "Educación, Información, Categoría"], [10, "Prueba social", "Evidencia de que otros ya lo usan.", "Calificaciones, testimonios o cifras reales, con permiso del usuario.", "«Mis papeles llegaron en 5 horas» — Laura, Ibagué", "Testimonios inventados o cifras infladas.", "Educación, Categoría"], [11, "Soporte", "Dónde pedir ayuda.", "Correo + WhatsApp + horario. La web promete soporte humano por WhatsApp: mostrarlo.", "¿Necesitas una mano? WhatsApp {número} · soporte@loyevo.co · 7 a. m. a 9 p. m.", "Solo correo, sin horario.", "Todos"], [12, "Aviso anti-fraude", "Frase de seguridad.", "Mantenerlo (ya existe). Coherente: no enviar contraseñas por correo.", "Loyevo nunca te pedirá tu contraseña por correo.", "Decir esto y a la vez mostrar la contraseña en el correo.", "Transacción"], [13, "Pie legal", "Datos de la empresa y enlaces legales.", "Razón social, ciudad, términos, privacidad. En correos que no son transaccionales: enlace para darse de baja (Ley 1581 de 2012).", "Loyevo · Bogotá D.C. · Términos · Privacidad · Darme de baja", "Correos promocionales sin opción de baja.", "Todos"], [14, "Variables", "Datos que cambian por persona.", "Lista base: {nombre}, {ciudad_origen}, {ciudad_destino}, {numero}, {valor}, {nombre_viajero}, {codigo}. Definir un texto por defecto para cada una.", "Tu envío a {ciudad_destino} → Tu envío a Medellín", "Variables vacías que muestran «Tu envío a ».", "Todos"], [15, "Enlaces medibles", "Etiquetas para saber qué correo generó el envío.", "Agregar UTM a cada botón: utm_source=crm&utm_medium=email&utm_campaign={código}.", "…?utm_source=crm&utm_medium=email&utm_campaign=M3", "Botones sin UTM: no se sabe qué correo funcionó.", "Todos"], [16, "Prueba final", "Revisión antes de activar.", "Enviar prueba a Gmail (celular y computador), iPhone y Outlook. Revisar modo oscuro, enlaces y variables.", "Checklist: asunto · preheader · nombre · botón · enlaces · baja", "Activar sin probar en celular, donde se abre la mayoría.", "Todos"]], "T": [["cuenta_creada", "La persona se registró sola.", "id_usuario, nombre, correo, celular, fecha, fuente (de dónde llegó), acepta_marketing (sí/no)", "EX1 · B1 (si no verifica)", "—", "CompleteRegistration"], ["cuenta_creada_asistida", "El equipo creó la cuenta por la persona.", "Igual que cuenta_creada + quién la creó", "EX2", "EX1 (no enviar ambos)", "—"], ["correo_verificado", "Hizo clic en verificar.", "id_usuario, fecha", "M1", "B1", "—"], ["rol_mandante / busqueda_ruta", "Eligió «Enviar» o buscó una ruta.", "id_usuario, ciudad_origen, ciudad_destino", "M1 → M2–M5", "—", "Search"], ["cotizacion_creada", "Cotizó un envío.", "id_usuario, id_cotizacion, origen, destino, tipo_envio, valor", "R1 · R2 · R3 (si no paga)", "M2–M5", "Lead"], ["pago_confirmado", "Pagó el mandado.", "id_usuario, id_mandado, valor, medio de pago, fuente/UTM", "T1", "R1–R3 · M2–M5", "Purchase (hoy no llega a Meta: prioridad)"], ["match_viajero", "Un viajero aceptó.", "id_mandado, nombre_viajero, foto, calificación, fecha_hora recogida", "T2", "T5", "—"], ["sin_match_x_horas", "Pagó y no hay viajero aún.", "id_mandado, horas de espera, ruta", "T5", "—", "—"], ["paquete_recogido", "El viajero recogió y subió foto.", "id_mandado, foto, hora estimada de llegada", "T3", "—", "—"], ["mandado_entregado", "Entrega confirmada con foto.", "id_mandado, foto, fecha, es_primer_mandado (sí/no)", "T4 · P1 · P2 · P3 · P4", "—", "MandadoDelivered"], ["calificacion_enviada", "Calificó el servicio.", "id_mandado, puntaje, comentario", "P3 (si es alta) · alerta a soporte (si es 6 o menos)", "P1", "—"], ["referido_entregado", "Alguien que usó su código completó su primer envío.", "id_referidor, id_referido, valor del bono", "RF1", "—", "—"], ["baja_marketing", "Pidió no recibir más promociones.", "id_usuario, fecha, canal", "—", "Todos los de Educación, Información y Categoría (las transacciones siguen)", "—"]], "H": [["Alta", "EX2 muestra «Contraseña: tu número de documento».", "Cualquiera que conozca la cédula puede entrar a la cuenta. Además contradice el aviso «nunca te pediremos tu contraseña» y golpea la confianza, que es la principal barrera de Loyevo.", "Reemplazar por un botón «Crear mi contraseña» con enlace de un solo uso. Pedir cambio de contraseña en el primer ingreso.", "EX2"], ["Alta", "Los dos correos llegan al mismo tiempo con casi el mismo contenido.", "La persona recibe dos bienvenidas iguales: parece error o spam.", "Enviar solo uno según el caso: registro propio → EX1. Cuenta creada por el equipo → EX2.", "EX1 · EX2"], ["Alta", "Se usan 3 dominios: remitente hola@loyevo.app, soporte@loyevo.co y enlace loyevo-6837b.firebaseapp.com.", "Dominios distintos hacen dudar si el correo es real y afectan la llegada a la bandeja de entrada.", "Unificar todo en loyevo.co. Configurar dominio propio para los enlaces de verificación de Firebase y autenticar el dominio (SPF, DKIM, DMARC).", "EX1 · EX2"], ["Media", "Se ve el enlace largo de firebaseapp.com.", "Un enlace largo y extraño parece phishing.", "Mostrar un enlace corto en dominio propio o solo el botón con la opción «copia este enlace» más discreta.", "EX1"], ["Media", "Nombre en mayúsculas: «Hola, ANDRES».", "Se siente automático y frío.", "Formatear el nombre: primera letra mayúscula y el resto minúscula.", "EX1 · EX2"], ["Media", "Titular y subtítulo en gris claro.", "Bajo contraste: difícil de leer en celular y con sol.", "Titular en el color oscuro de marca y subtítulo en gris más oscuro.", "EX1 · EX2"], ["Media", "El soporte es solo por correo.", "La web promete atención humana por WhatsApp de 7 a. m. a 9 p. m. Es un argumento de confianza que el correo no usa.", "Agregar botón de WhatsApp y horario en el bloque «¿Necesitas una mano?».", "EX1 · EX2"], ["Baja", "No hay franja de confianza.", "La bienvenida es el mejor momento para decir por qué es seguro.", "Agregar una línea: viajero verificado · pago protegido · fotos de entrega.", "EX1"], ["Mantener", "Banner de marca, lema, botón claro, bloque «Envía o viaja», aviso anti-fraude, enlace alterno y pie legal.", "Son buena base y se ven profesionales.", "Usarlos como plantilla maestra para el resto de correos.", "EX1 · EX2"]], "P": [["1", "Corregir los 2 correos actuales", "EX1 y EX2 según la hoja «Correos actuales». Primero la contraseña.", "Loyevo (tecnología) + Adcom (copy)"], ["1", "Unificar dominio y autenticarlo", "Remitente en loyevo.co · SPF, DKIM, DMARC · dominio propio en enlaces de Firebase.", "Loyevo (tecnología)"], ["1", "Elegir herramienta y conectar eventos", "Eventos de la hoja «Triggers» con el mismo id_usuario.", "Loyevo (tecnología)"], ["1", "Crear la plantilla maestra", "Esqueleto de la hoja «Anatomía del correo» + 3 variaciones.", "Adcom (diseño)"], ["2", "Transaccionales", "T1, T2, T3, T4, T5.", "Adcom + Loyevo"], ["2", "Recordatorio y rescate", "B1, R1, R2.", "Adcom + Loyevo"], ["2", "WhatsApp manual", "Cargar respuestas rápidas y etiquetas en WhatsApp Business.", "Loyevo (soporte)"], ["3", "Bienvenida mandante", "M1, M2, M3, M4, M5.", "Adcom + Loyevo"], ["3", "Pruebas", "Envíos de prueba en celular, Gmail, iPhone y Outlook. Revisar variables y salidas.", "Adcom + Loyevo"], ["4", "Post-entrega y referidos", "P1, P2, P3, P4, RF1. R3 solo en ruta piloto.", "Adcom + Loyevo"], ["4", "Primer reporte", "% verificación · % que cotiza · % cotizaciones recuperadas · % segundo envío · bajas.", "Adcom"]]};
-const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-const TCLS = {"Educación":"edu","Información":"info","Transacción":"trx","Categoría":"cat"};
-const R = D.R.map(x => ({code:x[0],st:x[1],prio:x[2],stage:x[3],ty:x[4],name:x[5],trg:x[6],when:x[7],stop:x[8],goal:x[9],subj:x[10],pre:x[11],struct:x[12],msg:x[13],cta:x[14],must:x[15],wa:x[16],wamsg:x[17],kpi:x[18]}));
-const isWA = r => r.wa.startsWith("Sí");
-
-// stats
-const stats = [
-  [R.length,"plantillas en total",false],
-  [R.filter(r=>r.st.startsWith("Ya existe")).length,"ya existen (ajustar)",false],
-  [R.filter(r=>r.st==="Por crear").length,"por crear",false],
-  [R.filter(r=>r.prio.startsWith("1")).length,"urgentes",true],
-  [R.filter(isWA).length,"se pueden replicar en WhatsApp",false],
-];
-document.getElementById("stats").innerHTML = stats.map(([n,l,h])=>`<div class="stat${h?" hl":""}"><b>${n}</b><span>${l}</span></div>`).join("");
-
-// map
-const stages = [...new Set(R.map(r=>r.stage))];
-const stageDesc = {
-  "0. Acceso a la cuenta":"Verificar el correo y entrar.",
-  "1. Bienvenida mandante (días 0–7)":"Explicar, educar y dar confianza hasta que cotice.",
-  "2. Rescate de cotización":"Cotizó y no pagó.",
-  "3. Mandado en curso":"Confirmaciones paso a paso.",
-  "4. Después de la entrega":"Calificar, repetir y recomendar."
-};
-document.getElementById("map").innerHTML = stages.map(s=>{
-  const [n,...t]=s.split(". ");
-  return `<li><span class="n">Etapa ${n}</span><b>${esc(t.join(". "))}</b><span>${esc(stageDesc[s]||"")}</span><span class="codes">${R.filter(r=>r.stage===s).map(r=>r.code).join(" · ")}</span></li>`;
-}).join("");
-
-// hallazgos
-document.getElementById("hall").innerHTML = D.H.map(h=>`<tr><td><span class="prio ${h[0]}">${h[0]}</span></td><td><b>${esc(h[1])}</b></td><td>${esc(h[2])}</td><td>${esc(h[3])}</td><td><code>${esc(h[4])}</code></td></tr>`).join("");
-
-// flujo
-let mode="all"; const on={"Educación":true,"Información":true,"Transacción":true,"Categoría":true};
-function pass(r){
-  if(!on[r.ty]) return false;
-  if(mode==="exist") return r.st.startsWith("Ya existe");
-  if(mode==="new") return r.st==="Por crear";
-  if(mode==="p1") return r.prio.startsWith("1");
-  if(mode==="wa") return isWA(r);
-  return true;
-}
-function card(r){
-  const ex = r.st.startsWith("Ya existe");
-  return `<article class="step${ex?" is-exist":""}" id="${r.code}">
-    <div class="code">${r.code}</div>
-    <div class="body">
-      <div class="row"><span class="chip ${ex?"exist":"new"}">${esc(r.st)}</span><span class="chip${r.prio.startsWith("1")?" p1":""}">Prioridad ${esc(r.prio)}</span><span class="tag ${TCLS[r.ty]}">${r.ty}</span>${isWA(r)?`<span class="chip wa">WhatsApp</span>`:""}</div>
-      <div class="name">${esc(r.name)}</div>
-      <div class="subj"><span class="lbl">Asunto · preheader</span><b>${esc(r.subj)}</b><span>${esc(r.pre)}</span></div>
-      <dl class="meta">
-        <div><dt>Trigger: qué lo activa</dt><dd>${esc(r.trg)}</dd></div>
-        <div><dt>Cuándo se envía</dt><dd>${esc(r.when)}</dd></div>
-        <div><dt>Se detiene si…</dt><dd>${esc(r.stop)}</dd></div>
-        <div><dt>Para qué sirve</dt><dd>${esc(r.goal)}</dd></div>
-        <div><dt>Estructura (bloques en orden)</dt><dd>${esc(r.struct)}</dd></div>
-        <div><dt>Mensaje clave</dt><dd>${esc(r.msg)}</dd></div>
-        <div class="wide"><dt>Lo que no puede faltar</dt><dd>${esc(r.must)}</dd></div>
-        <div><dt>Cómo saber si funciona</dt><dd>${esc(r.kpi)}</dd></div>
-        <div><dt>WhatsApp</dt><dd>${esc(r.wa)}</dd></div>
-        ${r.wamsg?`<div class="wide"><dt>Mensaje sugerido para WhatsApp</dt><dd class="wa-msg">${esc(r.wamsg)}</dd></div>`:""}
-      </dl>
-      <span class="cta">Botón: ${esc(r.cta)}</span>
-    </div></article>`;
-}
-function render(){
-  const html = stages.map(s=>{
-    const rows = R.filter(r=>r.stage===s && pass(r));
-    if(!rows.length) return "";
-    return `<div class="stage"><div class="stage-h"><span class="eyebrow">${esc(s)}</span></div><div class="steps">${rows.map(card).join("")}</div></div>`;
-  }).join("");
-  document.getElementById("lane").innerHTML = html || `<p class="empty">No hay plantillas con ese filtro.</p>`;
-}
-document.querySelectorAll(".tabs button").forEach(b=>b.addEventListener("click",()=>{
-  mode=b.dataset.s;
-  document.querySelectorAll(".tabs button").forEach(x=>x.setAttribute("aria-pressed",x===b));
-  render();
-}));
-document.querySelectorAll(".filters button").forEach(b=>b.addEventListener("click",()=>{
-  on[b.dataset.f]=!on[b.dataset.f]; b.setAttribute("aria-pressed",on[b.dataset.f]); render();
-}));
-render();
-
-// anatomía
-document.getElementById("anat").innerHTML = D.A.map(a=>`<tr><td>${a[0]}</td><td><b>${esc(a[1])}</b></td><td>${esc(a[2])}</td><td>${esc(a[3])}</td><td>${esc(a[4])}</td><td>${esc(a[5])}</td></tr>`).join("");
-// triggers
-document.getElementById("trig").innerHTML = D.T.map(t=>`<tr><td><code>${esc(t[0])}</code></td><td>${esc(t[1])}</td><td>${esc(t[2])}</td><td><b>${esc(t[3])}</b></td><td>${esc(t[4])}</td><td>${esc(t[5])}</td></tr>`).join("");
-// plan
-const weeks=[...new Set(D.P.map(p=>p[0]))];
-document.getElementById("planw").innerHTML = weeks.map(w=>`<div class="wk"><span class="eyebrow">Semana ${w}</span><ul>${D.P.filter(p=>p[0]===w).map(p=>`<li><b>${esc(p[1])}</b><span>${esc(p[2])}</span><i>${esc(p[3])}</i></li>`).join("")}</ul></div>`).join("");
-</script>
+<script src="assets/js/flujo-crm-mandantes.js" defer></script>
 
 </body></html>
