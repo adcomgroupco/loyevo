@@ -2,115 +2,17 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <title>Loyevo | Flujo CRM para mandantes</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Onest:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
-  <link rel="stylesheet" href="assets/css/shared.css">
-  <link rel="stylesheet" href="assets/css/flujo-crm-mandantes.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, follow">
+  <title>CRM para mandantes</title>
+  <link rel="canonical" href="crm/mandantes.html">
+  <meta http-equiv="refresh" content="0;url=crm/mandantes.html">
+  <script>location.replace("crm/mandantes.html" + location.search + location.hash);</script>
 </head>
 <body>
-  <a class="skip-link" href="#contenido">Saltar al contenido</a>
-<main id="contenido"><div class="wrap">
-  <div class="top">
-    <div class="logo">lo<i>yevo</i></div>
-    <a href="https://adcomgroupco.github.io/loyevo/" target="_blank" rel="noopener">← Centro de documentación</a>
-  </div>
-
-  <header class="hero">
-    <span class="eyebrow">DOC · 05 · CRM y comunicación · Mandantes</span>
-    <h1>Guía de plantillas de correo para <em>mandantes</em></h1>
-    <p class="lead">Hoy Loyevo tiene 2 correos: verificación y cuenta creada. Esta guía propone el resto del recorrido de quien envía un paquete, desde el registro hasta que repite y recomienda. Para cada correo dice qué lo activa, qué debe decir, cómo se arma y si se puede replicar por WhatsApp.</p>
-    <div class="stats" id="stats"></div>
-    <p class="note">Esta página tiene el mismo contenido que la guía en Excel enviada al equipo de Loyevo. El flujo de viajeros queda para una segunda fase.</p>
-  </header>
-
-  <section id="basico">
-    <span class="eyebrow">Antes de empezar</span>
-    <h2>Palabras clave</h2>
-    <div class="gloss">
-      <div><b>Mandante</b><span>La persona que envía un paquete con Loyevo.</span></div>
-      <div><b>Plantilla</b><span>El diseño base de un correo. Se construye una vez y el sistema cambia solo los datos: nombre, ruta, número de mandado.</span></div>
-      <div><b>Trigger</b><span>La acción que dispara el correo, por ejemplo «pagó» o «no ha cotizado en 3 días». Sin trigger, el correo no sale solo.</span></div>
-      <div><b>Se detiene si…</b><span>La regla de salida. Evita que a quien ya pagó le llegue «¿todavía no envías?».</span></div>
-      <div><b>Preheader</b><span>La frase gris que se ve junto al asunto en la bandeja de entrada.</span></div>
-      <div><b>Variable {así}</b><span>Un dato que el sistema reemplaza: {nombre} se vuelve «Andrés». Siempre definan qué mostrar si el dato falta.</span></div>
-    </div>
-    <div class="types">
-      <div class="type t-edu"><span class="tag edu">Educación</span><h3>Enseña y da confianza</h3><p>Cómo enviar en 3 pasos, cómo protegemos tu pago.</p></div>
-      <div class="type t-info"><span class="tag info">Información</span><h3>Avisa y mueve a la acción</h3><p>Cotización pendiente, viajeros en tu ruta, encuesta.</p></div>
-      <div class="type t-trx"><span class="tag trx">Transacción</span><h3>Confirma lo que pasó</h3><p>Pago recibido, viajero asignado, entregado. Sale siempre: no es publicidad.</p></div>
-      <div class="type t-cat"><span class="tag cat">Categoría</span><h3>Habla de su tipo de envío</h3><p>Documentos, regalos, emprendedores. Para que la persona se identifique.</p></div>
-    </div>
-  </section>
-
-  <section id="mapa">
-    <span class="eyebrow">El recorrido en una mirada</span>
-    <h2>Cinco etapas, 21 plantillas</h2>
-    <div class="map" role="region" aria-label="Mapa del recorrido" tabindex="0"><ol id="map"></ol></div>
-  </section>
-
-  <section id="actuales">
-    <span class="eyebrow">Lo que ya existe</span>
-    <h2>Revisión de los 2 correos actuales</h2>
-    <p class="lead">EX1 «Bienvenido a Loyevo 🚀» (verificación) y EX2 «Tu cuenta Loyevo fue creada ✅» (acceso). Ambos llegaron el 22 de octubre de 2026 a las 11:35 a. m. a la misma cuenta de prueba.</p>
-    <div class="tbl"><table><thead><tr><th>Prioridad</th><th>Hallazgo</th><th>Por qué importa</th><th>Recomendación</th><th>Aplica a</th></tr></thead><tbody id="hall"></tbody></table></div>
-  </section>
-
-  <section id="flujo">
-    <span class="eyebrow">Plantilla por plantilla</span>
-    <h2>Flujo de correos · Mandantes</h2>
-    <div class="tabs" aria-label="Filtrar por estado">
-      <button data-s="all" aria-pressed="true">Todas</button>
-      <button data-s="exist" aria-pressed="false">Ya existen</button>
-      <button data-s="new" aria-pressed="false">Por crear</button>
-      <button data-s="p1" aria-pressed="false">Solo urgentes</button>
-      <button data-s="wa" aria-pressed="false">Con WhatsApp</button>
-    </div>
-    <div class="filters" aria-label="Filtrar por tipo">Tipo:
-      <button class="tag edu" data-f="Educación" aria-pressed="true">Educación</button>
-      <button class="tag info" data-f="Información" aria-pressed="true">Información</button>
-      <button class="tag trx" data-f="Transacción" aria-pressed="true">Transacción</button>
-      <button class="tag cat" data-f="Categoría" aria-pressed="true">Categoría</button>
-    </div>
-    <div id="lane"></div>
-  </section>
-
-  <section id="anatomia">
-    <span class="eyebrow">Lista de chequeo</span>
-    <h2>Anatomía de una plantilla</h2>
-    <p class="lead">Las piezas que debe tener cada correo, de arriba hacia abajo. La recomendación es diseñar una plantilla maestra con estas piezas y sacar de ella tres variaciones: transaccional, educativa y promocional.</p>
-    <div class="tbl"><table><thead><tr><th>#</th><th>Elemento</th><th>Qué es</th><th>Cómo hacerlo bien</th><th>Ejemplo Loyevo</th><th>Error común</th></tr></thead><tbody id="anat"></tbody></table></div>
-  </section>
-
-  <section id="triggers">
-    <span class="eyebrow">Para el equipo técnico</span>
-    <h2>Eventos que la app debe enviar al CRM</h2>
-    <p class="lead">Para que los correos salgan solos, la app debe avisarle al CRM cada vez que pasa algo. Clave: usar el mismo ID de usuario en la app, el CRM y la medición.</p>
-    <div class="tbl"><table><thead><tr><th>Evento</th><th>Qué significa</th><th>Datos que debe llevar</th><th>Activa</th><th>Detiene</th><th>Meta / medición</th></tr></thead><tbody id="trig"></tbody></table></div>
-  </section>
-
-  <section id="whatsapp">
-    <span class="eyebrow">Canal complementario</span>
-    <h2>WhatsApp: qué replicar y cómo</h2>
-    <p class="lead">WhatsApp es el canal más cercano para el mandante y también el más invasivo. Si un mensaje va por WhatsApp no se repite por correo el mismo día, salvo las transacciones, que van por los dos.</p>
-    <div class="ways">
-      <div class="way"><span class="k">Hoy</span><h3>Manual con WhatsApp Business</h3><p>Soporte guarda los mensajes de cada ficha como respuestas rápidas y usa etiquetas («Cotizó sin pagar», «Primer envío»). Cada mañana revisa en el CRM quién cumple el trigger y escribe.</p><p><b>Sirve para:</b> rescates (R1), recordatorios (B1), dudas (M3), encuesta (P1).</p><p><b>Ojo:</b> toma tiempo; escribir solo de 7 a. m. a 9 p. m. y solo a quien aceptó ser contactado.</p></div>
-      <div class="way"><span class="k">Después</span><h3>Automático con WhatsApp Business Platform</h3><p>El CRM envía plantillas aprobadas por Meta a través de un proveedor. Categorías: Utilidad (transacciones), Marketing (requiere permiso) y Autenticación (códigos).</p><p><b>Sirve para:</b> T1–T4 y RF1 en tiempo real; promociones con permiso.</p><p><b>Ojo:</b> cada plantilla requiere aprobación de Meta y cada mensaje tiene costo según categoría.</p></div>
-      <div class="way"><span class="k">Reglas de oro</span><h3>Para no saturar</h3><ul class="rules"><li>Permiso para WhatsApp en el registro, en casilla aparte del correo.</li><li>Máximo 1 mensaje promocional por semana.</li><li>Siempre ofrecer salida: «Responde SALIR».</li><li>En lo manual, firmar como persona: «Soy Camila, de Loyevo».</li><li>Registrar cada contacto en el CRM para no escribir dos veces.</li></ul></div>
-    </div>
-  </section>
-
-  <section id="plan">
-    <span class="eyebrow">Puesta en marcha</span>
-    <h2>Plan de construcción en 4 semanas</h2>
-    <div class="plan" id="planw"></div>
-  </section>
-
-  <footer><span>Adcom Group · Colombia · 2026</span><span>Propuesta para validar con el equipo de Loyevo</span></footer>
-</div></main>
-
-<script src="assets/js/flujo-crm-mandantes.js" defer></script>
-
-</body></html>
+<!-- media-bridge:redirect -->
+  <a class="skip-link" href="#contenido">Ir al contenido</a>
+  <main id="contenido"><h1>CRM para mandantes</h1>
+  <p><a href="crm/mandantes.html">Abrir documento</a></p></main>
+</body>
+</html>

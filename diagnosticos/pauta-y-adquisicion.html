@@ -1,0 +1,892 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Diagnóstico de pauta, adquisición y medición de mandantes para Loyevo.">
+  <meta name="theme-color" content="#ed0a78">
+  <title>Loyevo | Pauta y adquisición</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/shared.css">
+  <link rel="stylesheet" href="../assets/css/diagnostico-inicial.css">
+</head>
+<body>
+  <div class="progress" aria-hidden="true"></div>
+  <svg class="icon-sprite" aria-hidden="true">
+    <symbol id="icon-chart" viewBox="0 0 24 24"><path d="M4 19V9M10 19V5M16 19v-7M22 19H2"/></symbol>
+    <symbol id="icon-route" viewBox="0 0 24 24"><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="6" r="2.5"/><path d="M8.5 18h2.25A3.25 3.25 0 0 0 14 14.75v-5.5A3.25 3.25 0 0 1 17.25 6h-1.75"/></symbol>
+    <symbol id="icon-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M12 2v2M22 12h-2M12 22v-2M2 12h2"/></symbol>
+    <symbol id="icon-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4M17 3v4M3 10h18"/></symbol>
+    <symbol id="icon-wallet" viewBox="0 0 24 24"><path d="M4 6.5h14a2 2 0 0 1 2 2V19H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h12"/><path d="M15 11h6v5h-6a2.5 2.5 0 0 1 0-5Z"/></symbol>
+    <symbol id="icon-eye" viewBox="0 0 24 24"><path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"/><circle cx="12" cy="12" r="2.5"/></symbol>
+    <symbol id="icon-cursor" viewBox="0 0 24 24"><path d="m5 3 13 9-6 1.5L9 19 5 3Z"/></symbol>
+    <symbol id="icon-layers" viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5 9-5Z"/><path d="m3 12 9 5 9-5M3 16l9 5 9-5"/></symbol>
+    <symbol id="icon-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20v-1a6 6 0 0 1 12 0v1M16 5.5a3 3 0 0 1 0 5.5M18 14a5 5 0 0 1 3 4.6V20"/></symbol>
+    <symbol id="icon-book" viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H11v16H6.5A2.5 2.5 0 0 0 4 21.5v-16ZM20 5.5A2.5 2.5 0 0 0 17.5 3H13v16h4.5a2.5 2.5 0 0 1 2.5 2.5v-16Z"/></symbol>
+    <symbol id="icon-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12 2.5 2.5L16.5 9"/></symbol>
+    <symbol id="icon-arrow-left" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
+    <symbol id="icon-arrow-right" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+  </svg>
+  <a class="skip-link" href="#resumen">Saltar al diagnóstico</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#top" aria-label="Loyevo, inicio"><img class="brand-logo" src="../assets/logo-loyevo.png" alt=""><span>lo<em>yevo</em></span></a>
+      <nav id="main-nav" aria-label="Navegación principal">
+        <a href="../index.html">Documentos</a>
+        <a href="#resumen">Diagnóstico</a>
+        <a href="#hallazgos">Hallazgos</a>
+        <a href="#audiencias-oferta">Avances</a>
+        <a href="#estructura">Estructura ideal</a>
+        <a href="#proyeccion">Proyección</a>
+        <a href="#creatividad">Creatividad</a>
+        <a href="#medicion">Medición</a>
+        <a href="#siguientes-pasos">Siguientes pasos</a>
+      </nav>
+      <span class="header-label">PAUTA · ADQUISICIÓN</span>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir navegación">☰</button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <p class="kicker">Diagnóstico de pauta y adquisición · agosto 2026</p>
+          <h1>Pauta y adquisición</h1>
+          <p class="hero-lead">Auditoría del ecosistema público y del histórico real de Meta para que más personas coticen, paguen y completen su primer mandado con Loyevo.</p>
+          <div class="hero-meta">
+            <span class="chip">Foco: adquisición</span>
+            <span class="chip">Mercado: Colombia</span>
+            <span class="chip">Conversión: mandado pagado</span>
+          </div>
+        </div>
+        <aside class="hero-card">
+          <small>La decisión estratégica</small>
+          <strong>Optimizar a valor real, no a descargas.</strong>
+          <p>La descarga es un paso. El negocio ocurre cuando un mandante publica, paga y logra entregar su objeto.</p>
+        </aside>
+      </div>
+    </section>
+
+    <div class="wrap">
+      <div class="notice" role="note">
+        <span class="notice-icon">!</span>
+        <div><strong>Revisión de la cuenta de Loyevo</strong><p>El diagnóstico histórico principal cierra el 13 de agosto de 2026: para ese corte, la última inversión registrada era del 1 de agosto y todas las campañas estaban pausadas. La actualización operativa confirma una nueva campaña de mandantes activa desde el 19 de octubre. Las cifras publicitarias reflejan interacciones y eventos; no prueban por sí solas que un mandado haya sido pagado o entregado.</p></div>
+      </div>
+    </div>
+
+    <div class="wrap chapter-console" aria-label="Vistas del diagnóstico">
+      <div class="chapter-tabs">
+        <button class="chapter-tab" type="button" data-chapter-filter="diagnostico" aria-pressed="true"><svg class="icon" aria-hidden="true"><use href="#icon-chart"></use></svg><span><small>01 · Qué pasó</small><b>Diagnóstico</b></span></button>
+        <button class="chapter-tab" type="button" data-chapter-filter="captacion" aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#icon-route"></use></svg><span><small>02 · Cómo operar</small><b>Captación</b></span></button>
+        <button class="chapter-tab" type="button" data-chapter-filter="medicion" aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#icon-target"></use></svg><span><small>03 · Qué probar</small><b>Medición</b></span></button>
+        <button class="chapter-tab" type="button" data-chapter-filter="plan" aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#icon-calendar"></use></svg><span><small>04 · Qué sigue</small><b>Plan 90 días</b></span></button>
+        <button class="chapter-tab" type="button" data-chapter-filter="all" aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#icon-layers"></use></svg><span><small>Vista continua</small><b>Ver todo</b></span></button>
+      </div>
+      <div class="chapter-controls">
+        <button class="chapter-control" type="button" data-chapter-prev aria-label="Capítulo anterior"><svg class="icon" aria-hidden="true"><use href="#icon-arrow-left"></use></svg></button>
+        <span class="chapter-status" aria-live="polite">1 / 4</span>
+        <button class="chapter-control" type="button" data-chapter-next aria-label="Capítulo siguiente"><svg class="icon" aria-hidden="true"><use href="#icon-arrow-right"></use></svg></button>
+      </div>
+    </div>
+
+    <section class="section-white" id="meta-data" data-chapter="diagnostico">
+      <div class="wrap">
+        <div class="section-heading">
+          <div><p class="kicker">Evidencia de cuenta</p><h2>La inversión creció.<br>La señal quedó corta.</h2></div>
+          <p>La cuenta generó volumen, pero concentró el aprendizaje en captar viajeros y en eventos intermedios. Meta no registra compras atribuidas en el histórico.</p>
+        </div>
+        <div class="metric-grid">
+          <article class="metric-card"><div class="metric-card-top"><small>Inversión histórica</small><span class="icon-badge"><svg class="icon" aria-hidden="true"><use href="#icon-wallet"></use></svg></span></div><strong>$11,16 M</strong><span>COP · nov. 2025 a ago. 2026</span></article>
+          <article class="metric-card"><div class="metric-card-top"><small>Entrega publicitaria</small><span class="icon-badge"><svg class="icon" aria-hidden="true"><use href="#icon-eye"></use></svg></span></div><strong>2,89 M</strong><span>Impresiones</span></article>
+          <article class="metric-card"><div class="metric-card-top"><small>Interacción</small><span class="icon-badge"><svg class="icon" aria-hidden="true"><use href="#icon-cursor"></use></svg></span></div><strong>97.456</strong><span>Clics reportados por Meta</span></article>
+          <article class="metric-card"><div class="metric-card-top"><small>Estructura</small><span class="icon-badge"><svg class="icon" aria-hidden="true"><use href="#icon-layers"></use></svg></span></div><strong>14 / 94</strong><span>Campañas / anuncios · 0 activos</span></article>
+        </div>
+        <div class="allocation">
+          <article class="allocation-card">
+            <div class="card-title"><span class="icon-badge"><svg class="icon" aria-hidden="true"><use href="#icon-chart"></use></svg></span><div><small>Distribución histórica</small><h3>¿A quién se destinó la inversión?</h3></div></div>
+            <div class="allocation-visual">
+              <div class="allocation-donut" role="img" aria-label="74,2 por ciento viajeros, 21,3 por ciento mandantes y 4,5 por ciento awareness y pruebas"><div class="allocation-total"><strong>$11,16 M</strong><span>Inversión total</span></div></div>
+              <div class="allocation-legend">
+                <div class="allocation-key" style="--swatch:var(--pink)"><b>Viajeros / oferta</b><span>74,2%</span><small>$8.278.308 COP</small></div>
+                <div class="allocation-key" style="--swatch:var(--navy)"><b>Mandantes / demanda</b><span>21,3%</span><small>$2.374.779 COP</small></div>
+                <div class="allocation-key" style="--swatch:#b9b3bd"><b>Awareness y pruebas</b><span>4,5%</span><small>$504.700 COP</small></div>
+              </div>
+            </div>
+            <div class="allocation-stack" aria-hidden="true"><span style="--share:74.2%;--swatch:var(--pink)"></span><span style="--share:21.3%;--swatch:var(--navy)"></span><span style="--share:4.5%;--swatch:#b9b3bd"></span></div>
+            <p class="chart-note">Casi tres de cada cuatro pesos construyeron oferta. El siguiente ciclo debe separar activación de la base, demanda nueva y liquidez por corredor.</p>
+          </article>
+          <article class="actual-results">
+            <div class="card-title"><span class="icon-badge"><svg class="icon" aria-hidden="true"><use href="#icon-target"></use></svg></span><div><small>Señales disponibles</small><h3>Eventos atribuidos</h3></div></div>
+            <div class="result-strip">
+              <div class="result-cell"><strong>7.553</strong><span><abbr class="term-tip" tabindex="0" data-tip="Registro completado reportado por Meta. No equivale necesariamente a un mandante activo.">CompleteRegistration</abbr></span></div>
+              <div class="result-cell"><strong>44</strong><span><abbr class="term-tip" tabindex="0" data-tip="Persona que dejó sus datos o completó una acción de contacto.">Leads totales</abbr></span></div>
+              <div class="result-cell"><strong>939</strong><span>Conversaciones iniciadas</span></div>
+              <div class="result-cell"><strong>0</strong><span><abbr class="term-tip" tabindex="0" data-tip="Compra atribuida a Meta; en este diagnóstico equivale a un mandado pagado.">Purchase atribuidos</abbr></span></div>
+            </div>
+            <p class="actual-note"><strong>Lectura:</strong> 7.553 registros no equivalen a mandantes. El 89% provino de la campaña de cinco ciudades, cuyos anuncios captaban socios viajeros con vehículo.</p>
+          </article>
+        </div>
+        <div class="performance-wrap" role="region" aria-label="Desempeño de las principales líneas de captación" tabindex="0">
+          <table class="performance-table">
+            <thead><tr><th>Línea</th><th>Inversión</th><th>Resultado Meta</th><th>Costo</th><th>Diagnóstico</th></tr></thead>
+            <tbody>
+              <tr><td>Viajeros · cinco ciudades</td><td>$6.691.183</td><td>6.757 registros</td><td><b>$990 / registro</b></td><td>60% del gasto total; construyó oferta, no demanda.</td></tr>
+              <tr><td>Mandantes · lead + web</td><td>$1.470.485</td><td>31 leads</td><td><b>$47.435 / lead</b></td><td>1.158 vistas de landing → 2,68% a lead.</td></tr>
+              <tr><td>Mandantes · WhatsApp</td><td>$724.304</td><td>177 conversaciones</td><td><b>$4.092 / conversación</b></td><td>Falta conectar conversación con pago y entrega.</td></tr>
+              <tr><td>Mandados a $4.900 · tráfico</td><td>$179.990</td><td>1.988 vistas de landing</td><td><b>$91 / vista</b></td><td>CTR de 7,01%, pero sin evento profundo atribuido.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="interpretation"><strong>Cómo leer “0 Purchase atribuidos”</strong><p>La cuenta no registra compras atribuidas en Meta. Esto revela una brecha de medición; no permite concluir, por sí solo, que Meta no haya generado ventas. Para comprobarlo se debe conciliar origen de campaña, CRM, pagos, mandados y entregas.</p></div>
+      </div>
+    </section>
+
+    <section id="audiencias-oferta" class="section-white" data-chapter="captacion">
+      <div class="wrap">
+        <div class="section-heading">
+          <div><p class="kicker">Evidencia de avance · 9 sep 2026</p><h2>La primera señal<br>para captar oferta ya existe.</h2></div>
+          <p>El piloto actual de Meta no busca mandantes. Busca personas que ya conducen, se movilizan o viajan y podrían llevar un encargo en un trayecto que de todas formas realizarían.</p>
+        </div>
+        <p class="evidence-intro"><b>Propuesta que se está llevando a producción:</b> “Si ya vas a viajar, gana dinero llevando un encargo en tu camino.” Las audiencias se mantienen deliberadamente en tres para no fragmentar el aprendizaje inicial.</p>
+        <div class="audience-evidence-grid">
+          <article class="audience-evidence">
+            <small>Público guardado · Meta</small>
+            <h3>Conductores</h3>
+            <p>Señales de Uber, UberEats, Taxi Driver, automóviles, conducción y transporte. Los intereses internacionales funcionan como <em>proxy</em> ante la baja disponibilidad de señales específicas para Colombia.</p>
+            <dl><dt>Ubicación</dt><dd>Bogotá D. C.</dd><dt>Edad</dt><dd>18–65+</dd><dt>Tamaño mostrado</dt><dd>33,3–39,2 M</dd></dl>
+          </article>
+          <article class="audience-evidence">
+            <small>Público guardado · Meta</small>
+            <h3>Viajeros frecuentes</h3>
+            <p>Usa el comportamiento “Viajeros frecuentes”, la señal más cercana a quienes se desplazan recurrentemente y pueden monetizar una ruta.</p>
+            <dl><dt>Ubicación</dt><dd>Bogotá D. C.</dd><dt>Edad</dt><dd>18–65+</dd><dt>Advantage+</dt><dd>Desactivado</dd><dt>Tamaño mostrado</dt><dd>30,1–35,4 M</dd></dl>
+          </article>
+          <article class="audience-evidence">
+            <small>Público guardado · Meta</small>
+            <h3>Transporte y traslado</h3>
+            <p>Audiencia amplia a partir de Vehículos (transporte) y el sector Transporte y traslado; permite contrastar una señal sectorial frente a las otras dos hipótesis.</p>
+            <dl><dt>Ubicación</dt><dd>Bogotá D. C.</dd><dt>Edad</dt><dd>18–65+</dd><dt>Advantage+</dt><dd>Desactivado</dd><dt>Tamaño mostrado</dt><dd>18,3–21,5 M</dd></dl>
+          </article>
+        </div>
+        <div class="evidence-steps" aria-label="Avances confirmados del piloto">
+          <article class="evidence-step"><small>01 · Completado</small><b>Tag Manager conectado<br>GTM-T7W5FHZ7</b></article>
+          <article class="evidence-step"><small>02 · Completado</small><b>GA4 creado y funcionando<br>Cuenta 407123361</b></article>
+          <article class="evidence-step"><small>03 · Completado</small><b>Clic hacia Google Play Store<br>medido y probado</b></article>
+          <article class="evidence-step"><small>04 · En curso</small><b>Producción de piezas<br>para el piloto de oferta</b></article>
+        </div>
+        <a class="evidence-bridge" href="../planes/arranque.html#avances-confirmados"><div><small>Evidencia → ejecución</small><b>Ver cómo estos avances habilitan el cronograma de ocho semanas.</b></div><span>Ir al cronograma →</span></a>
+      </div>
+    </section>
+
+    <section id="alcance" data-chapter="diagnostico">
+      <div class="wrap">
+        <div class="section-heading">
+          <div><p class="kicker">Alcance del diagnóstico</p><h2>Qué se sabe.<br>Qué falta conectar.</h2></div>
+          <p>La evidencia de pauta es suficiente para identificar prioridades, pero las decisiones de escala requieren completar el vínculo con el desempeño comercial y operativo.</p>
+        </div>
+        <div class="scope-grid">
+          <article class="scope-card"><small>Revisado</small><h3>Adquisición digital</h3><p>Campañas, conjuntos, anuncios, inversión, resultados, píxeles, sitio web, cotizador y creatividades de Meta.</p></article>
+          <article class="scope-card"><small>Pendiente de validar</small><h3>Resultado de negocio</h3><p>Cotizaciones, pagos, mandados, match, entregas, cancelaciones, ticket, margen y recurrencia por corredor.</p></article>
+          <article class="scope-card"><small>Fuera del corte actual</small><h3>Otros canales</h3><p>Google, orgánico, referidos, CRM, email, WhatsApp, alianzas y tiendas de aplicaciones: identificar su rol antes de compararlos.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="resumen" data-chapter="diagnostico">
+      <div class="wrap">
+        <div class="section-heading">
+          <div><p class="kicker">Resumen ejecutivo</p><h2>La promesa funciona.<br>El sistema todavía no.</h2></div>
+          <p>Loyevo ya explica seguridad, seguimiento y pagos protegidos. La brecha está entre esa promesa y una adquisición medible: 74% de la inversión construyó oferta de viajeros y el histórico no devuelve mandados pagados a Meta.</p>
+        </div>
+        <div class="score-layout">
+          <article class="score-main">
+            <span>Madurez digital estimada</span>
+            <strong>42<small>/100</small></strong>
+            <p>Índice diagnóstico, no resultado de plataforma. Resume claridad de oferta, conversión, medición, confianza y preparación para escalar.</p>
+          </article>
+          <div class="score-grid">
+            <article class="score-item"><div class="score-item-top"><h3>Propuesta de valor</h3><strong>70</strong></div><div class="bar"><i style="--value:70%"></i></div><p>Beneficios y seguridad bien explicados.</p></article>
+            <article class="score-item"><div class="score-item-top"><h3>Conversión web</h3><strong>38</strong></div><div class="bar"><i style="--value:38%"></i></div><p>El cotizador existe, pero no es el CTA dominante.</p></article>
+            <article class="score-item"><div class="score-item-top"><h3>Medición</h3><strong>32</strong></div><div class="bar"><i style="--value:32%"></i></div><p>Tres píxeles y señales intermedias; cero Purchase atribuidos en Meta.</p></article>
+            <article class="score-item"><div class="score-item-top"><h3>Escalabilidad</h3><strong>28</strong></div><div class="bar"><i style="--value:28%"></i></div><p>Falta gobernar inversión según liquidez de cada corredor.</p></article>
+          </div>
+        </div>
+        <p class="score-method"><b>Cómo se interpreta este índice:</b> es una rúbrica diagnóstica inicial, no una métrica extraída de Meta ni un indicador financiero. Sintetiza la evidencia revisada en propuesta de valor, conversión web, medición y preparación para escalar; deberá actualizarse cuando se concilien datos comerciales y operativos.</p>
+      </div>
+    </section>
+
+    <section id="hallazgos" data-chapter="diagnostico">
+      <div class="wrap">
+        <div class="section-heading">
+          <div><p class="kicker">Qué encontramos</p><h2>Seis oportunidades<br>que mueven negocio.</h2></div>
+          <p>Priorizadas por impacto potencial en adquisición y por la velocidad con que pueden validarse.</p>
+        </div>
+        <div class="finding-grid">
+          <article class="finding"><div class="finding-number"><span>01</span><span class="status high">Crítico</span></div><h3>La inversión priorizó viajeros</h3><p>$8,28 millones —74,2% del histórico— captaron oferta. Solo $2,37 millones se orientaron explícitamente a mandantes, el foco actual del negocio.</p><div class="evidence">Acción: separar presupuestos y mover el centro de gravedad a demanda.</div></article>
+          <article class="finding"><div class="finding-number"><span>02</span><span class="status high">Crítico</span></div><h3>Meta no recibió compras atribuidas</h3><p>La cuenta reporta 7.553 registros, 44 leads y 939 conversaciones, pero cero Purchase atribuidos. No se puede calcular CPA de mandado ni ROAS con la información actual.</p><div class="evidence">Dato observado: el algoritmo aprende volumen, no valor de negocio. Hipótesis por validar: puede existir conversión fuera de la atribución de Meta.</div></article>
+          <article class="finding"><div class="finding-number"><span>03</span><span class="status high">Crítico</span></div><h3>La medición está fragmentada</h3><p>Existen tres fuentes de medición: descarga, mandantes y pre-registro. Solo hay una conversión personalizada —descarga de app— y las campañas priorizan registros intermedios.</p><div class="evidence">Acción: unificar la medición y registrar pagos y entregas sin duplicados.</div></article>
+          <article class="finding"><div class="finding-number"><span>04</span><span class="status medium">Medio</span></div><h3>La cuenta se dispersó y hoy está apagada</h3><p>14 campañas, 19 conjuntos y 94 anuncios repartidos entre ventas, leads, engagement, awareness y tráfico; actualmente ninguno está activo.</p><div class="evidence">La última inversión registrada fue el 1 de agosto de 2026.</div></article>
+          <article class="finding"><div class="finding-number"><span>05</span><span class="status medium">Medio</span></div><h3>El journey cambia entre anuncio y destino</h3><p>La portada prioriza descarga; el carrusel de mandantes invita a cotizar en app, muestra Google Play y usa GET_QUOTE en campañas web.</p><div class="evidence">Oportunidad: una promesa, un destino y un CTA por campaña.</div></article>
+          <article class="finding"><div class="finding-number"><span>06</span><span class="status good">Fortaleza</span></div><h3>El producto ya tiene argumentos potentes</h3><p>Viajeros verificados, pago protegido, seguimiento, soporte humano y posible entrega el mismo día son activos creativos claros para reducir riesgo percibido.</p><div class="evidence">Acción: convertir beneficios en demostraciones, no solo afirmaciones.</div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-dark" id="intervencion" data-chapter="captacion">
+      <div class="wrap">
+        <div class="section-heading">
+          <div><p class="kicker">Secuencia recomendada</p><h2>Validar producto.<br>Preparar adquisición.</h2></div>
+          <p>La activación de usuarios registrados y la instrumentación técnica deben avanzar en paralelo. La pauta de adquisición entra cuando el recorrido y la señal de producto ya permiten aprender.</p>
+        </div>
+        <div class="priority-list">
+          <article class="priority"><h3>Definir la señal de product-market fit</h3><p>Primer mandado entregado, repetición, recomendación y tiempo a valor, medidos por corredor y rol.</p><time>Semana 1</time></article>
+          <article class="priority"><h3>Activar la base registrada</h3><p>Segmentar usuarios, entrevistarlos y acompañar una cohorte hacia su primer mandado; aprender antes de comprar más tráfico.</p><time>Semanas 1–4</time></article>
+          <article class="priority"><h3>Instrumentar el recorrido en paralelo</h3><p>Unir landing, cotización, registro, pago, match y entrega con un ID consistente y un tablero de cohortes.</p><time>Semanas 1–4</time></article>
+          <article class="priority"><h3>Resolver propuesta y camino landing → app</h3><p>La landing explica, filtra ruta y cotiza; la app continúa identidad, pago, seguimiento y recurrencia sin reiniciar el proceso.</p><time>Semanas 2–5</time></article>
+          <article class="priority"><h3>Educar y convertir aprendizajes en creatividad</h3><p>Primero “qué es Loyevo”, cómo funciona y por qué confiar; después casos de uso y piezas de adquisición.</p><time>Semanas 4–7</time></article>
+          <article class="priority"><h3>Activar adquisición como experimento</h3><p>Piloto en 1–2 corredores, con presupuesto limitado y escala condicionada a activación, entrega, margen y repetición.</p><time>Desde semana 7</time></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="estructura" class="section-white" data-chapter="captacion">
+      <div class="wrap">
+        <div class="section-heading">
+          <div><p class="kicker">Recorrido observado</p><h2>La señal llega.<br>El negocio no vuelve.</h2></div>
+          <p>El embudo actual muestra hasta dónde llega la evidencia de Meta. Las últimas etapas no son cero: hoy no están conciliadas ni atribuidas de forma confiable.</p>
+        </div>
+        <div class="current-funnel" aria-label="Embudo actual de datos disponibles">
+          <article class="funnel-status"><small>Disponible</small><strong>2,89 M</strong><p>Impresiones reportadas.</p></article>
+          <article class="funnel-status"><small>Disponible</small><strong>97.456</strong><p>Clics reportados por Meta.</p></article>
+          <article class="funnel-status"><small>Disponible</small><strong>3.146</strong><p>Vistas de landing identificadas en líneas destacadas.</p></article>
+          <article class="funnel-status"><small>Disponible</small><strong>983</strong><p>Leads y conversaciones atribuidos.</p></article>
+          <article class="funnel-status pending"><small>Sin conciliar</small><strong>Pago / mandado</strong><p>Falta cruzar cotización, usuario y pago.</p></article>
+          <article class="funnel-status pending"><small>Sin conciliar</small><strong>Match / entrega</strong><p>Falta conectar operación, calidad y resultado.</p></article>
+        </div>
+
+        <div style="height:64px"></div>
+        <div class="section-heading">
+          <div><p class="kicker">Journey recomendado</p><h2>La landing orienta.<br>La app completa.</h2></div>
+          <p>No conviene forzar una descarga en frío. La web debe resolver la duda, validar ruta e intención y conservar el contexto cuando el usuario continúa en la app.</p>
+        </div>
+        <div class="flow" aria-label="Flujo ideal de adquisición">
+          <article class="flow-step"><span>01 · Educación</span><h3>Entender el servicio</h3><p>Contenido “Qué es Loyevo”, caso de uso y corredor. La meta inicial es comprensión, no descarga.</p><code>ViewContent</code></article>
+          <article class="flow-step"><span>02 · Intención web</span><h3>Explorar y cotizar</h3><p>Origen, destino, objeto, disponibilidad estimada y prueba de confianza antes del registro.</p><code>Search / Quote</code></article>
+          <article class="flow-step"><span>03 · Activación</span><h3>Guardar el contexto</h3><p>Registro ligero o soporte por WhatsApp. La ruta y la cotización deben viajar con el usuario.</p><code>Lead / SignUp</code></article>
+          <article class="flow-step"><span>04 · Operación app</span><h3>Publicar y pagar</h3><p>Deep link a la app para identidad, pago y seguimiento, sin repetir lo ya diligenciado.</p><code>Purchase</code></article>
+          <article class="flow-step"><span>05 · Valor</span><h3>Entregar y repetir</h3><p>Confirmación de entrega, satisfacción y siguiente uso para medir acogida real del producto.</p><code>Delivered / Repeat</code></article>
+        </div>
+
+        <div style="height:64px"></div>
+        <div class="section-heading">
+          <div><p class="kicker">Arquitectura condicionada</p><h2>Tres campañas.<br>Después de validar.</h2></div>
+          <p>Esta estructura entra cuando la cohorte activada demuestre señal de producto y el recorrido sea medible. Los porcentajes son una hipótesis de piloto, no un presupuesto para arrancar hoy.</p>
+        </div>
+        <div class="campaign-tabs" role="tablist" aria-label="Campañas recomendadas">
+          <button class="tab" role="tab" aria-selected="true" data-panel="campaign-1">Prospección · 70%</button>
+          <button class="tab" role="tab" aria-selected="false" data-panel="campaign-2">Retargeting · 20%</button>
+          <button class="tab" role="tab" aria-selected="false" data-panel="campaign-3">Laboratorio · 10%</button>
+        </div>
+        <div id="campaign-1" class="tab-panel active" role="tabpanel">
+          <article class="campaign-card"><div class="campaign-share"><span>Participación inicial</span><strong>70%</strong><span>Demanda nueva</span></div><div class="campaign-body"><h3>Mandantes · Prospección</h3><p>Campaña de Ventas a sitio web, optimizada a Purchase cuando haya volumen suficiente. Antes, usar la señal profunda más cercana sin perder el objetivo de negocio.</p><div class="spec-grid"><div class="spec"><small>Geografía</small><p>Ciudades de origen con corredores activos; excluir zonas sin oferta.</p></div><div class="spec"><small>Audiencia</small><p>Broad / Advantage+ con exclusión de clientes recientes y viajeros.</p></div><div class="spec"><small>Conjuntos</small><p>Agrupar por corredor o clúster solo cuando cambie economía/mensaje.</p></div><div class="spec"><small>Creatividades</small><p>Problema, velocidad, precio, confianza y demostración.</p></div><div class="spec"><small>Destino</small><p>Cotizador web con UTM y ruta preseleccionada.</p></div><div class="spec"><small>Regla</small><p>No escalar si cae match rate o suben cancelaciones.</p></div></div></div></article>
+        </div>
+        <div id="campaign-2" class="tab-panel" role="tabpanel">
+          <article class="campaign-card"><div class="campaign-share"><span>Participación inicial</span><strong>20%</strong><span>Recuperar intención</span></div><div class="campaign-body"><h3>Mandantes · Retargeting</h3><p>Recuperar a quienes cotizaron o iniciaron pago sin competir con prospección. La ventana y el mensaje cambian según la profundidad.</p><div class="spec-grid"><div class="spec"><small>1–3 días</small><p>Inició pago: objeción, soporte y continuidad directa.</p></div><div class="spec"><small>4–14 días</small><p>Cotizó: prueba social, seguridad y recordatorio de ruta.</p></div><div class="spec"><small>15–30 días</small><p>Visitó contenido: casos de uso y educación.</p></div><div class="spec"><small>Exclusión</small><p>Mandado pagado en ventana coherente con recurrencia.</p></div><div class="spec"><small>Destino</small><p>Retomar cotización, no volver a la portada.</p></div><div class="spec"><small>Control</small><p>Vigilar frecuencia y solapamiento entre ventanas.</p></div></div></div></article>
+        </div>
+        <div id="campaign-3" class="tab-panel" role="tabpanel">
+          <article class="campaign-card"><div class="campaign-share"><span>Participación inicial</span><strong>10%</strong><span>Aprendizaje</span></div><div class="campaign-body"><h3>Laboratorio creativo</h3><p>Entorno controlado para descubrir conceptos ganadores antes de llevarlos a prospección. Testear una variable principal por celda.</p><div class="spec-grid"><div class="spec"><small>Hipótesis</small><p>Dolor vs. confianza vs. ahorro vs. velocidad.</p></div><div class="spec"><small>Formatos</small><p>UGC, demostración, estático, carrusel y animación simple.</p></div><div class="spec"><small>Lectura</small><p>Hook rate, retención, CTR, quote rate y CPA pagado.</p></div><div class="spec"><small>Cadencia</small><p>3–5 conceptos nuevos por semana al inicio.</p></div><div class="spec"><small>Ganador</small><p>Se valida por conversión, no solo por CTR.</p></div><div class="spec"><small>Aprendizaje</small><p>Documentar concepto, hook, promesa, prueba y audiencia.</p></div></div></div></article>
+        </div>
+
+        <div style="height:58px"></div>
+        <div class="section-heading">
+          <div><p class="kicker">Implementación</p><h2>Así se ordena<br>dentro de Meta.</h2></div>
+          <p>La jerarquía evita campañas duplicadas y permite leer qué corredor, concepto y pieza producen mandados de calidad.</p>
+        </div>
+        <div class="account-map" aria-label="Jerarquía recomendada de campañas de Meta">
+          <article class="account-row">
+            <div class="account-level"><small>Campaña 01 · 70%</small><strong>SALES · PROSPECTING</strong></div>
+            <div class="account-detail"><div><small>Objetivo</small><p>Ventas → sitio web → Purchase.</p></div><div><small>Conjuntos</small><p>Broad por clúster de origen/corredores con economía distinta.</p></div><div><small>Anuncios</small><p>3–5 conceptos activos; mezcla UGC, demo y estático.</p></div></div>
+          </article>
+          <article class="account-row">
+            <div class="account-level"><small>Campaña 02 · 20%</small><strong>SALES · RETARGETING</strong></div>
+            <div class="account-detail"><div><small>Objetivo</small><p>Recuperar cotización y pago.</p></div><div><small>Conjuntos</small><p>1–3 días alta intención; 4–30 días consideración.</p></div><div><small>Exclusiones</small><p>Purchase reciente, viajeros y audiencias solapadas.</p></div></div>
+          </article>
+          <article class="account-row">
+            <div class="account-level"><small>Campaña 03 · 10%</small><strong>SALES · CREATIVE LAB</strong></div>
+            <div class="account-detail"><div><small>Objetivo</small><p>Descubrir conceptos escalables.</p></div><div><small>Método</small><p>Una variable principal por prueba y gasto comparable.</p></div><div><small>Salida</small><p>Ganadores migran a prospección sin editar el original.</p></div></div>
+          </article>
+        </div>
+        <aside class="naming-box">
+          <h3>Convención de nombres recomendada</h3>
+          <div class="name-list">
+            <div><small>Campaña</small><code>CO_META_MAND_SALES_PROS_2026</code></div>
+            <div><small>Conjunto</small><code>AS_BROAD_[ORIGEN-O-CLUSTER]_18P</code></div>
+            <div><small>Anuncio</small><code>AD_[ANGULO]_[FORMATO]_[HOOK]_V01</code></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="proyeccion" data-chapter="captacion">
+      <div class="wrap">
+        <div class="section-heading">
+          <div><p class="kicker">Ejercicio de proyección</p><h2>Seis millones al mes.<br>Tres meses de evidencia.</h2></div>
+          <p>Cómo se aplicarían esos porcentajes con una inversión real de $6.000.000 COP mensuales, qué debería ocurrir cada mes y qué resultado entrega en un escenario pesimista, realista y optimista.</p>
+        </div>
+
+        <div class="notice" role="note">
+          <span class="notice-icon">!</span>
+          <div><strong>Esto es un ejercicio de planeación, no una promesa de resultados</strong><p>Los costos por impresión, clic, vista de landing y registro parten del histórico real de la cuenta. Las tasas de conversión hacia cotización, pago y entrega son hipótesis, porque hoy no existe un solo Purchase atribuido. Cada cifra proyectada debe reemplazarse por dato medido apenas el evento de mandado pagado empiece a registrar.</p></div>
+        </div>
+
+        <div class="metric-grid">
+          <article class="metric-card"><div class="metric-card-top"><small>Inversión mensual</small><span class="icon-badge"><svg class="icon" aria-hidden="true"><use href="#icon-wallet"></use></svg></span></div><strong>$6,00 M</strong><span>COP · $200.000 por día</span></article>
+          <article class="metric-card"><div class="metric-card-top"><small>Inversión total</small><span class="icon-badge"><svg class="icon" aria-hidden="true"><use href="#icon-calendar"></use></svg></span></div><strong>$18,00 M</strong><span>COP · 3 meses de piloto</span></article>
+          <article class="metric-card"><div class="metric-card-top"><small>A conversión</small><span class="icon-badge"><svg class="icon" aria-hidden="true"><use href="#icon-target"></use></svg></span></div><strong>$15,90 M</strong><span>88,3% · prospección + retargeting</span></article>
+          <article class="metric-card"><div class="metric-card-top"><small>A aprendizaje</small><span class="icon-badge"><svg class="icon" aria-hidden="true"><use href="#icon-layers"></use></svg></span></div><strong>$2,10 M</strong><span>11,7% · laboratorio creativo</span></article>
+        </div>
+
+        <div class="proj-band" aria-label="Reparto mensual de la inversión">
+          <article class="proj-month">
+            <div class="proj-month-top"><small>Mes 1 · Instalar</small><b>$6.000.000</b></div>
+            <p>El retargeting arranca en mínimo porque todavía no hay audiencia acumulada; el laboratorio arranca en máximo porque todavía no hay concepto ganador.</p>
+            <div class="split-stack" aria-hidden="true"><span style="--share:75%;--swatch:var(--pink)"></span><span style="--share:10%;--swatch:var(--navy)"></span><span style="--share:15%;--swatch:#b9b3bd"></span></div>
+            <div class="split-legend">
+              <div style="--swatch:var(--pink)"><b>Prospección</b><span>75% · $4.500.000</span></div>
+              <div style="--swatch:var(--navy)"><b>Retargeting</b><span>10% · $600.000</span></div>
+              <div style="--swatch:#b9b3bd"><b>Laboratorio</b><span>15% · $900.000</span></div>
+            </div>
+          </article>
+          <article class="proj-month">
+            <div class="proj-month-top"><small>Mes 2 · Optimizar</small><b>$6.000.000</b></div>
+            <p>Mes en que la hipótesis 70 / 20 / 10 se cumple exactamente: ya hay audiencias que recuperar y conceptos validados que sostener.</p>
+            <div class="split-stack" aria-hidden="true"><span style="--share:70%;--swatch:var(--pink)"></span><span style="--share:20%;--swatch:var(--navy)"></span><span style="--share:10%;--swatch:#b9b3bd"></span></div>
+            <div class="split-legend">
+              <div style="--swatch:var(--pink)"><b>Prospección</b><span>70% · $4.200.000</span></div>
+              <div style="--swatch:var(--navy)"><b>Retargeting</b><span>20% · $1.200.000</span></div>
+              <div style="--swatch:#b9b3bd"><b>Laboratorio</b><span>10% · $600.000</span></div>
+            </div>
+          </article>
+          <article class="proj-month">
+            <div class="proj-month-top"><small>Mes 3 · Escalar</small><b>$6.000.000</b></div>
+            <p>La intención acumulada ya justifica más recuperación. La prospección cede cinco puntos hacia el tramo más barato del embudo.</p>
+            <div class="split-stack" aria-hidden="true"><span style="--share:65%;--swatch:var(--pink)"></span><span style="--share:25%;--swatch:var(--navy)"></span><span style="--share:10%;--swatch:#b9b3bd"></span></div>
+            <div class="split-legend">
+              <div style="--swatch:var(--pink)"><b>Prospección</b><span>65% · $3.900.000</span></div>
+              <div style="--swatch:var(--navy)"><b>Retargeting</b><span>25% · $1.500.000</span></div>
+              <div style="--swatch:#b9b3bd"><b>Laboratorio</b><span>10% · $600.000</span></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="performance-wrap" role="region" aria-label="Presupuesto mensual y diario por campaña" tabindex="0">
+          <table class="performance-table compact">
+            <thead><tr><th>Mes</th><th class="num">Prospección</th><th class="num">Retargeting</th><th class="num">Laboratorio</th><th class="num">Inversión a conversión</th><th class="num">Presupuesto diario</th></tr></thead>
+            <tbody>
+              <tr><td>Mes 1 · instalar la señal</td><td class="num">$4.500.000 <b>75%</b></td><td class="num">$600.000 <b>10%</b></td><td class="num">$900.000 <b>15%</b></td><td class="num">$5.100.000</td><td class="num">$150.000 / $20.000 / $30.000</td></tr>
+              <tr><td>Mes 2 · optimizar el recorrido</td><td class="num">$4.200.000 <b>70%</b></td><td class="num">$1.200.000 <b>20%</b></td><td class="num">$600.000 <b>10%</b></td><td class="num">$5.400.000</td><td class="num">$140.000 / $40.000 / $20.000</td></tr>
+              <tr><td>Mes 3 · escalar lo que sostiene</td><td class="num">$3.900.000 <b>65%</b></td><td class="num">$1.500.000 <b>25%</b></td><td class="num">$600.000 <b>10%</b></td><td class="num">$5.400.000</td><td class="num">$130.000 / $50.000 / $20.000</td></tr>
+            </tbody>
+            <tfoot><tr><td>Total 90 días</td><td class="num">$12.600.000 · 70,0%</td><td class="num">$3.300.000 · 18,3%</td><td class="num">$2.100.000 · 11,7%</td><td class="num">$15.900.000</td><td class="num">$200.000 diarios</td></tr></tfoot>
+          </table>
+        </div>
+        <p class="chart-note">El promedio de los tres meses aterriza en la hipótesis 70 / 20 / 10 del capítulo anterior. La rampa existe porque el retargeting sin audiencia acumulada gasta mal, y el laboratorio es el único que puede encontrar el concepto que la prospección necesita.</p>
+
+        <div style="height:64px"></div>
+        <div class="section-heading">
+          <div><p class="kicker">Ejecución</p><h2>Cada mes compra<br>una decisión distinta.</h2></div>
+          <p>El primer mes no compra mandados: compra la señal que permitirá comprarlos. Cada tramo cierra con una puerta que decide si el siguiente se ejecuta, se corrige o se apaga.</p>
+        </div>
+        <div class="roadmap">
+          <article class="phase"><div class="phase-card"><div class="phase-head"><div><small>Mes 1 · días 1–30</small><h3>Instalar la señal</h3></div><span class="icon-badge"><svg class="icon" aria-hidden="true"><use href="#icon-target"></use></svg></span></div><ul><li>Publicar <b>Purchase</b> con valor en COP y <b>MandadoDelivered</b> antes del primer peso invertido.</li><li>Una campaña de prospección, dos conjuntos por corredor, 6–8 anuncios.</li><li>Optimizar a cotización o registro; Purchase todavía no tiene volumen para aprender.</li><li>Laboratorio al 15%: 3–5 conceptos nuevos por semana, una variable por celda.</li><li>Retargeting mínimo mientras se construyen las audiencias.</li></ul><p class="gate">Puerta 1: el evento de mandado pagado recibe datos sin duplicados y la cotización semanal supera el umbral acordado.</p></div></article>
+          <article class="phase"><div class="phase-card"><div class="phase-head"><div><small>Mes 2 · días 31–60</small><h3>Optimizar el recorrido</h3></div><span class="icon-badge"><svg class="icon" aria-hidden="true"><use href="#icon-route"></use></svg></span></div><ul><li>Migrar los ganadores del laboratorio a prospección sin editar el anuncio original.</li><li>Abrir retargeting al 20% con las tres ventanas: 1–3, 4–14 y 15–30 días.</li><li>Primera lectura real de costo por cotización y de tasa cotización → pago.</li><li>Apagar el corredor con peor economía en lugar de subirle la puja.</li><li>Conciliar semanalmente Meta contra pagos y entregas.</li></ul><p class="gate">Puerta 2: el costo por mandado pagado se sostiene bajo el techo acordado y la entrega supera el 80%.</p></div></article>
+          <article class="phase"><div class="phase-card"><div class="phase-head"><div><small>Mes 3 · días 61–90</small><h3>Escalar lo que sostiene</h3></div><span class="icon-badge"><svg class="icon" aria-hidden="true"><use href="#icon-chart"></use></svg></span></div><ul><li>Concentrar el incremento en el corredor con mejor margen, no repartirlo.</li><li>Retargeting al 25% con exclusión de compradores recientes.</li><li>Medir repetición a 30 días de la primera cohorte del mes 1.</li><li>Decidir con datos: escalar, sostener o apagar.</li><li>Cerrar el piloto con costo por mandado entregado y margen por corredor.</li></ul><p class="gate">Puerta 3: tres semanas consecutivas de CPA estable, sin caída de match ni aumento de cancelaciones.</p></div></article>
+        </div>
+
+        <div style="height:64px"></div>
+        <div class="section-heading">
+          <div><p class="kicker">Costo estimado por KPI</p><h2>Lo que costaría<br>cada paso del embudo.</h2></div>
+          <p>Costos en estado maduro, equivalentes al mes 2. El mes 1 corre un 30% más caro por fase de aprendizaje y el mes 3 un 12% más barato por acumulación de señal.</p>
+        </div>
+        <div class="performance-wrap" role="region" aria-label="Costo estimado por KPI en cada escenario" tabindex="0">
+          <table class="performance-table compact">
+            <thead><tr><th>KPI</th><th class="num">Referencia histórica</th><th class="num">Pesimista</th><th class="num">Realista</th><th class="num">Optimista</th></tr></thead>
+            <tbody>
+              <tr><td>CPM · mil impresiones</td><td class="num">$3.861 <b>alcance / tráfico</b></td><td class="num">$17.000</td><td class="num">$15.000</td><td class="num">$13.000</td></tr>
+              <tr><td>CPC · clic en el enlace</td><td class="num">$114 <b>objetivo tráfico</b></td><td class="num">$944</td><td class="num">$750</td><td class="num">$565</td></tr>
+              <tr><td>Vista de landing</td><td class="num">$1.270 <b>línea mandantes</b></td><td class="num">$1.259</td><td class="num">$962</td><td class="num">$689</td></tr>
+              <tr><td>Cotización iniciada</td><td class="num">Sin dato</td><td class="num">$12.593</td><td class="num">$6.410</td><td class="num">$4.308</td></tr>
+              <tr><td>Registro de mandante</td><td class="num">$47.435 <b>31 leads</b></td><td class="num">$46.639</td><td class="num">$16.869</td><td class="num">$10.507</td></tr>
+              <tr><td>Mandado pagado · <abbr class="term-tip" tabindex="0" data-tip="Costo por adquisición: inversión dividida entre mandados pagados atribuidos.">CPA</abbr></td><td class="num">Sin dato · 0 Purchase</td><td class="num">$310.928</td><td class="num">$76.678</td><td class="num">$42.030</td></tr>
+              <tr><td>Mandado entregado · <b>KPI norte</b></td><td class="num">Sin dato</td><td class="num">$414.571</td><td class="num">$90.209</td><td class="num">$46.700</td></tr>
+            </tbody>
+            <tfoot><tr><td>Conversión landing → mandado pagado</td><td class="num">2,68% landing → lead</td><td class="num">0,41%</td><td class="num">1,25%</td><td class="num">1,64%</td></tr></tfoot>
+          </table>
+        </div>
+        <div class="interpretation"><strong>Cómo se construyó el escenario pesimista</strong><p>No es un supuesto arbitrario: replica el desempeño que la cuenta ya demostró. Su costo por vista de landing ($1.259) y su costo por registro ($46.639) son prácticamente los históricos, y su tasa de landing a registro es el 2,7% medido en la línea de mandantes. Pesimista significa, literalmente, que el recorrido no mejora.</p></div>
+
+        <div style="height:64px"></div>
+        <div class="section-heading">
+          <div><p class="kicker">Proyección de resultados</p><h2>Tres escenarios.<br>La misma inversión.</h2></div>
+          <p>Los tres parten de $18.000.000 en 90 días y se separan únicamente por las tasas de conversión del recorrido. Cambie de pestaña para ver el detalle mes a mes.</p>
+        </div>
+        <div class="campaign-tabs" role="tablist" aria-label="Escenarios de proyección">
+          <button class="tab" role="tab" aria-selected="false" data-panel="scenario-pes">Pesimista</button>
+          <button class="tab" role="tab" aria-selected="true" data-panel="scenario-real">Realista</button>
+          <button class="tab" role="tab" aria-selected="false" data-panel="scenario-opt">Optimista</button>
+        </div>
+
+        <div id="scenario-pes" class="tab-panel" role="tabpanel">
+          <article class="scenario-card">
+            <div class="scenario-top">
+              <div class="scenario-flag"><div><small>Escenario pesimista</small><strong>50</strong><span>mandados pagados en 90 días</span></div><em>CPA $360.000 · 38 entregados</em></div>
+              <div class="scenario-body">
+                <h3>El recorrido no cambia</h3>
+                <p>La pauta se enciende, pero la landing, el cotizador y la medición siguen como están. Meta compra tráfico correcto hacia un embudo que sigue perdiendo a la gente en el mismo punto.</p>
+                <div class="assumption-grid">
+                  <div class="assumption"><small>CPM</small><b>$17.000</b></div>
+                  <div class="assumption"><small>CTR enlace</small><b>1,8%</b></div>
+                  <div class="assumption"><small>Vista → cotiza</small><b>10%</b></div>
+                  <div class="assumption"><small>Cotiza → paga</small><b>4,1%</b></div>
+                  <div class="assumption"><small>Paga → entrega</small><b>75%</b></div>
+                </div>
+                <div class="performance-wrap" role="region" aria-label="Resultados mensuales del escenario pesimista" tabindex="0">
+                  <table class="performance-table compact wide">
+                    <thead><tr><th>Mes</th><th class="num">Impresiones</th><th class="num">Clics</th><th class="num">Vistas landing</th><th class="num">Cotizaciones</th><th class="num">Registros</th><th class="num">Pagados</th><th class="num">Entregados</th><th class="num">CPA</th></tr></thead>
+                    <tbody>
+                      <tr><td>Mes 1</td><td class="num">230.769</td><td class="num">4.154</td><td class="num">3.115</td><td class="num">312</td><td class="num">84</td><td class="num">13</td><td class="num">10</td><td class="num"><b>$404.207</b></td></tr>
+                      <tr><td>Mes 2</td><td class="num">317.647</td><td class="num">5.718</td><td class="num">4.288</td><td class="num">429</td><td class="num">116</td><td class="num">17</td><td class="num">13</td><td class="num"><b>$310.928</b></td></tr>
+                      <tr><td>Mes 3</td><td class="num">360.963</td><td class="num">6.497</td><td class="num">4.873</td><td class="num">487</td><td class="num">132</td><td class="num">20</td><td class="num">15</td><td class="num"><b>$273.617</b></td></tr>
+                    </tbody>
+                    <tfoot><tr><td>Total 90 días</td><td class="num">909.379</td><td class="num">16.369</td><td class="num">12.277</td><td class="num">1.228</td><td class="num">331</td><td class="num">50</td><td class="num">38</td><td class="num">$360.000</td></tr></tfoot>
+                  </table>
+                </div>
+                <p class="chart-note">Lectura: $18.000.000 compran menos de un mandado pagado por día. A este costo la decisión correcta no es subir el presupuesto, es detener la inversión y arreglar el recorrido.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div id="scenario-real" class="tab-panel active" role="tabpanel">
+          <article class="scenario-card">
+            <div class="scenario-top">
+              <div class="scenario-flag is-real"><div><small>Escenario realista</small><strong>201</strong><span>mandados pagados en 90 días</span></div><em>CPA $89.552 · 172 entregados</em></div>
+              <div class="scenario-body">
+                <h3>El recorrido se arregla antes de encender</h3>
+                <p>La landing cotiza, la ruta viaja con el usuario hasta la app y la medición devuelve pago y entrega. La tasa de landing a registro pasa de 2,7% a 5,7%: el doble de lo que la cuenta ya logró, no una cifra inventada.</p>
+                <div class="assumption-grid">
+                  <div class="assumption"><small>CPM</small><b>$15.000</b></div>
+                  <div class="assumption"><small>CTR enlace</small><b>2,0%</b></div>
+                  <div class="assumption"><small>Vista → cotiza</small><b>15%</b></div>
+                  <div class="assumption"><small>Cotiza → paga</small><b>8,4%</b></div>
+                  <div class="assumption"><small>Paga → entrega</small><b>85%</b></div>
+                </div>
+                <div class="performance-wrap" role="region" aria-label="Resultados mensuales del escenario realista" tabindex="0">
+                  <table class="performance-table compact wide">
+                    <thead><tr><th>Mes</th><th class="num">Impresiones</th><th class="num">Clics</th><th class="num">Vistas landing</th><th class="num">Cotizaciones</th><th class="num">Registros</th><th class="num">Pagados</th><th class="num">Entregados</th><th class="num">CPA</th></tr></thead>
+                    <tbody>
+                      <tr><td>Mes 1</td><td class="num">261.538</td><td class="num">5.231</td><td class="num">4.080</td><td class="num">612</td><td class="num">233</td><td class="num">51</td><td class="num">44</td><td class="num"><b>$99.681</b></td></tr>
+                      <tr><td>Mes 2</td><td class="num">360.000</td><td class="num">7.200</td><td class="num">5.616</td><td class="num">842</td><td class="num">320</td><td class="num">70</td><td class="num">60</td><td class="num"><b>$76.678</b></td></tr>
+                      <tr><td>Mes 3</td><td class="num">409.091</td><td class="num">8.182</td><td class="num">6.382</td><td class="num">957</td><td class="num">364</td><td class="num">80</td><td class="num">68</td><td class="num"><b>$67.476</b></td></tr>
+                    </tbody>
+                    <tfoot><tr><td>Total 90 días</td><td class="num">1.030.629</td><td class="num">20.613</td><td class="num">16.078</td><td class="num">2.412</td><td class="num">916</td><td class="num">201</td><td class="num">172</td><td class="num">$89.552</td></tr></tfoot>
+                  </table>
+                </div>
+                <p class="chart-note">Lectura: 916 registros con intención real de mandar, frente a los 7.553 registros históricos que en su mayoría eran viajeros. El volumen baja ocho veces y el valor sube.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div id="scenario-opt" class="tab-panel" role="tabpanel">
+          <article class="scenario-card">
+            <div class="scenario-top">
+              <div class="scenario-flag is-opt"><div><small>Escenario optimista</small><strong>367</strong><span>mandados pagados en 90 días</span></div><em>CPA $49.046 · 331 entregados</em></div>
+              <div class="scenario-body">
+                <h3>El recorrido se arregla y el concepto pega</h3>
+                <p>Además del recorrido corregido, el laboratorio encuentra temprano un concepto con CTR alto y la oferta encaja en un corredor con liquidez. Es el techo del ejercicio, no su expectativa.</p>
+                <div class="assumption-grid">
+                  <div class="assumption"><small>CPM</small><b>$13.000</b></div>
+                  <div class="assumption"><small>CTR enlace</small><b>2,3%</b></div>
+                  <div class="assumption"><small>Vista → cotiza</small><b>16%</b></div>
+                  <div class="assumption"><small>Cotiza → paga</small><b>10,3%</b></div>
+                  <div class="assumption"><small>Paga → entrega</small><b>90%</b></div>
+                </div>
+                <div class="performance-wrap" role="region" aria-label="Resultados mensuales del escenario optimista" tabindex="0">
+                  <table class="performance-table compact wide">
+                    <thead><tr><th>Mes</th><th class="num">Impresiones</th><th class="num">Clics</th><th class="num">Vistas landing</th><th class="num">Cotizaciones</th><th class="num">Registros</th><th class="num">Pagados</th><th class="num">Entregados</th><th class="num">CPA</th></tr></thead>
+                    <tbody>
+                      <tr><td>Mes 1</td><td class="num">301.775</td><td class="num">6.941</td><td class="num">5.691</td><td class="num">911</td><td class="num">373</td><td class="num">93</td><td class="num">84</td><td class="num"><b>$54.639</b></td></tr>
+                      <tr><td>Mes 2</td><td class="num">415.385</td><td class="num">9.554</td><td class="num">7.834</td><td class="num">1.253</td><td class="num">514</td><td class="num">128</td><td class="num">116</td><td class="num"><b>$42.030</b></td></tr>
+                      <tr><td>Mes 3</td><td class="num">472.028</td><td class="num">10.857</td><td class="num">8.902</td><td class="num">1.424</td><td class="num">584</td><td class="num">146</td><td class="num">131</td><td class="num"><b>$36.986</b></td></tr>
+                    </tbody>
+                    <tfoot><tr><td>Total 90 días</td><td class="num">1.189.188</td><td class="num">27.351</td><td class="num">22.428</td><td class="num">3.588</td><td class="num">1.471</td><td class="num">367</td><td class="num">331</td><td class="num">$49.046</td></tr></tfoot>
+                  </table>
+                </div>
+                <p class="chart-note">Lectura: incluso aquí el mes 3 alcanza 146 mandados pagados, cerca de 34 por semana. Sigue por debajo de las 50 conversiones semanales que Meta necesita para optimizar con estabilidad.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="chart-card">
+          <h3>Mandados pagados por mes</h3>
+          <p>Los mismos $6.000.000 mensuales en los tres escenarios. La diferencia no la produce el presupuesto: la produce la tasa de conversión del recorrido.</p>
+          <div class="chart-scroll">
+            <svg class="chart-figure" viewBox="0 0 760 340" role="img" aria-label="Gráfico de barras de mandados pagados por mes. Mes 1: pesimista 13, realista 51, optimista 93. Mes 2: pesimista 17, realista 70, optimista 128. Mes 3: pesimista 20, realista 80, optimista 146.">
+              <line x1="56" y1="284.0" x2="744" y2="284.0" stroke="#e8e5ea" stroke-width="1"/>
+              <text x="46" y="288.0" text-anchor="end" font-size="11" fill="#6b6872">0</text>
+              <line x1="56" y1="219.5" x2="744" y2="219.5" stroke="#e8e5ea" stroke-width="1"/>
+              <text x="46" y="223.5" text-anchor="end" font-size="11" fill="#6b6872">40</text>
+              <line x1="56" y1="155.0" x2="744" y2="155.0" stroke="#e8e5ea" stroke-width="1"/>
+              <text x="46" y="159.0" text-anchor="end" font-size="11" fill="#6b6872">80</text>
+              <line x1="56" y1="90.5" x2="744" y2="90.5" stroke="#e8e5ea" stroke-width="1"/>
+              <text x="46" y="94.5" text-anchor="end" font-size="11" fill="#6b6872">120</text>
+              <line x1="56" y1="26.0" x2="744" y2="26.0" stroke="#e8e5ea" stroke-width="1"/>
+              <text x="46" y="30.0" text-anchor="end" font-size="11" fill="#6b6872">160</text>
+              <rect x="87.7" y="263.7" width="46" height="20.3" rx="6" fill="#b9b3bd"/>
+              <text x="110.7" y="255.7" text-anchor="middle" font-size="12" font-weight="700" fill="#111827">13</text>
+              <rect x="147.7" y="201.4" width="46" height="82.6" rx="6" fill="#ed0a78"/>
+              <text x="170.7" y="193.4" text-anchor="middle" font-size="12" font-weight="700" fill="#111827">51</text>
+              <rect x="207.7" y="133.6" width="46" height="150.4" rx="6" fill="#1c2c44"/>
+              <text x="230.7" y="125.6" text-anchor="middle" font-size="12" font-weight="700" fill="#111827">93</text>
+              <text x="170.7" y="308" text-anchor="middle" font-size="12" font-weight="700" fill="#111827">Mes 1</text>
+              <rect x="317.0" y="255.9" width="46" height="28.1" rx="6" fill="#b9b3bd"/>
+              <text x="340.0" y="247.9" text-anchor="middle" font-size="12" font-weight="700" fill="#111827">17</text>
+              <rect x="377.0" y="170.5" width="46" height="113.5" rx="6" fill="#ed0a78"/>
+              <text x="400.0" y="162.5" text-anchor="middle" font-size="12" font-weight="700" fill="#111827">70</text>
+              <rect x="437.0" y="76.8" width="46" height="207.2" rx="6" fill="#1c2c44"/>
+              <text x="460.0" y="68.8" text-anchor="middle" font-size="12" font-weight="700" fill="#111827">128</text>
+              <text x="400.0" y="308" text-anchor="middle" font-size="12" font-weight="700" fill="#111827">Mes 2</text>
+              <rect x="546.3" y="252.2" width="46" height="31.8" rx="6" fill="#b9b3bd"/>
+              <text x="569.3" y="244.2" text-anchor="middle" font-size="12" font-weight="700" fill="#111827">20</text>
+              <rect x="606.3" y="155.0" width="46" height="129.0" rx="6" fill="#ed0a78"/>
+              <text x="629.3" y="147.0" text-anchor="middle" font-size="12" font-weight="700" fill="#111827">80</text>
+              <rect x="666.3" y="48.6" width="46" height="235.4" rx="6" fill="#1c2c44"/>
+              <text x="689.3" y="40.6" text-anchor="middle" font-size="12" font-weight="700" fill="#111827">146</text>
+              <text x="629.3" y="308" text-anchor="middle" font-size="12" font-weight="700" fill="#111827">Mes 3</text>
+              <line x1="56" y1="284" x2="744" y2="284" stroke="#c9c4cd" stroke-width="1.5"/>
+            </svg>
+          </div>
+          <div class="chart-legend">
+            <span style="--swatch:#b9b3bd"><i></i>Pesimista · 50 en total</span>
+            <span style="--swatch:var(--pink)"><i></i>Realista · 201 en total</span>
+            <span style="--swatch:var(--navy)"><i></i>Optimista · 367 en total</span>
+          </div>
+        </div>
+
+        <div class="chart-card">
+          <h3>Mandados entregados acumulados</h3>
+          <p>El KPI norte del diagnóstico. Al cierre de los 90 días la distancia entre el peor y el mejor escenario es de 293 entregas con exactamente la misma inversión.</p>
+          <div class="chart-scroll">
+            <svg class="chart-figure" viewBox="0 0 760 340" role="img" aria-label="Gráfico de líneas de mandados entregados acumulados. Pesimista: 10, 23 y 38. Realista: 44, 104 y 172. Optimista: 84, 200 y 331.">
+              <line x1="56" y1="288.0" x2="740" y2="288.0" stroke="#e8e5ea" stroke-width="1"/>
+              <text x="46" y="292.0" text-anchor="end" font-size="11" fill="#6b6872">0</text>
+              <line x1="56" y1="235.6" x2="740" y2="235.6" stroke="#e8e5ea" stroke-width="1"/>
+              <text x="46" y="239.6" text-anchor="end" font-size="11" fill="#6b6872">70</text>
+              <line x1="56" y1="183.2" x2="740" y2="183.2" stroke="#e8e5ea" stroke-width="1"/>
+              <text x="46" y="187.2" text-anchor="end" font-size="11" fill="#6b6872">140</text>
+              <line x1="56" y1="130.8" x2="740" y2="130.8" stroke="#e8e5ea" stroke-width="1"/>
+              <text x="46" y="134.8" text-anchor="end" font-size="11" fill="#6b6872">210</text>
+              <line x1="56" y1="78.4" x2="740" y2="78.4" stroke="#e8e5ea" stroke-width="1"/>
+              <text x="46" y="82.4" text-anchor="end" font-size="11" fill="#6b6872">280</text>
+              <line x1="56" y1="26.0" x2="740" y2="26.0" stroke="#e8e5ea" stroke-width="1"/>
+              <text x="46" y="30.0" text-anchor="end" font-size="11" fill="#6b6872">350</text>
+              <text x="284.0" y="312" text-anchor="middle" font-size="12" font-weight="700" fill="#111827">Mes 1</text>
+              <text x="512.0" y="312" text-anchor="middle" font-size="12" font-weight="700" fill="#111827">Mes 2</text>
+              <text x="740.0" y="312" text-anchor="middle" font-size="12" font-weight="700" fill="#111827">Mes 3</text>
+              <path d="M56.0 288.0 L284.0 225.1 L512.0 138.3 L740.0 40.2" fill="none" stroke="#1c2c44" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="284.0" cy="225.1" r="5" fill="#fff" stroke="#1c2c44" stroke-width="3"/>
+              <circle cx="512.0" cy="138.3" r="5" fill="#fff" stroke="#1c2c44" stroke-width="3"/>
+              <circle cx="740.0" cy="40.2" r="5" fill="#fff" stroke="#1c2c44" stroke-width="3"/>
+              <text x="732.0" y="26.2" text-anchor="end" font-size="13" font-weight="800" fill="#1c2c44">331</text>
+              <path d="M56.0 288.0 L284.0 255.1 L512.0 210.1 L740.0 159.2" fill="none" stroke="#ed0a78" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="284.0" cy="255.1" r="5" fill="#fff" stroke="#ed0a78" stroke-width="3"/>
+              <circle cx="512.0" cy="210.1" r="5" fill="#fff" stroke="#ed0a78" stroke-width="3"/>
+              <circle cx="740.0" cy="159.2" r="5" fill="#fff" stroke="#ed0a78" stroke-width="3"/>
+              <text x="732.0" y="145.2" text-anchor="end" font-size="13" font-weight="800" fill="#ed0a78">172</text>
+              <path d="M56.0 288.0 L284.0 280.5 L512.0 270.8 L740.0 259.6" fill="none" stroke="#b9b3bd" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="284.0" cy="280.5" r="5" fill="#fff" stroke="#b9b3bd" stroke-width="3"/>
+              <circle cx="512.0" cy="270.8" r="5" fill="#fff" stroke="#b9b3bd" stroke-width="3"/>
+              <circle cx="740.0" cy="259.6" r="5" fill="#fff" stroke="#b9b3bd" stroke-width="3"/>
+              <text x="732.0" y="245.6" text-anchor="end" font-size="13" font-weight="800" fill="#b9b3bd">38</text>
+              <line x1="56" y1="288" x2="740" y2="288" stroke="#c9c4cd" stroke-width="1.5"/>
+            </svg>
+          </div>
+          <div class="chart-legend">
+            <span style="--swatch:#b9b3bd"><i></i>Pesimista · 38 entregados</span>
+            <span style="--swatch:var(--pink)"><i></i>Realista · 172 entregados</span>
+            <span style="--swatch:var(--navy)"><i></i>Optimista · 331 entregados</span>
+          </div>
+        </div>
+
+        <div style="height:64px"></div>
+        <div class="section-heading">
+          <div><p class="kicker">Punto de equilibrio</p><h2>Cuánto debe dejar<br>cada mandado.</h2></div>
+          <p>El diagnóstico no tiene ticket ni margen por corredor. Esta tabla convierte ese pendiente en un umbral concreto: el margen de contribución que cada escenario exige para que los $18.000.000 se recuperen dentro de los 90 días.</p>
+        </div>
+        <div class="performance-wrap" role="region" aria-label="Margen de contribución requerido por escenario" tabindex="0">
+          <table class="performance-table compact">
+            <thead><tr><th>Escenario</th><th class="num">Costo por mandado entregado</th><th class="num">Si el mandante hace 1 mandado</th><th class="num">Si hace 2 mandados</th><th class="num">Si hace 3 mandados</th></tr></thead>
+            <tbody>
+              <tr><td>Pesimista</td><td class="num"><b>$473.684</b></td><td class="num">$473.684</td><td class="num">$236.842</td><td class="num">$157.895</td></tr>
+              <tr><td>Realista</td><td class="num"><b>$104.651</b></td><td class="num">$104.651</td><td class="num">$52.326</td><td class="num">$34.884</td></tr>
+              <tr><td>Optimista</td><td class="num"><b>$54.381</b></td><td class="num">$54.381</td><td class="num">$27.190</td><td class="num">$18.127</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="chart-note">Margen de contribución requerido por mandado entregado, calculado sobre la inversión total de $18.000.000 —incluido el laboratorio creativo— y no solo sobre la inversión a conversión. La repetición es la variable que más rápido baja el umbral: es la razón por la que el KPI norte es la entrega y no la compra.</p>
+
+        <div style="height:58px"></div>
+        <div class="section-heading">
+          <div><p class="kicker">Reglas del piloto</p><h2>Qué detiene<br>la inversión.</h2></div>
+          <p>Un presupuesto de esta escala solo es defendible si las condiciones de corte se acuerdan antes de encenderlo, no cuando el resultado ya decepcionó.</p>
+        </div>
+        <div class="guard-grid">
+          <article class="guard"><small>Umbral de aprendizaje</small><b>Ningún escenario llega a 50 conversiones semanales</b><p>El mejor mes del mejor escenario alcanza 34 por semana. Mientras tanto, optimizar a cotización o registro y usar Purchase como lectura de negocio, no como evento de puja.</p></article>
+          <article class="guard"><small>Corte por costo</small><b>Costo por cotización al doble del supuesto</b><p>Si en la semana 6 supera $12.820, se detiene la escala y se revisa landing, oferta y ruta. Lo que falla en ese punto no es la puja.</p></article>
+          <article class="guard"><small>Corte por calidad</small><b>Match, cancelación y entrega</b><p>No se escala ningún corredor si cae el match rate, suben las cancelaciones o la entrega baja del 80%, aunque el CPA se vea bien.</p></article>
+          <article class="guard"><small>Condición de entrada</small><b>Sin evento de pago, no hay piloto</b><p>Si al cierre del mes 1 el evento de mandado pagado no registra con valor y sin duplicados, la inversión del mes 2 se aplaza. El ejercicio completo depende de esa señal.</p></article>
+        </div>
+        <div class="interpretation"><strong>El hallazgo del ejercicio</strong><p>Entre el escenario pesimista y el optimista el CPM solo se mueve un 31% —de $17.000 a $13.000—, pero el resultado se multiplica por siete: de 50 a 367 mandados pagados. Con la misma inversión, la palanca no está en el precio de la subasta ni en el tamaño del presupuesto: está en el recorrido y en la medición. Esa es la razón por la que este ejercicio va después del diagnóstico y no antes.</p></div>
+      </div>
+    </section>
+
+    <section class="section-dark" id="creatividad" data-chapter="captacion">
+      <div class="wrap">
+        <div class="section-heading">
+          <div><p class="kicker">Capítulo de educación</p><h2>Primero entender.<br>Después cotizar.</h2></div>
+          <p>Antes de producir anuncios de adquisición, Loyevo necesita instalar una categoría simple, demostrar el recorrido y responder el riesgo percibido con evidencia.</p>
+        </div>
+        <div class="education-band" aria-label="Sistema de contenidos educativos">
+          <article class="education-card"><span class="icon-badge"><svg class="icon" aria-hidden="true"><use href="#icon-book"></use></svg></span><small>01 · Categoría</small><h3>Qué es Loyevo</h3><p>Alguien que ya viaja por tu ruta puede llevar tu encargo dentro de una operación trazable.</p></article>
+          <article class="education-card"><span class="icon-badge"><svg class="icon" aria-hidden="true"><use href="#icon-route"></use></svg></span><small>02 · Mecánica</small><h3>Cómo funciona</h3><p>Cotización, publicación, match, pago protegido, seguimiento y confirmación de entrega.</p></article>
+          <article class="education-card"><span class="icon-badge"><svg class="icon" aria-hidden="true"><use href="#icon-check"></use></svg></span><small>03 · Confianza</small><h3>Por qué confiar</h3><p>Viajeros verificados, reglas visibles, trazabilidad y casos reales con autorización.</p></article>
+          <article class="education-card"><span class="icon-badge"><svg class="icon" aria-hidden="true"><use href="#icon-target"></use></svg></span><small>04 · Relevancia</small><h3>Cuándo usarlo</h3><p>Situaciones, objetos y corredores concretos donde el modelo puede resolver mejor.</p></article>
+        </div>
+        <div class="section-heading">
+          <div><p class="kicker">Auditoría de 94 anuncios</p><h2>Hay respuesta al mensaje.<br>Falta probar negocio.</h2></div>
+          <p>Se revisaron formatos, CTA, copies, imágenes y desempeño histórico. Ninguna pieza está activa hoy, por lo que la lectura rescata aprendizajes sin confundirlos con vigencia creativa.</p>
+        </div>
+        <div class="audit-grid" aria-label="Evaluación creativa sobre cinco puntos">
+          <article class="audit-card"><small>Foco en mandante</small><strong>2/5</strong><p>74% del gasto se dirigió a viajeros.</p></article>
+          <article class="audit-card"><small>Mix de formatos</small><strong>1/5</strong><p>87 imágenes/enlaces, 6 videos y 1 dinámica.</p></article>
+          <article class="audit-card"><small>Consistencia visual</small><strong>2/5</strong><p>Logo, tipografía y acabado cambian entre líneas.</p></article>
+          <article class="audit-card"><small>Coherencia de CTA</small><strong>2/5</strong><p>47 SIGN_UP frente a 12 GET_QUOTE.</p></article>
+          <article class="audit-card"><small>Prueba real</small><strong>1/5</strong><p>Poca evidencia humana de recogida y entrega.</p></article>
+        </div>
+        <div class="creative-findings">
+          <article class="creative-finding"><span>Brecha 01</span><h3>Los mayores “ganadores” no captaban mandantes</h3><p>Siete de los ocho anuncios con mayor gasto ofrecían ingresos a conductores. Sus CTR y registros prueban interés de oferta, pero no responden la pregunta de cómo captar demanda.</p></article>
+          <article class="creative-finding"><span>Brecha 02</span><h3>El portafolio depende casi por completo de estáticos</h3><p>El 92,6% del inventario es imagen/enlace. Faltan UGC, demostración del cotizador, testimonios autorizados y secuencias que enseñen el servicio en funcionamiento.</p></article>
+          <article class="creative-finding"><span>Brecha 03</span><h3>Conviven dos sistemas visuales</h3><p>Viajeros usa fotos de carro con tipografía itálica contorneada; mandantes usa degradados, tarjetas explicativas y otros tratamientos del logo. La recordación se diluye.</p></article>
+          <article class="creative-finding"><span>Brecha 04</span><h3>La pieza promete un recorrido distinto al clic</h3><p>El carrusel de mandantes dice “cotiza en la app”, termina en Google Play y código promocional, mientras el anuncio usa GET_QUOTE dentro de campañas web.</p></article>
+        </div>
+
+        <div class="section-heading">
+          <div><p class="kicker">Aprendizajes observados</p><h2>Lo que sí funcionó<br>y qué corregir.</h2></div>
+          <p>Los costos son señales publicitarias de Meta; no incluyen validación de pago, match ni entrega.</p>
+        </div>
+        <div class="ideas-wrap" role="region" aria-label="Desempeño de piezas creativas observadas" tabindex="0">
+          <table class="ideas-table">
+            <thead><tr><th>Pieza</th><th>Inversión / señal</th><th>Qué funcionó</th><th>Qué corregir</th></tr></thead>
+            <tbody>
+              <tr><td>Viajero · Creativo 7</td><td><strong>$1.569.466 · CTR 5,01% · 1.683 registros</strong></td><td>Ruta específica y beneficio económico directo.</td><td>No aporta aprendizaje sobre adquisición de mandantes.</td></tr>
+              <tr><td>Mandante · carrusel</td><td><strong>$566.761 · CTR 2,69% · 11 leads</strong></td><td>Explica recogida, entrega y proceso en pasos.</td><td>Unificar web/app, usar pantalla de cotización y sumar prueba real.</td></tr>
+              <tr><td>Mandante · web 2</td><td><strong>$368.051 · CTR 2,41% · 12 leads</strong></td><td>Abre con una necesidad clara y CTA de cotización.</td><td>Profundizar casos de uso y mostrar el producto, no solo describirlo.</td></tr>
+              <tr><td>Mandante · WhatsApp 3</td><td><strong>$431.035 · CTR 2,56% · 114 conversaciones</strong></td><td>Urgencia y canal de baja fricción.</td><td>Medir conversación calificada, cotización, pago y entrega.</td></tr>
+              <tr><td>Mandados a $4.900</td><td><strong>$179.990 · CTR 7,01% · 1.988 LPV</strong></td><td>La oferta concreta produjo curiosidad a bajo costo.</td><td>Validar elegibilidad, claridad de términos y conversión posterior.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="section-heading">
+          <div><p class="kicker">Territorios de mensaje</p><h2>Seis ángulos<br>para mandantes.</h2></div>
+          <p>La marca no necesita repetir “somos una comunidad”; necesita resolver momentos concretos y evidenciar por qué el proceso reduce riesgo.</p>
+        </div>
+        <div class="creative-grid">
+          <article class="creative"><span class="creative-label">Problema urgente</span><h3>“Se te quedaron las llaves en otra ciudad.”</h3><p>Situación reconocible → solución → cotización.</p></article>
+          <article class="creative"><span class="creative-label">Corredor</span><h3>“Bogotá → Tunja, sin filas ni bodegas.”</h3><p>Relevancia geográfica y expectativa concreta.</p></article>
+          <article class="creative"><span class="creative-label">Confianza</span><h3>“El pago se libera cuando entregan.”</h3><p>Demostrar verificación, fotos y seguimiento.</p></article>
+          <article class="creative"><span class="creative-label">Velocidad</span><h3>“Hoy puede llegar eso que necesitas mandar hoy.”</h3><p>Usar solo en rutas donde la promesa sea sostenible.</p></article>
+          <article class="creative"><span class="creative-label">Comparación</span><h3>“Cotiza antes de ir a una transportadora.”</h3><p>Precio y conveniencia sin afirmaciones no sustentadas.</p></article>
+          <article class="creative"><span class="creative-label">Demostración</span><h3>Un mandado real, de inicio a entrega.</h3><p>UGC con pantalla, viajero, tracking y confirmación.</p></article>
+        </div>
+
+        <div class="ideas-wrap" role="region" aria-label="Ideas creativas de captación" tabindex="0">
+          <table class="ideas-table">
+            <thead><tr><th>Idea</th><th>Hook / apertura</th><th>Ejecución</th><th>Formato</th><th>CTA</th></tr></thead>
+            <tbody>
+              <tr><td>01 · Las llaves</td><td><strong>“Las llaves están en Bogotá. Tú ya estás en Tunja.”</strong></td><td>UGC de 15–20 s: problema, cotización en pantalla, recogida y confirmación.</td><td>Reel / Story 9:16</td><td>Cotiza esa ruta</td></tr>
+              <tr><td>02 · Regalo a tiempo</td><td><strong>“El cumpleaños es hoy y el regalo sigue contigo.”</strong></td><td>Historia emocional con reloj, ruta y entrega; prueba de seguimiento.</td><td>UGC + subtítulos</td><td>Mándalo hoy</td></tr>
+              <tr><td>03 · Documento urgente</td><td><strong>“Ese documento no puede esperar al próximo envío.”</strong></td><td>Escena problema/solución; explicar viajero verificado y foto de entrega.</td><td>Video 15 s / estático</td><td>Cotiza en 2 minutos</td></tr>
+              <tr><td>04 · Pantalla real</td><td><strong>“Así se manda un paquete con Loyevo.”</strong></td><td>Screen recording con pasos: ruta, objeto, precio, pago y tracking.</td><td>Demo 20–30 s</td><td>Haz tu cotización</td></tr>
+              <tr><td>05 · Pago protegido</td><td><strong>“Tu aporte no se libera antes de la entrega.”</strong></td><td>Animación simple del flujo de dinero y confirmación, con disclaimer preciso.</td><td>Motion / carrusel</td><td>Conoce cómo funciona</td></tr>
+              <tr><td>06 · Caso real</td><td><strong>“De Medellín a Rionegro: qué mandó, cuánto tardó.”</strong></td><td>Cliente autorizado + objeto + ruta + resultado comprobable.</td><td>Testimonio 20 s</td><td>Cotiza tu mandado</td></tr>
+              <tr><td>07 · Emprendedor</td><td><strong>“Una venta en otra ciudad no debería frenarte.”</strong></td><td>Producto de emprendimiento, necesidad de despacho puntual y entrega.</td><td>UGC / carrusel</td><td>Envía tu pedido</td></tr>
+              <tr><td>08 · Recuperación</td><td><strong>“Tu cotización sigue lista.”</strong></td><td>Retargeting dinámico por ruta y etapa; resolver la objeción principal.</td><td>Estático / Story</td><td>Retomar cotización</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="creative-rules">
+          <article class="creative-rule"><b>01 · Un mensaje</b><p>Cada pieza prueba un dolor, promesa o prueba principal; no todo a la vez.</p></article>
+          <article class="creative-rule"><b>02 · Evidencia</b><p>Rostros, objetos, rutas y resultados solo con autorización y soporte verificable.</p></article>
+          <article class="creative-rule"><b>03 · Promesa local</b><p>No anunciar mismo día, precio o cobertura donde la operación no pueda cumplir.</p></article>
+          <article class="creative-rule"><b>04 · Ganador real</b><p>Evaluar por cotización, pago y entrega; CTR y retención son diagnósticos intermedios.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="medicion" data-chapter="medicion">
+      <div class="wrap">
+        <div class="section-heading">
+          <div><p class="kicker">Medición ideal</p><h2>Meta necesita saber<br>qué mandado vale.</h2></div>
+          <p>Conectar el recorrido completo con identificadores consistentes, consentimiento, enlaces trazables y datos de negocio no sensibles.</p>
+        </div>
+        <div class="parallel-note"><span class="icon-badge"><svg class="icon" aria-hidden="true"><use href="#icon-chart"></use></svg></span><span><strong>Actualización al 27 de octubre:</strong> ya existe acceso a Firebase Analytics y al reporte de eventos de la app. La línea base observada incluye 1.335 eventos, 109 usuarios, 98 <code>first_open</code> y 16 <code>sign_up</code>; <code>purchase</code> aún no muestra flujo. El 26 de octubre Meta mostraba 10 leads desde el inicio de la nueva campaña, mientras el reporte operativo separaba registros de app y web; estas fuentes deben conciliarse antes de hablar de usuarios únicos o ventas. <a href="https://datastudio.google.com/reporting/75593648-d0c8-48d2-969a-2131c9580d3f" target="_blank" rel="noopener"><strong>Abrir informe de pauta →</strong></a></span></div>
+        <div class="measurement-grid">
+          <article class="event-map"><h3>Mapa mínimo de eventos</h3><div class="event-list">
+            <div class="event"><code>ViewContent</code><span>Visita landing/caso de uso</span><b>Micro</b></div>
+            <div class="event"><code>Search</code><span>Origen + destino consultados</span><b>Intención</b></div>
+            <div class="event"><code>Lead</code><span>Datos de mandante enviados</span><b>Secundario</b></div>
+            <div class="event"><code>AddPaymentInfo</code><span>Método de pago iniciado</span><b>Profundo</b></div>
+            <div class="event"><code>Purchase</code><span>Mandado pagado + value/COP</span><b>Primario</b></div>
+            <div class="event"><code>MandadoDelivered</code><span>Entrega confirmada</span><b>Calidad</b></div>
+          </div></article>
+          <article class="kpi-card"><h3>Tablero de decisión</h3><div class="kpi-hero"><small>KPI norte</small><strong>Costo por primer mandado entregado</strong></div><ul class="kpi-list">
+            <li><span>Negocio</span><b>Margen por corredor</b></li>
+            <li><span>Adquisición</span><b>CPA mandado pagado · sin histórico</b></li>
+            <li><span>Conversión</span><b>Cotización → pago · pendiente</b></li>
+            <li><span>Liquidez</span><b>Match rate / tiempo a match</b></li>
+            <li><span>Calidad</span><b>Entrega y cancelación</b></li>
+            <li><span>Retención</span><b>Repetición a 30/60/90 días</b></li>
+          </ul></article>
+        </div>
+        <aside class="naming-box">
+          <h3>Configuración actual detectada en Meta</h3>
+          <div class="name-list">
+            <div><small>Pixel mandantes</small><code>Mandantes Loyevo (Cotizar)</code><p>Optimización actual: Lead · última señal 12 ago. 2026.</p></div>
+            <div><small>Pixel viajeros</small><code>Pre-registro Redes sociales</code><p>Optimización actual: CompleteRegistration · última señal 6 ago. 2026.</p></div>
+            <div><small>Pixel descarga</small><code>CLICK DESCARGAR APP WEB</code><p>Única conversión personalizada: “Loyevo.co Descarga APP”.</p></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="roadmap" class="section-white" data-chapter="plan">
+      <div class="wrap">
+        <div class="section-heading">
+          <div><p class="kicker">Plan de 90 días</p><h2>Aprender antes<br>de comprar alcance.</h2></div>
+          <p>Producto, datos y propuesta avanzan en paralelo. La educación y la adquisición se activan por puertas de evidencia, no porque cambie el mes.</p>
+        </div>
+        <div class="parallel-note"><span class="icon-badge"><svg class="icon" aria-hidden="true"><use href="#icon-layers"></use></svg></span><span><strong>Dos carriles permanentes:</strong> activar usuarios y observar uso real; al mismo tiempo, cerrar medición, propuesta de valor y continuidad entre landing y app.</span></div>
+        <div class="roadmap">
+          <article class="phase"><div class="phase-card"><div class="phase-head"><div><small>Días 0–30</small><h3>Señal de producto</h3></div><span class="icon-badge"><svg class="icon" aria-hidden="true"><use href="#icon-users"></use></svg></span></div><ul><li>Definir hipótesis de PMF por corredor y caso de uso.</li><li>Segmentar y contactar usuarios registrados.</li><li>Acompañar una cohorte al primer mandado entregado.</li><li>Instrumentar eventos, IDs y tablero en paralelo.</li><li>Auditar la continuidad landing → app.</li></ul><p class="gate">Puerta 1: existe una cohorte que activa, completa valor y explica por qué usaría Loyevo de nuevo.</p></div></article>
+          <article class="phase"><div class="phase-card"><div class="phase-head"><div><small>Días 31–60</small><h3>Recorrido repetible</h3></div><span class="icon-badge"><svg class="icon" aria-hidden="true"><use href="#icon-route"></use></svg></span></div><ul><li>Elegir 1–2 corredores con mejor señal y capacidad.</li><li>Ajustar propuesta con entrevistas y comportamiento.</li><li>Hacer que la web cotice y la app continúe sin pérdida de contexto.</li><li>Lanzar contenidos “Qué es Loyevo” y demostraciones.</li><li>Probar activación, recuperación y segundo uso.</li></ul><p class="gate">Puerta 2: el recorrido se mide de punta a punta y alcanza umbrales acordados de activación, entrega y calidad.</p></div></article>
+          <article class="phase"><div class="phase-card"><div class="phase-head"><div><small>Días 61–90</small><h3>Adquisición condicionada</h3></div><span class="icon-badge"><svg class="icon" aria-hidden="true"><use href="#icon-target"></use></svg></span></div><ul><li>Convertir aprendizajes educativos en conceptos de adquisición.</li><li>Activar un piloto de presupuesto limitado por corredor.</li><li>Optimizar a mandado pagado y vigilar entrega y margen.</li><li>Comparar base reactivada, orgánico, referidos y pauta.</li><li>Escalar solo la combinación corredor–mensaje que sostenga calidad.</li></ul><p class="gate">Puerta 3: crecimiento sin deteriorar match, cancelación, margen ni repetición.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="validaciones" data-chapter="medicion">
+      <div class="wrap">
+        <div class="section-heading">
+          <div><p class="kicker">Validaciones de negocio</p><h2>Sin trazabilidad,<br>no hay escala.</h2></div>
+          <p>El histórico de la cuenta de Loyevo permite entender la pauta y las creatividades. Para decidir cuánto invertir falta conectar cada resultado publicitario con la operación real.</p>
+        </div>
+        <div class="data-legend" aria-label="Guía para interpretar los pendientes"><span><b>Dato observado:</b> evidencia disponible</span><span><b>Validación:</b> cruce requerido con Loyevo</span><span><b>Recomendación:</b> acción propuesta</span></div>
+        <div class="questions">
+          <details open><summary>Conciliación de resultados</summary><p><b>Validación:</b> relacionar lead, conversación y registro de Meta con usuario, cotización, mandado pagado, match, cancelación y entrega.</p></details>
+          <details><summary>Objetivo comercial actual</summary><p><b>Validación:</b> definir la prioridad que permitirá interpretar el desempeño: mandados, ingresos, margen, recurrencia, corredor específico o validación de mercado.</p></details>
+          <details><summary>Economía y operación</summary><p><b>Validación:</b> ingreso, costo variable, margen, ticket, match rate, tiempo a match, cancelación y entrega por corredor. Sin esto no existe un CPA máximo defendible.</p></details>
+          <details><summary>Canales y atribución</summary><p><b>Validación:</b> identificar Google, orgánico, referidos, CRM, email, WhatsApp, alianzas y tiendas de aplicaciones; definir su rol y cruzar resultados cuando aplique.</p></details>
+          <details><summary>Registro de cambios</summary><p><b>Recomendación:</b> documentar presupuesto, pausas, ediciones y reinicios de fase para distinguir aprendizaje real de cambios de configuración.</p></details>
+          <details><summary>Calidad de medición</summary><p><b>Recomendación:</b> revisar señales, duplicados, dominios, enlaces trazables, consentimiento y ventanas de atribución antes de escalar.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-dark" id="fuentes" data-chapter="plan">
+      <div class="wrap">
+        <div class="section-heading">
+          <div><p class="kicker">Fuentes y trazabilidad</p><h2>Observado,<br>no supuesto.</h2></div>
+          <p>Revisión realizada el 13 de agosto de 2026. Las cifras de inversión, entrega, eventos, estructura y creatividades provienen directamente de la cuenta.</p>
+        </div>
+        <div class="sources">
+          <div class="source"><small>Cuenta de Loyevo</small>Campañas, conjuntos, anuncios, inversión, resultados y configuración de medición</div>
+          <a class="source" href="https://loyevo.co/" target="_blank" rel="noopener"><small>Sitio oficial</small>Propuesta, CTA, seguridad, beneficios y testimonios</a>
+          <a class="source" href="https://loyevo.co/emisor-web/cotizar" target="_blank" rel="noopener"><small>Cotizador</small>Journey web, etiquetas base y flujo de conversión</a>
+          <a class="source" href="https://play.google.com/store/apps/details?id=com.luquedigital.loyevo" target="_blank" rel="noopener"><small>Google Play</small>Ficha pública de la aplicación Loyevo</a>
+          <a class="source" href="https://www.facebook.com/ads/library/" target="_blank" rel="noopener"><small>Meta pública</small>Biblioteca de anuncios activos</a>
+          <a class="source" href="https://loyevo.co/legal/datos-personales/" target="_blank" rel="noopener"><small>Legal</small>Tratamiento de datos, seguridad y rol de la plataforma</a>
+          <a class="source" href="https://www.facebook.com/help/259468828226154" target="_blank" rel="noopener"><small>Documentación</small>Alcance y funcionamiento de la Biblioteca de anuncios</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="siguientes-pasos" class="section-white" data-chapter="plan">
+      <div class="wrap">
+        <div class="section-heading">
+          <div><p class="kicker">Cronograma por frentes</p><h2>Cuatro carriles.<br>Tres puertas.</h2></div>
+          <p>La secuencia deja de ser una cadena de pauta. Durante 12 semanas, validación de producto, medición y journey avanzan en paralelo; educación y adquisición entran cuando dependen de aprendizajes ya disponibles.</p>
+        </div>
+        <div class="schedule-shell">
+          <p class="schedule-swipe">Desliza para ver las 12 semanas →</p>
+          <div class="schedule-scroll" role="region" aria-label="Cronograma de trabajo de doce semanas por frentes paralelos" tabindex="0">
+            <div class="parallel-timeline">
+              <div class="timeline-head"><div>Frente de trabajo</div><div>Sem. 1–2<br>Descubrir</div><div>Sem. 3–4<br>Validar</div><div>Sem. 5–8<br>Repetir</div><div>Sem. 9–12<br>Adquirir</div></div>
+              <div class="timeline-row">
+                <div class="timeline-label"><span class="icon-badge"><svg class="icon" aria-hidden="true"><use href="#icon-users"></use></svg></span><span><b>Producto y PMF</b><small>Cohortes y acogida</small></span></div><i class="timeline-gridline"></i><i class="timeline-gridline"></i><i class="timeline-gridline"></i><i class="timeline-gridline"></i>
+                <div class="timeline-bar pink" style="--start:2;--end:6">Segmentar base → entrevistas → activación asistida → entrega → repetición</div>
+              </div>
+              <div class="timeline-row">
+                <div class="timeline-label"><span class="icon-badge"><svg class="icon" aria-hidden="true"><use href="#icon-target"></use></svg></span><span><b>Datos y medición</b><small>Fuente de verdad</small></span></div><i class="timeline-gridline"></i><i class="timeline-gridline"></i><i class="timeline-gridline"></i><i class="timeline-gridline"></i>
+                <div class="timeline-bar" style="--start:2;--end:5">Eventos + ID único → implementación → QA → tablero por corredor y cohorte</div>
+              </div>
+              <div class="timeline-row">
+                <div class="timeline-label"><span class="icon-badge"><svg class="icon" aria-hidden="true"><use href="#icon-route"></use></svg></span><span><b>Propuesta y journey</b><small>Landing + app</small></span></div><i class="timeline-gridline"></i><i class="timeline-gridline"></i><i class="timeline-gridline"></i><i class="timeline-gridline"></i>
+                <div class="timeline-bar soft" style="--start:2;--end:4">Auditar → prototipar → probar continuidad, cotización y objeciones</div>
+              </div>
+              <div class="timeline-row">
+                <div class="timeline-label"><span class="icon-badge"><svg class="icon" aria-hidden="true"><use href="#icon-book"></use></svg></span><span><b>Educación y creatividad</b><small>Comprensión antes que venta</small></span></div><i class="timeline-gridline"></i><i class="timeline-gridline"></i><i class="timeline-gridline"></i><i class="timeline-gridline"></i>
+                <div class="timeline-bar amber" style="--start:3;--end:5">“Qué es Loyevo” → demostración → confianza → conceptos de adquisición</div>
+              </div>
+              <div class="timeline-row">
+                <div class="timeline-label"><span class="icon-badge"><svg class="icon" aria-hidden="true"><use href="#icon-chart"></use></svg></span><span><b>Adquisición</b><small>Piloto condicionado</small></span></div><i class="timeline-gridline"></i><i class="timeline-gridline"></i><i class="timeline-gridline"></i><i class="timeline-gridline"></i>
+                <div class="timeline-bar green" style="--start:4;--end:6">Piloto 1–2 corredores → lectura de calidad → escala o corrección</div>
+              </div>
+            </div>
+          </div>
+          <div class="schedule-guards" aria-label="Puertas de decisión del cronograma">
+            <div class="schedule-guard"><small>Puerta 1 · Semana 2</small><p>Hipótesis de PMF, corredor, cohorte y evento de activación definidos. Sin esto, no se evalúa acogida.</p></div>
+            <div class="schedule-guard"><small>Puerta 2 · Semana 4</small><p>Primer mandado medible de punta a punta y decisión explícita sobre el rol de landing y app.</p></div>
+            <div class="schedule-guard"><small>Puerta 3 · Semana 8</small><p>Solo lanzar adquisición si activación, entrega, calidad y economía alcanzan los umbrales acordados.</p></div>
+          </div>
+        </div>
+        <div class="schedule-legend" aria-label="Lectura del calendario"><span><svg class="icon" aria-hidden="true"><use href="#icon-layers"></use></svg>Los bloques superpuestos son trabajo paralelo.</span><span><svg class="icon" aria-hidden="true"><use href="#icon-check"></use></svg>Las puertas permiten continuar, corregir o detener.</span><span>Semanas contadas desde el kickoff.</span></div>
+      </div>
+    </section>
+    <section class="connected-docs" id="conexiones" aria-labelledby="conexiones-title">
+      <div class="wrap">
+        <div class="connected-head">
+          <div><p class="kicker">Ruta conectada · DOC 03</p><h2 id="conexiones-title">Adquirir después<br>de aprender.</h2></div>
+          <p>Pauta y adquisición amplifica una propuesta priorizada y una demanda entendida. Sus datos regresan a producto y CRM para corregir el siguiente ciclo.</p>
+        </div>
+        <div class="connected-grid">
+          <a class="connection" href="producto-y-mercado.html#canales"><small>Hallazgos → producto</small><h3>Entender la fricción de los activos</h3><p>La lectura de sitio, app, contenido y referidos explica por qué la captación no puede evaluarse aislada del producto.</p><span>Ver Canales →</span></a>
+          <a class="connection" href="demanda-y-crm.html#crm-mandantes"><small>Captación → base propia</small><h3>Convertir cada contacto en relación</h3><p>Pauta, plataforma y referidos deben converger en una base de mandantes con journeys diferenciados.</p><span>Ver Mandantes →</span></a>
+          <a class="connection" href="demanda-y-crm.html#crm-analitica"><small>Medición → aprendizaje</small><h3>Devolver resultados al ciclo</h3><p>Eventos, corredores y cohortes alimentan la analítica que permite investigar, activar y optimizar de nuevo.</p><span>Ver Analítica →</span></a>
+          <a class="connection" href="../planes/arranque.html#pauta"><small>Medición → ejecución</small><h3>Convertir el diagnóstico en tareas</h3><p>El cronograma traduce la auditoría, consolidación de píxeles, definición de eventos y reunión técnica en una secuencia visible.</p><span>Ver cronograma →</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="wrap footer-inner"><span>Loyevo · Diagnóstico de pauta y adquisición</span><span>Documento estratégico · Adcom Group · Agosto 2026</span></div></footer>
+
+  <script src="../assets/js/diagnostico-inicial.js" defer></script>
+</body>
+</html>

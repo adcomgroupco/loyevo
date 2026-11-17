@@ -5,12 +5,12 @@ Centro de documentos web para revisar producto, mercado, posicionamiento y adqui
 ## Entregable
 
 - `index.html`: hub principal y punto de entrada a los entregables.
-- `diagnostico-producto-mercado.html`: diagnóstico condensado de posicionamiento, barreras, canales, audiencias, competencia, DOFA y prioridades.
-- `diagnostico-crm.html`: diagnóstico de desarrollo de demanda y CRM, con investigación, perfilamiento, embajadores, referidos y journeys de mandantes.
-- `diagnostico-inicial.html`: diagnóstico de pauta y adquisición, navegable, responsive e imprimible.
-- `cronograma-arranque.html`: cronograma visual de ocho semanas para activar la base, consolidar medición, producir piezas y ejecutar un piloto de adquisición.
-- `flujo-crm-mandantes.html`: guía de cinco etapas con 21 plantillas de correo, eventos de automatización y criterios de uso para WhatsApp.
-- `inteligencia-competitiva-skydropx.html`: investigación de la pauta activa de Skydropx y aprendizajes aplicables al cuadro de materiales de noviembre.
+- `diagnosticos/producto-y-mercado.html`: diagnóstico condensado de posicionamiento, barreras, canales, audiencias, competencia, DOFA y prioridades.
+- `diagnosticos/demanda-y-crm.html`: diagnóstico de desarrollo de demanda y CRM, con investigación, perfilamiento, embajadores, referidos y journeys de mandantes.
+- `diagnosticos/pauta-y-adquisicion.html`: diagnóstico de pauta y adquisición, navegable, responsive e imprimible.
+- `planes/arranque.html`: cronograma visual de ocho semanas para activar la base, consolidar medición, producir piezas y ejecutar un piloto de adquisición.
+- `crm/mandantes.html`: guía de cinco etapas con 21 plantillas de correo, eventos de automatización y criterios de uso para WhatsApp.
+- `analisis/skydropx.html`: investigación de la pauta activa de Skydropx y aprendizajes aplicables al cuadro de materiales de noviembre.
 - El sitio publicado no requiere compilación ni dependencias de producción.
 - Puede abrirse directamente o publicarse con GitHub Pages.
 
@@ -75,3 +75,24 @@ La portada prioriza la descarga mientras la ruta web de cotización queda relega
 - [Ayuda oficial sobre la Biblioteca de anuncios](https://www.facebook.com/help/259468828226154)
 
 Revisión pública y de la cuenta de Loyevo realizada el **13 de agosto de 2026**. Última inversión registrada: **1 de agosto de 2026**; todas las campañas estaban pausadas al momento de la auditoría.
+
+
+## Organización de documentos
+
+La portada es [index.html](index.html). Cada carpeta agrupa un tema. Los nombres
+usan minúsculas, guiones y fechas `AAAA-MM` o `AAAA-MM-DD` cuando distinguen cortes.
+El nombre del cliente vive en el repositorio y no se repite en cada URL.
+Los títulos de la portada y de cada documento usan el mismo nombre.
+
+Los HTML en las rutas anteriores solo redirigen para conservar enlaces compartidos,
+incluidos sus parámetros y secciones. Los documentos nuevos se guardan en las
+carpetas temáticas y se enlazan desde la portada.
+
+| Documento | Ruta |
+|---|---|
+| [Producto y mercado](diagnosticos/producto-y-mercado.html) | `diagnosticos/producto-y-mercado.html` |
+| [Demanda y CRM](diagnosticos/demanda-y-crm.html) | `diagnosticos/demanda-y-crm.html` |
+| [Pauta y adquisición](diagnosticos/pauta-y-adquisicion.html) | `diagnosticos/pauta-y-adquisicion.html` |
+| [Plan de arranque](planes/arranque.html) | `planes/arranque.html` |
+| [CRM para mandantes](crm/mandantes.html) | `crm/mandantes.html` |
+| [Análisis de Skydropx](analisis/skydropx.html) | `analisis/skydropx.html` |
